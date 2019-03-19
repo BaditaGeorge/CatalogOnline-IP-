@@ -1,0 +1,6 @@
+ - pana la finalul iteratiei 1 ( saptamana a-7-a )
+ - o diagrama UML care va descrie modulul nostru
+ - o diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
+ - definitia pentru o parte din clasele necesare in modulul nostru
+ - documentatie pentru prelucrarea tipurilor de fisiere si stabilirea conexiunilor cu baza de date
+ - o functie pentru extragerea datelor dintr-un fisier (tip pdf sa csv), partial implementata

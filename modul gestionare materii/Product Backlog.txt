@@ -1,0 +1,7 @@
+
+ - primirea de fisiere de tipul csv sau excel si preclucrarea datelor
+ - datele extrase si prelucrate sunt disponibile pentru a fi afisate
+ - se introduc date in baza de date pentru persistenta (datele prelucrate, introduse de unul dintre utilizatori)
+ - gestionarea drepturilor in functie de tipul utilizatorului(studentul nu poate adauga note, profesorul nu poate adauga liste cu studenti)
+ - prelucrarea datelor din cadrul aplicatiei (notele studentilor, studentii) pentru a le putea exporta intr-un format citibil
+ - la fiecare update a datelor din cadrul aplicatiei, vom actualiza datele si in baza de date
