@@ -1,0 +1,12 @@
+Definition of done
+- Modul Calcul tabelar -
+
+
+
+	Iteratia 1 (2 saptamani)
+stabilim limbajul pe care il vom folosi;
+sincronizam programul folosit;
+stabilim in ce fel comunicam cu celelalte module
+finalizam arhitectura aplicatiei
+realizam o documentatie pentru modul de comunicare cu baza de date
+implementam definitia pentru o parte din clasele din diagrama 

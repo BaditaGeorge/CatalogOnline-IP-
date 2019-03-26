@@ -1,0 +1,16 @@
+Product Backlog
+
+Modulul  “Calcul”  isi propune :
+- sa  stocheze notele fiecarui  student introduse (de  catre  profesori)  de la laboratoare, de la teme si de la examene ;
+- sa stocheze punctajele  fiecarui  student  de  la activitatea fiecarei  materii;
+- sa stabileasca punctajele fiecarui student in functie de  formula specifica materiei;
+- sa  stocheze prezentele fiecarui student introduse (de catre  profesori)  pentru fiecare  materie;
+- sa permita  vizualizarea  de catre  profesori a tuturor datelor introduse; 
+- sa  implementeze  criteriile  de  promovare  pentru fiecare disciplina  in parte;
+- sa  verifice daca criteriile  respective  sunt indeplinite;
+- sa  permita  vizualizarea  notelor si a prezentelor  studentului dupa un cod  unic  generat pe  care il detine doar studentul;
+- ca vizualizarea de  catre student a notelor/ prezentelor/ punctajelor sa fie  in timp relativ  real;
+- sa nu permita modificarea datelor de catre  student;
+- sa introduca  formule de calcul al  mediei fiecarui student;
+- sa stabileasca daca  un  student este  promovat/ nepromovat;
+- sa permita  calcularea  mediei  finale  doar  in cazul  in care  studentul este  promovat.
