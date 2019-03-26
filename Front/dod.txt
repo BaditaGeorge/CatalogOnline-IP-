@@ -1,0 +1,9 @@
+DoD
+
+ - pana la finalul iteratiei 1 ( saptamana a-7-a )
+ - o diagrama UML care va descrie modulul nostru
+ - o diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
+ - wireframe/ptototip al aplicatiei
+ - documentatia legata de tehnologiile utilizate
+ - un sistem de desing mai amanuntit pentru fiecare componenta globala
+ - definirea unor componente globale ale aplicatiei

@@ -1,0 +1,5 @@
+1. Un utilizator trebuie sa dispuna de o interfata de inregistrae/logare
+2. Un utilizator cu drepturi de ADMIN trebuie sa aibe acces la o interfata de administrare a aplicatiei de tipul Admin Panel (validare drepturi useri, administrare discipline, editare)
+3. Un utilizator cu drepturi de SECRETAR trebuie sa dispuna de o interfata de manageriere a studentilor inscrisi, a disciplinelor de studiu, a profesorilor si a relatiilor dintre acestea + verificarea criteriilor de promovare)
+4. Un utilizator cu drepturile de PROFESOR trebuie sa dispuna de un dashboard al materiei sale (centralizarea notelor si a studentilor inscrisi, formulele de calcul ale notelor partiale/finale, criteriilor de promovare, import/export rezultate, etc)
+5. Un utilizator cu drepturile de STUDENT trebuie sa dispuna de un dashboard care centralizeaza rezultatele si disciplinele de studiu, inscrierea la diferite optionale, istoricul notelor si al creditelor, etc
