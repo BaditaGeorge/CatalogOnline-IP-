@@ -1,8 +1,22 @@
-
- - primirea de fisiere de tipul csv sau excel si preclucrarea datelor <prioritatar>
- - datele extrase si prelucrate sunt disponibile pentru a fi afisate 
- - ne ocupam de actualizarea catalogului, de oricate ori este necesar
- - se introduc date in baza de date pentru persistenta (datele prelucrate, introduse de unul dintre utilizatori)
- - gestionarea drepturilor in functie de tipul utilizatorului(studentul nu poate adauga note, profesorul nu poate adauga liste cu studenti)
- - prelucrarea datelor din cadrul aplicatiei (notele studentilor, studentii) pentru a le putea exporta intr-un format citibil
- - la fiecare update a datelor din cadrul aplicatiei, vom actualiza datele si in baza de date
+1. Gandirea si scrierea unui Product Backlog pentru a stabili prioritatea task-urilor si a se putea face ulterior atribuirea lor.
+2. Scrierea documentului DoD care va stabili ce se va livra pana la finalul primului sprint.
+3. Crearea unei diagrame UML care sa reflecte modul in care este proiectat modulul la nivel de clase.
+4. Crearea unei diagrame C4 care sa reflecte modul in care comunica modulul cu restul modulelor din cadrul aplicatiei.
+5. Gasirea si documentarea unei bibleoteci Java care sa ne permita lucrul cu baze de date de tip SqlLite.
+6. Gasirea si documentarea unei bibleoteci Java pentru prelucrarea fisierelor de tip PDF,CSV,Excel.
+7. Crearea cu ajutorul diagramei UML, a unui package Java cu clasele pe care le are modulul, si cu signaturile functiilor pentru clasele respective.
+8. Preluarea datelor de la entitatea Secretar.
+9. Preluarea datelor de la entitatea Profesor.
+10. Extragerea datelor din baza de date la cererea unei entitati.
+11. Prelucrarea documentelor de tip CSV ce contin liste de nume,numere matricole,date de nastere,etc..
+12. Prelucrarea documentelor de tip PDF ce contin liste de nume,numere matricole,date de nastere,etc..
+13. Prelucrarea documentelor de tip CSV ce contin liste ce au legatura cu materiile(sau liste cu materiile).
+14. Prelucrarea documentelor de tip PDF ce contin liste ce au legatura cu materiile(sau liste cu materiile).
+15. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor cu studenti si note.
+16. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor cu studenti si note.
+17. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor cu materii si media notelor.
+18. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor cu materii si media notelor.
+19. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor ce contin studentii in ordinea notelor obtinute(distributie buget taxa).
+20. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor ce contin studentii in ordinea notelor
+obtinute(distributie buget taxa).
+21. Prelucrarea datelor si generarea documentului de tip Excel(GoogleSheet) ce va afisa continutul tabelei unde se tine evidenta activitatii studentilor dintr-o grupa.
