@@ -7,6 +7,7 @@
 7. [GTH] Design system
 8. [MEDIUM] Identificarea tehnologiilor si resurselor necesare
 9. [MEDIUM] Documentare tehnologii necesare
+9'. [MEDIUM] Implementare clase de baza ale aplicatie
 10. [HIGH] Implementare Router, clasa care gestioneaza view-urile aplicatie
 11. [HIGHT] Implementare Main View, clasa de baza a plicatiei, start-ul flowurilor
 12. [HIGH] Implementare formular inregistrare/login
