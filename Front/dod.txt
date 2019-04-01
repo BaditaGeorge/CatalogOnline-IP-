@@ -1,9 +1,16 @@
 DoD
 
- - pana la finalul iteratiei 1 ( saptamana a-7-a )
- - o diagrama UML care va descrie modulul nostru
- - o diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
- - wireframe/ptototip al aplicatiei
- - documentatia legata de tehnologiile utilizate
- - un sistem de desing mai amanuntit pentru fiecare componenta globala
- - definirea unor componente globale ale aplicatiei
+
+[C ][DDL   ][Members          ]#Task
+
+[2h][25 Apr][All]              #Module meeting (stabilire responsabilitati, directii 	generale)
+
+[2h][25 Apr][Gabriel]          #Deffinition of Done doc, listare taskuri mandatory in primul sprint (responsabili + cost/ddl)
+
+[2h][25 Apr][Gabriel]          #Un backlog (lista de taksuri generale ce trebuie indeplinite pe baza unor prioritatie pana la sfarsitul proiectului)
+
+[6h][25 Apr][Emilian + Teona]  #Un site-map generalizat, posibile directii ale interfetei, stabilire succinta a unor metode/viewuri (Short guide pentru diagrame)
+
+[6h][2 Apr ][Paul + Claudiu]   #Diagrama UML (Views Classes) - Modul de functionare al aplicatie la nivel de interfata, legaturile dintre view-uri si date
+
+[6h][2 Apr ][George + Lician]  #O diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
