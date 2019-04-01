@@ -2,6 +2,13 @@
 Product backlog
 
 1.Sistemul de login
-2.Validare prin mail pentru inregistrarea utilizatorilor temporari (studenti).
-3.Acordarea de drepturi si tipuri de conturi (administrator , secretar, student, temporar, permanent)
+-criptarea parolelor folosind salted hashes
+-verificarea validitatii datelor de logare(email-uri valide ce apartin de info.uaic.ro ce contin doar caractere alfanumerice,@,.)
+-verificarea datelor de logare introduse folosind datele de logare din baza de date a aplicatiei
+2.Sistemul de register
+-criptarea parolelor folosind salted hashes
+-verificarea validitatii datelor de logare
+-generarea unui hash random si a unei adrese temporare ce vor fi trimise prin email adresei introduse de utilizator,ce le va folosi pentru a-si confirma statutul de student al Facultatii de Informatica. 
+-introducerea datelor de logare valide in database,dupa confirmarea email-ului
+3.Acordarea de drepturi si tipuri de conturi (administrator , secretar,profesor, student)
 4.Integrarea protocolului de securitate https folosind certificate locale
