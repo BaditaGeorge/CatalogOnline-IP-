@@ -6,9 +6,11 @@ public class Catalog {
 
     public Integer valoareNoua;
 
-    public Vector  myStudent;
-    public Vector  myNota;
-
+    public Vector myStudent;
+    public Vector myNota;
+    
+    public void addNota(Nota el){
+    }
     public void exportaDate() {
     }
 
