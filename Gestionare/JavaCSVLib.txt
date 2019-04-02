@@ -1,0 +1,3 @@
+Nu avem nevoie de o bibleoteca pentru a prelucra formatul CSV
+putem crea singuri metoda de prelucrare, fara tool-uri externe
+la acest link https://www.geeksforgeeks.org/writing-a-csv-file-in-java-using-opencsv/ este un tutorial de pe geeks for geeks pentru crearea unei clase ce ne va ajuta sa prelucram csv-uri, tutorial dupa care ne putem ghida

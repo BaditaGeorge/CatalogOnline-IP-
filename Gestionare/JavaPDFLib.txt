@@ -1,0 +1,12 @@
+Pentru a prelucra fisierele PDF, si pentru a genera fisiere PDF vom utiliza bibleoteca PDFBox
+http://www.pdfbox.org/
+Aceasta bibleoteca are mai multe feature-uri care ne pot fi utile in cadrul proiectului, feature-uri precum concatenarea de fisiere pdf, citirea de fisiere pdf si crearea de fisiere pdf, de asemenea, crearea de imagini din fisiere pdf este ceva ce am putea utiliza pentru adaugarea unor feature-uri suplimentare.
+Aceasta bibleoteca ne pune la dispozitie, printre altele
+PDFDocument - un tip neprimitv cu functii de save si load suprascrise, acesta este principalul tip de date utilizat pentru modelarea pdf-urilor
+addPage - posibilitatea de a adauga pagini, prin metoda
+PDPage - avem de asemenea un tip de date neprimitiv pe care il putem utiliza pentru a stoca date, pe care sa le adaugam ulterior documentelor
+contentStream - Principalul tool de modelare, este un alt tip neprimitiv pe care ni-l furmizeaza bibleoteca, si cu ajutorul caruia putem modela string-uri si alte tipuri de date, pe care sa le adaugam unui document PDF
+PDFTextStriper - pentru extragerea textului dintr-o pagina PDF
+Bibleoteca furnizeaza multe alte instrumente utile, acestea sunt suficiente pentru prelucrarile principale pe care le avem de facut.
+Un link cu un tutorial pentru bibleoteca este aici: https://www.tutorialspoint.com/pdfbox/pdfbox_reading_text.htm
+Iar documentatia pentru bibleoteca o putem gasi la adresa : https://pdfbox.apache.org/1.8/cookbook/documentcreation.html
