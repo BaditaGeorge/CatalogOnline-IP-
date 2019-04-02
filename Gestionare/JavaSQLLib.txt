@@ -1,0 +1,7 @@
+Pentru interactiunea cu baza de date, vom utiliza o bibleoteca denumita SQLite JDBC
+Este una dintre cele mai utilizate bibleoteci disponibile in limbajul Java, pentru interactiunea cu baze de date.
+Cu ajutorul bibleotecii putem crea baze de date si tabele, si putem executa expresii Sql(select,insert,delete,update).
+Statement - este un tip de date oferit de bibleoteca cu ajutorul caruia putem modela expresiile SQL
+Connection - este un tip de date oferit de bibleoteca cu ajutorul caruia putem modela conexiunea cu baza de date
+Result - este un tip de date in care putem stoca rezultatul returnat de un SQL Query
+Documentatia o putem gasi chiar pe pagina de github a bibleotecii: https://github.com/xerial/sqlite-jdbc
