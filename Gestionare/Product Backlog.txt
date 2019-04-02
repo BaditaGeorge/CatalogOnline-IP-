@@ -20,4 +20,4 @@
 20. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor ce contin studentii in ordinea notelor obtinute(distributie buget taxa).
 21. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor ce contin studentii in ordinea notelor
 obtinute(distributie buget taxa).
-22. Prelucrarea datelor si generarea documentului de tip Excel(GoogleSheet) ce va afisa continutul tabelei unde se tine evidenta activitatii studentilor dintr-o grupa.
+22. Prelucrarea datelor si generarea documentului de tip GoogleSheet ce va afisa continutul tabelei unde se tine evidenta activitatii studentilor dintr-o grupa.
