@@ -3,17 +3,17 @@ DoD
 
 [C ][DDL   ][Members          ]#Task
 
-[2h][25 Apr][All]              #Module meeting (stabilire responsabilitati, directii 	generale)
+[2h][25 Mar[All]              #Module meeting (stabilire responsabilitati, directii 	generale)
 
-[2h][25 Apr][Gabriel]          #Deffinition of Done doc, listare taskuri mandatory in primul sprint (responsabili + cost/ddl)
+[2h][25 Mar[Gabriel]          #Deffinition of Done doc, listare taskuri mandatory in primul sprint (responsabili + cost/ddl)
 
-[2h][25 Apr][Gabriel]          #Un backlog (lista de taksuri generale ce trebuie indeplinite pe baza unor prioritatie pana la sfarsitul proiectului)
+[2h][25 Mar[Gabriel]          #Un backlog (lista de taksuri generale ce trebuie indeplinite pe baza unor prioritatie pana la sfarsitul proiectului)
 
 [1h][2 Apr][Gabriel]           #Documentare tehnologii
 
 [1h][2 Apr][Gabriel]           #Implementare clase fara metode si instalare proiect
 
-[6h][25 Apr][Emilian + Teona]  #Un site-map generalizat, posibile directii ale interfetei, stabilire succinta a unor metode/viewuri (Short guide pentru diagrame)
+[6h][25 Mar[Emilian + Teona]  #Un site-map generalizat, posibile directii ale interfetei, stabilire succinta a unor metode/viewuri (Short guide pentru diagrame)
 
 [6h][2 Apr ][Paul + Claudiu]   #Diagrama UML (Views Classes) - Modul de functionare al aplicatie la nivel de interfata, legaturile dintre view-uri si date
 
