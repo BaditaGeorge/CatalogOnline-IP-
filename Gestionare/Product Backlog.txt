@@ -7,16 +7,17 @@
 7. Crearea cu ajutorul diagramei UML, a unui package Java cu clasele pe care le are modulul, si cu signaturile functiilor pentru clasele respective.
 8. Preluarea datelor de la entitatea Secretar.
 9. Preluarea datelor de la entitatea Profesor.
-10. Extragerea datelor din baza de date la cererea unei entitati.
-11. Prelucrarea documentelor de tip CSV ce contin liste de nume,numere matricole,date de nastere,etc..
-12. Prelucrarea documentelor de tip PDF ce contin liste de nume,numere matricole,date de nastere,etc..
-13. Prelucrarea documentelor de tip CSV ce contin liste ce au legatura cu materiile(sau liste cu materiile).
-14. Prelucrarea documentelor de tip PDF ce contin liste ce au legatura cu materiile(sau liste cu materiile).
-15. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor cu studenti si note.
-16. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor cu studenti si note.
-17. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor cu materii si media notelor.
-18. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor cu materii si media notelor.
-19. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor ce contin studentii in ordinea notelor obtinute(distributie buget taxa).
-20. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor ce contin studentii in ordinea notelor
+10. Inserarea datelor in baza de date.
+11. Extragerea datelor din baza de date la cererea unei entitati.
+12. Prelucrarea documentelor de tip CSV ce contin liste de nume,numere matricole,date de nastere,etc..
+13. Prelucrarea documentelor de tip PDF ce contin liste de nume,numere matricole,date de nastere,etc..
+14. Prelucrarea documentelor de tip CSV ce contin liste ce au legatura cu materiile(sau liste cu materiile).
+15. Prelucrarea documentelor de tip PDF ce contin liste ce au legatura cu materiile(sau liste cu materiile).
+16. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor cu studenti si note.
+17. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor cu studenti si note.
+18. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor cu materii si media notelor.
+19. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor cu materii si media notelor.
+20. Prelucrarea datelor si generarea documentului de tip PDF pentru exportul listelor ce contin studentii in ordinea notelor obtinute(distributie buget taxa).
+21. Prelucrarea datelor si generarea documentului de tip CSV pentru exportul listelor ce contin studentii in ordinea notelor
 obtinute(distributie buget taxa).
-21. Prelucrarea datelor si generarea documentului de tip Excel(GoogleSheet) ce va afisa continutul tabelei unde se tine evidenta activitatii studentilor dintr-o grupa.
+22. Prelucrarea datelor si generarea documentului de tip Excel(GoogleSheet) ce va afisa continutul tabelei unde se tine evidenta activitatii studentilor dintr-o grupa.
