@@ -100,6 +100,10 @@ public class FormulaTest {
         MockFormula.infixToPostfix();
         assertEquals("L E1 E2 :+", MockFormula.formulaPostfixata);
 
+        MockFormula.setFormula("P=L + sum(E1:E2)");
+        MockFormula.infixToPostfix();
+        assertEquals("P L E1 E2 :+=", MockFormula.formulaPostfixata);
+
 
     }
 

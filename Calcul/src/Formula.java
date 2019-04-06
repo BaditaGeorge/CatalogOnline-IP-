@@ -120,7 +120,7 @@ public class Formula {
                }
            }
 
-           else if("+-/*".indexOf(formula.charAt(i))>=0) {
+           else if("+-/*=".indexOf(formula.charAt(i))>=0) {
                if (isOperator)
                {
                    mesajPentruFront="Eroare: Nu pot exista doi operatori unul dupa altul";
@@ -238,7 +238,7 @@ public class Formula {
                     stack.pop();
             }
 
-            else if("+-/*:".indexOf(formula.charAt(i))>=0)
+            else if("+-/*:=".indexOf(formula.charAt(i))>=0)
             {   String currentOperator= "";
                 currentOperator+=formula.charAt(i);
                 while(!stack.peek().equals("#") && precedence(currentOperator)<=precedence(stack.peek()))
