@@ -8,9 +8,15 @@ public class FormulaTest {
 
         Formula MockFormula= new Formula("L + E");
         MockFormula.parsareFormula();
+
+        //se verifica daca vectorul cu variabile a fost populat corect
         assertEquals("L", MockFormula.variabile[0]);
         assertEquals("E", MockFormula.variabile[1]);
+
+        //se verifica numarul de variabile
         assertEquals(2, MockFormula.nrVariabile);
+
+        //daca nu s-a gasit nicio eroare in mesajPentruFront ar trebui sa apara mesajul "Formula este valida"
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
 
@@ -33,7 +39,8 @@ public class FormulaTest {
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
 
-        MockFormula.setFormula("L * T ( P + B)");
+        //formula data mai jos e intentionat gresita pentru a verica daca se detecteaza eroarea
+        MockFormula.setFormula("B+ T(P + B)");
         MockFormula.parsareFormula();
         assertEquals("Eroare: Inainte de paranteza nu exista operator", MockFormula.mesajPentruFront);
 
@@ -41,6 +48,12 @@ public class FormulaTest {
         MockFormula.setFormula(" B + 1L");
         MockFormula.parsareFormula();
         assertEquals("Eroare: Variabilele nu pot incepe cu cifre",MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("B+ min(10,L1)");
+        MockFormula.parsareFormula();
+        assertEquals("Formula este valida",MockFormula.mesajPentruFront);
+
+
 
 
     }
@@ -92,18 +105,39 @@ public class FormulaTest {
         MockFormula.infixToPostfix();
         assertEquals("L E +", MockFormula.formulaPostfixata);
 
-        MockFormula.setFormula("L + E* (T+P)");
+        MockFormula.setFormula("L + E* (T+P)"); //aici se  pune formula normala, infixata
         MockFormula.infixToPostfix();
-        assertEquals("L E T P +*+", MockFormula.formulaPostfixata);
+        assertEquals("L E T P +*+", MockFormula.formulaPostfixata); // aici cea postfixata
+
+        //sum(E1:E3) = (E1+E2+E3) In formula postfixata sum e descompus direct in plusuri
 
         MockFormula.setFormula("L + sum(E1:E2)");
         MockFormula.infixToPostfix();
-        assertEquals("L E1 E2 :+", MockFormula.formulaPostfixata);
+        assertEquals("L E1 E2 ++", MockFormula.formulaPostfixata);
 
-        MockFormula.setFormula("P=L + sum(E1:E2)");
+        MockFormula.setFormula("L + sum(E1:E5)");
         MockFormula.infixToPostfix();
-        assertEquals("P L E1 E2 :+=", MockFormula.formulaPostfixata);
+        assertEquals("L E1 E2 E3 E4 E5 +++++", MockFormula.formulaPostfixata);
 
+        MockFormula.setFormula("P=L + sum(E1:E2)"); //nu stiu daca vom folosi egal, dar pare ca merge
+        MockFormula.infixToPostfix();
+        assertEquals("P L E1 E2 ++=", MockFormula.formulaPostfixata);
+
+        MockFormula.setFormula("12*L + 16 + T");
+        MockFormula.infixToPostfix();
+        assertEquals("12 L *16 +T +", MockFormula.formulaPostfixata);
+
+        MockFormula.setFormula("12*L + min(16.20,E) + T"); //aici am testat si numere rationale
+        MockFormula.infixToPostfix();
+        assertEquals("12 L *16.20 E ~min~+T +", MockFormula.formulaPostfixata); //poti vedea cum arata functia min in forma postfixata
+
+        //daca in functia min trebuie sa pui expresii pune-le intre paranteze
+        //in primul test se declara niste chestii, deci daca vrei sa folosesti unul ca model, foloseste-le pe urmatoarele
+
+    }
+
+    public void verificareUtilizareMinMax()
+    {
 
     }
 
