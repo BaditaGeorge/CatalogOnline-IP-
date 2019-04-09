@@ -451,6 +451,11 @@ public class Formula {
         }
     }
 
+    void verificareVariabileFormula(AntetMaterie antet)
+    {
+        
+    }
+
 
 
     void parsareCriteriiPromovare()

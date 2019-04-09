@@ -12,11 +12,6 @@ public class PrelucrareDate {
 
     }
 
-    //extrage notele fiecarei materii ce contine id_student si populeaza variabila materii din PaginaStudent
-    public void primesteDateStudent(String id_student)
-    {
-
-    }
 
     //aplica formulele pentru materiile unde s-au adaugat note
     public void updateBazaDeDate(String id_materie)
