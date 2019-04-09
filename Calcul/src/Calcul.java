@@ -74,7 +74,7 @@ public class Calcul {
 
              }
 
-             if("+-*/~:".indexOf(formula.formulaPostfixata.charAt(i))>=0)
+             if("+-*/%~:".indexOf(formula.formulaPostfixata.charAt(i))>=0)
              {
                 double val1=stack.pop();
                 double val2=stack.pop();
@@ -92,6 +92,9 @@ public class Calcul {
                         break;
                     case '/':
                         stack.push(val2/val1);
+                        break;
+                    case '%':
+                        stack.push(val2%val1);
                         break;
                     case '~':
                     {
