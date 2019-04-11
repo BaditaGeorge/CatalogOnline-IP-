@@ -107,74 +107,74 @@ public class CalculTest {
         //Test 7 - formula ip  10*(LAB+PROIECT+BONUS+EXAMEN)/MAX_PCT_FARA_BONUS 360?
 
         MockCalcul.formula.setFormula("10*(sum(E1:E4))/360");
-        for(int i=1;i<=4;i++)
+        for (int i = 1; i <= 4; i++)
             MockCalcul.antet[i] = "E" + i;
-        MockCalcul.note[0][1]=100;
-        MockCalcul.note[0][2]=140;
-        MockCalcul.note[0][3]=15;
-        MockCalcul.note[0][4]=105;
+        MockCalcul.note[0][1] = 100;
+        MockCalcul.note[0][2] = 140;
+        MockCalcul.note[0][3] = 15;
+        MockCalcul.note[0][4] = 105;
 
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata(0);
-        number=10d;
-        assertEquals(number,MockCalcul.stack.peek());
+        number = 10d;
+        assertEquals(number, MockCalcul.stack.peek());
 
         //Test 8 formula TW PF = P * 0.1 + A * 0.2 + S * 0.5 + T(t1+t2+t3) * 0.2 + E(e1+e2+e3) * 0.1,
 
         MockCalcul.formula.setFormula("E1*0.1+E2*0.2+E3*0.5+sum(E4:E6)*0.2+sum(E7:E9)*0.1");
-        for(int i=1;i<=9;i++)
+        for (int i = 1; i <= 9; i++)
             MockCalcul.antet[i] = "E" + i;
-        MockCalcul.note[0][1]=7;
-        MockCalcul.note[0][2]=9;
-        MockCalcul.note[0][3]=8;
-        MockCalcul.note[0][4]=1.25;
-        MockCalcul.note[0][5]=2.5;
-        MockCalcul.note[0][6]=1.25;
-        MockCalcul.note[0][7]=2;
-        MockCalcul.note[0][8]=2;
-        MockCalcul.note[0][9]=1;
+        MockCalcul.note[0][1] = 7;
+        MockCalcul.note[0][2] = 9;
+        MockCalcul.note[0][3] = 8;
+        MockCalcul.note[0][4] = 1.25;
+        MockCalcul.note[0][5] = 2.5;
+        MockCalcul.note[0][6] = 1.25;
+        MockCalcul.note[0][7] = 2;
+        MockCalcul.note[0][8] = 2;
+        MockCalcul.note[0][9] = 1;
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata(0);
-        number=8d;
-        assertEquals(number,MockCalcul.stack.peek());
+        number = 8d;
+        assertEquals(number, MockCalcul.stack.peek());
 
         //Test 9 calcul modulo
         MockCalcul.formula.setFormula("E1%9");
         MockCalcul.antet[1] = "E" + 1;
-        MockCalcul.note[0][1]=6;
+        MockCalcul.note[0][1] = 6;
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata(0);
-        number=6d;
-        assertEquals(number,MockCalcul.stack.peek());
+        number = 6d;
+        assertEquals(number, MockCalcul.stack.peek());
 
         //Test 10 formula retele 0.4*P+0.3*E+0.2*L+1;
 
         MockCalcul.formula.setFormula("E1*0.4+E2*0.3+E3*0.2+1");
-        for(int i=1;i<=3;i++)
+        for (int i = 1; i <= 3; i++)
             MockCalcul.antet[i] = "E" + i;
-        MockCalcul.note[0][1]=7.25;
-        MockCalcul.note[0][2]=6.5;
-        MockCalcul.note[0][3]=5.25;
+        MockCalcul.note[0][1] = 7.25;
+        MockCalcul.note[0][2] = 6.5;
+        MockCalcul.note[0][3] = 5.25;
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata(0);
-        number=6.9;
-        assertEquals(number,MockCalcul.stack.peek());
+        number = 6.9;
+        assertEquals(number, MockCalcul.stack.peek());
 
         //Test 11 formula lfac 0.3*(T1+T2)/2+0.2*P+0.3*(T1+T2)/2+0.2*E;
 
         MockCalcul.formula.setFormula("(sum(E1:E2)/2)*0.3+E3*0.2+(sum(E4:E5)/2)*0.3+E6*0.2");
-        for(int i=1;i<=6;i++)
+        for (int i = 1; i <= 6; i++)
             MockCalcul.antet[i] = "E" + i;
-        MockCalcul.note[0][1]=10;
-        MockCalcul.note[0][2]=10;
-        MockCalcul.note[0][3]=6.25;
-        MockCalcul.note[0][4]=10;
-        MockCalcul.note[0][5]=4;
-        MockCalcul.note[0][6]=9.25;
+        MockCalcul.note[0][1] = 10;
+        MockCalcul.note[0][2] = 10;
+        MockCalcul.note[0][3] = 6.25;
+        MockCalcul.note[0][4] = 10;
+        MockCalcul.note[0][5] = 4;
+        MockCalcul.note[0][6] = 9.25;
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata(0);
-        number=8.2;
-        assertEquals(number,MockCalcul.stack.peek());
+        number = 8.2;
+        assertEquals(number, MockCalcul.stack.peek());
     }
 
 }
