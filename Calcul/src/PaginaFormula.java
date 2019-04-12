@@ -5,16 +5,25 @@ public class PaginaFormula {
     String id_materie;
 
 
-    void generare(String id_materie) {
+    void generareAntet(String id_materie, String antet) {
 
     }
 
-    void schimbareFormula(String id_materie) {
+    void schimbareAntet(String id_materie, String antet) {
 
     }
 
-    boolean checkIfExists(String id_materie) {
-        return false;
+    void generareFormula(String id_materie, String formula) {
+
+    }
+
+    void schimbareFormula(String id_materie, String formula) {
+
+    }
+
+
+    void generareCriterii(String id_materie) {
+
     }
 
     void schimbareCriterii(String id_materie) {

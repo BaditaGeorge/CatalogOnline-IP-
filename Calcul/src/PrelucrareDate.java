@@ -1,20 +1,23 @@
 public class PrelucrareDate {
 
-    //utilizeaza functii definite de modulul Gestionare pentru a extrage din baza de date variabilele mentionate
-    public void primesteFormula(String id_materie, String[] formula, String[] antet) {
+    String mesajDeLaFront;
+
+    public void primesteMesajDeLaFront()
+    {
 
     }
 
-    //creeaza cu ajutorul unei functii definite de modulul Gestionare o noua tabela in baza de date pentru o anumita materie
-    public void trimiteAntet(String id_materie, String formula, String antet) {
+    public void TrimiteMesajCatreFront(String mesajPentruFront)
+    {
 
     }
 
-
-    //aplica formulele pentru materiile unde s-au adaugat note
     public void updateBazaDeDate(String id_materie) {
 
     }
 
+    boolean cautareFormulaInBD(String id_materie) {
+        return false;
+    }
 
 }
