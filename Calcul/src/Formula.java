@@ -215,7 +215,7 @@ public class Formula {
                 if (!isOperator && !variabile[nrVariabile - 1].equals("sum") && !variabile[nrVariabile - 1].equals("min") && !variabile[nrVariabile - 1].equals("max")) {
                     mesajPentruFront = "Eroare: Inainte de paranteza nu exista operator";
                     return;
-                } else if (nrVariabile>=1 && variabile[nrVariabile - 1].equals("sum") && isVariable) {
+                } else if (nrVariabile >= 1 && variabile[nrVariabile - 1].equals("sum") && isVariable) {
                     nrVariabile--;
 
                     int newIndex = verificaUtilizareSum(i);
@@ -226,8 +226,7 @@ public class Formula {
                     nrParantezeDeschise--;
 
 
-
-                } else if (nrVariabile>=1 && (variabile[nrVariabile - 1].equals("min") || variabile[nrVariabile - 1].equals("max")) && isVariable) {
+                } else if (nrVariabile >= 1 && (variabile[nrVariabile - 1].equals("min") || variabile[nrVariabile - 1].equals("max")) && isVariable) {
 
                     nrVariabile--;
 
@@ -485,16 +484,23 @@ public class Formula {
     void verificareVariabileFormula(AntetMaterie antet) {
         int k = 0;
         boolean check;
+        if (nrVariabile == 0)
+            return;
         String[] raspuns = new String[nrVariabile];
 
-        for (int i = 0; i < nrVariabile; i++) {
-            check = false;
-            for (int j = 0; j < antet.nrCampuri; j++)
-                if (variabile[i].equals(antet.CampuriAntet[j]))
-                    check = true;
-            if (!check)
-                raspuns[k++] = this.variabile[i];
-        }
+        if (antet.nrCampuri == 0)
+            for (int i = 0; i < nrVariabile; i++)
+                raspuns[i] = variabile[i];
+        else
+            for (int i = 0; i < nrVariabile; i++) {
+                check = false;
+                for (int j = 0; j < antet.nrCampuri; j++)
+                    if (variabile[i].equals(antet.CampuriAntet[j]))
+                        check = true;
+                if (!check)
+                    raspuns[k++] = this.variabile[i];
+            }
+
         if (raspuns[0] != null) {
             mesajPentruFront = "Eroare: Urmatoarele variabile din formula nu sunt definite in antet:";
             for (int i = 0; i < raspuns.length; i++)
@@ -502,6 +508,7 @@ public class Formula {
                     mesajPentruFront += " " + raspuns[i];
         } else
             mesajPentruFront = "Formula este valida";
+
     }
 
     void parsareCriteriiPromovare() {
