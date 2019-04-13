@@ -496,7 +496,7 @@ public class Formula {
                 raspuns[k++] = this.variabile[i];
         }
         if (raspuns[0] != null) {
-            mesajPentruFront = "Lipseste din antet:";
+            mesajPentruFront = "Eroare: Urmatoarele variabile din formula nu sunt definite in antet:";
             for (int i = 0; i < raspuns.length; i++)
                 if (raspuns[i] != null)
                     mesajPentruFront += " " + raspuns[i];

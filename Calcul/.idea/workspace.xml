@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="teste evaluare formula postfixata">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/AntetMaterie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/AntetMaterie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/AntetMaterieTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/AntetMaterieTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/CalculTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/CalculTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Formula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/FormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/FormulaTest.java" afterDir="false" />
     </list>
@@ -35,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="244" column="44" selection-start-line="244" selection-start-column="44" selection-end-line="244" selection-end-column="44" />
+            <state relative-caret-position="232">
+              <caret line="257" column="9" selection-start-line="257" selection-start-column="9" selection-end-line="257" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -44,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Formula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="479" column="18" lean-forward="true" selection-start-line="479" selection-start-column="18" selection-end-line="479" selection-end-column="18" />
+            <state relative-caret-position="31">
+              <caret line="488" column="23" lean-forward="true" selection-start-line="488" selection-start-column="23" selection-end-line="488" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -62,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="164" column="90" lean-forward="true" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="90" />
+            <state relative-caret-position="2754">
+              <caret line="164" column="90" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -157,8 +147,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,7 +180,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555115141087" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555163677926" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -297,32 +287,20 @@
       <workItem from="1554927527243" duration="200000" />
       <workItem from="1554963653169" duration="6363000" />
       <workItem from="1554970349782" duration="5357000" />
-      <workItem from="1555085984725" duration="22286000" />
+      <workItem from="1555085984725" duration="22825000" />
+      <workItem from="1555162887688" duration="728000" />
     </task>
+    <task id="LOCAL-00001" summary="functie + teste verificareVariabileFormula">
+      <created>1555115285312</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555115285313</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 15m 54s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 17m 36s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 18m 13s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 18m 35s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 18m 57s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 19m 49s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormulaTest - 2019.04.13 at 03h 20m 10s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FormulaTest - 2019.04.13 at 03h 21m 15s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
@@ -332,9 +310,30 @@
     <history-entry file="FormulaTest - 2019.04.13 at 03h 23m 39s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 24m 38s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 25m 16s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 16h 47m 19s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 16h 47m 51s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 16h 48m 22s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 16h 48m 51s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2019.04.13 at 16h 49m 57s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59139000" />
+    <option name="totallyTimeSpent" value="60406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,7 +348,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885022" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16111952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -358,7 +357,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26841244" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26841244" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -418,7 +417,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="teste evaluare formula postfixata" />
-    <option name="LAST_COMMIT_MESSAGE" value="teste evaluare formula postfixata" />
+    <MESSAGE value="functie + teste verificareVariabileFormula" />
+    <option name="LAST_COMMIT_MESSAGE" value="functie + teste verificareVariabileFormula" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -527,6 +527,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="164" column="90" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -548,38 +569,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="479" column="18" lean-forward="true" selection-start-line="479" selection-start-column="18" selection-end-line="479" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="164" column="90" lean-forward="true" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="90" />
+        <state relative-caret-position="31">
+          <caret line="488" column="23" lean-forward="true" selection-start-line="488" selection-start-column="23" selection-end-line="488" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="244" column="44" selection-start-line="244" selection-start-column="44" selection-end-line="244" selection-end-column="44" />
+        <state relative-caret-position="232">
+          <caret line="257" column="9" selection-start-line="257" selection-start-column="9" selection-end-line="257" selection-end-column="9" />
         </state>
       </provider>
     </entry>
