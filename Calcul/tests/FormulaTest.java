@@ -57,6 +57,10 @@ public class FormulaTest {
         MockFormula.setFormula("sum(L1:L3)");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("(sum(E1:E2)/2)*0.3+E3*0.2+(sum(E4:E5)/2)*0.3+E6*0.2");
+        MockFormula.parsareFormula();
+        assertEquals("Formula este valida", MockFormula.mesajPentruFront);
     }
 
     @Test
@@ -128,6 +132,7 @@ public class FormulaTest {
         MockFormula.setFormula("12*L + min(16.20,E) + T"); //aici am testat si numere rationale
         MockFormula.infixToPostfix();
         assertEquals("12 L *16.20 E ~min~+T +", MockFormula.formulaPostfixata); //poti vedea cum arata functia min in forma postfixata
+
 
         //daca in functia min trebuie sa pui expresii pune-le intre paranteze
         //in primul test se declara niste chestii, deci daca vrei sa folosesti unul ca model, foloseste-le pe urmatoarele
@@ -210,6 +215,11 @@ public class FormulaTest {
         assertEquals(14, pozitieParantezaInchisa);
         assertEquals("Eroare: Variabila invalida", MockFormula.mesajPentruFront);
         assertEquals("L", MockFormula.variabile[0]);
+
+        MockFormula.setFormula("max(E5,10) + E6");
+        pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(3);
+        assertEquals(9, pozitieParantezaInchisa);
+
     }
 
     @Test

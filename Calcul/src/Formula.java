@@ -215,24 +215,29 @@ public class Formula {
                 if (!isOperator && !variabile[nrVariabile - 1].equals("sum") && !variabile[nrVariabile - 1].equals("min") && !variabile[nrVariabile - 1].equals("max")) {
                     mesajPentruFront = "Eroare: Inainte de paranteza nu exista operator";
                     return;
-                } else if (variabile[nrVariabile - 1].equals("sum") && isVariable) {
+                } else if (nrVariabile>=1 && variabile[nrVariabile - 1].equals("sum") && isVariable) {
+                    nrVariabile--;
+
                     int newIndex = verificaUtilizareSum(i);
 
                     if (newIndex == -1) return;
 
                     i = newIndex;
                     nrParantezeDeschise--;
+
+
+
+                } else if (nrVariabile>=1 && (variabile[nrVariabile - 1].equals("min") || variabile[nrVariabile - 1].equals("max")) && isVariable) {
+
                     nrVariabile--;
 
-
-                } else if ((variabile[nrVariabile - 1].equals("min") || variabile[nrVariabile - 1].equals("max")) && isVariable) {
                     int newIndex = verificaUtilizareMinMax(i);
 
                     if (newIndex == -1) return;
 
                     i = newIndex;
                     nrParantezeDeschise--;
-                    nrVariabile--;
+
 
                 } else {
                     isVariable = false;
@@ -297,9 +302,10 @@ public class Formula {
                 mesajPentruFront = "Eroare: Paranteze folosite incorect";
                 return;
             }
-            if (isVariable)
+            if (isVariable && !var.equals("sum") && !var.equals("min") && !var.equals("max"))
                 variabile[nrVariabile++] = var;
             mesajPentruFront = "Formula este valida";
+
         }
 
 
