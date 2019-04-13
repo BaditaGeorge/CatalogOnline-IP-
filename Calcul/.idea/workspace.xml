@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="teste evaluare formula postfixata">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaginaFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaginaFormula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/AntetMaterie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/AntetMaterie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/AntetMaterieTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/AntetMaterieTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/CalculTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/CalculTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Formula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/FormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/FormulaTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1161">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            <state relative-caret-position="212">
+              <caret line="244" column="44" selection-start-line="244" selection-start-column="44" selection-end-line="244" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -34,8 +44,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Formula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8211">
-              <caret line="485" lean-forward="true" selection-start-line="485" selection-end-line="485" />
+            <state relative-caret-position="82">
+              <caret line="479" column="18" lean-forward="true" selection-start-line="479" selection-start-column="18" selection-end-line="479" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -43,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+            <state relative-caret-position="79">
+              <caret line="164" column="90" lean-forward="true" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -58,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -72,6 +91,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -110,17 +138,18 @@
         <option value="$PROJECT_DIR$/src/Calcul.java" />
         <option value="$PROJECT_DIR$/tests/AntetMaterieTest.java" />
         <option value="$PROJECT_DIR$/tests/CalculTest.java" />
-        <option value="$PROJECT_DIR$/tests/FormulaTest.java" />
-        <option value="$PROJECT_DIR$/src/Formula.java" />
         <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
         <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
+        <option value="$PROJECT_DIR$/src/Formula.java" />
+        <option value="$PROJECT_DIR$/tests/FormulaTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="975" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -128,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -150,7 +180,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -161,7 +190,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555055666362" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555115141087" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -268,49 +297,59 @@
       <workItem from="1554927527243" duration="200000" />
       <workItem from="1554963653169" duration="6363000" />
       <workItem from="1554970349782" duration="5357000" />
+      <workItem from="1555085984725" duration="22286000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 23m 32s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 15m 54s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 23m 34s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 17m 36s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 23m 36s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 18m 13s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 23m 52s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 18m 35s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 24m 08s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 18m 57s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 25m 06s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 19m 49s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 25m 19s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 20m 10s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 25m 39s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 21m 15s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 25m 51s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 22m 27s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.11 at 12h 41m 48s.xml">
+    <history-entry file="FormulaTest - 2019.04.13 at 03h 23m 39s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36853000" />
+    <option name="totallyTimeSpent" value="59139000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15704697" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -319,7 +358,39 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26868907" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26841244" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3207856" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Database" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15960665" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26841244" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -340,7 +411,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
       <window_info anchor="right" id="Database" order="9" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -446,20 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -470,17 +527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1161">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        <state relative-caret-position="306">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -491,6 +541,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Calcul.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -498,17 +555,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Formula.java">
+    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8211">
-          <caret line="485" lean-forward="true" selection-start-line="485" selection-end-line="485" />
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
+    <entry file="file://$PROJECT_DIR$/src/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="82">
+          <caret line="479" column="18" lean-forward="true" selection-start-line="479" selection-start-column="18" selection-end-line="479" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="164" column="90" lean-forward="true" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="244" column="44" selection-start-line="244" selection-start-column="44" selection-end-line="244" selection-end-column="44" />
         </state>
       </provider>
     </entry>

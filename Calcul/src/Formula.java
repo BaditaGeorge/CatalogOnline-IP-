@@ -8,7 +8,6 @@ public class Formula {
     public String[] variabile = new String[50];
     public String mesajPentruFront;
 
-
     public Formula(String formula) {
         this.formula = formula;
     }
@@ -478,9 +477,26 @@ public class Formula {
     }
 
     void verificareVariabileFormula(AntetMaterie antet) {
+        int k = 0;
+        boolean check;
+        String[] raspuns = new String[nrVariabile];
 
+        for (int i = 0; i < nrVariabile; i++) {
+            check = false;
+            for (int j = 0; j < antet.nrCampuri; j++)
+                if (variabile[i].equals(antet.CampuriAntet[j]))
+                    check = true;
+            if (!check)
+                raspuns[k++] = this.variabile[i];
+        }
+        if (raspuns[0] != null) {
+            mesajPentruFront = "Lipseste din antet:";
+            for (int i = 0; i < raspuns.length; i++)
+                if (raspuns[i] != null)
+                    mesajPentruFront += " " + raspuns[i];
+        } else
+            mesajPentruFront = "Formula este valida";
     }
-
 
     void parsareCriteriiPromovare() {
 

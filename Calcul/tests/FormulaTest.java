@@ -212,5 +212,50 @@ public class FormulaTest {
         assertEquals("L", MockFormula.variabile[0]);
     }
 
+    @Test
+    public void verificareVariabileFormula(){
 
+        Formula MockFormula = new Formula("L+E+D");
+        MockFormula.parsareFormula();
+        String[] init = {"D"};
+        AntetMaterie antet = new AntetMaterie(init);
+        MockFormula.verificareVariabileFormula(antet);
+        assertEquals("Lipseste din antet: L E", MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("A+B+C");
+        MockFormula.parsareFormula();
+        String[] sir1 = {"A","B","C"};
+        antet.setCampuriAntet(sir1);
+        MockFormula.verificareVariabileFormula(antet);
+        assertEquals("Formula este valida", MockFormula.mesajPentruFront);
+
+
+        MockFormula.setFormula("sum(A:C)");
+        MockFormula.parsareFormula();
+        String[] sir2 = {"sum"};
+        antet.setCampuriAntet(sir2);
+        MockFormula.verificareVariabileFormula(antet);
+        assertEquals("Formula este valida", MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("E1*0.2+(sum(E2:E5)/2)*0.3+E6*0.2");
+        MockFormula.parsareFormula();
+        String[] sir3 = {"sum", "E1"};
+        antet.setCampuriAntet(sir3);
+        MockFormula.verificareVariabileFormula(antet);
+        assertEquals("Lipseste din antet: E6", MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("E1 * min((sum(E2:E4),10)* E4");
+        String[] sir4 = {"E1","min"};
+        antet.setCampuriAntet(sir4);
+        MockFormula.parsareFormula();
+        MockFormula.verificareVariabileFormula(antet);
+        assertEquals("Formula este valida", MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("0.5*sum(E1:E4) + max(E5,10) + E6*(E7 * (E8+E9))");
+        MockFormula.parsareFormula();
+        String[] sir5 = {""};
+        antet.setCampuriAntet(sir5);
+        MockFormula.verificareVariabileFormula(antet);
+        assertEquals("Lipseste din antet: sum max", MockFormula.mesajPentruFront);
+    }
 }
