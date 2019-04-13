@@ -220,7 +220,7 @@ public class FormulaTest {
         String[] init = {"D"};
         AntetMaterie antet = new AntetMaterie(init);
         MockFormula.verificareVariabileFormula(antet);
-        assertEquals("Lipseste din antet: L E", MockFormula.mesajPentruFront);
+        assertEquals("Eroare: Urmatoarele variabile din formula nu sunt definite in antet: L E", MockFormula.mesajPentruFront);
 
         MockFormula.setFormula("A+B+C");
         MockFormula.parsareFormula();
@@ -229,33 +229,32 @@ public class FormulaTest {
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-
-        MockFormula.setFormula("sum(A:C)");
+        MockFormula.setFormula("sum(A:B)");
         MockFormula.parsareFormula();
-        String[] sir2 = {"sum"};
+        String[] sir2 = {"A,B"};
         antet.setCampuriAntet(sir2);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("E1*0.2+(sum(E2:E5)/2)*0.3+E6*0.2");
+        MockFormula.setFormula("min(E1,E2)");
         MockFormula.parsareFormula();
-        String[] sir3 = {"sum", "E1"};
+        String[] sir3 = {"E1", "E2"};
         antet.setCampuriAntet(sir3);
         MockFormula.verificareVariabileFormula(antet);
-        assertEquals("Lipseste din antet: E6", MockFormula.mesajPentruFront);
+        assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("E1 * min((sum(E2:E4),10)* E4");
-        String[] sir4 = {"E1","min"};
+        MockFormula.setFormula("max(A,B)");
+        String[] sir4 = {"A","B"};
         antet.setCampuriAntet(sir4);
         MockFormula.parsareFormula();
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("0.5*sum(E1:E4) + max(E5,10) + E6*(E7 * (E8+E9))");
+        MockFormula.setFormula("0.5*sum(E1:E2) + max(E3,10) + E4*(E5 * (E6+E7))");
         MockFormula.parsareFormula();
         String[] sir5 = {""};
         antet.setCampuriAntet(sir5);
         MockFormula.verificareVariabileFormula(antet);
-        assertEquals("Lipseste din antet: sum max", MockFormula.mesajPentruFront);
+        assertEquals("Eroare: Urmatoarele variabile din formula nu sunt definite in antet: E1 E2 E3 E4 E5 E6", MockFormula.mesajPentruFront);
     }
 }
