@@ -57,10 +57,6 @@ public class FormulaTest {
         MockFormula.setFormula("sum(L1:L3)");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
-
-        MockFormula.setFormula("(sum(E1:E2)/2)*0.3+E3*0.2+(sum(E4:E5)/2)*0.3+E6*0.2");
-        MockFormula.parsareFormula();
-        assertEquals("Formula este valida", MockFormula.mesajPentruFront);
     }
 
     @Test
@@ -133,6 +129,34 @@ public class FormulaTest {
         MockFormula.infixToPostfix();
         assertEquals("12 L *16.20 E ~min~+T +", MockFormula.formulaPostfixata); //poti vedea cum arata functia min in forma postfixata
 
+        MockFormula.setFormula("E1 * min(sum(E2:E4),10)* E4");
+        MockFormula.infixToPostfix();
+        assertEquals("E1 E2 E3 E4 ++10 ~min~*E4 *", MockFormula.formulaPostfixata);
+
+        //IP: 10*(LAB+PROIECT+BONUS+EXAMEN)/MAX_PCT_FARA_BONUS 360
+        MockFormula.setFormula("10*(sum(E1:E4))/360");
+        MockFormula.infixToPostfix();
+        assertEquals("10 E1 E2 E3 E4 +++*360 /", MockFormula.formulaPostfixata);
+
+        //TW PF = P * 0.1 + A * 0.2 + S * 0.5 + T(t1+t2+t3) * 0.2 + E(e1+e2+e3) * 0.1
+        MockFormula.setFormula("P*0.1+A*0.2+S*0.5+sum(T1:T3)*0.2+sum(E1:E3)*0.1");
+        MockFormula.infixToPostfix();
+        assertEquals("P 0.1 *A 0.2 *+S 0.5 *+T1 T2 T3 ++0.2 *+E1 E2 E3 ++0.1 *+", MockFormula.formulaPostfixata);
+
+        //modulo
+        MockFormula.setFormula("E1%9");
+        MockFormula.infixToPostfix();
+        assertEquals("E1 9 %", MockFormula.formulaPostfixata);
+
+        //Retele:0.4*P+0.3*E+0.2*L+1
+        MockFormula.setFormula("P*0.4+E*0.3+L*0.2+1");
+        MockFormula.infixToPostfix();
+        assertEquals("P 0.4 *E 0.3 *+L 0.2 *+1 +", MockFormula.formulaPostfixata);
+
+        //LFAC: 0.3*(T1+T2)/2+0.2*P+0.3*(T1+T2)/2+0.2*E
+        MockFormula.setFormula("(sum(T1:T2)/2)*0.3+P*0.2+(sum(T1:T2)/2)*0.3+E*0.2");
+        MockFormula.infixToPostfix();
+        assertEquals("T1 T2 +2 /0.3 *P 0.2 *+T1 T2 +2 /0.3 *+E 0.2 *+", MockFormula.formulaPostfixata);
 
         //daca in functia min trebuie sa pui expresii pune-le intre paranteze
         //in primul test se declara niste chestii, deci daca vrei sa folosesti unul ca model, foloseste-le pe urmatoarele
@@ -215,11 +239,6 @@ public class FormulaTest {
         assertEquals(14, pozitieParantezaInchisa);
         assertEquals("Eroare: Variabila invalida", MockFormula.mesajPentruFront);
         assertEquals("L", MockFormula.variabile[0]);
-
-        MockFormula.setFormula("max(E5,10) + E6");
-        pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(3);
-        assertEquals(9, pozitieParantezaInchisa);
-
     }
 
     @Test
