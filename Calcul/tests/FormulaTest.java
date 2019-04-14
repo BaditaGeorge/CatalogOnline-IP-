@@ -248,7 +248,7 @@ public class FormulaTest {
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Eroare: Urmatoarele variabile din formula nu sunt definite in antet: L E", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("A+B+C");
+        MockFormula.setFormula("A+B*C");
         MockFormula.parsareFormula();
         String[] sir1 = {"A","B","C"};
         antet.setCampuriAntet(sir1);
@@ -276,11 +276,5 @@ public class FormulaTest {
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("0.5*sum(E1:E2) + max(E3,10) + E4*(E5 * (E6+E7))");
-        MockFormula.parsareFormula();
-        String[] sir5 = {""};
-        antet.setCampuriAntet(sir5);
-        MockFormula.verificareVariabileFormula(antet);
-        assertEquals("Eroare: Urmatoarele variabile din formula nu sunt definite in antet: E1 E2 E3 E4 E5 E6", MockFormula.mesajPentruFront);
     }
 }
