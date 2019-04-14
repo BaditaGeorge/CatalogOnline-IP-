@@ -158,9 +158,6 @@ public class FormulaTest {
         MockFormula.infixToPostfix();
         assertEquals("T1 T2 +2 /0.3 *P 0.2 *+T1 T2 +2 /0.3 *+E 0.2 *+", MockFormula.formulaPostfixata);
 
-        //daca in functia min trebuie sa pui expresii pune-le intre paranteze
-        //in primul test se declara niste chestii, deci daca vrei sa folosesti unul ca model, foloseste-le pe urmatoarele
-
     }
 
     @Test

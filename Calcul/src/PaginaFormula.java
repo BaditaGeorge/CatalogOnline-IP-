@@ -1,9 +1,16 @@
 public class PaginaFormula {
 
-    public Formula formula;
     AntetMaterie antet;
     String id_materie;
+    String mesajPentruFront;
+    Formula[] listaFormula = new Formula[10];
 
+
+    void parsareFormule(String formule)
+    {
+
+
+    }
 
     void generareAntet(String id_materie, String antet) {
 
