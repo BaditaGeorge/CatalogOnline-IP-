@@ -24,9 +24,23 @@ public class Formula {
     // Pentru "P + sum(L)" returneaza -1
     public int verificaUtilizareSum(int index) {
         int i = index;
+        int j = index+1;
+        int k;
         int indexFinal = -1;
+        String var ;
+
 
         while (i < formula.length()) {
+            if (formula.charAt(j) != formula.charAt(j + 3) && formula.charAt(j) != formula.charAt(j + 4))
+            {
+                mesajPentruFront="Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
+                break;
+            }
+            if(Character.getNumericValue(formula.charAt(index+2)) > Character.getNumericValue(formula.charAt(index+5)))
+            {
+                mesajPentruFront="Eroare: Ordinea variabilelor din sum nu e corecta";
+                break;
+            }
             if (formula.charAt(i) == ')') {
                 indexFinal = i;
                 break;
@@ -34,6 +48,29 @@ public class Formula {
             i++;
         }
 
+        if(indexFinal != -1 )
+        {
+
+            if(formula.charAt(j+5) != ')')
+            {
+                nrVariabile = (Character.getNumericValue(formula.charAt(indexFinal-2))*10 + Character.getNumericValue(formula.charAt(indexFinal-1))) + 1 - Character.getNumericValue(formula.charAt(index+2));
+            }
+            else
+            {
+                nrVariabile = Character.getNumericValue(formula.charAt(indexFinal-1) + 1 - Character.getNumericValue(formula.charAt(index+2))) ;
+            }
+            k = Character.getNumericValue(formula.charAt(index+2)) - 1;
+            int l=0;
+            while(l < nrVariabile)
+            {
+                var = String.valueOf(formula.charAt(index+1));
+                var += (k + 1) ;
+                System.out.println(var);
+                variabile[l]= var ;
+                k++;
+                l++;
+            }
+        }
         return indexFinal;
 
     }
