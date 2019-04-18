@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component, Suspense, lazy} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+const Login = lazy(() => import('./components/Login'));
+const Register = lazy(() => import('./components/Register'));
+const StudentDashboard = lazy(() => import('./components/StudentDashboard'));
+const TeacherDashboard = lazy(() => import('./components/TeacherDashboard'));
+const SecretaryDashboard = lazy(() => import('./components/SecretaryDashboard'));
+const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
+const About = lazy(() => import('./components/About'));
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Router>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Switch>
+                        <Route exact path="/login" component={Login}/>
+                        <Route path="/register" component={Register}/>
+                        <Route path="/student" component={StudentDashboard}/>
+                        <Route path="/teacher" component={TeacherDashboard}/>
+                        <Route path="/secretary" component={SecretaryDashboard}/>
+                        <Route path="/admin" component={AdminDashboard}/>
+                        <Route path="/about" component={About}/>
+                    </Switch>
+                </Suspense>
+            </Router>
+        );
+    }
 }
 
 export default App;
