@@ -28,10 +28,10 @@ public class SQL_func {
         return result;
     }
     //Selectam doar o singura formula din baza de date indicata de id-ul materiei
-    public String selectFormula(Integer id) {
+    public String selectFormula(String id) {
         String result = "";
         String query = " Select formula_calcul from materii where id_materie=";
-        query+=id.toString();
+        query+=id;
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
@@ -43,14 +43,14 @@ public class SQL_func {
         return result;
     }
     //Facem update-ul campului valori_note din baza de date pentru un anumit student la o anumita materie
-    public void updateNote(Integer id_s, Integer id_m, String note)
+    public void updateNote(String id_s, String id_m, String note)
     {
         String query = "Update materii set valori_note= ? where id_student= ? and id_materie= ?";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, note);
-            pstmt.setInt(2, id_s);
-            pstmt.setInt(3, id_m);
+            pstmt.setString(2, id_s);
+            pstmt.setString(3, id_m);
             // update
             pstmt.executeUpdate();
             System.out.println("Succes!");
@@ -58,7 +58,7 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-    //Selectam toate notele existente in baza de date 
+    //Selectam toate notele existente in baza de date
     public String selectNote(){
         String result="";
         String query="Select id_materie,id_student,valori_note from materii";
@@ -72,5 +72,35 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
         return result;
+    }
+    //Facem update campului formula_calcul al tabelei materii
+    public void updateFormula(String id_m,String formula)
+    {
+        String query="Update materii set formula_calcul = ? where id_materie = ?";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,formula);
+            pstmt.setString(2,id_m);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    //Inseram o linie in intregime(Toate campurile aferente tabelei materii) in tabela materii.
+    public void insert(String id_m,String id_s,String nume,String note,String formula){
+        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note,formula_calcul) VALUES (?,?,?,?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, id_m);
+            pstmt.setString(2, id_s);
+            pstmt.setString(3, nume);
+            pstmt.setString(4, note);
+            pstmt.setString(5, formula);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
