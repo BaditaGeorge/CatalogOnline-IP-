@@ -1,5 +1,5 @@
 Definition of done
-- Modul Calcul tabelar -
+- Modul Calcul tabelar 
 
 
 Iteratia 1 (2 saptamani)

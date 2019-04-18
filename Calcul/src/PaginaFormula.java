@@ -1,31 +1,41 @@
 public class PaginaFormula {
 
-    public Formula formula;
     AntetMaterie antet;
     String id_materie;
+    String mesajPentruFront;
+    Formula[] listaFormula = new Formula[10];
 
 
-    void generare(String id_materie)
+    void parsareFormule(String formule)
     {
+
 
     }
 
-    void schimbareFormula(String id_materie)
-    {
+    void generareAntet(String id_materie, String antet) {
 
     }
 
-    boolean checkIfExists(String id_materie)
-    {
-      return false;
-    }
-
-    void schimbareCriterii(String id_materie)
-    {
+    void schimbareAntet(String id_materie, String antet) {
 
     }
 
+    void generareFormula(String id_materie, String formula) {
 
+    }
+
+    void schimbareFormula(String id_materie, String formula) {
+
+    }
+
+
+    void generareCriterii(String id_materie) {
+
+    }
+
+    void schimbareCriterii(String id_materie) {
+
+    }
 
 
 }

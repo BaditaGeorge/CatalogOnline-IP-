@@ -6,4 +6,4 @@ DoD
  - o diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
  - definitia pentru o parte din clasele necesare in modulul nostru
  - documentatia legata de tehnologiile utilizate
- - functii pentru extragerea datelor credentiale din baza de date,partial implementata
+ - prototipurile claselor utilizate in modulul nostru
