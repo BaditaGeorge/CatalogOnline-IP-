@@ -1,24 +1,16 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../App.css';
 
-export default class Register extends Component {
+export default class About extends Component {
     constructor(props) {
         super(props)
-    }
-
-    sendForm() {
-
-    }
-
-    updateUser() {
-
     }
 
     render() {
         return (
             <main className="dashboard">
                 <div>
-                    Register Form
+                    About Page
                 </div>
             </main>
         );
