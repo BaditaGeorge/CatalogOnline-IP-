@@ -4,4 +4,7 @@ Front/src/node_modules
 Front/src/.idea
 
 .idea
+.idea/*
 
+*/.idea
+.idea

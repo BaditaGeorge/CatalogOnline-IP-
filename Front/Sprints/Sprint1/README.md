@@ -1,3 +1,5 @@
+### Backlog
+
 1. [HIGH] Redactarea unui Product Backlog
 2. [HIGH] DoD pentru fiecare Sprint
 3. [HIGH] Diagrama UML a view-urilor si a legaturilor dintre acestea
@@ -48,3 +50,23 @@
 	- [GTH] Tabel CRUD administratori
 19. [GTH] Responsive (mai putin Admin)
 	
+###DoD
+
+
+[C ][DDL   ][Members          ]#Task
+
+[2h][25 Mar[All]              #Module meeting (stabilire responsabilitati, directii 	generale)
+
+[2h][25 Mar[Gabriel]          #Deffinition of Done doc, listare taskuri mandatory in primul sprint (responsabili + cost/ddl)
+
+[2h][25 Mar[Gabriel]          #Un backlog (lista de taksuri generale ce trebuie indeplinite pe baza unor prioritatie pana la sfarsitul proiectului)
+
+[1h][2 Apr][Gabriel]           #Documentare tehnologii
+
+[1h][2 Apr][Gabriel]           #Implementare clase fara metode si instalare proiect
+
+[6h][25 Mar[Emilian + Teona]  #Un site-map generalizat, posibile directii ale interfetei, stabilire succinta a unor metode/viewuri (Short guide pentru diagrame)
+
+[6h][2 Apr ][Paul + Claudiu]   #Diagrama UML (Views Classes) - Modul de functionare al aplicatie la nivel de interfata, legaturile dintre view-uri si date
+
+[6h][2 Apr ][George + Lician]  #O diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
