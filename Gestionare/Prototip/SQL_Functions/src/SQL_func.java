@@ -73,6 +73,19 @@ public class SQL_func {
         }
         return result;
     }
+    //Selectam notele de la o anumita materie pentru un anumit student
+    public String selectNote(String id_s,String id_m){
+        String result="";
+        String query="Select valori_note from materii where id_student=" + id_s+ " and id_materie=" + id_m;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            result = rs.getString("valori_note");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
     //Facem update campului formula_calcul al tabelei materii
     public void updateFormula(String id_m,String formula)
     {
