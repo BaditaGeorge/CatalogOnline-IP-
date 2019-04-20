@@ -4,7 +4,17 @@ public class Calcul {
     public Formula formula;
     public String[] antet;
     public Stack<Double> stack = new Stack<>();
-    public double[][] note = new double[1000][50];
+    public double[] note = new double[50];
+
+
+    public Calcul(String formula) {
+        this.formula = new Formula(formula);
+        this.formula.infixToPostfix();
+    }
+
+    String parsareNote(String stringNote) {
+        return stringNote;
+    }
 
     int getColumnOf(String var) {
         for (int i = 0; i < antet.length; i++)
@@ -13,7 +23,7 @@ public class Calcul {
         return -1;
     }
 
-    void evaluareFormulaPostfixata(int linie) {
+    void evaluareFormulaPostfixata() {
 
         boolean isVariable = false;
         boolean isNumber = false;
@@ -60,7 +70,7 @@ public class Calcul {
             if (isVariable) {
                 isVariable = false;
                 int col = getColumnOf(var);
-                stack.push(note[linie][col]);
+                stack.push(note[col]);
 
             }
 
