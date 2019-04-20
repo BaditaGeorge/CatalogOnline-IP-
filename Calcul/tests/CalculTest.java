@@ -162,8 +162,8 @@ public class CalculTest {
 
         //Test 11 formula lfac 0.3*(T1+T2)/2+0.2*P+0.3*(T1+T2)/2+0.2*E;
 
-        MockCalcul.formula.setFormula("(sum(E1:E2)/2)*0.3+E3*0.2+(sum(E4:E5)/2)*0.3+E6*0.2");
-        for (int i = 1; i <= 6; i++)
+        MockCalcul.formula.setFormula("E0=(sum(E1:E2)/2)*0.3+E3*0.2+(sum(E4:E5)/2)*0.3+E6*0.2");
+        for (int i = 0; i <= 6; i++)
             MockCalcul.antet[i] = "E" + i;
         MockCalcul.note[1] = 10;
         MockCalcul.note[2] = 10;
@@ -174,7 +174,29 @@ public class CalculTest {
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata();
         number = 8.2;
+        assertEquals((Double)number, (Double)MockCalcul.note[0]);
+
+        //Test 12 asignare
+
+        MockCalcul.formula.setFormula("L1 =L2+L3");
+        for (int i = 1; i <= 3; i++)
+            MockCalcul.antet[i] = "L" + i;
+        MockCalcul.note[1] = 10;
+        MockCalcul.note[2] = 10;
+        MockCalcul.note[3] = 6.25;
+        MockCalcul.formula.infixToPostfix();
+        MockCalcul.evaluareFormulaPostfixata();
+        number =16.25;
         assertEquals(number, MockCalcul.stack.peek());
+        assertEquals((Double)MockCalcul.note[1], (Double)MockCalcul.stack.peek());
+
+
+
+
+
+
+
+
     }
 
 }

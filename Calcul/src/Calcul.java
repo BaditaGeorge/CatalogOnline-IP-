@@ -30,9 +30,26 @@ public class Calcul {
         double number, decimal;
         char currentChar;
         String var;
+        int startIndex=0;
+        String resultVar="";
 
 
-        for (int i = 0; i < formula.formulaPostfixata.length(); i++) {
+        if(formula.formulaPostfixata.indexOf('=')>=0)
+        {
+            resultVar="";
+            while(formula.formulaPostfixata.charAt(startIndex)==' ') startIndex++;
+            currentChar=formula.formulaPostfixata.charAt(startIndex);
+            while((currentChar >= 'a' && currentChar<= 'z') || (currentChar >= 'A' && currentChar <= 'Z') || (currentChar >= '0' && currentChar <= '9'))
+            {
+                resultVar+=currentChar;
+                startIndex++;
+                currentChar=formula.formulaPostfixata.charAt(startIndex);
+            }
+
+            formula.formulaPostfixata=formula.formulaPostfixata.substring(0, formula.formulaPostfixata.length() - 1);
+        }
+
+        for (int i = startIndex; i < formula.formulaPostfixata.length(); i++) {
             number = 0;
 
             isNumber = false;
@@ -123,6 +140,10 @@ public class Calcul {
 
 
         }
+
+        if(startIndex>0)
+            note[getColumnOf(resultVar)]=stack.peek();
+
 
     }
 
