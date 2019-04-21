@@ -3,6 +3,8 @@ import '../App.css';
 import {connect} from "react-redux";
 import Catalog from "./Catalog"
 import {getGlobal, getProfessorCatalog} from "../actions/actions";
+import {Container, Row, Col} from "react-bootstrap";
+import Formula from "./Formula";
 
 class ProfessorDashboard extends Component {
     constructor(props) {
@@ -16,7 +18,10 @@ class ProfessorDashboard extends Component {
 
     render() {
         return (
-            <Catalog rows={this.props.rows} columns={this.props.columns}/>
+            <div>
+                <Catalog rows={this.props.rows} columns={this.props.columns}/>
+                <Formula/>
+            </div>
         );
     }
 }

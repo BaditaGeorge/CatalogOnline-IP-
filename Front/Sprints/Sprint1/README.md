@@ -32,7 +32,7 @@
 	- [HIGH] Navigare grupe
 	- [HIGH] Tabel situatie (per disciplina, per grupa)
 	- [HIGH] Tabel criterii promovare (editare, adaugare criterii)
-	- [HIGH] Formule complexe de calcul al notelor paritiale/finale
+	- [HIGH] Formula.jsx complexe de calcul al notelor paritiale/finale
 	- [MEDIUM] Import/Export note
 	- [GTH] Grafic progres semestrial
 17. Implementare view Secretar

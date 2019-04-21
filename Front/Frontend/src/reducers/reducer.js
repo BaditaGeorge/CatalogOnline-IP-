@@ -6,36 +6,21 @@ import {
     GET_PROFESSOR_CATALOG_SUCCESS,
     GET_PROFESSOR_CATALOG_FAIL,
 } from "../actions/actions";
-import {Filters} from "react-data-grid-addons";
-
-const {
-    NumericFilter,
-    AutoCompleteFilter,
-    MultiSelectFilter,
-    SingleSelectFilter
-} = Filters;
-
-const defaultColumnProperties = {
-    editable: true,
-    resizable: true,
-    filterable: true,
-    sortable: true,
-};
 
 const INITIAL_STATE = {
     global: undefined,
     columns: [
-        {key: 'id', name: 'ID', filterRenderer: NumericFilter},
-        {key: 'student', name: 'Student', filterRenderer: AutoCompleteFilter},
-        {key: 'group', name: 'Group', filterRenderer: SingleSelectFilter},
-        {key: 'l1', name: 'L1', filterRenderer: NumericFilter},
-        {key: 'l2', name: 'L2', filterRenderer: NumericFilter},
-        {key: 'l3', name: 'L3', filterRenderer: NumericFilter},
-        {key: 'l4', name: 'L4', filterRenderer: NumericFilter},
-        {key: 'l5', name: 'L5', filterRenderer: NumericFilter},
-        {key: 'presences', name: 'Presences', filterRenderer: NumericFilter},
-        {key: 'exam', name: 'Exam', filterRenderer: NumericFilter},
-    ].map(c => ({...c, ...defaultColumnProperties})),
+        {key: 'id', type: 'string'},
+        {key: 'student', type: 'string'},
+        {key: 'group', type: 'string'},
+        {key: 'l1', type: 'number'},
+        {key: 'l2', type: 'number'},
+        {key: 'l3', type: 'number'},
+        {key: 'l4', type: 'number'},
+        {key: 'l5', type: 'number'},
+        {key: 'presences', type: 'number'},
+        {key: 'exam', type: 'number'},
+    ],
     rows: [
         {
             id: 0,
