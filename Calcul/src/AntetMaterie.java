@@ -23,4 +23,8 @@ public class AntetMaterie {
     public void verificareAntetMaterie() {
 
     }
+
+    public String getMesajPentruFront(){
+        return mesajPentruFront;
+    }
 }

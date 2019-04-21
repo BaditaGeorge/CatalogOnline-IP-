@@ -4,7 +4,17 @@ public class Calcul {
     public Formula formula;
     public String[] antet;
     public Stack<Double> stack = new Stack<>();
-    public double[][] note = new double[1000][50];
+    public double[] note = new double[50];
+
+
+    public Calcul(String formula) {
+        this.formula = new Formula(formula);
+        this.formula.infixToPostfix();
+    }
+
+    String parsareNote(String stringNote) {
+        return stringNote;
+    }
 
     int getColumnOf(String var) {
         for (int i = 0; i < antet.length; i++)
@@ -13,16 +23,33 @@ public class Calcul {
         return -1;
     }
 
-    void evaluareFormulaPostfixata(int linie) {
+    void evaluareFormulaPostfixata() {
 
         boolean isVariable = false;
         boolean isNumber = false;
         double number, decimal;
         char currentChar;
         String var;
+        int startIndex=0;
+        String resultVar="";
 
 
-        for (int i = 0; i < formula.formulaPostfixata.length(); i++) {
+        if(formula.formulaPostfixata.indexOf('=')>=0)
+        {
+            resultVar="";
+            while(formula.formulaPostfixata.charAt(startIndex)==' ') startIndex++;
+            currentChar=formula.formulaPostfixata.charAt(startIndex);
+            while((currentChar >= 'a' && currentChar<= 'z') || (currentChar >= 'A' && currentChar <= 'Z') || (currentChar >= '0' && currentChar <= '9'))
+            {
+                resultVar+=currentChar;
+                startIndex++;
+                currentChar=formula.formulaPostfixata.charAt(startIndex);
+            }
+
+            formula.formulaPostfixata=formula.formulaPostfixata.substring(0, formula.formulaPostfixata.length() - 1);
+        }
+
+        for (int i = startIndex; i < formula.formulaPostfixata.length(); i++) {
             number = 0;
 
             isNumber = false;
@@ -60,7 +87,7 @@ public class Calcul {
             if (isVariable) {
                 isVariable = false;
                 int col = getColumnOf(var);
-                stack.push(note[linie][col]);
+                stack.push(note[col]);
 
             }
 
@@ -113,6 +140,10 @@ public class Calcul {
 
 
         }
+
+        if(startIndex>0)
+            note[getColumnOf(resultVar)]=stack.peek();
+
 
     }
 

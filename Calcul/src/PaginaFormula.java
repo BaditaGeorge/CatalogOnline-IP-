@@ -3,8 +3,16 @@ public class PaginaFormula {
     AntetMaterie antet;
     String id_materie;
     String mesajPentruFront;
-    Formula[] listaFormula = new Formula[10];
+    private PrelucrareDate prelucrareDate;
 
+    public PaginaFormula(PrelucrareDate prelucrareDate){
+        this.prelucrareDate=prelucrareDate;
+    }
+
+    String generareFormula(String id_materie, String formula) {
+
+        return mesajPentruFront;
+    }
 
     void parsareFormule(String formule)
     {
@@ -12,17 +20,16 @@ public class PaginaFormula {
 
     }
 
-    void generareAntet(String id_materie, String antet) {
+    String generareAntet(String id_materie, String antet) {
 
+        return mesajPentruFront;
     }
 
     void schimbareAntet(String id_materie, String antet) {
 
     }
 
-    void generareFormula(String id_materie, String formula) {
 
-    }
 
     void schimbareFormula(String id_materie, String formula) {
 

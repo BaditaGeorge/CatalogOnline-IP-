@@ -1,8 +1,9 @@
 public class PrelucrareDate {
 
     String mesajDeLaFront;
+    MockFunctiiGestiune functiiGestiune= new MockFunctiiGestiune();
 
-    public void primesteMesajDeLaFront()
+    public void primesteMesajFront(String mesajDeLaFront)
     {
 
     }

@@ -1,0 +1,30 @@
+utilizatori:
+id_utilizator
+username
+email
+salt_parola(cauta pe net password salt ca sa intelegi ce e)
+parola	
+numar_telefon
+tip_utilizator('profesor','student','secretara',fa-l varchar2 pe asta)
+verificare
+
+materii:
+id_materie
+id_student
+denumire_materie
+valori_Note(un varchar2 care va fi de forma "L1 5;L2 10;...", adica combinatii de litere si cifre delimitate de separatorul ';')
+formula_Calcul(tot varchar2, fa campul asta si cel de mai sus mari, gen macar 500 de caracterespun eu)
+
+usersAstud:
+id_utilizator
+id_student
+
+studenti:
+id_student
+nume
+prenume
+email
+
+verificare:
+username VARCHAR(20)
+cod VARCHAR(100)

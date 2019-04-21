@@ -518,7 +518,7 @@ public class Formula {
         }
     }
 
-    void verificareVariabileFormula(AntetMaterie antet) {
+    public void verificareVariabileFormula(AntetMaterie antet) {
         int k = 0;
         boolean check;
         if (nrVariabile == 0)
@@ -550,6 +550,10 @@ public class Formula {
 
     void parsareCriteriiPromovare() {
 
+    }
+
+    String getMesajPentruFront(){
+        return mesajPentruFront;
     }
 
 }
