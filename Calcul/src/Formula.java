@@ -24,47 +24,98 @@ public class Formula {
     // Pentru "P + sum(L)" returneaza -1
     public int verificaUtilizareSum(int index) {
         int i = index;
-        int j = index + 1;
-        int k;
         int indexFinal = -1;
-        String var;
+        String var1="",var2="";
+        String func=formula.substring(index,formula.length());
 
+        if(func.indexOf(')')<0)
+        {
+            mesajPentruFront="Eroare: Nu s-a inchis paranteza pentru sum";
+            return -1;
+        }
 
-        while (i < formula.length()) {
-            if (formula.charAt(j) != formula.charAt(j + 3) && formula.charAt(j) != formula.charAt(j + 4)) {
+        func=func.substring(1,func.indexOf(')')+1);
+
+        if(func.indexOf(':')<0)
+        {
+            mesajPentruFront="Eroare: Functia sum nu contine caracterul \':\'";
+            return -1;
+        }
+        i=0;
+        while(i<func.indexOf(':') && func.charAt(i)==' ') i++;
+        var1=func.substring(i,func.indexOf(':'));
+
+        i=func.indexOf(':')+1;
+        while(i<func.indexOf(')') && func.charAt(i)==' ') i++;
+        var2=func.substring(i,func.indexOf(')'));
+
+        int indexVar1=0, indexVar2=0;
+        while(indexVar1<var1.length() &&((var1.charAt(indexVar1)>='a' && var1.charAt(indexVar1)<='z') || (var1.charAt(indexVar1)>='A' && var1.charAt(indexVar1)<='Z')))
+            indexVar1++;
+        while(indexVar2<var2.length() && ((var2.charAt(indexVar2)>='a' && var2.charAt(indexVar2)<='z') || (var2.charAt(indexVar2)>='A' && var2.charAt(indexVar2)<='Z')))
+            indexVar2++;
+
+        if(indexVar1!=indexVar2)
+        {
+            mesajPentruFront = "Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
+            return -1;
+        }
+        if(indexVar1==0)
+        {
+            mesajPentruFront = "Eroare: Variabila din sum trebuie sa inceapa cu o litera";
+            return -1;
+        }
+        for(i=0; i<indexVar1; i++)
+            if(var1.charAt(i)!=var2.charAt(i))
+            {
                 mesajPentruFront = "Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
-                break;
+                return -1;
             }
-            if (Character.getNumericValue(formula.charAt(index + 2)) > Character.getNumericValue(formula.charAt(index + 5))) {
-                mesajPentruFront = "Eroare: Ordinea variabilelor din sum nu e corecta";
-                break;
+
+        int num1=0,num2=0;
+        for(i=indexVar1; i<var1.length(); i++)
+        {
+            if(var1.charAt(i)<'0' || var1.charAt(i)>'9')
+            {
+               while(i<var1.length() && var1.charAt(i)==' ') i++;
+                if(i<var1.length())
+                {
+                    mesajPentruFront = "Eroare: Variabilele din sum trebuie sa inceapa cu litere si sa se termine cu cifre";
+                    return -1;
+                }
             }
-            if (formula.charAt(i) == ')') {
-                indexFinal = i;
-                break;
-            }
-            i++;
+            num1=num1*10+(var1.charAt(i)-'0');
         }
 
-        if (indexFinal != -1) {
-
-            if (formula.charAt(j + 5) != ')') {
-                nrVariabile = (Character.getNumericValue(formula.charAt(indexFinal - 2)) * 10 + Character.getNumericValue(formula.charAt(indexFinal - 1))) + 1 - Character.getNumericValue(formula.charAt(index + 2));
-            } else {
-                nrVariabile = Character.getNumericValue(formula.charAt(indexFinal - 1) + 1 - Character.getNumericValue(formula.charAt(index + 2)));
+        for(i=indexVar2; i<var2.length(); i++)
+        {
+            if(var2.charAt(i)<'0' || var2.charAt(i)>'9')
+            {
+                while(i<var2.length() && var2.charAt(i)==' ') i++;
+                if(i<var2.length())
+                {
+                    mesajPentruFront = "Eroare: Variabilele din sum trebuie sa inceapa cu litere si sa se termine cu cifre";
+                    return -1;
+                }
             }
-            k = Character.getNumericValue(formula.charAt(index + 2)) - 1;
-            int l = 0;
-            while (l < nrVariabile) {
-                var = String.valueOf(formula.charAt(index + 1));
-                var += (k + 1);
-                System.out.println(var);
-                variabile[l] = var;
-                k++;
-                l++;
-            }
+            num2=num2*10+(var2.charAt(i)-'0');
         }
-        return indexFinal;
+
+        if(num1>num2) {
+            mesajPentruFront = "Eroare: Ordinea variabilelor din sum nu e corecta";
+            return -1;
+
+        }
+
+        var1=var1.substring(0,indexVar1);
+
+        for(i=num1; i<=num2; i++)
+            variabile[nrVariabile++]=var1+i;
+
+        i=index;
+        while(formula.charAt(i)!=')') i++;
+
+        return i;
 
     }
 

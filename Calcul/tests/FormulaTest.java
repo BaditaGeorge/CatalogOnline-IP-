@@ -74,7 +74,7 @@ public class FormulaTest {
             assertEquals(var, MockFormula.variabile[i]);
         }
 
-        MockFormula.setFormula("sum(L2:L4)");
+        MockFormula.setFormula("sum(L2:L4) + L3");
         pozitieParantezaInchisa = MockFormula.verificaUtilizareSum(3);
         assertEquals(9, pozitieParantezaInchisa);
         assertEquals(3, MockFormula.nrVariabile);
@@ -264,9 +264,9 @@ public class FormulaTest {
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("sum(A:B)");
+        MockFormula.setFormula("sum(A1:A3)");
         MockFormula.parsareFormula();
-        String[] sir2 = {"A,B"};
+        String[] sir2 = {"A1","A2","A3"};
         antet.setCampuriAntet(sir2);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
