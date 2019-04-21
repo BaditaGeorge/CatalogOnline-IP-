@@ -32,7 +32,7 @@ const INITIAL_STATE = {
         {key: 'l2', name: 'L2', filterRenderer: NumericFilter},
         {key: 'l3', name: 'L3', filterRenderer: NumericFilter},
         {key: 'l4', name: 'L4', filterRenderer: NumericFilter},
-        {key: 'l5', name: 'L6', filterRenderer: NumericFilter},
+        {key: 'l5', name: 'L5', filterRenderer: NumericFilter},
         {key: 'presences', name: 'Presences', filterRenderer: NumericFilter},
         {key: 'exam', name: 'Exam', filterRenderer: NumericFilter},
     ].map(c => ({...c, ...defaultColumnProperties})),
