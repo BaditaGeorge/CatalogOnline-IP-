@@ -30,7 +30,7 @@ In Router se identifica urmatorea componenta generata pe baza userului logat
                 <Route exact path="/login" component={Login}/>
                 <Route path="/register" component={Register}/>
                 <Route path="/student" component={StudentDashboard}/>
-                <Route path="/teacher" component={TeacherDashboard}/>
+                <Route path="/teacher" component={ProfesorDashboard}/>
                 <Route path="/secretary" component={SecretaryDashboard}/>
                 <Route path="/admin" component={AdminDashboard}/>
                 <Route path="/about" component={About}/>
