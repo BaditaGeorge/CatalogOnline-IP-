@@ -1,31 +1,34 @@
 import React, {Component, Suspense, lazy} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Provider} from "react-redux";
+import store from './store';
 
-const Login = lazy(() => import('./components/Login'));
-const Register = lazy(() => import('./components/Register'));
-const StudentDashboard = lazy(() => import('./components/StudentDashboard'));
-const TeacherDashboard = lazy(() => import('./components/TeacherDashboard'));
-const SecretaryDashboard = lazy(() => import('./components/SecretaryDashboard'));
-const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
-const About = lazy(() => import('./components/About'));
-
+import Login from './components/Login';
+import Register from './components/Register';
+import StudentDashboard from './components/StudentDashboard';
+import {ProfessorDashboardRedux} from './components/ProfessorDashboardRedux';
+import SecretaryDashboard from './components/SecretaryDashboard'
+import AdminDashboard from './components/AdminDashboard';
+import About from './components/About';
 
 class App extends Component {
     render() {
         return (
-            <Router>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Switch>
-                        <Route exact path="/login" component={Login}/>
-                        <Route path="/register" component={Register}/>
-                        <Route path="/student" component={StudentDashboard}/>
-                        <Route path="/teacher" component={TeacherDashboard}/>
-                        <Route path="/secretary" component={SecretaryDashboard}/>
-                        <Route path="/admin" component={AdminDashboard}/>
-                        <Route path="/about" component={About}/>
-                    </Switch>
-                </Suspense>
-            </Router>
+            <Provider store={store}>
+                <Router>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Switch>
+                            <Route exact path="/login" component={Login}/>
+                            <Route path="/register" component={Register}/>
+                            <Route path="/student" component={StudentDashboard}/>
+                            <Route path="/professor" component={ProfessorDashboardRedux}/>
+                            <Route path="/secretary" component={SecretaryDashboard}/>
+                            <Route path="/admin" component={AdminDashboard}/>
+                            <Route path="/about" component={About}/>
+                        </Switch>
+                    </Suspense>
+                </Router>
+            </Provider>
         );
     }
 }
