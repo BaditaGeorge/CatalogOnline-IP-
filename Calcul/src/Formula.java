@@ -24,21 +24,19 @@ public class Formula {
     // Pentru "P + sum(L)" returneaza -1
     public int verificaUtilizareSum(int index) {
         int i = index;
-        int j = index+1;
+        int j = index + 1;
         int k;
         int indexFinal = -1;
-        String var ;
+        String var;
 
 
         while (i < formula.length()) {
-            if (formula.charAt(j) != formula.charAt(j + 3) && formula.charAt(j) != formula.charAt(j + 4))
-            {
-                mesajPentruFront="Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
+            if (formula.charAt(j) != formula.charAt(j + 3) && formula.charAt(j) != formula.charAt(j + 4)) {
+                mesajPentruFront = "Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
                 break;
             }
-            if(Character.getNumericValue(formula.charAt(index+2)) > Character.getNumericValue(formula.charAt(index+5)))
-            {
-                mesajPentruFront="Eroare: Ordinea variabilelor din sum nu e corecta";
+            if (Character.getNumericValue(formula.charAt(index + 2)) > Character.getNumericValue(formula.charAt(index + 5))) {
+                mesajPentruFront = "Eroare: Ordinea variabilelor din sum nu e corecta";
                 break;
             }
             if (formula.charAt(i) == ')') {
@@ -48,25 +46,20 @@ public class Formula {
             i++;
         }
 
-        if(indexFinal != -1 )
-        {
+        if (indexFinal != -1) {
 
-            if(formula.charAt(j+5) != ')')
-            {
-                nrVariabile = (Character.getNumericValue(formula.charAt(indexFinal-2))*10 + Character.getNumericValue(formula.charAt(indexFinal-1))) + 1 - Character.getNumericValue(formula.charAt(index+2));
+            if (formula.charAt(j + 5) != ')') {
+                nrVariabile = (Character.getNumericValue(formula.charAt(indexFinal - 2)) * 10 + Character.getNumericValue(formula.charAt(indexFinal - 1))) + 1 - Character.getNumericValue(formula.charAt(index + 2));
+            } else {
+                nrVariabile = Character.getNumericValue(formula.charAt(indexFinal - 1) + 1 - Character.getNumericValue(formula.charAt(index + 2)));
             }
-            else
-            {
-                nrVariabile = Character.getNumericValue(formula.charAt(indexFinal-1) + 1 - Character.getNumericValue(formula.charAt(index+2))) ;
-            }
-            k = Character.getNumericValue(formula.charAt(index+2)) - 1;
-            int l=0;
-            while(l < nrVariabile)
-            {
-                var = String.valueOf(formula.charAt(index+1));
-                var += (k + 1) ;
+            k = Character.getNumericValue(formula.charAt(index + 2)) - 1;
+            int l = 0;
+            while (l < nrVariabile) {
+                var = String.valueOf(formula.charAt(index + 1));
+                var += (k + 1);
                 System.out.println(var);
-                variabile[l]= var ;
+                variabile[l] = var;
                 k++;
                 l++;
             }
@@ -81,7 +74,7 @@ public class Formula {
 
         String f1 = ""; //primul termen al functiei
         String f2 = ""; //al doilea termen al functiei
-        int form1 = 0, form2 = 0;
+        int form1 = 0, form2 = 0, error = 0;
         boolean checkFormula1 = false, checkFormula2 = false;
 
         while (i < formula.length()) {
@@ -93,7 +86,7 @@ public class Formula {
                     i++;
                 else if (formula.charAt(i) != ' ') {
                     f1 += formula.charAt(i);
-                    if ("+-/*%".indexOf(formula.charAt(i)) >= 0)
+                    if ("+-/*%:".indexOf(formula.charAt(i)) >= 0)
                         checkFormula1 = true;
                     i++;
                 } else i++;
@@ -105,35 +98,59 @@ public class Formula {
                 return -1;
             }
 
-            if (i == formula.length()) {
+            if (i == formula.length() || formula.charAt(i) != ',') {
                 mesajPentruFront = "Eroare: Termenii nu sunt separati prin virgula";
                 return -1;
             } else {
                 i++;
-                index = i;
-                while (i < formula.length()) {
-                    if (formula.charAt(i) == ' ') {
-                        index++;
-                    } else if ((i == index && formula.charAt(i) == '(') || (formula.charAt(i) == ')' && i == formula.length() - 2 && formula.charAt(i + 1) == ')'))
+                int parantezeDeschise = 0, parantezeInchise = 0;
+
+                while (formula.charAt(i) == ' ') i++;
+
+                if (formula.charAt(i) == '(') {
+                    parantezeDeschise++;
+                    form2++;
+                    while (parantezeDeschise != parantezeInchise) {
+                        if (formula.charAt(i) != ' ') {
+                            if (formula.charAt(i) == '(')
+                                parantezeDeschise++;
+                            if (formula.charAt(i) == ')')
+                                parantezeInchise++;
+                            if ("+-/*%:".indexOf(formula.charAt(i)) >= 0)
+                                checkFormula2 = true;
+                            if (parantezeDeschise != parantezeInchise)
+                                f2 += formula.charAt(i);
+                        }
+                        i++;
+                    }
+
+                    if (formula.charAt(i - 1) == ')') {
+                        indexFinal = i - 1;
                         form2++;
-                    else if (formula.charAt(i) == ')' && i == formula.length() - 1)
-                        indexFinal = i;
-                    else if (formula.charAt(i) != ' ') {
-                        f2 += formula.charAt(i);
+                    } else error = 1;
+                    i = formula.length();
+                } else {
+                    while (formula.charAt(i) != ')' && i != formula.length() - 1) {
+                        if (formula.charAt(i) != ' ')
+                            f2 += formula.charAt(i);
                         if ("+-/*%:".indexOf(formula.charAt(i)) >= 0)
                             checkFormula2 = true;
+
+                        i++;
                     }
-                    i++;
+
+                    if (formula.charAt(i) == ')')
+                        indexFinal = i;
+                    else error = 1;
+                    i = formula.length();
                 }
 
                 //System.out.println("Formula 2:" + f2);
-                if (indexFinal != formula.length() - 1) {
-                    mesajPentruFront = "Eroare: Paranteze folosite incorect";
-                    return -1;
-                }
-
                 if (form2 != 2 && checkFormula2) {
                     mesajPentruFront = "Eroare: Al doilea termen este o formula care nu este introdusa intre paranteze";
+                    return -1;
+                } else if (error == 1) {
+                    mesajPentruFront = "Eroare: Paranteze folosite incorect";
                     return -1;
                 }
             }
@@ -148,9 +165,9 @@ public class Formula {
             }
         } else {
             int check = checkIsValid(f1);
-            if (check == -1)
+            if (check == -1) {
                 return -1;
-            else if (check == 1)
+            } else if (check == 1)
                 variabile[nrVariabile++] = f1;
         }
 
@@ -166,8 +183,9 @@ public class Formula {
             int check = checkIsValid(f2);
             if (check == 1)
                 variabile[nrVariabile++] = f2;
-            else if (check == -1)
+            else if (check == -1) {
                 return -1;
+            }
         }
 
         return indexFinal;
@@ -180,17 +198,19 @@ public class Formula {
         if (f.charAt(i) == '0' && f.length() > 1) {
             mesajPentruFront = "Eroare: Numerele nu pot incepe cu 0";
             return -1;
-        }
+        } else if ("0123456789".indexOf(f.charAt(0)) >= 0 && f.length() == 1)
+            return 2;
 
         while (i < f.length() && (f.charAt(i) >= '0' && f.charAt(i) <= '9'))
             i++;
-        if (i != f.length() && f.charAt(0) >= '0' && f.charAt(0) <= '9') {
-            mesajPentruFront = "Eroare: Variabila invalida";
-            return -1;
-        }
+
         // f este un numar
         if (i == f.length())
             return 2;
+        else if (f.charAt(0) >= '0' && f.charAt(0) <= '9' && "0123456789".indexOf(f.charAt(i)) < 0) {
+            mesajPentruFront = "Eroare: Variabila invalida";
+            return -1;
+        }
 
         //f este o variabila
         i = 0;
@@ -552,7 +572,7 @@ public class Formula {
 
     }
 
-    String getMesajPentruFront(){
+    String getMesajPentruFront() {
         return mesajPentruFront;
     }
 

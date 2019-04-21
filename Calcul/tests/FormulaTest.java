@@ -179,9 +179,10 @@ public class FormulaTest {
 
         MockFormula.setFormula("E+S+min((E + S), (sum(L1 : L10)))");
         pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(7);
+        System.out.println(MockFormula.mesajPentruFront);
         assertEquals(32, pozitieParantezaInchisa);
 
-        MockFormula.setFormula("E+S+min((E + S), (sum(L1:L12) + E))");
+        MockFormula.setFormula("E+S+min((E + S), (sum(L1:L12) + E)) + 10 + sum(L1:L20)");
         pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(7);
         assertEquals(34, pozitieParantezaInchisa);
 
@@ -206,7 +207,7 @@ public class FormulaTest {
         assertEquals(-1, pozitieParantezaInchisa);
         assertEquals("Eroare: Paranteze folosite incorect", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("E+S+min((B+ T(P + B)), (sum(L1:L12) + E + P / sum(D2:D10)))");
+        MockFormula.setFormula("E+S+min((B+ T*(P + B)), (sum(L1:L12) + E + P / sum(D2:D10)))");
         pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(7);
         assertEquals(-1, pozitieParantezaInchisa);
         assertEquals("Eroare: Functia nu e folosita corespunzator - formula invalida", MockFormula.mesajPentruFront);
@@ -231,15 +232,23 @@ public class FormulaTest {
         assertEquals(-1, pozitieParantezaInchisa);
         assertEquals("Eroare: Variabila invalida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("E+S+min(100, L)");
+        MockFormula.setFormula("E+S+min(L, 50)");
+        pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(7);
+        assertEquals(13, pozitieParantezaInchisa);
+        assertEquals("L", MockFormula.variabile[0]);
+
+        MockFormula.setFormula("E+S+min(100, E)  + L + T");
         pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(7);
         assertEquals(14, pozitieParantezaInchisa);
-        assertEquals("Eroare: Variabila invalida", MockFormula.mesajPentruFront);
-        assertEquals("L", MockFormula.variabile[0]);
+        assertEquals("E", MockFormula.variabile[1]);
+
+        MockFormula.setFormula("E+S+min(100, 20) + 10 + sum(L1:L20)");
+        pozitieParantezaInchisa = MockFormula.verificaUtilizareMinMax(7);
+        assertEquals(15, pozitieParantezaInchisa);
     }
 
     @Test
-    public void verificareVariabileFormula(){
+    public void verificareVariabileFormula() {
 
         Formula MockFormula = new Formula("L+E+D");
         MockFormula.parsareFormula();
@@ -250,7 +259,7 @@ public class FormulaTest {
 
         MockFormula.setFormula("A+B*C");
         MockFormula.parsareFormula();
-        String[] sir1 = {"A","B","C"};
+        String[] sir1 = {"A", "B", "C"};
         antet.setCampuriAntet(sir1);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
@@ -270,7 +279,7 @@ public class FormulaTest {
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
         MockFormula.setFormula("max(A,B)");
-        String[] sir4 = {"A","B"};
+        String[] sir4 = {"A", "B"};
         antet.setCampuriAntet(sir4);
         MockFormula.parsareFormula();
         MockFormula.verificareVariabileFormula(antet);
