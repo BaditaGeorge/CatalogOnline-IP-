@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="IPCalcul:jar" />
@@ -7,22 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IPCalcul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IPCalcul.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/MockFunctiiGestiune.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/MockFunctiiGestiune.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/CalculTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/CalculTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/PaginaFormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/PaginaFormulaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calcul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calcul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaginaFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaginaFormula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/AntetMaterie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrelucrareDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CalculTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CalculTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/FormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/FormulaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Formula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="595" column="19" lean-forward="true" selection-end-line="630" />
+            <state relative-caret-position="10081">
+              <caret line="595" column="19" selection-end-line="630" />
               <folding>
                 <element signature="e#21824#21825#0" expanded="true" />
                 <element signature="e#21863#21864#0" expanded="true" />
@@ -55,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="527">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,14 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-              <folding>
-                <element signature="e#323#324#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -82,17 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="195" column="16" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="2340">
+              <caret line="201" selection-start-line="201" selection-end-line="201" />
             </state>
           </provider>
         </entry>
@@ -100,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Calcul.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="80" column="33" lean-forward="true" selection-end-line="212" />
+            <state relative-caret-position="1360">
+              <caret line="105" selection-end-line="213" />
             </state>
           </provider>
         </entry>
@@ -109,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+            <state relative-caret-position="544">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="57" selection-end-line="77" />
+            <state relative-caret-position="153">
+              <caret line="11" column="57" selection-end-line="11" selection-end-column="4" />
               <folding>
                 <element signature="e#206#207#0" expanded="true" />
                 <element signature="e#258#259#0" expanded="true" />
@@ -134,8 +115,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="255">
+              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -143,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
+            <state relative-caret-position="527">
               <caret line="33" column="117" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="117" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -211,10 +192,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="956" />
-    <option name="width" value="973" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -222,8 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,6 +225,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -364,6 +346,7 @@
       <workItem from="1555837759282" duration="10547000" />
       <workItem from="1555872362137" duration="1866000" />
       <workItem from="1555887473175" duration="277000" />
+      <workItem from="1555957295940" duration="1261000" />
     </task>
     <task id="LOCAL-00001" summary="functie + teste verificareVariabileFormula">
       <created>1555115285312</created>
@@ -415,7 +398,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74357000" />
+    <option name="totallyTimeSpent" value="75618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -427,9 +410,42 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22281879" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22617246" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39660057" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.31852654" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info active="true" anchor="bottom" id="Run" order="12" visible="true" weight="0.30605564" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.3295302" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Database" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22617246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -459,38 +475,6 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
       <window_info anchor="right" id="Database" order="9" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22319475" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39660057" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.31852654" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
-      <window_info anchor="right" id="Database" order="9" />
-      <window_info anchor="right" id="Run" order="10" weight="0.30872482" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,8 +505,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/tests/CalculTest.java</url>
-          <line>195</line>
-          <properties class="CalculTest" method="parsareNote">
+          <line>201</line>
+          <properties class="CalculTest">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="13" />
@@ -638,9 +622,7 @@
     <entry file="file://$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
     <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" />
     <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java" />
-    <entry file="file://$PROJECT_DIR$/src/verificareAntetMaterie.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/verificareAntetMaterie.java" />
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -662,20 +644,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="33" column="117" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="117" />
+        <state relative-caret-position="10081">
+          <caret line="595" column="19" selection-end-line="630" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#21824#21825#0" expanded="true" />
+            <element signature="e#21863#21864#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        <state relative-caret-position="527">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -684,21 +667,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="105" selection-end-line="213" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+    <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="195" column="16" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
+        <state relative-caret-position="153">
+          <caret line="11" column="57" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="117" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="117" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,49 +717,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
+    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="80" column="33" lean-forward="true" selection-end-line="212" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Formula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="595" column="19" lean-forward="true" selection-end-line="630" />
-          <folding>
-            <element signature="e#21824#21825#0" expanded="true" />
-            <element signature="e#21863#21864#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-end-line="77" />
-          <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2340">
+          <caret line="201" selection-start-line="201" selection-end-line="201" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="255">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
         </state>
       </provider>
     </entry>

@@ -5,6 +5,18 @@ public class PrelucrareDate {
     SQL_func functiiGestiune= new SQL_func("C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea");
     String mesajPentruFront="";
 
+    /**
+     * Functia va fi apelata de modulul Gestiune.
+     * @param mesajDeLaFront  Acesta este un String ce poate avea trei formate:<br>
+     *                       - "f: id_materie; formula" - va fi instaintiat un obiect PaginaForumla si apelata functia generareFormula(id_materie, formula) <br>
+     *                       - "a: id_materie; antet" - va fi instantiat un obiect PaginaFormula si apeleata functia generareAntet(id_materie, antet)<br>
+     *                       - "n: id_student; id_materie; note" - va fi apelata functia String selectFormula(String id_materie) si instantiat un obiect Calcul cu stringul primit drept formula. Apoi va fi apelata functia parsareNote din Calcul ce va returna notele updatate si in final va fi apelata updateNote(String id_s, String id_m, String note) in functiiGestiune.
+     * @return "Update efectuat" - daca formatul este corect <br>
+     * "Solicitarea pentru calcul nu are formatul dorit" - daca formatul este incorect <br>
+     * "Nu se vor face calcule fara formula" - daca formula lipseste
+     */
+
+
     public String primesteMesajFront(String mesajDeLaFront) {
         int i = 2;
         if (mesajDeLaFront.charAt(0) == 'f' || mesajDeLaFront.charAt(0) == 'a') {
