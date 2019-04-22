@@ -150,7 +150,7 @@ public class SQL_func {
     }
     public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula)
     {
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul) VALUES (?,?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_p);
@@ -159,6 +159,7 @@ public class SQL_func {
             pstmt.setString(4, id_m);
             pstmt.setString(5, den_m);
             pstmt.setString(6, formula);
+            pstmt.setString(7, "");
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -168,7 +169,7 @@ public class SQL_func {
     public void insertProfesori(String id_p,String den_m)
     {
 
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul) VALUES (?,?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
         String aux=getNumePrenumeProf(id_p);
         String[] numePrenume=aux.split(" ");
         String nume=numePrenume[0];
@@ -181,7 +182,7 @@ public class SQL_func {
             pstmt.setInt(4, getMaxIdMaterie());
             pstmt.setString(5, den_m);
             pstmt.setString(6, "");
-
+            pstmt.setString(7, "");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -367,5 +368,35 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
         return true;
+
+    }
+    public String selectAntet(String id_m)
+    {
+        String result = "";
+        String query = " Select antet from profesori where id_materie=";
+        query+=id_m;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            result =(rs.getString("antet") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    public void updateAntet(String antet,String id_m)
+    {
+        String query="Update profesori set antet = ? where id_materie = ?";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,antet);
+            pstmt.setString(2,id_m);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
