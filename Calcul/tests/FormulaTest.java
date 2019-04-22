@@ -57,6 +57,36 @@ public class FormulaTest {
         MockFormula.setFormula("sum(L1:L3)");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
+        
+         MockFormula.setFormula(" max(min(L1,L4),min(L2,L3))");
+        MockFormula.parsareFormula();
+        assertEquals("Formula este valida",MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("3 ++ T");
+        MockFormula.parsareFormula();
+        assertEquals("Eroare: Nu pot exista doi operatori unul dupa altul",MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("min(Z,3)+7");
+        MockFormula.parsareFormula();
+        assertEquals("Formula este valida",MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("L T");
+        MockFormula.parsareFormula();
+        assertEquals("Eroare: Intre doi operanzi nu exista operator",MockFormula.mesajPentruFront);
+
+        // MockFormula.setFormula("NF + (-10)");  // 
+        // MockFormula.parsareFormula();
+        // assertEquals("Formula este valida",MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("010.5 + max(L3,B)");
+        MockFormula.parsareFormula();
+        assertEquals("Formula este valida",MockFormula.mesajPentruFront);
+
+        MockFormula.setFormula("(L5 +) T*25/100");
+        MockFormula.parsareFormula();
+        assertEquals("Eroare: Paranteza inchisa dupa operator",MockFormula.mesajPentruFront);
+
+
     }
 
     @Test
