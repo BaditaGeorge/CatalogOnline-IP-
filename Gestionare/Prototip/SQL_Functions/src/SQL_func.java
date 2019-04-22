@@ -15,12 +15,12 @@ public class SQL_func {
     //Selectam toate formulele de calcul din baza de date
     public String selectFormula() {
         String result = "";
-        String query = " Select denumire_materie, formula_calcul from materii";
+        String query = " Select formula_calcul from profesori";
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                 result+= rs.getString("denumire_materie") +"  " + rs.getString("formula_calcul") + " | ";
+                 result+= rs.getString("formula_calcul") + " | ";
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -30,7 +30,7 @@ public class SQL_func {
     //Selectam doar o singura formula din baza de date indicata de id-ul materiei
     public String selectFormula(String id) {
         String result = "";
-        String query = " Select formula_calcul from materii where id_materie=";
+        String query = " Select formula_calcul from profesori where id_materie=";
         query+=id;
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
@@ -89,7 +89,7 @@ public class SQL_func {
     //Facem update-ul formulei din tabela materii pe baza id-ul materiei
     public void updateFormula(String id_m,String formula)
     {
-        String query="Update materii set formula_calcul = ? where id_materie = ?";
+        String query="Update profesori set formula_calcul = ? where id_materie = ?";
         try ( Connection conn =this.connect();
               PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1,formula);
@@ -102,15 +102,14 @@ public class SQL_func {
         }
     }
     //Inseram in tabela materii o intrare noua
-    public void insertMaterii(String id_m,String id_s,String nume,String note,String formula){
-        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note,formula_calcul) VALUES (?,?,?,?,?)";
+    public void insertMaterii(String id_m,String id_s,String nume,String note){
+        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note) VALUES (?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_m);
             pstmt.setString(2, id_s);
             pstmt.setString(3, nume);
             pstmt.setString(4, note);
-            pstmt.setString(5, formula);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -144,9 +143,9 @@ public class SQL_func {
         }
         return result;
     }
-    public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m)
+    public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula)
     {
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie) VALUES (?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul) VALUES (?,?,?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_p);
@@ -154,6 +153,8 @@ public class SQL_func {
             pstmt.setString(3, prenume);
             pstmt.setString(4, id_m);
             pstmt.setString(5, den_m);
+            pstmt.setString(6, formula);
+
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -162,7 +163,7 @@ public class SQL_func {
     public void insertProfesori(String id_p,String den_m)
     {
         SQL_func test = new SQL_func();
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie) VALUES (?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul) VALUES (?,?,?,?,?,?)";
         String aux=test.getNumePrenumeProf(id_p);
         String[] numePrenume=aux.split(" ");
         String nume=numePrenume[0];
@@ -172,8 +173,10 @@ public class SQL_func {
             pstmt.setString(1, id_p);
             pstmt.setString(2, nume);
             pstmt.setString(3, prenume);
-            pstmt.setInt(4, getMaxId());
+            pstmt.setInt(4, test.getMaxIdMaterie());
             pstmt.setString(5, den_m);
+            pstmt.setString(6, "");
+
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -250,35 +253,50 @@ public class SQL_func {
         }
         return result;
     }
-    public void addNewUser(String id_u, String username,String email,String pas,String salt,String nrt , String tip_u,String ver)
+    public void addNewUser(String username,String email,String pas,String salt ,String auth)
     {
         String query = "Insert into utilizatori(id_utilizator,username,email,parola,salt_parola,numar_telefon,tip_utilizator,verificare) VALUES (?,?,?,?,?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setString(1, id_u);
+            pstmt.setInt(1, getMaxIdUtilizator());
             pstmt.setString(2, username);
             pstmt.setString(3, email);
             pstmt.setString(4, pas);
             pstmt.setString(5, salt);
-            pstmt.setString(6, nrt);
-            pstmt.setString(7, tip_u);
-            pstmt.setString(8, ver);
-
+            pstmt.setString(6, "");
+            pstmt.setString(7, "Student");
+            pstmt.setString(8, "0");
+            pstmt.executeUpdate();
+            addNewU(username,auth);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void addNewU(String username,String auth)
+    {
+        String query="Insert into verificare(username,cod) VALUES (?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,username);
+            pstmt.setString(2,auth);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-    public int getMaxId()
+    public int getMaxIdMaterie()
     {
         int result=0;
-        String query="Select max(id_materie) as maxID from profesori";
+        String query="Select id_materie as maxID from profesori";
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-           // result=rs.getInt("maxID");
-            if(rs.next())
-                result=rs.getInt(1);
+            while (rs.next())
+            {
+                Integer aux =Integer.parseInt(rs.getString("maxID"));
+                if( aux > result)
+                    result = aux;
+            }
         }
      catch (SQLException e) {
         System.out.println(e.getMessage());
@@ -296,5 +314,37 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
         return result;
+    }
+    public void confirmUser(String username){
+        String query="Update utilizatori set verificare = ? where username = ?";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,"1");
+            pstmt.setString(2,username);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public Integer getMaxIdUtilizator()
+    {
+            int result=0;
+            String query="Select id_utilizator as maxID from utilizatori";
+            try (Connection conn = this.connect();
+                 Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery(query)) {
+                while (rs.next())
+                {
+                    Integer aux =Integer.parseInt(rs.getString("maxID"));
+                    if( aux > result)
+                        result = aux;
+                }
+            }
+            catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return result+1;
     }
 }
