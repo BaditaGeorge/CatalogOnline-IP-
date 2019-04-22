@@ -13,6 +13,36 @@ public class Calcul {
     }
 
     String parsareNote(String stringNote) {
+
+        int a=0;
+        int n=0;
+        for(int i=0; i<stringNote.length(); i++)
+        {
+            if(stringNote.charAt(i)!= ('0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'))
+            {
+                while(stringNote.charAt(i)!=' ')
+                {
+                    antet[a] += stringNote.charAt(i);
+                    i++;
+                }
+                a++;
+                i++;
+            }
+            else
+            {
+                if(stringNote.charAt(i+1)!=' ')
+                {
+                    note[n] = Character.getNumericValue(stringNote.charAt(i)) * 10;
+                    i++;
+                }
+                else
+                {
+                    note[n] = Character.getNumericValue(stringNote.charAt(i));
+                }
+                n++;
+            }
+        }
+        evaluareFormulaPostfixata();
         return stringNote;
     }
 
