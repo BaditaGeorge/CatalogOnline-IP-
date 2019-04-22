@@ -1,9 +1,14 @@
 import java.sql.*;
 
 public class SQL_func {
+    String way;
+    SQL_func(String path)
+    {
+        way=path;
+    }
     // Conectarea cu baza de date
     private Connection connect() {
-        String url = "jdbc:sqlite:B://Faculta/IP/BD_Gestiunea";
+        String url = "jdbc:sqlite:" + way;
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -162,9 +167,9 @@ public class SQL_func {
     }
     public void insertProfesori(String id_p,String den_m)
     {
-        SQL_func test = new SQL_func();
+
         String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul) VALUES (?,?,?,?,?,?)";
-        String aux=test.getNumePrenumeProf(id_p);
+        String aux=getNumePrenumeProf(id_p);
         String[] numePrenume=aux.split(" ");
         String nume=numePrenume[0];
         String prenume = numePrenume[1];
@@ -173,7 +178,7 @@ public class SQL_func {
             pstmt.setString(1, id_p);
             pstmt.setString(2, nume);
             pstmt.setString(3, prenume);
-            pstmt.setInt(4, test.getMaxIdMaterie());
+            pstmt.setInt(4, getMaxIdMaterie());
             pstmt.setString(5, den_m);
             pstmt.setString(6, "");
 
@@ -214,7 +219,7 @@ public class SQL_func {
     //Returneaza numarul de utilizatori cu acelasi mail din baza de date.
     public int countUsersByMail(String mail) {
         int result = 0;
-        String query = "select count(email) from utilizatori where email like '" + mail + "'";
+        String query = "select email from utilizatori where email like '" + mail + "'";
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
@@ -346,5 +351,21 @@ public class SQL_func {
                 System.out.println(e.getMessage());
             }
             return result+1;
+    }
+    public boolean verificareLogIn(String username)
+    {
+        String query="Select verificare from utilizatori where username like '" + username + "'";
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            if(rs.getInt("verificare") == 0)
+                return false;
+            else
+                return true;
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
     }
 }
