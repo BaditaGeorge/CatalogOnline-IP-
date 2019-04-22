@@ -212,9 +212,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="957" />
-    <option name="width" value="972" />
-    <option name="height" value="1038" />
+    <option name="x" value="956" />
+    <option name="width" value="973" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -255,7 +255,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555951686382" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555956514564" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Gestionare/SQL_Functions.jar!/" />
@@ -333,8 +333,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in IPCalcul" />
-        <item itemvalue="JUnit.PaginaFormulaTest.generareAntet" />
         <item itemvalue="JUnit.CalculTest" />
+        <item itemvalue="JUnit.PaginaFormulaTest.generareAntet" />
         <item itemvalue="JUnit.PaginaFormulaTest" />
         <item itemvalue="JUnit.FormulaTest" />
       </list>

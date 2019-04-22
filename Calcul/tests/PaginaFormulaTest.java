@@ -7,7 +7,7 @@ public class PaginaFormulaTest {
     @Test
     public void generareAntet() {
 
-         PrelucrareDate prelucrareDate= new PrelucrareDate();
+        PrelucrareDate prelucrareDate= new PrelucrareDate();
         PaginaFormula paginaFormula = new PaginaFormula(prelucrareDate);
         paginaFormula.generareAntet("381","L1 L2 WEF");
         assertEquals("Antetul este valid", paginaFormula.mesajPentruFront);

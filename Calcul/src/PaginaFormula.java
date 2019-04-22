@@ -36,7 +36,9 @@ public class PaginaFormula {
 
 
 
+
     String generareAntet(String id_materie, String antet) {
+
 
         String[] sir = antet.split(" ");
         AntetMaterie antetNou = new AntetMaterie(sir);
@@ -48,11 +50,14 @@ public class PaginaFormula {
 
         return mesajPentruFront;
 
+
+
     }
 
     void schimbareAntet(String id_materie, String antet) {
 
     }
+
 
 
     void schimbareFormula(String id_materie, String formula) {
@@ -63,6 +68,7 @@ public class PaginaFormula {
     void generareCriterii(String id_materie) {
 
     }
+
 
     void schimbareCriterii(String id_materie) {
 
