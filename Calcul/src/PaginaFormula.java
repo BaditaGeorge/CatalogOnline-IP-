@@ -9,23 +9,44 @@ public class PaginaFormula {
         this.prelucrareDate = prelucrareDate;
     }
 
-    void generareFormula(String id_materie, String formula) {
+    String generareFormula(String id_materie, String formula) {
 
+        String antet=prelucrareDate.functiiGestiune.selectAntet(id_materie);
+        if(antet.equals(""))
+            return "Eroare: Antetul nu a fost definit";
+
+
+
+        Formula formulaNoua=new Formula(formula);
+        formulaNoua.parsareFormula();
+        mesajPentruFront=formulaNoua.getMesajPentruFront();
+        if(!mesajPentruFront.equals("Formula este valida"))
+            return mesajPentruFront;
+
+        String[] campuriAntet=antet.split(" ");
+        AntetMaterie antetMaterie=new AntetMaterie(campuriAntet);
+        formulaNoua.verificareVariabileFormula(antetMaterie);
+        mesajPentruFront=formulaNoua.getMesajPentruFront();
+        if(mesajPentruFront.equals("Formula este valida"))
+            this.prelucrareDate.functiiGestiune.updateFormula(id_materie,formula);
+
+        return mesajPentruFront;
 
     }
 
-    void parsareFormule(String formule) {
 
 
-    }
-
-    void generareAntet(String id_materie, String antet) {
+    String generareAntet(String id_materie, String antet) {
 
         String[] sir = antet.split(" ");
         AntetMaterie antetNou = new AntetMaterie(sir);
         antetNou.verificareAntetMaterie();
         mesajPentruFront = antetNou.getMesajPentruFront();
-        this.prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
+
+        if(mesajPentruFront.equals("Antetul este valid"))
+            this.prelucrareDate.functiiGestiune.updateAntet(id_materie,antet);
+
+        return mesajPentruFront;
 
     }
 
@@ -44,6 +65,11 @@ public class PaginaFormula {
     }
 
     void schimbareCriterii(String id_materie) {
+
+    }
+
+    void parsareFormule(String formule) {
+
 
     }
 

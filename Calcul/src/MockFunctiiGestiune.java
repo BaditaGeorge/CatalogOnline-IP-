@@ -10,17 +10,24 @@ public class MockFunctiiGestiune {
     }
 
 
-    void raspunsDeLaCalcul(String mesajPentruFront) {
-
-    }
-
     public String selectFormula(String id) {
-        return "L1 + L2";
+        return "P =L1 + L2";
     }
 
     public void updateFormula(String id_m,String formula)
     {
 
     }
+
+    public String selectAntet(String id) {
+        return "L1 L2";
+    }
+
+    public void updateAntet(String id_m,String antet)
+    {
+
+    }
+
+
 
 }

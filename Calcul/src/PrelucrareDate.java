@@ -1,9 +1,11 @@
+
+
 public class PrelucrareDate {
 
-    String mesajDeLaFront;
-    MockFunctiiGestiune functiiGestiune= new MockFunctiiGestiune();
+    SQL_func functiiGestiune= new SQL_func("C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea");
+    String mesajPentruFront="";
 
-    public void primesteMesajFront(String mesajDeLaFront) {
+    public String primesteMesajFront(String mesajDeLaFront) {
         int i = 2;
         if (mesajDeLaFront.charAt(0) == 'f' || mesajDeLaFront.charAt(0) == 'a') {
             PaginaFormula paginaFormula = new PaginaFormula(this);
@@ -22,7 +24,7 @@ public class PrelucrareDate {
                     formula += mesajDeLaFront.charAt(i);
                     i++;
                 }
-                paginaFormula.generareFormula(id_materie, formula);
+                return paginaFormula.generareFormula(id_materie, formula);
 
             } else if (mesajDeLaFront.charAt(0) == 'a') {
                 String antet = "";
@@ -31,7 +33,7 @@ public class PrelucrareDate {
                     antet += mesajDeLaFront.charAt(i);
                     i++;
                 }
-                paginaFormula.generareAntet(id_materie, antet);
+                return paginaFormula.generareAntet(id_materie, antet);
             }
         } else if (mesajDeLaFront.charAt(0) == 'n') {
             String id_student = "", id_materie = "", note = "";
@@ -40,32 +42,33 @@ public class PrelucrareDate {
                 id_student += mesajDeLaFront.charAt(i);
                 i++;
             }
+            i++;
             while (mesajDeLaFront.charAt(i) == ' ') i++;
             while (mesajDeLaFront.charAt(i) != ';') {
                 id_materie += mesajDeLaFront.charAt(i);
                 i++;
             }
+            i++;
             while (mesajDeLaFront.charAt(i) == ' ') i++;
-            while (mesajDeLaFront.charAt(i) != ';') {
+            while (i != mesajDeLaFront.length()) {
                 note += mesajDeLaFront.charAt(i);
                 i++;
             }
-            Calcul calcul = new Calcul(functiiGestiune.selectFormula(id_materie));
+
+            String formula=functiiGestiune.selectFormula(id_materie);
+            if(formula.equals(""))
+                return "Nu se vor face calcule fara formula";
+
+            Calcul calcul = new Calcul(formula);
             functiiGestiune.updateNote(id_student, id_materie, calcul.parsareNote(note));
+
+
+            return "Update efectuat";
         }
-    }
-
-    public void TrimiteMesajCatreFront(String mesajPentruFront)
-    {
+        return "Solicitarea pentru calcul nu are formatul dorit";
 
     }
 
-    public void updateBazaDeDate(String id_materie) {
 
-    }
-
-    boolean cautareFormulaInBD(String id_materie) {
-        return false;
-    }
 
 }

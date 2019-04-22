@@ -17,4 +17,19 @@ public class PaginaFormulaTest {
 
 
     }
+
+    @Test
+    public void generareFormula() {
+
+        PrelucrareDate prelucrareDate= new PrelucrareDate();
+        PaginaFormula paginaFormula = new PaginaFormula(prelucrareDate);
+        paginaFormula.generareFormula("381","L1 + L2");
+        assertEquals("Formula este valida", paginaFormula.mesajPentruFront);
+
+        paginaFormula.generareFormula("381","L1 + L2 + L3");
+        assertEquals("Eroare: Urmatoarele variabile din formula nu sunt definite in antet: L3", paginaFormula.mesajPentruFront);
+
+
+    }
+
 }

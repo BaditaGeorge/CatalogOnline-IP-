@@ -7,15 +7,15 @@ public class FormulaTest {
     @Test
     public void parsareFormula() {
 
-        Formula MockFormula = new Formula("L + E");
+        Formula MockFormula = new Formula("P =L + E");
         MockFormula.parsareFormula();
 
         //se verifica daca vectorul cu variabile a fost populat corect
-        assertEquals("L", MockFormula.variabile[0]);
-        assertEquals("E", MockFormula.variabile[1]);
+        assertEquals("P", MockFormula.variabile[0]);
+        assertEquals("L", MockFormula.variabile[1]);
 
         //se verifica numarul de variabile
-        assertEquals(2, MockFormula.nrVariabile);
+        assertEquals(3, MockFormula.nrVariabile);
 
         //daca nu s-a gasit nicio eroare in mesajPentruFront ar trebui sa apara mesajul "Formula este valida"
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
@@ -129,9 +129,9 @@ public class FormulaTest {
 
     @Test
     public void infixToPostfix() {
-        Formula MockFormula = new Formula("L + E");
+        Formula MockFormula = new Formula("P=L + E");
         MockFormula.infixToPostfix();
-        assertEquals("L E +", MockFormula.formulaPostfixata);
+        assertEquals("P L E +=", MockFormula.formulaPostfixata);
 
         MockFormula.setFormula("L + E* (T+P)"); //aici se  pune formula normala, infixata
         MockFormula.infixToPostfix();
