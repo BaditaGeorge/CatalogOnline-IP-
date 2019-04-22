@@ -4,8 +4,8 @@ public class PrelucrareDate {
     MockFunctiiGestiune functiiGestiune= new MockFunctiiGestiune();
 
     public void primesteMesajFront(String mesajDeLaFront) {
-        int i = 0;
-        if (mesajDeLaFront.charAt(i) == 'f' || mesajDeLaFront.charAt(i) == 'a') {
+        int i = 2;
+        if (mesajDeLaFront.charAt(0) == 'f' || mesajDeLaFront.charAt(0) == 'a') {
             PaginaFormula paginaFormula = new PaginaFormula(this);
 
             String id_materie = "";
@@ -15,7 +15,7 @@ public class PrelucrareDate {
                 i++;
             }
             i++;
-            if (mesajDeLaFront.charAt(i) == 'f') {
+            if (mesajDeLaFront.charAt(0) == 'f') {
                 String formula = "";
                 while (mesajDeLaFront.charAt(i) == ' ') i++;
                 while (i != mesajDeLaFront.length()) {
@@ -24,7 +24,7 @@ public class PrelucrareDate {
                 }
                 paginaFormula.generareFormula(id_materie, formula);
 
-            } else if (mesajDeLaFront.charAt(i) == 'a') {
+            } else if (mesajDeLaFront.charAt(0) == 'a') {
                 String antet = "";
                 while (mesajDeLaFront.charAt(i) == ' ') i++;
                 while (i != mesajDeLaFront.length()) {
@@ -33,7 +33,7 @@ public class PrelucrareDate {
                 }
                 paginaFormula.generareAntet(id_materie, antet);
             }
-        } else if (mesajDeLaFront.charAt(i) == 'n') {
+        } else if (mesajDeLaFront.charAt(0) == 'n') {
             String id_student = "", id_materie = "", note = "";
             while (mesajDeLaFront.charAt(i) == ' ') i++;
             while (mesajDeLaFront.charAt(i) != ';') {

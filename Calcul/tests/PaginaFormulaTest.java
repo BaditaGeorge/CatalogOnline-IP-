@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 public class PaginaFormulaTest {
 
     @Test
-    public void parsareFormule() {
+    public void generareAntet() {
+
+
 
     }
 }

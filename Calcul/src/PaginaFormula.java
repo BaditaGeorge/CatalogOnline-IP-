@@ -9,9 +9,9 @@ public class PaginaFormula {
         this.prelucrareDate = prelucrareDate;
     }
 
-    String generareFormula(String id_materie, String formula) {
+    void generareFormula(String id_materie, String formula) {
 
-        return mesajPentruFront;
+
     }
 
     void parsareFormule(String formule) {
@@ -19,18 +19,13 @@ public class PaginaFormula {
 
     }
 
-    String generareAntet(String id_materie, String antet) {
+    void generareAntet(String id_materie, String antet) {
 
-        //in constructor antet e de tip String[], functia asta e folosita in alte parti cu prototipul asta si am preferat sa convertesc decat sa modific parametrii
-        String[] sir = new String[1];
-        sir[0] = antet;
+        String[] sir = antet.split(" ");
         AntetMaterie antetNou = new AntetMaterie(sir);
         antetNou.verificareAntetMaterie();
         mesajPentruFront = antetNou.getMesajPentruFront();
         this.prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
-        if (mesajPentruFront.equals("Antetul este valid"))
-            this.prelucrareDate.functiiGestiune.updateNote(antet, id_materie, "10");  //nu am inteles de unde va fi luat stringul cu note
-        return mesajPentruFront;
 
     }
 

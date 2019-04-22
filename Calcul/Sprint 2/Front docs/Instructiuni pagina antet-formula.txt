@@ -7,7 +7,7 @@ Nu se pot repeta denumirile si nu se pot folosi denumirile "sum", "min", "max".
 Formula
 Formulele trebuie sa contina variabile existente in antet.
 Trebuie sa fie de forma <variabila> = <expresie>
-Expresiile accepta paranteze si operatiile "+","-","*","/","mod"
+Expresiile accepta paranteze si operatiile "+","-","*","/","%"
 Se pot folosi functiile min, max sub forma 
 min(<variabila/numar>, <variabila/numar>) sau min((<expresie>),(<expresie>)) (expresiile trebuie sa apara in paranteza in functiile min, max)
 De asemenea functia sum permite scrierea prescurtata a unei sume de tipul L1+L2+...+L14 si are signatura:
