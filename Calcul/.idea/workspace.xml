@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprint 2/Front docs/Instructiuni pagina antet-formula.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sprint 2/Front docs/Instructiuni pagina antet-formula.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/PaginaFormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/PaginaFormulaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaginaFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaginaFormula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AntetMaterie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AntetMaterie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/verificareAntetMaterie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AntetMaterieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AntetMaterieTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -64,12 +60,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="24" selection-start-column="24" selection-end-column="24" />
+            <state relative-caret-position="714">
+              <caret line="42" column="128" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="128" />
               <folding>
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2218#2219#0" expanded="true" />
+                <element signature="e#2257#2258#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -77,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="561">
+              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,19 +93,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+        <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3026">
-              <caret line="180" column="51" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="51" />
+            <state relative-caret-position="133">
+              <caret line="140" selection-start-line="140" selection-end-line="140" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="374">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#206#207#0" expanded="true" />
                 <element signature="e#258#259#0" expanded="true" />
@@ -108,26 +114,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="221">
+              <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Calcul.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2465">
-              <caret line="145" selection-start-line="145" selection-end-line="145" />
-              <folding>
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,17 +178,17 @@
         <option value="$PROJECT_DIR$/src/Materie.java" />
         <option value="$PROJECT_DIR$/src/PaginaStudent.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/tests/AntetMaterieTest.java" />
         <option value="$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
         <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
-        <option value="$PROJECT_DIR$/src/AntetMaterie.java" />
         <option value="$PROJECT_DIR$/tests/CalculTest.java" />
         <option value="$PROJECT_DIR$/src/Calcul.java" />
         <option value="$PROJECT_DIR$/tests/FormulaTest.java" />
         <option value="$PROJECT_DIR$/src/Formula.java" />
-        <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
-        <option value="$PROJECT_DIR$/tests/PaginaFormulaTest.java" />
         <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
+        <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
+        <option value="$PROJECT_DIR$/src/AntetMaterie.java" />
+        <option value="$PROJECT_DIR$/tests/AntetMaterieTest.java" />
+        <option value="$PROJECT_DIR$/tests/PaginaFormulaTest.java" />
       </list>
     </option>
   </component>
@@ -205,11 +198,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="957" />
+    <option name="width" value="972" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -250,7 +242,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555927652701" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555930908388" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -279,12 +271,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.PaginaFormulaTest.generareAntet">
-    <configuration name="CalculTest.evaluareFormulaPostfixata" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AntetMaterieTest">
+    <configuration name="AntetMaterieTest.verificareAntetMaterie" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CalculTest" />
-      <option name="METHOD_NAME" value="evaluareFormulaPostfixata" />
+      <option name="MAIN_CLASS_NAME" value="AntetMaterieTest" />
+      <option name="METHOD_NAME" value="verificareAntetMaterie" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -300,21 +292,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FormulaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AntetMaterieTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FormulaTest" />
+      <option name="MAIN_CLASS_NAME" value="AntetMaterieTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FormulaTest.infixToPostfix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FormulaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FormulaTest" />
-      <option name="METHOD_NAME" value="infixToPostfix" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -331,11 +322,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AntetMaterieTest" />
+        <item itemvalue="Android JUnit.AntetMaterieTest.verificareAntetMaterie" />
         <item itemvalue="Android JUnit.PaginaFormulaTest.generareAntet" />
         <item itemvalue="JUnit.FormulaTest" />
         <item itemvalue="JUnit.FormulaTest.verificareUtilizareMinMax" />
-        <item itemvalue="Android JUnit.CalculTest.evaluareFormulaPostfixata" />
-        <item itemvalue="JUnit.FormulaTest.infixToPostfix" />
       </list>
     </recent_temporary>
   </component>
@@ -382,35 +373,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FormulaTest - 2019.04.22 at 01h 24m 40s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 36m 59s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.22 at 01h 24m 55s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 37m 12s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.22 at 01h 25m 50s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 37m 14s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.22 at 01h 26m 58s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 37m 24s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.22 at 01h 27m 02s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 39m 33s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PaginaFormulaTest_generareAntet - 2019.04.22 at 12h 59m 34s.xml">
-      <configuration name="PaginaFormulaTest.generareAntet" configurationId="AndroidJUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 40m 37s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest - 2019.04.22 at 13h 01m 05s.xml">
-      <configuration name="FormulaTest" configurationId="JUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 41m 45s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PaginaFormulaTest_generareAntet - 2019.04.22 at 13h 01m 05s.xml">
-      <configuration name="PaginaFormulaTest.generareAntet" configurationId="AndroidJUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 42m 19s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PaginaFormulaTest_generareAntet - 2019.04.22 at 13h 02m 18s.xml">
-      <configuration name="PaginaFormulaTest.generareAntet" configurationId="AndroidJUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 42m 45s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PaginaFormulaTest_generareAntet - 2019.04.22 at 13h 05m 30s.xml">
-      <configuration name="PaginaFormulaTest.generareAntet" configurationId="AndroidJUnit" />
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 43m 51s.xml">
+      <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -427,8 +418,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22281879" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22281879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -437,7 +429,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Debug" order="2" visible="true" weight="0.39660057" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39660057" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.3286119" />
@@ -447,7 +439,7 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.31852654" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Run" order="12" weight="0.30736545" />
+      <window_info anchor="bottom" id="Run" order="12" visible="true" weight="0.30736545" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -510,17 +502,20 @@
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/PaginaFormulaTest.java</url>
-          <line>8</line>
-          <properties />
-          <option name="timeStamp" value="7" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/tests/AntetMaterieTest.java</url>
+          <line>9</line>
+          <properties class="AntetMaterieTest" method="verificareAntetMaterie">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="formula" language="JAVA" />
+        <watch expression="Array.getLength(CampuriAntet)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -530,6 +525,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>Array.getLength(CampuriAntet)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>formula</expression-string>
         <language-id>JAVA</language-id>
@@ -575,13 +575,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Materie.java" />
     <entry file="file://$PROJECT_DIR$/src/PaginaStudent.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -621,13 +614,6 @@
     <entry file="file://$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
     <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" />
     <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3026">
@@ -642,28 +628,6 @@
           <folding>
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#396#397#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-          <folding>
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="63" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="63" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,26 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -716,13 +660,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/verificareAntetMaterie.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="128" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2218#2219#0" expanded="true" />
+            <element signature="e#2257#2258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="63" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="63" />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#206#207#0" expanded="true" />
             <element signature="e#258#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

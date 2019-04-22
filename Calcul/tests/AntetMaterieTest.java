@@ -4,17 +4,7 @@ import static org.junit.Assert.*;
 
 public class AntetMaterieTest {
 
-    @Test
-    public void AntetMaterie() {
-        String[] campuri = {"L1", "L2", "E"};
 
-        AntetMaterie MockAntet = new AntetMaterie(campuri);
-        assertEquals(3, MockAntet.nrCampuri);
-        assertEquals("L1", MockAntet.CampuriAntet[0]);
-        assertEquals("L2", MockAntet.CampuriAntet[1]);
-        assertEquals("E", MockAntet.CampuriAntet[2]);
-
-    }
 
     @Test
     public void verificareAntetMaterie() {
@@ -36,9 +26,12 @@ public class AntetMaterieTest {
         campuri[0] = "sum";
         MockAntet.setCampuriAntet(campuri);
         MockAntet.verificareAntetMaterie(); // in mesajFront ar trebui sa ai eroarea de mai jos
-        assertEquals("Eroare: Cuvantul sum este rezervat pentru o functie", MockAntet.mesajPentruFront);
+        assertEquals("Eroare: Cuvintele sum, min si max sunt rezervate pentru functii", MockAntet.mesajPentruFront);
 
-        //pentru mai multe teste copiaza ultimul test si schimba continutul din vector si mesajul de eroare
+        campuri[0] = "1L";
+        MockAntet.setCampuriAntet(campuri);
+        MockAntet.verificareAntetMaterie(); // in mesajFront ar trebui sa ai eroarea de mai jos
+        assertEquals("Eroare: Campurile din antet pot contine doar litere si cifre si trebuie sa inceapa cu o litera", MockAntet.mesajPentruFront);
     }
 
 }
