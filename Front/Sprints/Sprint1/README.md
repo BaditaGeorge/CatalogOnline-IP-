@@ -70,3 +70,20 @@
 [6h][2 Apr ][Paul + Claudiu]   #Diagrama UML (Views Classes) - Modul de functionare al aplicatie la nivel de interfata, legaturile dintre view-uri si date
 
 [6h][2 Apr ][George + Lician]  #O diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
+
+
+##Testare
+###Problems
+- In momentul in care tabelul ramane fara Rows nu se va mai putea face nicio actiune,
+deoarece posibilitatea de a face diferite actiuni se face prin apasarea a click 2 pe oricare
+dintre valorile tabelului, indiferent de coloana pe care te aflii.
+- Actiunile Rename Column/ Insert Row/ Insert Column, butonul CANCEL nu functioneaza.
+Cand butonul a fost apasat, iar ulterior s-a apasat butonul de cancel, acesta in loc sa duca la
+anularea actiunii, va creea un Row/Column/Rename cu numele undefined.
+- Caracterul '0', nu este gasit in Filter Rows.
+- Primul input de la actiunile cele 3, mentionate mai sus, nu este luat in considerare
+- Este acceptata introducerea oricarui caracter ASCII.(De ex: 1/2d), indiferent de tipul coloanei.
+- Lipseste autoincrementarea pentru o coloana de tipul ID.
+- In momentul in care se sterg toate coloanele din table, toate actiunile in afara de insert column,
+duc la picarea serverului.
+- Nu este ceruta o confirmare la actiunea butoanelor, delete column/ rows.

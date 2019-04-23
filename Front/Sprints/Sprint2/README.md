@@ -19,18 +19,14 @@ Aici sa se poata adauga in formula curenta alte rezultate calculate anterior de 
 ### DoD 2
 [C ][DDL   ][Members          ]#Task
 
-[2h][25 Mar[All]              #Module meeting (stabilire responsabilitati, directii 	generale)
-
-[2h][25 Mar[Gabriel]          #Deffinition of Done doc, listare taskuri mandatory in primul sprint (responsabili + cost/ddl)
-
-[2h][25 Mar[Gabriel]          #Un backlog (lista de taksuri generale ce trebuie indeplinite pe baza unor prioritatie pana la sfarsitul proiectului)
-
-[1h][2 Apr][Gabriel]           #Documentare tehnologii
-
-[1h][2 Apr][Gabriel]           #Implementare clase fara metode si instalare proiect
-
-[6h][25 Mar[Emilian + Teona]  #Un site-map generalizat, posibile directii ale interfetei, stabilire succinta a unor metode/viewuri (Short guide pentru diagrame)
-
-[6h][2 Apr ][Paul + Claudiu]   #Diagrama UML (Views Classes) - Modul de functionare al aplicatie la nivel de interfata, legaturile dintre view-uri si date
-
-[6h][2 Apr ][George + Lician]  #O diagrama C4 in care sa putem observa felul in care interactioneaza modulul nostru cu celelalte module
+[2h][23 Apr][All]              #Module meeting (stabilire responsabilitati, directii generale)
+[2h][23 Apr][All]              #Documentare Rreac (Meeting de introducere in react)
+[2h][23 Apr][Gabriel]          #Deffinition of Done doc, listare taskuri mandatory in al doilea sprint (responsabili + cost/ddl)
+[2h][23 Apr][Gabriel]          #Tabel general cu datele stundetilor si coloane
+[2h][23 Apr][Gabriel]          #Actiuni default in table (Adaugare coloane, Adaugare rows, stergere/actualizare coloane/rows)
+[2h][23 Apr][George]           #Filtre complex in tabelul Catalog si sortare
+[2h][23 Apr][Lucian]           #Input adaugare formula
+[2h][23 Apr][Claudiu]          #Dashboard profesor si integrare cu celelalte componente
+[1h][23Apr][Paul]              #Header cu selector pentru discipline
+[1h][23Apr][Gabriel]           #Implementare clase fara metode si instalare proiect
+[6h][23 Apr][Emilian + Teona]  #Wireframe-uri si UI aplicatie + CSS
