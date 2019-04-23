@@ -33,7 +33,7 @@ public class Calcul {
 
             note[i/2]=0;
             while(j<splited[i].length() && splited[i].charAt(j)>='0' && splited[i].charAt(j)<='9'){
-                note[i/2]=note[i/2]+(splited[i].charAt(j)-'0');
+                note[i/2]=note[i/2]*10+(splited[i].charAt(j)-'0');
                 j++;
             }
 
