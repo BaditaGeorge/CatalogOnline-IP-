@@ -2,9 +2,10 @@ import java.util.Stack;
 
 public class Calcul {
     public Formula formula;
-    public String[] antet;
+    public String[] antet=new String[50];
     public Stack<Double> stack = new Stack<>();
     public double[] note = new double[50];
+    public int nrNote;
 
 
     public Calcul(String formula) {
@@ -14,35 +15,57 @@ public class Calcul {
 
     String parsareNote(String stringNote) {
 
-        int a=0;
-        int n=0;
-        for(int i=0; i<stringNote.length(); i++)
-        {
-            if(stringNote.charAt(i)!= ('0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'))
-            {
-                while(stringNote.charAt(i)!=' ')
-                {
-                    antet[a] += stringNote.charAt(i);
-                    i++;
-                }
-                a++;
-                i++;
-            }
-            else
-            {
-                if(stringNote.charAt(i+1)!=' ')
-                {
-                    note[n] = Character.getNumericValue(stringNote.charAt(i)) * 10;
-                    i++;
-                }
-                else
-                {
-                    note[n] = Character.getNumericValue(stringNote.charAt(i));
-                }
-                n++;
-            }
+        stringNote=stringNote.replaceAll("\\s+"," ");
+        String[] splited=stringNote.split(" ");
+        nrNote=0;
+        for(int i=0; i<splited.length; i+=2) {
+            antet[i/2]=splited[i];
+            nrNote++;
         }
+        for(int i=1; i<splited.length; i+=2){
+            int j=0;
+            int pow=1;
+            if(splited[i].charAt(0)=='-')
+            {
+                pow=-1;
+                j++;
+            }
+
+            note[i/2]=0;
+            while(j<splited[i].length() && splited[i].charAt(j)>='0' && splited[i].charAt(j)<='9'){
+                note[i/2]=note[i/2]+(splited[i].charAt(j)-'0');
+                j++;
+            }
+
+
+            if(j<splited[i].length() && splited[i].charAt(j)=='.')
+            {
+                j++;
+
+               double decimal = 0.1;
+                int pow2 = 10;
+                while (j<splited[i].length() && splited[i].charAt(j) >= '0' && splited[i].charAt(j) <= '9') {
+                    note[i/2] = note[i/2] + ( splited[i].charAt(j)- '0') * decimal;
+                    note[i/2] = ((double) Math.floor(note[i/2] * pow2)) / pow2;
+                    pow2 *= 10;
+                    decimal /= 10;
+                    j++;
+                }
+            }
+
+            note[i/2]*=pow;
+        }
+
         evaluareFormulaPostfixata();
+        stringNote="";
+        for(int i=0; i<nrNote; i++)
+        {
+            stringNote+=antet[i]+" ";
+            stringNote+=note[i]+" ";
+
+        }
+
+
         return stringNote;
     }
 
@@ -62,6 +85,8 @@ public class Calcul {
         String var;
         int startIndex=0;
         String resultVar="";
+
+        formula.infixToPostfix();
 
 
         if(formula.formulaPostfixata.indexOf('=')>=0)

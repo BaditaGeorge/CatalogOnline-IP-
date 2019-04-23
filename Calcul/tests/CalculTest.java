@@ -13,12 +13,12 @@ public class CalculTest {
 
         MockCalcul.antet = new String[50]; //aici il poti privi ca pe sirul de variabile
         MockCalcul.antet[0] = "L"; //daca o variabila e in sir pe pozitia i, valoarea ei trebuie sa fie tot pe coloana i
-        MockCalcul.note[0] = 5;
+        MockCalcul.note[0] = -5;
 
         MockCalcul.formula.infixToPostfix(); //functia asta nu a fost complet testata, dar speram ca merge bine
         MockCalcul.evaluareFormulaPostfixata(); //momentan lucram doar pe linia 0
 
-        Double number = 17d; // asta e valoarea finala pe care ar trebui sa obtii daca inlocuiesti valorile variabilelor in formula ta
+        Double number = 7d; // asta e valoarea finala pe care ar trebui sa obtii daca inlocuiesti valorile variabilelor in formula ta
         assertEquals(number, MockCalcul.stack.peek()); // aici se verifica daca ai obtinut ce trebuie
 
         MockCalcul.stack.clear(); // se goleste stiva ca sa nu incurce urmatoarele teste
@@ -174,7 +174,7 @@ public class CalculTest {
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata();
         number = 8.2;
-        assertEquals((Double)number, (Double)MockCalcul.note[0]);
+        assertEquals((Double) number, (Double) MockCalcul.note[0]);
 
         //Test 12 asignare
 
@@ -186,17 +186,29 @@ public class CalculTest {
         MockCalcul.note[3] = 6.25;
         MockCalcul.formula.infixToPostfix();
         MockCalcul.evaluareFormulaPostfixata();
-        number =16.25;
+        number = 16.25;
         assertEquals(number, MockCalcul.stack.peek());
-        assertEquals((Double)MockCalcul.note[1], (Double)MockCalcul.stack.peek());
+        assertEquals((Double) MockCalcul.note[1], (Double) MockCalcul.stack.peek());
+    }
 
 
+    @Test
+    public void parsareNote() {
 
 
-
+        Calcul MockCalcul = new Calcul("P = 12 + L");
+        String noteNoi = MockCalcul.parsareNote("P 5 L -5.5");
+        assertEquals("P 6.5 L -5.5 ", noteNoi);
 
 
 
     }
+
+
+
+
+
+
+
 
 }

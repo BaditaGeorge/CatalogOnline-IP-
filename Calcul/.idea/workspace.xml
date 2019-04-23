@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="IPCalcul:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AntetMaterie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AntetMaterie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verificareAntetMaterie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AntetMaterieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AntetMaterieTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/AntetMaterie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Calcul.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrelucrareDate.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,14 +35,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Formula.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10081">
+              <caret line="595" column="19" selection-end-line="630" />
+              <folding>
+                <element signature="e#21824#21825#0" expanded="true" />
+                <element signature="e#21863#21864#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2340">
+              <caret line="201" selection-start-line="201" selection-end-line="201" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Calcul.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="105" selection-end-line="213" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="153">
+              <caret line="11" column="57" selection-end-line="11" selection-end-column="4" />
               <folding>
                 <element signature="e#206#207#0" expanded="true" />
                 <element signature="e#258#259#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="33" column="117" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="117" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,16 +173,16 @@
         <option value="$PROJECT_DIR$/src/PaginaStudent.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
-        <option value="$PROJECT_DIR$/tests/CalculTest.java" />
-        <option value="$PROJECT_DIR$/src/Calcul.java" />
-        <option value="$PROJECT_DIR$/tests/FormulaTest.java" />
         <option value="$PROJECT_DIR$/src/Formula.java" />
-        <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
         <option value="$PROJECT_DIR$/src/AntetMaterie.java" />
         <option value="$PROJECT_DIR$/tests/AntetMaterieTest.java" />
-        <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
-        <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
         <option value="$PROJECT_DIR$/tests/PaginaFormulaTest.java" />
+        <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
+        <option value="$PROJECT_DIR$/tests/FormulaTest.java" />
+        <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
+        <option value="$PROJECT_DIR$/src/Calcul.java" />
+        <option value="$PROJECT_DIR$/tests/CalculTest.java" />
+        <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
       </list>
     </option>
   </component>
@@ -95,10 +192,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -106,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,6 +226,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,14 +237,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555930908388" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555956514564" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Gestionare/SQL_Functions.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="nele.options" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -168,31 +266,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AntetMaterieTest">
-    <configuration name="AntetMaterieTest.verificareAntetMaterie" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in IPCalcul">
+    <configuration name="All in IPCalcul" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AntetMaterieTest" />
-      <option name="METHOD_NAME" value="verificareAntetMaterie" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaginaFormulaTest.generareAntet" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PaginaFormulaTest" />
-      <option name="METHOD_NAME" value="generareAntet" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AntetMaterieTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IPCalcul" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AntetMaterieTest" />
+      <option name="MAIN_CLASS_NAME" value="CalculTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,11 +293,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FormulaTest.verificareUtilizareMinMax" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PaginaFormulaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FormulaTest" />
-      <option name="METHOD_NAME" value="verificareUtilizareMinMax" />
+      <option name="MAIN_CLASS_NAME" value="PaginaFormulaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaginaFormulaTest.generareAntet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IPCalcul" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PaginaFormulaTest" />
+      <option name="METHOD_NAME" value="generareAntet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,11 +314,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AntetMaterieTest" />
-        <item itemvalue="Android JUnit.AntetMaterieTest.verificareAntetMaterie" />
-        <item itemvalue="Android JUnit.PaginaFormulaTest.generareAntet" />
+        <item itemvalue="JUnit.All in IPCalcul" />
+        <item itemvalue="JUnit.CalculTest" />
+        <item itemvalue="JUnit.PaginaFormulaTest.generareAntet" />
+        <item itemvalue="JUnit.PaginaFormulaTest" />
         <item itemvalue="JUnit.FormulaTest" />
-        <item itemvalue="JUnit.FormulaTest.verificareUtilizareMinMax" />
       </list>
     </recent_temporary>
   </component>
@@ -251,6 +346,7 @@
       <workItem from="1555837759282" duration="10547000" />
       <workItem from="1555872362137" duration="1866000" />
       <workItem from="1555887473175" duration="277000" />
+      <workItem from="1555957295940" duration="1261000" />
     </task>
     <task id="LOCAL-00001" summary="functie + teste verificareVariabileFormula">
       <created>1555115285312</created>
@@ -270,39 +366,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 36m 59s.xml">
+    <history-entry file="FormulaTest - 2019.04.22 at 17h 07m 20s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculTest_parsareNote - 2019.04.22 at 17h 10m 43s.xml">
+      <configuration name="CalculTest.parsareNote" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CalculTest_parsareNote - 2019.04.22 at 17h 11m 29s.xml">
+      <configuration name="CalculTest.parsareNote" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="AntetMaterieTest - 2019.04.22 at 17h 11m 46s.xml">
       <configuration name="AntetMaterieTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 37m 12s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
+    <history-entry file="CalculTest - 2019.04.22 at 17h 11m 49s.xml">
+      <configuration name="CalculTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 37m 14s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
+    <history-entry file="FormulaTest - 2019.04.22 at 17h 11m 52s.xml">
+      <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 37m 24s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
+    <history-entry file="PaginaFormulaTest - 2019.04.22 at 17h 11m 56s.xml">
+      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 39m 33s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
+    <history-entry file="CalculTest - 2019.04.22 at 17h 12m 26s.xml">
+      <configuration name="CalculTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 40m 37s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
+    <history-entry file="PaginaFormulaTest_generareAntet - 2019.04.22 at 17h 22m 12s.xml">
+      <configuration name="PaginaFormulaTest.generareAntet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 41m 45s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 42m 19s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 42m 45s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AntetMaterieTest - 2019.04.22 at 13h 43m 51s.xml">
-      <configuration name="AntetMaterieTest" configurationId="JUnit" />
+    <history-entry file="All_in_IPCalcul - 2019.04.22 at 17h 23m 04s.xml">
+      <configuration name="All in IPCalcul" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74357000" />
+    <option name="totallyTimeSpent" value="75618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -314,9 +410,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12684564" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22617246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -332,7 +429,39 @@
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="9" visible="true" weight="0.31728044" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.31852654" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info active="true" anchor="bottom" id="Run" order="12" visible="true" weight="0.30605564" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.3295302" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Database" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22617246" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39660057" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.31852654" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Run" order="12" weight="0.30736545" />
@@ -346,38 +475,6 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
       <window_info anchor="right" id="Database" order="9" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22319475" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39660057" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.31852654" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3295302" />
-      <window_info anchor="right" id="Database" order="9" />
-      <window_info anchor="right" id="Run" order="10" weight="0.30872482" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,12 +503,24 @@
           </properties>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/tests/CalculTest.java</url>
+          <line>201</line>
+          <properties class="CalculTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="formula" language="JAVA" />
-        <watch expression="Array.getLength(CampuriAntet)" language="JAVA" />
+      </configuration>
+      <configuration name="AndroidJUnit">
+        <watch expression="calcul.parsareNote(note)" language="JAVA" />
+        <watch expression="formula" language="JAVA" />
+        <watch expression="note" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -422,7 +531,7 @@
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>Array.getLength(CampuriAntet)</expression-string>
+        <expression-string>note</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -431,16 +540,19 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
+      <expression>
+        <expression-string>calcul.parsareNote(note)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Array.getLength(CampuriAntet)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1351">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/reflect/InvocationTargetException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -500,80 +612,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
-    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" />
-    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java" />
-    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3026">
-          <caret line="180" column="51" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="51" />
+        <state relative-caret-position="34">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="4" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
+    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" />
+    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java" />
     <entry file="file://$PROJECT_DIR$/src/verificareAntetMaterie.java" />
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
+        <state relative-caret-position="133">
           <caret line="140" selection-start-line="140" selection-end-line="140" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="133">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-          <folding>
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="131" column="44" selection-start-line="131" selection-start-column="44" selection-end-line="131" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8879">
-          <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+        <state relative-caret-position="10081">
+          <caret line="595" column="19" selection-end-line="630" />
           <folding>
             <element signature="e#21824#21825#0" expanded="true" />
             <element signature="e#21863#21864#0" expanded="true" />
@@ -581,27 +655,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
+    <entry file="file://$PROJECT_DIR$/src/AntetMaterie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="527">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
+    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="e#2495#2496#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="105" selection-end-line="213" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="544">
           <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -611,12 +691,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="153">
+          <caret line="11" column="57" selection-end-line="11" selection-end-column="4" />
           <folding>
             <element signature="e#206#207#0" expanded="true" />
             <element signature="e#258#259#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AntetMaterieTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="117" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="117" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -626,10 +737,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>IPCalcul:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -677,7 +790,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

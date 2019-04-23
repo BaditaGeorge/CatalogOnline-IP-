@@ -9,23 +9,19 @@ public class PaginaFormula {
         this.prelucrareDate = prelucrareDate;
     }
 
-    void generareFormula(String id_materie, String formula) {
+    String generareFormula(String id_materie, String formula) {
 
         String antet=prelucrareDate.functiiGestiune.selectAntet(id_materie);
         if(antet.equals(""))
-        {
-            mesajPentruFront="Eroare: Antetul nu a fost definit";
-            return;
-        }
+            return "Eroare: Antetul nu a fost definit";
+
+
 
         Formula formulaNoua=new Formula(formula);
         formulaNoua.parsareFormula();
         mesajPentruFront=formulaNoua.getMesajPentruFront();
         if(!mesajPentruFront.equals("Formula este valida"))
-        {
-            this.prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
-            return;
-        }
+            return mesajPentruFront;
 
         String[] campuriAntet=antet.split(" ");
         AntetMaterie antetMaterie=new AntetMaterie(campuriAntet);
@@ -34,12 +30,15 @@ public class PaginaFormula {
         if(mesajPentruFront.equals("Formula este valida"))
             this.prelucrareDate.functiiGestiune.updateFormula(id_materie,formula);
 
-        this.prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
+        return mesajPentruFront;
 
     }
 
 
-    void generareAntet(String id_materie, String antet) {
+
+
+    String generareAntet(String id_materie, String antet) {
+
 
         String[] sir = antet.split(" ");
         AntetMaterie antetNou = new AntetMaterie(sir);
@@ -49,7 +48,10 @@ public class PaginaFormula {
         if(mesajPentruFront.equals("Antetul este valid"))
             this.prelucrareDate.functiiGestiune.updateAntet(id_materie,antet);
 
-        this.prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
+        return mesajPentruFront;
+
+
+
     }
 
     void schimbareAntet(String id_materie, String antet) {
@@ -72,10 +74,10 @@ public class PaginaFormula {
 
     }
 
-
     void parsareFormule(String formule) {
 
 
     }
+
 
 }
