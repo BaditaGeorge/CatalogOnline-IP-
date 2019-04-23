@@ -12,8 +12,10 @@ public class PaginaFormula {
     String generareFormula(String id_materie, String formula) {
 
         String antet=prelucrareDate.functiiGestiune.selectAntet(id_materie);
-        if(antet.equals(""))
-            return "Eroare: Antetul nu a fost definit";
+        if(antet.equals("")) {
+            mesajPentruFront="Eroare: Antetul nu a fost definit";
+            return mesajPentruFront;
+        }
 
 
 
@@ -23,6 +25,7 @@ public class PaginaFormula {
         if(!mesajPentruFront.equals("Formula este valida"))
             return mesajPentruFront;
 
+        antet=antet.replaceAll("\\s+"," ");
         String[] campuriAntet=antet.split(" ");
         AntetMaterie antetMaterie=new AntetMaterie(campuriAntet);
         formulaNoua.verificareVariabileFormula(antetMaterie);
@@ -39,7 +42,7 @@ public class PaginaFormula {
 
     String generareAntet(String id_materie, String antet) {
 
-
+        antet=antet.replaceAll("\\s+"," ");
         String[] sir = antet.split(" ");
         AntetMaterie antetNou = new AntetMaterie(sir);
         antetNou.verificareAntetMaterie();

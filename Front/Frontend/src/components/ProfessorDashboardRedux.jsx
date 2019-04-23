@@ -59,8 +59,7 @@ class ProfessorDashboard extends Component {
         this.props.getGlobal()
         this.props.getProfessorCatalog(7, 1)
         this.props.getProfessorDisciplines(2)
-        this.props.getDisciplineFormulas(10)
-        this.props.insertProfessorCatalog(catalog)
+        this.props.getDisciplineFormulas(7)
     }
 
     render() {
