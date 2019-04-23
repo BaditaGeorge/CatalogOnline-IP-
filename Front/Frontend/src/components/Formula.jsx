@@ -6,13 +6,19 @@ export default class Formula extends Component {
         super(props);
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        this.setState({formulas: nextProps.formulas})
+    }
+
     render() {
         return (
             <div className={"mt-3"}>
                 <Form.Label>Formule</Form.Label>
                 <Row>
                     <Col xs={10}>
-                        <Form.Control type="text" placeholder="Enter formula"/>
+                        <Form.Control type="text"
+                                      value={this.props.formulas && this.props.formulas[0] ? this.props.formulas[0].formula : ''}
+                                      placeholder="Enter formula"/>
                     </Col>
                     <Col xs={2}>
                         <Button className={"col"} variant="primary" type="button">

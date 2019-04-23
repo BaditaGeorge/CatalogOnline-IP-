@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import '../App.css';
 import {connect} from "react-redux";
 import Catalog from "./Catalog"
-import {getGlobal, getProfessorCatalog} from "../actions/actions";
-import {Container, Row, Col} from "react-bootstrap";
+import {
+    getGlobal,
+    getProfessorCatalog,
+    getProfessorDisciplines,
+    getDisciplineFormulas,
+    insertDisciplineFormulas
+} from "../actions/actions";
 import Formula from "./Formula";
 import NavProf from "./NavProf";
 
@@ -14,15 +19,22 @@ class ProfessorDashboard extends Component {
 
     componentWillMount() {
         this.props.getGlobal()
-        this.props.getProfessorCatalog()
+        this.props.getProfessorCatalog(7, 1)
+        this.props.getProfessorDisciplines(1)
+        this.props.getDisciplineFormulas(10)
+        // this.props.insertDisciplineFormulas({
+        //     "id_materie": "10",
+        //     "formule": "L1-L2"
+        // })
     }
 
     render() {
+        console.log(this.props.disciplines);
         return (
             <div>
-                <NavProf/>
+                <NavProf disciplines={this.props.disciplines}/>
                 <Catalog rows={this.props.rows} columns={this.props.columns}/>
-                <Formula/>
+                <Formula formula={this.props.formulas}/>
             </div>
         );
     }
@@ -31,10 +43,12 @@ class ProfessorDashboard extends Component {
 export const ProfessorDashboardRedux = connect((state) => ({
     global: state.global,
     columns: state.columns,
+    disciplines: state.disciplines,
+    formulas: state.formulas,
     rows: state.rows,
     loading: state.loading
 }), {
-    getGlobal, getProfessorCatalog
+    getGlobal, getProfessorCatalog, getProfessorDisciplines, getDisciplineFormulas, insertDisciplineFormulas
 })(ProfessorDashboard)
 
 

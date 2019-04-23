@@ -32,6 +32,10 @@ export default class Catalog extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        this.setState({rows: nextProps.rows, columns: nextProps.columns})
+    }
+
     askUserInput = (message, defaultInput) => {
         const result = prompt("Column ID:");
         if (result === "") {
