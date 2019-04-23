@@ -18,23 +18,56 @@ class ProfessorDashboard extends Component {
     }
 
     componentWillMount() {
+        const catalog = {
+            "profesor": "1",
+            "disciplina": "7",
+            "columns": [
+                {
+                    "key": "student",
+                    "type": "text"
+                },
+                {
+                    "key": "id",
+                    "type": "text"
+                },
+                {
+                    "key": "group",
+                    "type": "text"
+                },
+                {
+                    "key": "L1",
+                    "type": "number"
+                },
+                {
+                    "key": "L2",
+                    "type": "number"
+                },
+                {
+                    "key": "L3",
+                    "type": "number"
+                }], "rows": [
+                {
+                    "id": "1",
+                    "student": "Victor Paval",
+                    "group": "B1",
+                    "L1": "5",
+                    "L2": "10",
+                    "L3": "15"
+                }]
+        }
         this.props.getGlobal()
         this.props.getProfessorCatalog(7, 1)
-        this.props.getProfessorDisciplines(1)
-        this.props.getDisciplineFormulas(10)
-        this.props.insertDisciplineFormulas({
-            "id_materie": "10",
-            "formule": "L1-L2"
-        })
+        this.props.getProfessorDisciplines(2)
+        this.props.getDisciplineFormulas(7)
     }
 
     render() {
-        console.log(this.props.disciplines);
+        console.log(this.props.disciplines)
         return (
             <div>
                 <NavProf disciplines={this.props.disciplines}/>
                 <Catalog rows={this.props.rows} columns={this.props.columns}/>
-                <Formula formula={this.props.formulas} insertDisciplineFormulas={this.props.insertDisciplineFormulas}/>
+                <Formula formulas={this.props.formulas}/>
             </div>
         );
     }
@@ -48,7 +81,11 @@ export const ProfessorDashboardRedux = connect((state) => ({
     rows: state.rows,
     loading: state.loading
 }), {
-    getGlobal, getProfessorCatalog, getProfessorDisciplines, getDisciplineFormulas, insertDisciplineFormulas
+    getProfessorCatalog,
+    getProfessorDisciplines,
+    getDisciplineFormulas,
+    insertDisciplineFormulas,
+    insertProfessorCatalog
 })(ProfessorDashboard)
 
 

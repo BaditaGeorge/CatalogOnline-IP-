@@ -22,17 +22,12 @@ export default class Formula extends Component {
                         <Form.Control type="text"
                                       value={this.props.formulas && this.props.formulas[0] ? this.props.formulas[0].formula : ''}
                                       placeholder="Enter formula"
-                                      onChange={(e) => this.setState({formulas: [{formula: e.value}]})}
                         />
                     </Col>
                     <Col xs={2}>
                         <Button className={"col"}
                                 variant="primary"
                                 type="button"
-                                onClick={this.props.insertDisciplineFormulas({
-                                    id_materie: 10,
-                                    formulas: this.props.formulas
-                                })}
                         >
                         Save
                         </Button>
