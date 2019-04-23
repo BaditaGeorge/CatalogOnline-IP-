@@ -4,6 +4,9 @@ import {Row, Col, Form, Button} from "react-bootstrap";
 export default class Formula extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            formulas: []
+        }
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -18,11 +21,20 @@ export default class Formula extends Component {
                     <Col xs={10}>
                         <Form.Control type="text"
                                       value={this.props.formulas && this.props.formulas[0] ? this.props.formulas[0].formula : ''}
-                                      placeholder="Enter formula"/>
+                                      placeholder="Enter formula"
+                                      onChange={(e) => this.setState({formulas: [{formula: e.value}]})}
+                        />
                     </Col>
                     <Col xs={2}>
-                        <Button className={"col"} variant="primary" type="button">
-                            Submit
+                        <Button className={"col"}
+                                variant="primary"
+                                type="button"
+                                onClick={this.props.insertDisciplineFormulas({
+                                    id_materie: 10,
+                                    formulas: this.props.formulas
+                                })}
+                        >
+
                         </Button>
                     </Col>
                 </Row>
