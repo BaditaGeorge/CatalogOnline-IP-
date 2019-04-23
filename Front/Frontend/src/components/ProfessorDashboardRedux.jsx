@@ -7,7 +7,8 @@ import {
     getProfessorCatalog,
     getProfessorDisciplines,
     getDisciplineFormulas,
-    insertDisciplineFormulas
+    insertDisciplineFormulas,
+    insertProfessorCatalog
 } from "../actions/actions";
 import Formula from "./Formula";
 import NavProf from "./NavProf";
@@ -22,10 +23,10 @@ class ProfessorDashboard extends Component {
         this.props.getProfessorCatalog(7, 1)
         this.props.getProfessorDisciplines(1)
         this.props.getDisciplineFormulas(10)
-        // this.props.insertDisciplineFormulas({
-        //     "id_materie": "10",
-        //     "formule": "L1-L2"
-        // })
+        this.props.insertDisciplineFormulas({
+            "id_materie": "10",
+            "formule": "L1-L2"
+        })
     }
 
     render() {
@@ -34,7 +35,7 @@ class ProfessorDashboard extends Component {
             <div>
                 <NavProf disciplines={this.props.disciplines}/>
                 <Catalog rows={this.props.rows} columns={this.props.columns}/>
-                <Formula formula={this.props.formulas}/>
+                <Formula formula={this.props.formulas} insertDisciplineFormulas={this.props.insertDisciplineFormulas}/>
             </div>
         );
     }
@@ -48,7 +49,7 @@ export const ProfessorDashboardRedux = connect((state) => ({
     rows: state.rows,
     loading: state.loading
 }), {
-    getGlobal, getProfessorCatalog, getProfessorDisciplines, getDisciplineFormulas, insertDisciplineFormulas
+    getGlobal, getProfessorCatalog, getProfessorDisciplines, getDisciplineFormulas, insertDisciplineFormulas, insertProfessorCatalog
 })(ProfessorDashboard)
 
 
