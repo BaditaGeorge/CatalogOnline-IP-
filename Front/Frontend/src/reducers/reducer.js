@@ -14,6 +14,12 @@ import {
     POST_DISCIPLINE_FORMULAS,
     POST_DISCIPLINE_FORMULAS_SUCCESS,
     POST_DISCIPLINE_FORMULAS_FAIL,
+    POST_PROFESSOR_CATALOG,
+    POST_PROFESSOR_CATALOG_SUCCESS,
+    POST_PROFESSOR_CATALOG_FAIL,
+    POST_PROFESSOR_DISCIPLINES,
+    POST_PROFESSOR_DISCIPLINES_SUCCESS,
+    POST_PROFESSOR_DISCIPLINES_FAIL,
 } from "../actions/actions";
 
 const INITIAL_STATE = {
@@ -118,6 +124,46 @@ export default function reducer(state = INITIAL_STATE, action) {
             };
         }
         case POST_DISCIPLINE_FORMULAS_FAIL: {
+            return {
+                ...state,
+                loading: false
+            };
+        }
+        case POST_PROFESSOR_CATALOG: {
+            return {
+                ...state,
+                loading: true
+            };
+        }
+        case POST_PROFESSOR_CATALOG_SUCCESS: {
+            return {
+                ...state,
+                rows: action.payload.rows,
+                columns: action.payload.columns,
+                loading: false
+            };
+        }
+        case POST_PROFESSOR_CATALOG_FAIL: {
+            return {
+                ...state,
+                loading: false
+            };
+        }
+
+        case POST_PROFESSOR_DISCIPLINES: {
+            return {
+                ...state,
+                loading: true
+            };
+        }
+        case POST_PROFESSOR_DISCIPLINES_SUCCESS: {
+            return {
+                ...state,
+                disciplines: action.payload.disciplines,
+                loading: false
+            };
+        }
+        case POST_PROFESSOR_DISCIPLINES_FAIL: {
             return {
                 ...state,
                 loading: false
