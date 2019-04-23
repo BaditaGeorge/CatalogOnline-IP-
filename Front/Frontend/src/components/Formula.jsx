@@ -34,7 +34,7 @@ export default class Formula extends Component {
                                     formulas: this.props.formulas
                                 })}
                         >
-
+                        Save
                         </Button>
                     </Col>
                 </Row>

@@ -8,7 +8,6 @@ import {
     getProfessorDisciplines,
     getDisciplineFormulas,
     insertDisciplineFormulas,
-    insertProfessorCatalog
 } from "../actions/actions";
 import Formula from "./Formula";
 import NavProf from "./NavProf";
@@ -49,7 +48,7 @@ export const ProfessorDashboardRedux = connect((state) => ({
     rows: state.rows,
     loading: state.loading
 }), {
-    getGlobal, getProfessorCatalog, getProfessorDisciplines, getDisciplineFormulas, insertDisciplineFormulas, insertProfessorCatalog
+    getGlobal, getProfessorCatalog, getProfessorDisciplines, getDisciplineFormulas, insertDisciplineFormulas
 })(ProfessorDashboard)
 
 
