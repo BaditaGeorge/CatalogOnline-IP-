@@ -7,16 +7,22 @@ public class Formula {
     public String criteriiPromovare;
     public String[] variabile = new String[50];
     public String mesajPentruFront;
+    public String[] variabileCriterii = new String[50];
 
     public Formula(String formula) {
         this.formula = formula;
     }
+    public Formula(){}
 
     //used only for tests
     public void setFormula(String formula) {
         this.formula = formula;
         nrVariabile = 0;
         formulaPostfixata = "";
+    }
+
+    public void setCriteriiPromovare(String criteriiPromovare) {
+        this.criteriiPromovare = criteriiPromovare;
     }
 
     //primeste un index de unde incepe paranteza pentru sum, returneaza  pozitia primei paranteze inchise pe care o gaseste daca functia sum a fost folosita corect si -1 altfel
@@ -589,6 +595,10 @@ public class Formula {
         }
     }
 
+    public void verificareVariabileCriteriu(AntetMaterie antet){
+        mesajPentruFront = "Criteriul este valid";
+    }
+
     public void verificareVariabileFormula(AntetMaterie antet) {
         int k = 0;
         boolean check;
@@ -619,7 +629,8 @@ public class Formula {
 
     }
 
-    void parsareCriteriiPromovare() {
+
+    void parsareCriteriu() {
 
     }
 

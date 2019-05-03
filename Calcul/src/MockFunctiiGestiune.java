@@ -28,6 +28,16 @@ public class MockFunctiiGestiune {
 
     }
 
+    public String selectCriterii(String id) {
+        return "L1>5; L2>5";
+    }
+
+    public void updateCriterii(String id_m,String criterii) {
+
+    }
+
+
+
 
 
 }

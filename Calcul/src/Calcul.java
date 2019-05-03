@@ -13,6 +13,7 @@ public class Calcul {
         this.formula.infixToPostfix();
     }
 
+
     String parsareNote(String stringNote) {
 
         stringNote=stringNote.replaceAll("\\s+"," ");
@@ -202,9 +203,6 @@ public class Calcul {
 
     }
 
-    void updatePunctaj() {
-
-    }
 
     void verificarePromovareMaterie() {
 

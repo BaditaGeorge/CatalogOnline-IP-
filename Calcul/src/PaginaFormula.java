@@ -9,6 +9,26 @@ public class PaginaFormula {
         this.prelucrareDate = prelucrareDate;
     }
 
+    String parsareFormule(String formule) {
+
+         return mesajPentruFront;
+    }
+
+
+
+    String parsareCriterii(String criterii){
+
+        return mesajPentruFront;
+    }
+
+    String verificareOrdineFormule(Formula[] formule, int nrFormule){
+        return mesajPentruFront;
+    }
+
+    void generareCriterii(String id_materie, String criterii) {
+
+    }
+
     String generareFormula(String id_materie, String formula) {
 
         String antet=prelucrareDate.functiiGestiune.selectAntet(id_materie);
@@ -16,8 +36,6 @@ public class PaginaFormula {
             mesajPentruFront="Eroare: Antetul nu a fost definit";
             return mesajPentruFront;
         }
-
-
 
         Formula formulaNoua=new Formula(formula);
         formulaNoua.parsareFormula();
@@ -68,19 +86,11 @@ public class PaginaFormula {
     }
 
 
-    void generareCriterii(String id_materie) {
-
-    }
-
-
     void schimbareCriterii(String id_materie) {
 
     }
 
-    void parsareFormule(String formule) {
 
-
-    }
 
 
 }
