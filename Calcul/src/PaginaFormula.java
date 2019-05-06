@@ -41,9 +41,32 @@ public class PaginaFormula {
         return mesajPentruFront;
     }
 
-
     String parsareCriterii(String criterii) {
 
+        String antet = prelucrareDate.functiiGestiune.selectAntet(id_materie);
+        if (antet.equals("")) {
+            mesajPentruFront = "Eroare: Antetul nu a fost definit";
+            return mesajPentruFront;
+        }
+        antet = antet.replaceAll("\\s+", " ");
+        String[] campuriAntet = antet.split(" ");
+        AntetMaterie antetMaterie = new AntetMaterie(campuriAntet);
+
+        String[] list = criterii.split(";");
+        for (String s : list) {
+            Formula criteriu = new Formula(s);
+            criteriu.parsareCriteriu();
+            mesajPentruFront = criteriu.getMesajPentruFront();
+            if (!mesajPentruFront.equals("Criteriul este valid!"))
+                return mesajPentruFront;
+            else {
+                criteriu.verificareVariabileCriteriu(antetMaterie);
+                mesajPentruFront = criteriu.getMesajPentruFront();
+                if (mesajPentruFront.equals("Criteriul este valid!"))
+                    //verificareVariabileCriteriu
+                    return mesajPentruFront;
+            }
+        }
         return mesajPentruFront;
     }
 
