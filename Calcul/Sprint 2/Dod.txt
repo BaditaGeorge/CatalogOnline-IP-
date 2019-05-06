@@ -1,0 +1,24 @@
+Definition of done
+- Modul Calcul tabelar 
+
+
+Iteratia 1 (2 saptamani)
+
+- stabilim in ce fel comunicam cu celelalte module
+- finalizam diagrama componentelor (C4)
+- modelam diagrama UML 
+- intocmim un product backlog
+- realizam un prototip pentru clasele din diagrama
+
+Iteratia 2 (2 saptamani)
+
+- primim formule sub forma de stringuri si verificam daca sunt valide
+- primim antetul tabelului cu note sub forma de string si verificam daca e valid
+- primim notele unui student de la o materie si aplicam formula 
+- returnam mesaje de eroare sau validare catre modulul de gestionare pentru a le transmite catre front
+- apelam functii pentru updatarea bazei de date
+- punem la dispozitie o functie pentru modulul de gestionare pentru a ne rula modulul
+- punem la dispozitie instructiuni de introduce a formulei si a antetului pentru front
+- realizam unit testing
+
+ 

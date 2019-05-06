@@ -1,12 +1,22 @@
 import java.sql.*;
-
+/**
+ * Clasa care contine functii cu operatii pentru baza de date
+ */
 public class SQL_func {
     String way;
+
+    /**
+     * Constructor cu rol de plasare a path-ului 
+     * @param path Un String cu path-ul bazei de date
+      */
     SQL_func(String path)
     {
         way=path;
     }
-    // Conectarea cu baza de date
+    /**
+     *  Functia care creeaza conexiunea cu baza de date
+     * @return Returneaza conexiunea
+     */
     private Connection connect() {
         String url = "jdbc:sqlite:" + way;
         Connection conn = null;
@@ -17,7 +27,10 @@ public class SQL_func {
         }
         return conn;
     }
-    //Selectam toate formulele de calcul din baza de date
+    /**
+     * Functia care returneaza formula de calcul pentru toate materiile
+     * @return Returneaza un string cu materii si formule
+     */
     public String selectFormula() {
         String result = "";
         String query = " Select formula_calcul from profesori";
@@ -32,7 +45,11 @@ public class SQL_func {
         }
         return result;
     }
-    //Selectam doar o singura formula din baza de date indicata de id-ul materiei
+    /**
+     * Functia care returneaza formula pentru o anumita materie
+     * @param id Parametrul care identifica materia
+     * @return Returneaza un string cu formula materiei
+     */
     public String selectFormula(String id) {
         String result = "";
         String query = " Select formula_calcul from profesori where id_materie=";
@@ -47,7 +64,13 @@ public class SQL_func {
         }
         return result;
     }
-    //Facem update-ul campului valori_note din baza de date pentru un anumit student la o anumita materie
+    /**
+     * Functia care face update-ul campului valori_note din baza de date pentru un anumit student la o anumita materie
+     * este evitata posibilitatea de SQL injection folosind query precompilat
+     * @param id_s Parametrul care identifica id-ul studentului
+     * @parma id_m Parametrul care identifica id-ul materie
+     * @param note Parametrul care identifica nota ce va fi setata
+     */
     public void updateNote(String id_s, String id_m, String note)
     {
         String query = "Update materii set valori_note= ? where id_student= ? and id_materie= ?";
@@ -63,7 +86,10 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-    //Selectam toate notele existente in baza de date
+    /**
+     * Functia care returneaza toate notele din baza de date(asociate cu o materie si un student)
+     * @return Returneaza un string cu studentii, materiile si notele
+     */
     public String selectNote(){
         String result="";
         String query="Select id_materie,id_student,valori_note from materii";
@@ -78,7 +104,12 @@ public class SQL_func {
     }
         return result;
 }
-    //Selectam notele unui anumit student la o anumita materie
+    /**
+     * Functia care returneaza notele unui anumit student la o anumita materie
+     * @param id_s Parametrul care identifica id-ul studentului
+     * @param id_m Parametrul care identifica id-ul materie
+     * @return Returneaza un string cu notele studentului respectiv la materia respectiva
+     */
     public String selectNote(String id_s,String id_m){
         String result="";
         String query="Select valori_note from materii where id_student=" + id_s+ " and id_materie=" + id_m;
@@ -91,7 +122,12 @@ public class SQL_func {
         }
         return result;
     }
-    //Facem update-ul formulei din tabela materii pe baza id-ul materiei
+    /**
+     * Functia care face update-ul campului formula_calcul din tabela materii pe baza id-ului materiei
+     * este evitata posibilitatea de SQL injection folosind query precompilat
+     * @param id_m Parametrul care identifica id-ul materiei
+     * @param formula Parametrul care identifica noua formula
+     */
     public void updateFormula(String id_m,String formula)
     {
         String query="Update profesori set formula_calcul = ? where id_materie = ?";
@@ -106,7 +142,15 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-    //Inseram in tabela materii o intrare noua
+    /**
+     * Functia care insereaza o materie noua in baza de date
+     * este evitata posibilitatea de SQL injection folosind query precompilat
+     * @param id_m Parametrul care identifica id-ul materiei
+     * @param id_s Parametrul care identifica id-ul studentului
+     * @param nume Parametrul care identifica numele materiei
+     * @param note Parametrul care identifica valorile notelor
+     * @param formula Parametrul care identifica formula de calcul
+     */
     public void insertMaterii(String id_m,String id_s,String nume,String note){
         String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note) VALUES (?,?,?,?)";
         try (Connection conn = this.connect();
@@ -120,6 +164,12 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+    /**
+     * Functia care returneaza notele si informatiile unui student in functie de materie si profesorul ce preda materia respectiva
+     * @param id_m Parametrul care identifica id-ul materiei
+     * @param id_p Parametrul care identifica id-ul profesorului
+     * @return Returneaza un string cu id-ul, numele, prenumele, grupa si notele studentului respectiv
+     */
     public String selectCatalog(String id_m, String id_p){
         String result="";
         String query="Select s.id_student,s.nume,s.prenume,s.grupa,m.valori_note from studenti s join materii m on s.id_student = m.id_student join profesori p on m.id_materie = p.id_materie where m.id_materie=" + id_m + " and p.id_profesor=" + id_p;
@@ -134,6 +184,11 @@ public class SQL_func {
         }
         return result;
     }
+    /**
+     * Functia care returneaza denumirea materiei predate de profesorul dat ca parametru
+     * @param id_p Parametrul care identifica id-ul profesorului
+     * @return Returneaza un string cu denumirea materiei
+     */
     public String selectDenumireMaterii(String id_p){
         String result="";
         String query="Select denumire_materie from profesori where id_profesor=" + id_p;
@@ -148,6 +203,14 @@ public class SQL_func {
         }
         return result;
     }
+    /**
+     * Functia care insereaza valori pentru campurile tabelei profesori
+     * @param id_p Parametrul care identifica id-ul profesorului
+     * @param nume Parametrul care identifica numele profesorului
+     * @param prenume Parametrul care identifica prenumele profesorului
+     * @param id_m Parametrul care identifica id-ul materiei
+     * @param den_m Parametrul care identifica materia predate de catre profesorul respectiv
+     */
     public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula)
     {
         String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
@@ -166,6 +229,11 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+    /**
+     * Functia care insereaza in profesori si genereaza automat id-ul si cauta numele si prenumele din intrarile deja inserate
+     * @param id_p Parametrul care identifica id-ul profesorului
+     * @param den_m Parametrul care identifica materia predate de catre profesorul respectiv
+     */
     public void insertProfesori(String id_p,String den_m)
     {
 
@@ -188,7 +256,11 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-    //Returneaza nummarul de utilizatori cu acelasi nume din baza de date.
+    /**
+     * Functia care numara utilizatorii cu acelasi username
+     * @param name Parametrul care identifica username-ul unui utilizator
+     * @return Returneaza un numar ce reprezinta utilizatorii cu acelasi username
+     */
     public int countUsersByName(String name) {
         int result = 0;
         String query = "select username from utilizatori where username like '" + name + "'";
@@ -202,7 +274,11 @@ public class SQL_func {
         }
         return result;
     }
-    //Returneaza valoarea din coloana salt_parola a tabelei utilizatori din baza de date.
+    /**
+     * Functia care returneaza valoarea din coloana salt_parola a tabelei utilizatori din baza de date
+     * @param name Parametrul care identifica name-ul utilizatorului
+     * @return Returneaza valoarea din coloana salt_parole
+     */
     public String getSalt(String name) {
         String result = "";
         String query = "select salt_parola from utilizatori where username like '" + name +"'" ;
@@ -217,7 +293,11 @@ public class SQL_func {
         }
         return result;
     }
-    //Returneaza numarul de utilizatori cu acelasi mail din baza de date.
+    /**
+     * Functia care numara utilizatorii cu aceeasi adresa de mail din baza de date
+     * @param mail Parametrul care identifica adresa de mail a utilizatorului
+     * @return Returneaza numarul de utilizatori cu adresa de mail identica din baza de date
+     */
     public int countUsersByMail(String mail) {
         int result = 0;
         String query = "select email from utilizatori where email like '" + mail + "'";
@@ -231,7 +311,12 @@ public class SQL_func {
         }
         return result;
     }
-    //Returneaza numarul de utilizatori cu acelasi username si cu acelasi password din baza de date.
+    /**
+     * Functia care numara utilizatorii cu username-ul si parola identice
+     * @param username Parametrul care identifica username-ul utilizatorului
+     * @param pass Parametrul care identifica parola utilizatorului
+     * @return Returneaza numarul de persoane cu acelasi username si parola
+     */
     public int countUsersByUsernamePass(String username,String pass) {
         int result = 0;
         String query = "select username from utilizatori where username like '%" + username + "' and parola like '%" +pass + "'";
@@ -245,7 +330,12 @@ public class SQL_func {
         }
         return result;
     }
-    //Returneaza numarul de rezultate din tabela verificare cu acelasi username si cu acelasi cod din baza de date.
+    /**
+     * Functia care numara rezultatele din tabela verificare ce au username si auth_code identice
+     * @param username Parametrul care identifica usernameul utilizatorului
+     * @param auth_code Parametrul care identifica codul de autentificare din baza de date
+     * @return Returneaza numarul de rezultate din tabela verificare cu acelasi username si cu acelasi cod din baza de date
+     */
     public int checkAuthCode(String username, String auth_code) {
         int result = 0;
         String query = "select * from verificare where username like '" + username + "' and cod like '" +auth_code + "'";
@@ -259,6 +349,17 @@ public class SQL_func {
         }
         return result;
     }
+    /**
+     * Functia care insereaza un nou utilizator in baza de date
+     * @param id_u Parametrul care identifica id-ul utilizatorului
+     * @param username Parametrul care identifica username-ul utilizatorului
+     * @param email Parametrul care identifica adresa de mail a utilizatorului
+     * @param pas Parametrul care identifica parola utilizatorului
+     * @param salt Parametrul care identifica valoarea din campul salt_parola a utilizatorului
+     * @param nrt Parametrul care identifica numarul de telefon al utilizatorului
+     * @param tip_u Parametrul care identifica tipul utilizatorului
+     * @param ver Parametrul care identifica valoarea din campul verificare a utilizatorului
+     */
     public void addNewUser(String username,String email,String pas,String salt ,String auth)
     {
         String query = "Insert into utilizatori(id_utilizator,username,email,parola,salt_parola,numar_telefon,tip_utilizator,verificare) VALUES (?,?,?,?,?,?,?,?)";
@@ -278,6 +379,12 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+
+    /**
+     * Functia care insereaza un set de valori in tabela verificare
+     * @param username Parametrul care identifica username-ul utilizatorului
+     * @param auth Parametrul care identifica valoarea din campul cod
+     */
     public void addNewU(String username,String auth)
     {
         String query="Insert into verificare(username,cod) VALUES (?,?)";
@@ -290,6 +397,11 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+
+    /**
+     * Functia care genereaza id-ul nou pentru o intrare noua in tabela profesori
+     * @return Returneaza valoarea id-ului nou
+     */
     public int getMaxIdMaterie()
     {
         int result=0;
@@ -309,6 +421,11 @@ public class SQL_func {
     }
         return result+1;
     }
+    /**
+     * Functia care returneaza numele si prenumele profesorului identificat dupa id_p
+     * @param id_p Parametrul care identifica id-ul profesorului
+     * @return Returneaza un string ce contine numele si prenumelui profesorului
+     */
     public String getNumePrenumeProf(String id_p){
         String result="";
         String query="Select nume,prenume from profesori where id_profesor=" + id_p;
@@ -321,6 +438,11 @@ public class SQL_func {
         }
         return result;
     }
+
+    /**
+     * Functia care schimba valoarea din campul verificare pentru un user dat ca parametru (din 0 face -1 daca userul a fost verificat )
+     * @param username Parametrul care identifica username-ul unui utilizator
+     */
     public void confirmUser(String username){
         String query="Update utilizatori set verificare = ? where username = ?";
         try ( Connection conn =this.connect();
@@ -334,6 +456,11 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+
+    /**
+     * Functia care genereaza un id nou pentru un utilizator nou
+     * @return Returneaza valoarea id-ului nou
+     */
     public Integer getMaxIdUtilizator()
     {
             int result=0;
@@ -353,6 +480,12 @@ public class SQL_func {
             }
             return result+1;
     }
+
+    /**
+     * Functia care verifica daca un utilizator este logat
+     * @param username Parametrul are identifica username-ul utilizatorului
+     * @return False daca utilizatorul nu este logat, true daca este
+     */
     public boolean verificareLogIn(String username)
     {
         String query="Select verificare from utilizatori where username like '" + username + "'";
@@ -370,6 +503,12 @@ public class SQL_func {
         return true;
 
     }
+
+    /**
+     * Functia care returneaza antetul din tabela profesori in functie de id_m
+     * @param id_m Parametrul care identifica id-ul materiei
+     * @return Returneaza un string ce contine antetul
+     */
     public String selectAntet(String id_m)
     {
         String result = "";
@@ -385,6 +524,12 @@ public class SQL_func {
         }
         return result;
     }
+
+    /**
+     * Functia care updateaza antetul din tabela profesori
+     * @param antet Parametrul care identifica antetul
+     * @param id_m Parametrul care identifica id-ul materiei
+     */
     public void updateAntet(String antet,String id_m)
     {
         String query="Update profesori set antet = ? where id_materie = ?";

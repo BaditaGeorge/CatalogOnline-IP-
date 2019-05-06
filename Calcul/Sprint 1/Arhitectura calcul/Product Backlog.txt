@@ -3,15 +3,13 @@ Product Backlog
 (in ordinea prioritatii)
 
 - preluarea si modelarea formulei de calcul pentru a delimita componentele notei finale 
-- realizarea antetului pentru tabelele cu note ce vor fi completate de profesori in functie de componentele notei
-- trimiterea antetului catre modulul de gestionare pentru a se crea tabelele in baza de date 
+- validara antetului pentru tabelele cu note ce vor fi completate de profesori in functie de componentele notei
+- stocarea antetului in baza de date
 - cautarea formulei de calcul in baza de date a modulului gestionare 
-- preluarea tabelelor cu note din baza de date 
+- preluarea notelor din baza de date
 - calcularea punctajelor studentilor pentru fiecare materie in functie de formula
 - updatarea punctajelor calculate in baza de date
-- cautarea datelor unui singur student in baza de date
 - preluarea criteriilor  de  promovare  pentru fiecare disciplina  in parte
-- vizualizarea  notelor si a prezentelor  studentului din pagina sa
 - verificarea promovarii studentilor
 - calcularea mediei finale a studentului
 - posibilitatea de a schimba formula de calcul
