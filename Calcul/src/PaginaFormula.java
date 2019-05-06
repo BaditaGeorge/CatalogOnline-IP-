@@ -162,6 +162,11 @@ public class PaginaFormula {
 
     void generareCriterii(String id_materie, String criterii) {
 
+        mesajPentruFront = parsareCriterii(criterii);
+        prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
+        if(mesajPentruFront == "Criteriul este valid" ) {
+            prelucrareDate.functiiGestiune.updateCriterii(id_materie,criterii);
+        }
     }
 
     String generareFormula(String id_materie, String formula) {
