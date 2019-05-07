@@ -19,5 +19,6 @@ Iteratia 2 (2 saptamani)
 - apelam functii pentru updatarea bazei de date
 - punem la dispozitie o functie pentru modulul de gestionare pentru a ne rula modulul
 - punem la dispozitie instructiuni de introduce a formulei si a antetului pentru front
+- realizam unit testing
 
  

@@ -7,6 +7,7 @@ public class CalculTest {
     @Test
     public void evaluareFormulaPostfixata() {
 
+        /*
         //Test 1
         Calcul MockCalcul = new Calcul("12 + L"); // clasa cu metoda ce trebuie testata
         // formula in care se vor inlocui variabilele
@@ -189,6 +190,8 @@ public class CalculTest {
         number = 16.25;
         assertEquals(number, MockCalcul.stack.peek());
         assertEquals((Double) MockCalcul.note[1], (Double) MockCalcul.stack.peek());
+
+        */
     }
 
 
@@ -197,7 +200,9 @@ public class CalculTest {
 
 
         Calcul MockCalcul = new Calcul("P = 12 + L");
-        String noteNoi = MockCalcul.parsareNote("P 5 L -5.5");
+        MockCalcul.parsareNote("P 5 L -5.5");
+        MockCalcul.evaluareFormulaPostfixata();
+        String noteNoi=MockCalcul.noteUpdatate();
         assertEquals("P 6.5 L -5.5 ", noteNoi);
 
 
