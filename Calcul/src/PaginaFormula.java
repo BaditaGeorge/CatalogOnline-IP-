@@ -7,6 +7,7 @@ public class PaginaFormula {
     AntetMaterie antet;
     String id_materie;
     String mesajPentruFront;
+    String formuleReturnate;
     private PrelucrareDate prelucrareDate;
 
     public PaginaFormula(PrelucrareDate prelucrareDate) {
@@ -25,8 +26,11 @@ public class PaginaFormula {
         AntetMaterie antetMaterie = new AntetMaterie(campuriAntet);
 
         String[] list = formule.split(";");
+        Formula[] listFormule=new Formula[list.length];
+        int index=0;
         for (String s : list) {
             Formula formula = new Formula(s);
+            listFormule[index++]=formula;
             formula.parsareFormula();
             mesajPentruFront = formula.getMesajPentruFront();
             if (!mesajPentruFront.equals("Formula este valida"))
@@ -38,6 +42,25 @@ public class PaginaFormula {
                     return mesajPentruFront;
             }
         }
+        String feedback=verificareOrdineFormule(listFormule,list.length);
+        if(feedback.charAt(0)=='E') mesajPentruFront=feedback;
+        else
+        {
+            feedback=feedback.replaceAll("\\s+", " ");
+            String[] numbers = feedback.split(" ");
+            int nr;
+            formuleReturnate="";
+            for(String number: numbers){
+                nr=0;
+                for(int i=number.length()-1; i>=0; i--){
+                    nr=nr*10+number.charAt(i)-'0';
+                }
+
+                formuleReturnate+=(listFormule[nr].formula+ "; ");
+
+            }
+        }
+
         return mesajPentruFront;
     }
 
@@ -54,15 +77,16 @@ public class PaginaFormula {
 
         String[] list = criterii.split(";");
         for (String s : list) {
-            Formula criteriu = new Formula(s);
+            Formula criteriu = new Formula();
+            criteriu.setCriteriiPromovare(s);
             criteriu.parsareCriteriu();
             mesajPentruFront = criteriu.getMesajPentruFront();
-            if (!mesajPentruFront.equals("Criteriul este valid!"))
+            if (!mesajPentruFront.equals("Criteriul este valid"))
                 return mesajPentruFront;
             else {
                 criteriu.verificareVariabileCriteriu(antetMaterie);
                 mesajPentruFront = criteriu.getMesajPentruFront();
-                if (mesajPentruFront.equals("Criteriul este valid!"))
+                if (!mesajPentruFront.equals("Criteriul este valid"))
                     //verificareVariabileCriteriu
                     return mesajPentruFront;
             }
@@ -160,36 +184,21 @@ public class PaginaFormula {
         return index;
     }
 
-    void generareCriterii(String id_materie, String criterii) {
+    String generareCriterii(String id_materie, String criterii) {
 
         mesajPentruFront = parsareCriterii(criterii);
-        prelucrareDate.functiiGestiune.raspunsDeLaCalcul(mesajPentruFront);
         if(mesajPentruFront == "Criteriul este valid" ) {
             prelucrareDate.functiiGestiune.updateCriterii(id_materie,criterii);
         }
+
+        return mesajPentruFront;
     }
 
     String generareFormula(String id_materie, String formula) {
 
-        String antet = prelucrareDate.functiiGestiune.selectAntet(id_materie);
-        if (antet.equals("")) {
-            mesajPentruFront = "Eroare: Antetul nu a fost definit";
-            return mesajPentruFront;
-        }
-
-        Formula formulaNoua = new Formula(formula);
-        formulaNoua.parsareFormula();
-        mesajPentruFront = formulaNoua.getMesajPentruFront();
-        if (!mesajPentruFront.equals("Formula este valida"))
-            return mesajPentruFront;
-
-        antet = antet.replaceAll("\\s+", " ");
-        String[] campuriAntet = antet.split(" ");
-        AntetMaterie antetMaterie = new AntetMaterie(campuriAntet);
-        formulaNoua.verificareVariabileFormula(antetMaterie);
-        mesajPentruFront = formulaNoua.getMesajPentruFront();
+        mesajPentruFront=parsareFormule(id_materie, formula);
         if (mesajPentruFront.equals("Formula este valida"))
-            this.prelucrareDate.functiiGestiune.updateFormula(id_materie, formula);
+            this.prelucrareDate.functiiGestiune.updateFormula(id_materie, formuleReturnate);
 
         return mesajPentruFront;
 

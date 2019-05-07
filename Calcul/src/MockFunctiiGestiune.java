@@ -11,7 +11,7 @@ public class MockFunctiiGestiune {
 
 
     public String selectFormula(String id) {
-        return "P =L1 + L2";
+        return "L1=L2+L5; L3=L1+L4";
     }
 
     public void updateFormula(String id_m,String formula)
@@ -20,7 +20,7 @@ public class MockFunctiiGestiune {
     }
 
     public String selectAntet(String id) {
-        return "L1 L2";
+        return "L1 L2 L3 L4 L5 L6";
     }
 
     public void updateAntet(String id_m,String antet)
@@ -29,10 +29,14 @@ public class MockFunctiiGestiune {
     }
 
     public String selectCriterii(String id) {
-        return "L1>5; L2>5";
+        return "L1>5; L2>0";
     }
 
     public void updateCriterii(String id_m,String criterii) {
+
+    }
+
+    public void updatePromovare(String promovare){
 
     }
 

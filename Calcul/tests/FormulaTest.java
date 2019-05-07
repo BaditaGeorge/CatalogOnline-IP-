@@ -86,6 +86,12 @@ public class FormulaTest {
         MockFormula.parsareFormula();
         assertEquals("Eroare: Paranteza inchisa dupa operator",MockFormula.mesajPentruFront);
 
+        MockFormula.setFormula("L5 == L6 > 3");
+        MockFormula.parsareFormula();
+        assertEquals("L5", MockFormula.variabile[0]);
+        assertEquals("L6", MockFormula.variabile[1]);
+        assertEquals("Formula este valida",MockFormula.mesajPentruFront);
+
 
     }
 
@@ -187,6 +193,16 @@ public class FormulaTest {
         MockFormula.setFormula("(sum(T1:T2)/2)*0.3+P*0.2+(sum(T1:T2)/2)*0.3+E*0.2");
         MockFormula.infixToPostfix();
         assertEquals("T1 T2 +2 /0.3 *P 0.2 *+T1 T2 +2 /0.3 *+E 0.2 *+", MockFormula.formulaPostfixata);
+
+        MockFormula.setFormula("L1<=L2");
+        MockFormula.infixToPostfix();
+        assertEquals("L1 L2 ~<=~", MockFormula.formulaPostfixata);
+
+        MockFormula.setFormula("L1 && L2 <=L3");
+        MockFormula.infixToPostfix();
+        assertEquals("L1 L2 L3 ~<=~~&&~", MockFormula.formulaPostfixata);
+
+
 
     }
 
