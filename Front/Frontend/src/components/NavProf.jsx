@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Navbar, Nav, NavDropdown, Image} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Image, Button} from 'react-bootstrap';
 
 export default class NavProf extends Component {
     constructor(props) {
