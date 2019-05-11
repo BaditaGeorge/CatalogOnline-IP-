@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Navbar, Nav, NavItem, NavDropdown, MenuItem, Image, Col} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Image} from 'react-bootstrap';
 
 export default class NavProf extends Component {
     constructor(props) {
@@ -12,11 +12,11 @@ export default class NavProf extends Component {
 
     render() {
         return (
-            <Navbar collapseOnSelect expand="sm" bg="light" variant="light">
+            <Navbar collapseOnSelect expand="sm">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Button variant="secondary">Logo</Button>
+                        <a className={"logo"} href={"."}>eSims</a>
                         {this.props.disciplines.length !== 0 && (
                             <NavDropdown title="Courses" id="collasible-nav-dropdown">
                                 {
@@ -32,6 +32,7 @@ export default class NavProf extends Component {
                             </NavDropdown>
                         )}
                     </Nav>
+
                     <Nav>
                         <NavDropdown title="Mark Otto" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/myProfile">My profile</NavDropdown.Item>
@@ -39,7 +40,7 @@ export default class NavProf extends Component {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Image width={50} height={50} src="https://cdn.onlinewebfonts.com/svg/img_24787.png"
+                        <Image className={"avatar"} src="https://cdn.onlinewebfonts.com/svg/img_24787.png"
                                roundedCircle/>
                     </Nav>
                 </Navbar.Collapse>

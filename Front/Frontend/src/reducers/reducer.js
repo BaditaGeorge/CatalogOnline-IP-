@@ -25,12 +25,13 @@ import {
 const INITIAL_STATE = {
     global: undefined,
     columns: [
+
         {
-            "key": "student",
+            "key": "nr_matricol",
             "type": "text"
         },
         {
-            "key": "id",
+            "key": "student",
             "type": "text"
         },
         {
@@ -53,7 +54,7 @@ const INITIAL_STATE = {
     formulas: [],
     rows: [
         {
-            "id": "1",
+            "nr_matricol": "1",
             "student": "Victor Paval",
             "group": "B1",
             "L1": "5",
@@ -61,7 +62,7 @@ const INITIAL_STATE = {
             "L3": "15"
         },
         {
-            "id": "1",
+            "nr_matricol": "1",
             "student": "Victor Marian",
             "group": "B1",
             "L1": "5",
@@ -69,7 +70,7 @@ const INITIAL_STATE = {
             "L3": "15"
         },
         {
-            "id": "1",
+            "nr_matricol": "1",
             "student": "Victor Cristian",
             "group": "B1",
             "L1": "5",
