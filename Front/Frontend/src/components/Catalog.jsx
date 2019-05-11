@@ -28,6 +28,7 @@ export default class Catalog extends Component {
         this.state = {
             rows: props.rows,
             columns: props.columns,
+            user: props.user,
             filters: {}
         }
     }
@@ -244,21 +245,21 @@ export default class Catalog extends Component {
                 column.filterRenderer = filters[column.type];
             return column
         })];
-
+        console.log(this.state.user)
         return (
             <ReactDataGrid
                 columns={columns}
                 rowGetter={i => filteredRows[i]}
                 rowsCount={this.state.rows.length}
-                onGridRowsUpdated={this.onGridRowsUpdated}
+                onGridRowsUpdated={this.state.user.role === 'professor' ? this.onGridRowsUpdated : null}
                 onColumnResize={this.onColumnResize}
                 onGridSort={this.onColumnSort}
-                enableCellSelect={true}
+                enableCellSelect={this.state.user.role === 'professor' ? true : false}
                 toolbar={<Toolbar enableFilter={true}/>}
                 onAddFilter={this.onFilter}
                 onClearFilters={() => this.setState({filters: {}})}
                 getValidFilterValues={columnKey => this.getValidFilterValues(this.state.rows, columnKey)}
-                contextMenu={
+                contextMenu={this.state.user.role === 'professor' ?
                     <CatalogContextMenu
                         onRowDelete={(e, {rowIdx}) => this.onRowDelete(rowIdx)}
                         onRowInsertAbove={(e, {rowIdx}) => this.onRowInsert(rowIdx)}
@@ -268,6 +269,7 @@ export default class Catalog extends Component {
                         onColumnInsertRight={(e, {idx}) => this.onColumnInsert(idx + 1)}
                         onColumnRename={(e, {idx}) => this.onColumnRename(idx)}
                     />
+                    : null
                 }
                 RowsContainer={ContextMenuTrigger}
                 ColumnsContainer={ContextMenuTrigger}
