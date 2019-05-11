@@ -3,11 +3,11 @@ import '../App.css';
 import {connect} from "react-redux";
 import Catalog from "./Catalog"
 import {
-    getGlobal,
     getProfessorCatalog,
     getProfessorDisciplines,
     getDisciplineFormulas,
     insertDisciplineFormulas,
+    insertProfessorCatalog
 } from "../actions/actions";
 import Formula from "./Formula";
 import NavProf from "./NavProf";
@@ -18,47 +18,47 @@ class ProfessorDashboard extends Component {
     }
 
     componentWillMount() {
-        const catalog = {
-            "profesor": "1",
-            "disciplina": "7",
-            "columns": [
-                {
-                    "key": "student",
-                    "type": "text"
-                },
-                {
-                    "key": "id",
-                    "type": "text"
-                },
-                {
-                    "key": "group",
-                    "type": "text"
-                },
-                {
-                    "key": "L1",
-                    "type": "number"
-                },
-                {
-                    "key": "L2",
-                    "type": "number"
-                },
-                {
-                    "key": "L3",
-                    "type": "number"
-                }], "rows": [
-                {
-                    "id": "1",
-                    "student": "Victor Paval",
-                    "group": "B1",
-                    "L1": "5",
-                    "L2": "10",
-                    "L3": "15"
-                }]
-        }
-        this.props.getGlobal()
-        this.props.getProfessorCatalog(7, 1)
-        this.props.getProfessorDisciplines(2)
-        this.props.getDisciplineFormulas(7)
+        // const catalog = {
+        //     "profesor": "1",
+        //     "disciplina": "7",
+        //     "columns": [
+        //         {
+        //             "key": "student",
+        //             "type": "text"
+        //         },
+        //         {
+        //             "key": "id",
+        //             "type": "text"
+        //         },
+        //         {
+        //             "key": "group",
+        //             "type": "text"
+        //         },
+        //         {
+        //             "key": "L1",
+        //             "type": "number"
+        //         },
+        //         {
+        //             "key": "L2",
+        //             "type": "number"
+        //         },
+        //         {
+        //             "key": "L3",
+        //             "type": "number"
+        //         }], "rows": [
+        //         {
+        //             "id": "1",
+        //             "student": "Victor Paval",
+        //             "group": "B1",
+        //             "L1": "5",
+        //             "L2": "10",
+        //             "L3": "15"
+        //         }]
+        // }
+        // this.props.getProfessorCatalog(7, 1)
+        // this.props.getProfessorDisciplines(2)
+        // this.props.getDisciplineFormulas(7)
+        // this.props.insertDisciplineFormulas(7, "L1*L2")
     }
 
     render() {

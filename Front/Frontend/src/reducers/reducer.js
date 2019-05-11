@@ -24,12 +24,69 @@ import {
 
 const INITIAL_STATE = {
     global: undefined,
-    columns: [],
+    columns: [
+        {
+            "key": "student",
+            "type": "text"
+        },
+        {
+            "key": "id",
+            "type": "text"
+        },
+        {
+            "key": "group",
+            "type": "text"
+        },
+        {
+            "key": "L1",
+            "type": "number"
+        },
+        {
+            "key": "L2",
+            "type": "number"
+        },
+        {
+            "key": "L3",
+            "type": "number"
+        }],
     disciplines: [],
     formulas: [],
-    rows: [],
+    rows: [
+        {
+            "id": "1",
+            "student": "Victor Paval",
+            "group": "B1",
+            "L1": "5",
+            "L2": "10",
+            "L3": "15"
+        },
+        {
+            "id": "1",
+            "student": "Victor Marian",
+            "group": "B1",
+            "L1": "5",
+            "L2": "10",
+            "L3": "15"
+        },
+        {
+            "id": "1",
+            "student": "Victor Cristian",
+            "group": "B1",
+            "L1": "5",
+            "L2": "10",
+            "L3": "15"
+        }],
     loading: false
 };
+
+// const INITIAL_STATE = {
+//     global: undefined,
+//     columns: [],
+//     disciplines: [],
+//     formulas: [],
+//     rows: [],
+//     loading: false
+// };
 
 export default function reducer(state = INITIAL_STATE, action) {
     switch (action.type) {
