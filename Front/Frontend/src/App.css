@@ -3,6 +3,9 @@
     font-family: Helvetica;
 
 }
+body {
+    width:100%;
+}
 
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -120,7 +123,12 @@
 .dropdown-menu{
     background: #253441;
     right:0;
+
 }
+.show {
+    transition: 0.5s ease;
+}
+
 .navbar a{
     color:white!important;
 }

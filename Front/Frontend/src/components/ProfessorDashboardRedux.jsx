@@ -2,6 +2,7 @@
     import '../App.css';
     import {connect} from "react-redux";
     import Catalog from "./Catalog"
+
     import {
         getProfessorCatalog,
         getProfessorDisciplines,
