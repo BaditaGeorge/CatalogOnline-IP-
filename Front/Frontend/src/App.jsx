@@ -5,7 +5,7 @@ import store from './store';
 
 import Login from './components/Login';
 import Register from './components/Register';
-import StudentDashboard from './components/StudentDashboard';
+import {StudentDashboardRedux} from './components/StudentDashboard';
 import {ProfessorDashboardRedux} from './components/ProfessorDashboardRedux';
 import SecretaryDashboard from './components/SecretaryDashboard'
 import AdminDashboard from './components/AdminDashboard';
@@ -20,7 +20,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/login" component={Login}/>
                             <Route path="/register" component={Register}/>
-                            <Route path="/student" component={StudentDashboard}/>
+                            <Route path="/student" component={StudentDashboardRedux}/>
                             <Route path="/professor" component={ProfessorDashboardRedux}/>
                             <Route path="/secretary" component={SecretaryDashboard}/>
                             <Route path="/admin" component={AdminDashboard}/>
