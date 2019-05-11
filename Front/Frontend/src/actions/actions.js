@@ -1,5 +1,5 @@
 import axios from "axios/index";
-import {ThunkAction as getState} from "redux-thunk";
+import {APIURL} from "../config";
 
 export const GET_GLOBAL = "GET_GLOBAL";
 export const GET_GLOBAL_SUCCESS = "GET_GLOBAL_SUCCESS";
@@ -50,7 +50,7 @@ export const getProfessorCatalog = (id_materie = 7, id_profesor = 1) => dispatch
         type: GET_PROFESSOR_CATALOG
     });
     axios
-        .get(`http://localhost:8080/catalog?id_materie=${id_materie}&id_profesor=${id_profesor}`)
+        .get(`${APIURL}/catalog?id_materie=${id_materie}&id_profesor=${id_profesor}`)
         .then(res => {
             let rows, columns
             if (res.data) {
@@ -72,7 +72,7 @@ export const getProfessorDisciplines = (id_professor = 1) => dispatch => {
         type: GET_PROFESSOR_DISCIPLINES
     });
     axios
-        .get(`http://localhost:8080/materii?id_profesor=${id_professor}`)
+        .get(`${APIURL}/materii?id_profesor=${id_professor}`)
         .then(res => {
             let disciplines
             if (res.data) {
@@ -93,7 +93,7 @@ export const getDisciplineFormulas = (id_materie = 7) => dispatch => {
         type: GET_DISCIPLINE_FORMULAS
     });
     axios
-        .get(`http://localhost:8080/formule?id_materie=${id_materie}`)
+        .get(`${APIURL}/formule?id_materie=${id_materie}`)
         .then(res => {
             let formulas
             if (res.data) {
@@ -114,7 +114,7 @@ export const insertDisciplineFormulas = (id_materie = 7, formula = "L1*L2") => d
         type: POST_DISCIPLINE_FORMULAS
     });
     axios
-        .get(`http://localhost:8080/formule2?id_materie=${id_materie}&formule=${formula}`)
+        .post(`${APIURL}/formule`, {id_materie: id_materie, formula: formula})
         .then(res => {
             let formulas
             if (res.data) {
@@ -134,7 +134,7 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
         type: POST_PROFESSOR_CATALOG
     });
     axios
-        .get(`http://localhost:8080/catalog2?catalog=${JSON.stringify(catalog)}`)
+        .get(`${APIURL}/catalog2?catalog=${JSON.stringify(catalog)}`)
         .then(res => {
             console.log(res)
             let columns, rows
@@ -157,7 +157,7 @@ export const insertProfessorDisciplines = (id_profesor, den_materie) => dispatch
         type: POST_PROFESSOR_DISCIPLINES
     });
     axios
-        .get(`http://localhost:8080/materii2?id_profesor=${id_profesor}&den_materie=${den_materie}`)
+        .get(`${APIURL}/materii2?id_profesor=${id_profesor}&den_materie=${den_materie}`)
         .then(res => {
             console.log(res)
             let disciplines
