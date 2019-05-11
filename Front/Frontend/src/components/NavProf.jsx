@@ -17,20 +17,13 @@ export default class NavProf extends Component {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Button variant="secondary">Logo</Button>
-                        {this.props.disciplines.length !== 0 && (
-                            <NavDropdown title="Courses" id="collasible-nav-dropdown">
-                                {
-                                    this.props.disciplines.map((item, index) => {
-                                        return (
-                                            <NavDropdown.Item key={index}
-                                                              href="#action/1">{item.materie}</NavDropdown.Item>
-                                        )
-                                    })
-                                }
-                                <NavDropdown.Divider/>
-                                <NavDropdown.Item href="#action/4">+ Add a new class</NavDropdown.Item>
-                            </NavDropdown>
-                        )}
+                        <NavDropdown title="Courses" id="collasible-nav-dropdown">
+                            <NavDropdown.Item
+                                href="#action/1">Materie
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider/>
+                            <NavDropdown.Item href="#action/4">+ Add a new class</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                     <Nav>
                         <NavDropdown title="Mark Otto" id="collasible-nav-dropdown">
