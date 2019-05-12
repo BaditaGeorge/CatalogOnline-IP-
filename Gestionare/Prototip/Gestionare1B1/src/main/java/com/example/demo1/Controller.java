@@ -173,6 +173,12 @@ public class Controller {
            antet="a: "+treeMap.get(result.get(1)).toString()+"; "+antet;
            System.out.println(cnt);
            System.out.println("\n"+antet);
+           
+           PrelucrareDate pd = new PrelucrareDate();
+           String mesajPentruFront=pd.primesteMesajFront(antet);
+           System.out.println(mesajPentruFront);
+           
+           
            String[] splitedVal = treeMap.get(result.get(3)).toString().split("}");
            int cnt2=0;
            for(String tempVal:splitedVal)
@@ -212,9 +218,12 @@ public class Controller {
                     tempSol=tempSol.substring(j,tempSol.length());
                     tempSol = "n: " + idStud + "; " + treeMap.get(result.get(1)).toString() + "; " + tempSol;
                     System.out.println(tempSol+"\n");
+                    System.out.println("before\n");
+                    System.out.println(pd.primesteMesajFront(tempSol));
+                    System.out.println("after\n");
                }
            }
-           return "Done";
+           return mesajPentruFront;
         }
         catch(IOException e)
         {
@@ -374,6 +383,7 @@ public class Controller {
     public String postFormule(@RequestBody String something){
         String aRe="";
         String bRe="";
+        String mesajPentruFront="";
         ObjectMapper mapper = new ObjectMapper();
         try{
            Map<String,Object> treeMap = mapper.readValue(something,Map.class);
@@ -386,7 +396,8 @@ public class Controller {
            aRe=aRe.replace(" ","");
            new SQL_func().updateAntet("L1 L2 L3",aRe);
            System.out.println(new SQL_func().selectAntet(aRe));
-           System.out.println(pd.primesteMesajFront(forC));
+           mesajPentruFront=pd.primesteMesajFront(forC);
+           System.out.println(mesajPentruFront);
            System.out.println(forC);
            
         }
@@ -396,7 +407,7 @@ public class Controller {
         }
         //String forRet = parserPuiuMic(updateFormule(id_materie,formula));
         //return forRet;
-        return something;
+        return mesajPentruFront;
     }
     
      
