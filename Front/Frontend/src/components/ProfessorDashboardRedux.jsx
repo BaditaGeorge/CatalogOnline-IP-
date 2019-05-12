@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import '../App.css';
 import {connect} from "react-redux";
+import equal from "fast-deep-equal"
 import Catalog from "./Catalog"
 import {
     getProfessorCatalog,
@@ -19,107 +20,38 @@ class ProfessorDashboard extends Component {
     }
 
     componentWillMount() {
-        const catalog = {
-            "profesor": "1",
-            "disciplina": "Proba",
-            "columns": [
-                {
-                    "key": "id",
-                    "name": "ID",
-                    "type": "text"
-                },
-                {
-                    "key": "student",
-                    "name": "Student",
-                    "type": "text"
-                },
-                {
-                    "key": "group",
-                    "name": "Group",
-                    "type": "text"
-                },
-                {
-                    "key": "l1",
-                    "name": "L1",
-                    "type": "number"
-                },
-                {
-                    "key": "l2",
-                    "name": "L2",
-                    "type": "number"
-                },
-                {
-                    "key": "l3",
-                    "name": "L3",
-                    "type": "number"
-                },
-                {
-                    "key": "l4",
-                    "name": "L4",
-                    "type": "number"
-                },
-                {
-                    "key": "l5",
-                    "name": "L6",
-                    "type": "number"
-                },
-                {
-                    "key": "presences",
-                    "name": "Presences",
-                    "type": "number"
-                },
-                {
-                    "key": "exam",
-                    "name": "Exam",
-                    "type": "number"
-                }
-            ],
-            "rows": [
-                {
-                    "id": 0,
-                    "student": "James Doe 1",
-                    "group": "B5",
-                    "l1": 1.5,
-                    "l2": 4,
-                    "l3": 6,
-                    "l4": 8,
-                    "l5": 10,
-                    "l6": 10,
-                    "presences": 10,
-                    "exam": 10
-                },
-                {
-                    "id": 0,
-                    "student": "James Doe 2",
-                    "group": "B2",
-                    "l1": 2,
-                    "l2": 4,
-                    "l3": 6,
-                    "l4": 8,
-                    "l5": 10,
-                    "l6": 10,
-                    "presences": 10,
-                    "exam": 10
-                }
-            ]
-        }
-        // this.props.getProfessorCatalog(7, 1)
-        // this.props.getProfessorDisciplines(2)
-        // this.props.getDisciplineFormulas(7)
+        const user = {name: "Alex Ivan", role: "professor", id_prof: 1}
+        this.props.getProfessorDisciplines(user.id_prof)
+        this.props.getProfessorCatalog(7, user.id_prof)
+        // this.props.getDisciplineFormulas(5)
         // this.props.insertProfessorCatalog(catalog)
-        this.props.insertDisciplineFormulas(10, "L1asd*L2")
-        this.props.insertProfessorDisciplines(3, 'DSFUM')
+        // this.props.insertDisciplineFormulas(10, "L1asd*L2")
+        // this.props.insertProfessorDisciplines(3, 'DSFUM')
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if(!equal(this.props, prevProps))
+    //     {
+    //         this.forceUpdate()
+    //     }
+    // }
+
     render() {
-        console.log(this.props.formulas)
-        const user = {name: "Alex", prenume: "Andrei", role: "professor"}
+        const user = {name: "Alex Ivan", role: "professor", id_prof: 1}
         return (
-            <div>
-                <NavProf disciplines={this.props.disciplines}/>
-                <Catalog user={user} rows={this.props.rows} columns={this.props.columns}/>
-                <Formula formulas={this.props.formulas}/>
-            </div>
+            <Fragment>
+                <NavProf user={user}
+                         disciplines={this.props.disciplines}
+                         onAddDiscipline={this.props.insertProfessorDisciplines}
+                />
+                <Catalog user={user}
+                         rows={this.props.rows}
+                         columns={this.props.columns}
+                />
+                <Formula formulas={this.props.formulas}
+                         onAddFormulas={this.props.insertDisciplineFormulas}
+                />
+            </Fragment>
         );
     }
 }
@@ -128,6 +60,7 @@ export const ProfessorDashboardRedux = connect((state) => ({
     global: state.professorReducer.global,
     columns: state.professorReducer.columns,
     disciplines: state.professorReducer.disciplines,
+    currentDiscipline: state.professorReducer.currentDiscipline,
     formulas: state.professorReducer.formulas,
     rows: state.professorReducer.rows,
     loading: state.professorReducer.loading

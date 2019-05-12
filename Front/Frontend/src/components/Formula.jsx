@@ -15,7 +15,7 @@ export default class Formula extends Component {
 
     render() {
         return (
-            <div className={"mt-3"}>
+            <Form className={"mt-3"}>
                 <Form.Label>Formule</Form.Label>
                 <Row>
                     <Col xs={10}>
@@ -36,7 +36,7 @@ export default class Formula extends Component {
                 <Form.Text className="text-muted">
                     Ex: sum(L1:L10)/10
                 </Form.Text>
-            </div>
+            </Form>
         )
     }
 }

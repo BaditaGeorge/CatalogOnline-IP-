@@ -54,7 +54,7 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
         "id_prof": id_profesor
     };
     axios
-        .get(`${APIURL}/catalog`, {data: JSON.stringify(data)})
+        .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}`)
         .then(res => {
             let rows, columns
             if (res.data) {
@@ -71,7 +71,7 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
         });
 };
 
-export const getProfessorDisciplines = (id_professor = 1) => dispatch => {
+export const getProfessorDisciplines = (id_professor) => dispatch => {
     dispatch({
         type: GET_PROFESSOR_DISCIPLINES
     });
@@ -92,12 +92,12 @@ export const getProfessorDisciplines = (id_professor = 1) => dispatch => {
         });
 };
 
-export const getDisciplineFormulas = (id_materie = 7) => dispatch => {
+export const getDisciplineFormulas = (id_materie) => dispatch => {
     dispatch({
         type: GET_DISCIPLINE_FORMULAS
     });
     axios
-        .get(`${APIURL}/formule?id_materie=${id_materie}`)
+        .get(`${APIURL}/formule?id_profesor=${id_materie}`)
         .then(res => {
             let formulas
             if (res.data) {
@@ -156,17 +156,15 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
         });
 };
 
-export const insertProfessorDisciplines = (id_materie, den_materie) => dispatch => {
+export const insertProfessorDisciplines = (id_profesor, den_materie) => (dispatch, getState) => {
     dispatch({
         type: POST_PROFESSOR_DISCIPLINES
     });
     axios
-        .post(`${APIURL}/materii`, {id_materie: id_materie, den_materie: den_materie})
+        .post(`${APIURL}/materii`, {id_materie: id_profesor, den_materie: den_materie})
         .then(res => {
-            console.log(res)
-            let disciplines
             if (res.data) {
-                // disciplines = [...getState().disciplines];
+                let disciplines = getState().professorReducer.disciplines
                 disciplines.push({materie: res.data.den_materie})
                 dispatch({
                     type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
