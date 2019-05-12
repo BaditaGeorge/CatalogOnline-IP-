@@ -1,5 +1,7 @@
 .App {
     text-align: center;
+    font-family: Helvetica;
+
 }
 
 .App-logo {
@@ -96,7 +98,44 @@
 .react-contextmenu-item.react-contextmenu-submenu {
     padding: 0;
 }
-
+.navbar,
+.navbar-default {
+    background-color:#4D7A97;
+}
+.navbar .mr-auto a{
+    color:white!important;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.5s all ease-in-out;
+}
+.mr-auto a:hover {
+    transform: scale(1.1);
+    color: #fbf9ee!important;
+}
+.navbar-nav a{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.dropdown-menu{
+    background: #253441;
+    right:0;
+}
+.navbar a{
+    color:white!important;
+}
+.dropdown-menu a:hover {
+    background: #4D7A97;
+    color:white;
+    border-radius: 3px;
+}
+.react-grid-Main {
+    padding: 0 2em!important;
+}
+.avatar {
+    width:30px;
+    height:30px;
+}
 .react-contextmenu-item.react-contextmenu-submenu > .react-contextmenu-item {
 }
 
@@ -111,4 +150,10 @@
 .example-multiple-targets::after {
     content: attr(data-count);
     display: block;
+}
+.react-grid-Container{
+    padding: 0;
+}
+.react-grid-Header{
+    background:blue!important;
 }

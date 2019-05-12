@@ -45,12 +45,16 @@ export const getGlobal = () => dispatch => {
         });
 };
 
-export const getProfessorCatalog = (id_materie = 7, id_profesor = 1) => dispatch => {
+export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
     dispatch({
         type: GET_PROFESSOR_CATALOG
     });
+    const data = {
+        "id_Materie": id_materie,
+        "id_prof": id_profesor
+    };
     axios
-        .get(`${APIURL}/catalog?id_materie=${id_materie}&id_profesor=${id_profesor}`)
+        .get(`${APIURL}/catalog`, {data: JSON.stringify(data)})
         .then(res => {
             let rows, columns
             if (res.data) {
@@ -109,12 +113,12 @@ export const getDisciplineFormulas = (id_materie = 7) => dispatch => {
         });
 };
 
-export const insertDisciplineFormulas = (id_materie = 7, formula = "L1*L2") => dispatch => {
+export const insertDisciplineFormulas = (id_materie, formule) => dispatch => {
     dispatch({
         type: POST_DISCIPLINE_FORMULAS
     });
     axios
-        .post(`${APIURL}/formule`, {id_materie: id_materie, formula: formula})
+        .post(`${APIURL}/formule`, {id_materie: id_materie, formule: formule})
         .then(res => {
             let formulas
             if (res.data) {
@@ -134,7 +138,7 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
         type: POST_PROFESSOR_CATALOG
     });
     axios
-        .get(`${APIURL}/catalog2?catalog=${JSON.stringify(catalog)}`)
+        .post(`${APIURL}/catalog`, catalog)
         .then(res => {
             console.log(res)
             let columns, rows
@@ -152,12 +156,12 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
         });
 };
 
-export const insertProfessorDisciplines = (id_profesor, den_materie) => dispatch => {
+export const insertProfessorDisciplines = (id_materie, den_materie) => dispatch => {
     dispatch({
         type: POST_PROFESSOR_DISCIPLINES
     });
     axios
-        .get(`${APIURL}/materii2?id_profesor=${id_profesor}&den_materie=${den_materie}`)
+        .post(`${APIURL}/materii`, {id_materie: id_materie, den_materie: den_materie})
         .then(res => {
             console.log(res)
             let disciplines

@@ -1,6 +1,8 @@
 Calcul/.idea
 .idea/workspace.xml
 
+Gestionare/*.jar
+
 Front/src/node_modules
 Front/src/.idea
 
@@ -9,3 +11,4 @@ Front/src/.idea
 
 */.idea
 .idea/workspace.xml
+node_modules
