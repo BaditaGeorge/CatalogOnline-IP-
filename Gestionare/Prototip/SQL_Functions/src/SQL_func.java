@@ -544,4 +544,72 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+        /**
+     * Functia care adauga un nou student in baza de date
+     * @param student e un String de forma id,nume,prenume,grupa.email
+     */
+    public void insertNewStudent(String student)
+    {
+        String date[]=student.split(" ");
+        String id = date[0];
+        String nume = date[1];
+        String prenume = date[2];
+        String grupa = date[3];
+        String eMail = date[4];
+        String query = "Insert into studenti(id_student,nume,prenume,email,grupa) VALUES (?,?,?,?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, id);
+            pstmt.setString(2, nume);
+            pstmt.setString(3, prenume);
+            pstmt.setString(4, grupa);
+            pstmt.setString(5, eMail);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        insertUserByMail(eMail);
+    }
+
+    /**
+     * Functia care adauga un user in baza de date pe baza eMail-ului
+     * @param eMail e un String de forma *****@*****; ex : victor.paval@info.uaic.ro
+     */
+    public void insertUserByMail(String eMail) {
+        String[] user = eMail.split("@");
+        String username = user[0];
+        String query = "Insert into utilizatori(id_utilizator,username,email,parola,salt_parola,numar_telefon,tip_utilizator,verificare) VALUES (?,?,?,?,?,?,?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, getMaxIdUtilizator());
+            pstmt.setString(2, username);
+            pstmt.setString(3, eMail);
+            pstmt.setString(4, createSalt());
+            pstmt.setString(5, createSalt());
+            pstmt.setString(6, "");
+            pstmt.setString(7, "Student");
+            pstmt.setString(8, "0");
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * Creaza un salt provizoriu pntru a adauga un user dupa mail
+     * @return salt-ul creat
+     */
+    public String createSalt(){
+    String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    StringBuilder salt = new StringBuilder();
+    Random rnd = new Random();
+        while (salt.length() < 18) { // length of the random string.
+        int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+        salt.append(SALTCHARS.charAt(index));
+    }
+    String saltStr = salt.toString();
+        return saltStr;
+
+    }
 }
