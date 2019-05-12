@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *
  * @author GoguSpoder
  */
-@Configuration
+/*@Configuration
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
@@ -26,4 +26,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
             .allowedHeaders("origin, content-type, accept, x-requested-with")
             .maxAge(3600);
     }
-}
+}*/

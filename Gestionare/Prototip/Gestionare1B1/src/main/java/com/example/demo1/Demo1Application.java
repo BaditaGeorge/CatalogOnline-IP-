@@ -21,13 +21,21 @@ public class Demo1Application {
 		SpringApplication.run(Demo1Application.class, args);
 	}
         
-        @Bean
-        public WebMvcConfigurer corsConfigurer() {
-            return new WebMvcConfigurer() {
-                @Override
-                public void addCorsMappings(CorsRegistry registry) {
-                    registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:3000");
-                }
-            };
-        }
+//        @Bean
+//        CorsConfigurationSource corsConfigurationSource() {
+//            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//            CorsConfiguration corsConfiguration = new CorsConfiguration();
+//            corsConfiguration.addAllowedOrigin("http://localhost:3000");
+//            corsConfiguration.setAllowedMethods(Arrays.asList(
+//                    HttpMethod.GET.name(),
+//                    HttpMethod.HEAD.name(),
+//                    HttpMethod.POST.name(),
+//                    HttpMethod.PUT.name(),
+//                    HttpMethod.OPTIONS.name(),
+//                    HttpMethod.DELETE.name()));
+//            corsConfiguration.addAllowedHeader("*");
+//            corsConfiguration.setMaxAge(1800L);
+//            source.registerCorsConfiguration("/**", corsConfiguration); // you restrict your path here
+//            return source;
+//        }
 }
