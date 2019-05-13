@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77976ea4-88b4-4271-b50b-02b2f035e628" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboardRedux.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboardRedux.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="77976ea4-88b4-4271-b50b-02b2f035e628" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +334,7 @@
       <workItem from="1557162801018" duration="128000" />
       <workItem from="1557162964762" duration="2086000" />
       <workItem from="1557167625060" duration="320000" />
-      <workItem from="1557581771827" duration="5587000" />
+      <workItem from="1557581771827" duration="5722000" />
     </task>
     <servers />
   </component>
@@ -358,11 +350,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35940000" />
+    <option name="totallyTimeSpent" value="36075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14164905" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
