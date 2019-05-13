@@ -495,4 +495,45 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+    void updatePromovare(String promovare,String id_s,String id_m){
+        String query = "Update materii set situatiePromovare= ? where id_student= ? and id_materie= ?";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, promovare);
+            pstmt.setString(2, id_s);
+            pstmt.setString(3, id_m);
+            // update
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    String selectCriterii(String id){
+        String result = "";
+        String query = " Select criteriiPromovare from profesori where id_materie=";
+        query+=id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            result =(rs.getString("criteriiPromovare  ") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    void updateCriterii(String id_m, String criterii){
+        String query="Update profesori set criteriiPromovare = ? where id_materie = ?";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,criterii);
+            pstmt.setString(2,id_m);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
