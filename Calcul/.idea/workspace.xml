@@ -7,8 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/SQL_func.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/SQL_func.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Formula.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PaginaFormula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PrelucrareDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/test-classes/com/example/demo1/Demo1ApplicationTests.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +48,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="33" selection-start-line="32" selection-start-column="5" selection-end-line="33" />
+            <state relative-caret-position="272">
+              <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
               <folding>
                 <element signature="e#249#250#0" expanded="true" />
                 <element signature="e#292#293#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="659" column="5" lean-forward="true" selection-start-line="646" selection-start-column="3" selection-end-line="659" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Calcul.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2669">
+            <state relative-caret-position="194">
               <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
             </state>
           </provider>
@@ -80,13 +103,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
+            <state relative-caret-position="-1392">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3196">
@@ -148,9 +171,9 @@
         <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
         <option value="$PROJECT_DIR$/tests/PaginaFormulaTest.java" />
         <option value="$PROJECT_DIR$/tests/CalculTest.java" />
-        <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
         <option value="$PROJECT_DIR$/src/Calcul.java" />
         <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
+        <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
       </list>
     </option>
   </component>
@@ -160,7 +183,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
@@ -570,8 +593,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/MockFunctiiGestiune.java" />
-    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" />
-    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java" />
     <entry file="file://$PROJECT_DIR$/src/verificareAntetMaterie.java" />
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -621,28 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" selection-start-line="32" selection-start-column="5" selection-end-line="33" />
-          <folding>
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3247">
           <caret line="193" column="10" selection-start-line="193" selection-start-column="10" selection-end-line="193" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -676,17 +679,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3196">
           <caret line="190" selection-start-line="190" selection-end-line="190" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/SQL_Functions.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1392">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Gestionare/Prototip/SQL_Functions/src/SQL_func.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="659" column="5" lean-forward="true" selection-start-line="646" selection-start-column="3" selection-end-line="659" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

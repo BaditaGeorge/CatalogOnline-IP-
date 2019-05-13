@@ -36,7 +36,7 @@ public class MockFunctiiGestiune {
 
     }
 
-    public void updatePromovare(String promovare){
+    public void updatePromovare(String promovare, String id_s, String id_m){
 
     }
 

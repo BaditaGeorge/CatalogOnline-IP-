@@ -2,7 +2,7 @@
 
 public class PrelucrareDate {
 
-    //SQL_func functiiGestiune= new SQL_func("C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea");
+    // SQL_func functiiGestiune= new SQL_func("C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea");
     MockFunctiiGestiune functiiGestiune = new MockFunctiiGestiune();
     String mesajPentruFront = "";
 
@@ -112,7 +112,7 @@ public class PrelucrareDate {
                 }
 
             }
-            functiiGestiune.updatePromovare(promovare);
+            functiiGestiune.updatePromovare(promovare,id_student,id_materie);
 
             return "Update efectuat";
         }
