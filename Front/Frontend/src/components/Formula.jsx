@@ -17,7 +17,6 @@ export default class Formula extends Component {
     return (
       <Form className={"mt-3"}>
         {this.props.formulas.map((item, key) => {
-          console.log(item.id_materie, this.props.currentDiscipline)
           if (item.id_materie === this.props.currentDiscipline.id_materie)
             return (
               <Row>

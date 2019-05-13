@@ -39,30 +39,6 @@ class ProfessorDashboard extends Component {
     }
   }
 
-  // componentDidUpdate(prevProps) {
-  //     if (!equal(prevProps.currentDiscipline, this.props.currentDiscipline)) {
-  //         this.props.getProfessorCatalog(this.props.currentDiscipline.id_materie, user.id_prof)
-  //         this.setState({currentDiscipline: this.props.currentDiscipline})
-  //     }
-  //     if (!equal(prevProps.disciplines, this.props.disciplines)) {
-  //         this.setState({disciplines: this.props.disciplines})
-  //     }
-  //     if (!equal(prevProps.rows, this.props.rows)) {
-  //         this.setState({rows: this.props.rows})
-  //     }
-  //     if (!equal(prevProps.columns, this.props.columns)) {
-  //         this.setState({columns: this.props.columns})
-  //     }
-  //     if (!equal(prevProps.formulas, this.props.formulas)) {
-  //         this.props.formulas.map((item) => {
-  //             console.log(item, this.state.currentDiscipline.id_materie.replace(' ', ''))
-  //             if(item.id_materie === parseInt(this.state.currentDiscipline.id_materie, 10))
-  //                 this.setState({formulas: item.formula_calcul})
-  //         })
-  //     }
-  // }
-
-
   render () {
     if (!this.props.loading)
       return (
