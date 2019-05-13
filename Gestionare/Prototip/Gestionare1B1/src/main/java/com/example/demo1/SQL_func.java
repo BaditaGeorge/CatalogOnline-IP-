@@ -54,7 +54,7 @@ public class SQL_func {
         return result;
     }
     //Selectam doar o singura formula din baza de date indicata de id-ul materiei
-    /*public String selectFormula(String id) {
+    public String selectFormulaCalc(String id) {
         String result = "";
         String query = " Select formula_calcul from profesori where id_materie=";
         query+=id;
@@ -67,7 +67,7 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
         return result;
-    }*/
+    }
     public String selectFormula(String id){
         String result = "";
         String query = " Select formula_calcul,id_materie from profesori where id_profesor=";
@@ -516,7 +516,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-            result =(rs.getString("criteriiPromovare  ") + "\t");
+            result =(rs.getString("criteriiPromovare") + "\t");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
