@@ -1,26 +1,9 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown, Image, Button} from 'react-bootstrap';
-import equal from 'fast-deep-equal';
 
 export default class NavProf extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            disciplines: []
-        }
-    }
-
-    componentDidMount() {
-        this.setState(
-            {
-                disciplines: this.props.disciplines,
-            })
-    }
-
-    componentDidUpdate(prevProps) {
-        if (!equal(this.props.disciplines, prevProps.disciplines)) {
-            this.setState({disciplines: this.props.disciplines})
-        }
     }
 
     askUserInput = (message) => {
@@ -42,6 +25,7 @@ export default class NavProf extends Component {
     }
 
     render() {
+        console.log(this.props.disciplines)
         return (
             <Navbar collapseOnSelect expand="sm">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
@@ -49,11 +33,11 @@ export default class NavProf extends Component {
                     <Nav className="mr-auto">
                         <Button variant="secondary">Logo</Button>
                         <NavDropdown title="Courses" id="collasible-nav-dropdown">
-                            {this.state.disciplines && this.state.disciplines.map((item, id) => {
+                            {this.props.disciplines && this.props.disciplines.map((item, id) => {
                                 return (
-                                    <NavDropdown.Item key={id} value={item.materie}
-                                                      onClick={() => console.log(item.materie)}>
-                                        {item.materie}
+                                    <NavDropdown.Item key={id} value={item.denumire_materie}
+                                                      onClick={() => console.log(item.denumire_materie)}>
+                                        {item.denumire_materie}
                                     </NavDropdown.Item>
                                 )
                             })}

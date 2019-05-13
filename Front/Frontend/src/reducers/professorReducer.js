@@ -20,6 +20,7 @@ import {
     POST_PROFESSOR_DISCIPLINES,
     POST_PROFESSOR_DISCIPLINES_SUCCESS,
     POST_PROFESSOR_DISCIPLINES_FAIL,
+    SET_CURRENT_DISCIPLINE,
 } from "../actions/professorActions";
 
 
@@ -27,7 +28,7 @@ const INITIAL_STATE = {
     global: undefined,
     columns: [],
     disciplines: [],
-    currentDiscipline: undefined,
+    currentDiscipline: {},
     formulas: [],
     rows: [],
     loading: false
@@ -84,7 +85,7 @@ export default function professorReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 disciplines: action.payload.disciplines,
-                currentDiscipline: action.payload.disciplines[1],
+                currentDiscipline: action.payload.currentDiscipline,
                 loading: false
             };
         }
@@ -112,6 +113,13 @@ export default function professorReducer(state = INITIAL_STATE, action) {
                 ...state,
                 loading: false
             };
+        }
+        case SET_CURRENT_DISCIPLINE:
+        {
+            return {
+                ...state,
+                currentDiscipline: action.payload.currentDiscipline
+            }
         }
         case POST_DISCIPLINE_FORMULAS: {
             return {
@@ -163,6 +171,7 @@ export default function professorReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 disciplines: action.payload.disciplines,
+                currentDiscipline: action.payload.currentDiscipline,
                 loading: false
             };
         }
