@@ -43,7 +43,7 @@ export default class NavProf extends Component {
               {this.props.disciplines && this.props.disciplines.map((item, id) => {
                 return (
                   <NavDropdown.Item key={id} value={item.denumire_materie}
-                                    onClick={() => console.log(item)}>
+                                    onClick={() => this.onDisciplineChange(item.id_materie, item.denumire_materie)}>
                     {item.denumire_materie}
                   </NavDropdown.Item>
                 )

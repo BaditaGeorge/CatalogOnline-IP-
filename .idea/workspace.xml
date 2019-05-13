@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b65d462d-d87e-43eb-a777-a46a4fae8f1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestionare/BD_Gestiunea" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/BD_Gestiunea" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +19,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+            <state relative-caret-position="687">
+              <caret line="55" column="34" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="240" column="3" lean-forward="true" selection-start-line="240" selection-start-column="3" selection-end-line="240" selection-end-column="3" />
               <folding>
-                <element signature="e#1#50#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="147" column="3" lean-forward="true" selection-start-line="147" selection-start-column="3" selection-end-line="147" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#1680#2090#0" />
               </folding>
             </state>
           </provider>
@@ -39,25 +71,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="41" column="40" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="40" />
+            <state relative-caret-position="777">
+              <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,6 +91,13 @@
       <find>console.</find>
       <find>replace</find>
       <find>onDis</find>
+      <find>getProf</find>
+      <find>insertPro</find>
+      <find>getStat</find>
+      <find>GET_PROFESS</find>
+      <find>postFo</find>
+      <find>insertProf</find>
+      <find>ger</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -83,9 +110,11 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboardRedux.jsx" />
         <option value="$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx" />
-        <option value="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" />
-        <option value="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" />
         <option value="$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" />
       </list>
     </option>
   </component>
@@ -170,13 +199,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8995000" />
+    <option name="totallyTimeSpent" value="12303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2493" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17071198" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17071198" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -193,7 +222,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32849503" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32849503" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -208,16 +237,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/studentReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -276,29 +295,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js">
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="131" column="25" lean-forward="true" selection-start-line="131" selection-start-column="25" selection-end-line="132" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
+        <state relative-caret-position="777">
+          <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-          <folding>
-            <element signature="e#1#50#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -313,10 +315,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx">
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="40" />
+        <state relative-caret-position="389">
+          <caret line="147" column="3" lean-forward="true" selection-start-line="147" selection-start-column="3" selection-end-line="147" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#1680#2090#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="240" column="3" lean-forward="true" selection-start-line="240" selection-start-column="3" selection-end-line="240" selection-end-column="3" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

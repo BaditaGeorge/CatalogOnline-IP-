@@ -30,11 +30,11 @@ class ProfessorDashboard extends Component {
   }
 
   componentWillUpdate (nextProps, nextState, nextContext) {
-    if (nextProps.currentDiscipline && (!nextProps.rows.length || !nextProps.columns.length)) {
+    if (nextProps.currentDiscipline && (!nextProps.columns || !nextProps.columns.length)) {
       this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, user.id_prof)
     }
 
-    if (!equal(nextProps.currentDiscipline, this.props.currentDiscipline) && (nextProps.rows.length || nextProps.columns.length)) {
+    if (!equal(nextProps.currentDiscipline, this.props.currentDiscipline) && (nextProps.rows || nextProps.rows.length)) {
       this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, user.id_prof)
     }
   }
@@ -50,8 +50,10 @@ class ProfessorDashboard extends Component {
                    onDisciplineChange={this.props.setDefaultDiscipline}
           />
           <Catalog user={user}
+                   currentDiscipline={this.props.currentDiscipline}
                    rows={this.props.rows}
                    columns={this.props.columns}
+                   onCatalogChange={this.props.insertProfessorCatalog}
           />
           <Formula formulas={this.props.formulas}
                    currentDiscipline={this.props.currentDiscipline}
