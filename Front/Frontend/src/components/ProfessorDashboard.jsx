@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import '../App.css';
+import '../css/Professor.css';
 import {connect} from "react-redux";
 import equal from "fast-deep-equal"
 import Catalog from "./Catalog"
