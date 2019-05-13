@@ -20,73 +20,19 @@ import {
     POST_PROFESSOR_DISCIPLINES,
     POST_PROFESSOR_DISCIPLINES_SUCCESS,
     POST_PROFESSOR_DISCIPLINES_FAIL,
+    SET_CURRENT_DISCIPLINE,
 } from "../actions/professorActions";
+
 
 const INITIAL_STATE = {
     global: undefined,
-    columns: [
-        {
-            "key": "student",
-            "type": "text"
-        },
-        {
-            "key": "id",
-            "type": "text"
-        },
-        {
-            "key": "group",
-            "type": "text"
-        },
-        {
-            "key": "L1",
-            "type": "number"
-        },
-        {
-            "key": "L2",
-            "type": "number"
-        },
-        {
-            "key": "L3",
-            "type": "number"
-        }],
+    columns: [],
     disciplines: [],
+    currentDiscipline: {},
     formulas: [],
-    rows: [
-        {
-            "id": "1",
-            "student": "Victor Paval",
-            "group": "B1",
-            "L1": "5",
-            "L2": "10",
-            "L3": "15"
-        },
-        {
-            "id": "1",
-            "student": "Victor Marian",
-            "group": "B1",
-            "L1": "5",
-            "L2": "10",
-            "L3": "15"
-        },
-        {
-            "id": "1",
-            "student": "Victor Cristian",
-            "group": "B1",
-            "L1": "5",
-            "L2": "10",
-            "L3": "15"
-        }],
+    rows: [],
     loading: false
 };
-
-// const INITIAL_STATE = {
-//     global: undefined,
-//     columns: [],
-//     disciplines: [],
-//     formulas: [],
-//     rows: [],
-//     loading: false
-// };
 
 export default function professorReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
@@ -139,6 +85,7 @@ export default function professorReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 disciplines: action.payload.disciplines,
+                currentDiscipline: action.payload.currentDiscipline,
                 loading: false
             };
         }
@@ -166,6 +113,13 @@ export default function professorReducer(state = INITIAL_STATE, action) {
                 ...state,
                 loading: false
             };
+        }
+        case SET_CURRENT_DISCIPLINE:
+        {
+            return {
+                ...state,
+                currentDiscipline: action.payload.currentDiscipline
+            }
         }
         case POST_DISCIPLINE_FORMULAS: {
             return {
@@ -217,6 +171,7 @@ export default function professorReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 disciplines: action.payload.disciplines,
+                currentDiscipline: action.payload.currentDiscipline,
                 loading: false
             };
         }

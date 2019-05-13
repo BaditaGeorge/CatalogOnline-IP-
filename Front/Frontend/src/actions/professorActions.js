@@ -22,6 +22,7 @@ export const POST_PROFESSOR_CATALOG_FAIL = "POST_PROFESSOR_CATALOG_FAIL"
 export const POST_PROFESSOR_DISCIPLINES = "POST_PROFESSOR_DISCIPLINES";
 export const POST_PROFESSOR_DISCIPLINES_SUCCESS = "POST_PROFESSOR_DISCIPLINES_SUCCESS";
 export const POST_PROFESSOR_DISCIPLINES_FAIL = "POST_PROFESSOR_DISCIPLINES_FAIL"
+export const SET_CURRENT_DISCIPLINE = "SET_CURRENT_DISCIPLINE"
 export const getGlobal = () => dispatch => {
     dispatch({
         type: GET_GLOBAL
@@ -54,7 +55,7 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
         "id_prof": id_profesor
     };
     axios
-        .get(`${APIURL}/catalog`, {data: JSON.stringify(data)})
+        .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}`)
         .then(res => {
             let rows, columns
             if (res.data) {
@@ -71,7 +72,7 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
         });
 };
 
-export const getProfessorDisciplines = (id_professor = 1) => dispatch => {
+export const getProfessorDisciplines = (id_professor) => dispatch => {
     dispatch({
         type: GET_PROFESSOR_DISCIPLINES
     });
@@ -80,10 +81,10 @@ export const getProfessorDisciplines = (id_professor = 1) => dispatch => {
         .then(res => {
             let disciplines
             if (res.data) {
-                disciplines = res.data.materii.list;
+                disciplines = res.data.disciplines;
                 dispatch({
                     type: GET_PROFESSOR_DISCIPLINES_SUCCESS,
-                    payload: {disciplines: disciplines}
+                    payload: {disciplines: disciplines, currentDiscipline: disciplines[0] ? disciplines[0] : {}}
                 });
             }
         })
@@ -92,16 +93,15 @@ export const getProfessorDisciplines = (id_professor = 1) => dispatch => {
         });
 };
 
-export const getDisciplineFormulas = (id_materie = 7) => dispatch => {
+export const getDisciplineFormulas = (id_professor) => dispatch => {
     dispatch({
         type: GET_DISCIPLINE_FORMULAS
     });
     axios
-        .get(`${APIURL}/formule?id_materie=${id_materie}`)
+        .get(`${APIURL}/formule?id_profesor=${id_professor}`)
         .then(res => {
-            let formulas
             if (res.data) {
-                formulas = res.data.formule.list;
+                let formulas = res.data
                 dispatch({
                     type: GET_DISCIPLINE_FORMULAS_SUCCESS,
                     payload: {formulas: formulas}
@@ -112,6 +112,13 @@ export const getDisciplineFormulas = (id_materie = 7) => dispatch => {
             dispatch({type: GET_DISCIPLINE_FORMULAS_FAIL});
         });
 };
+
+export const setDefaultDiscipline = (id_materie, den_materie) => dispatch => {
+    dispatch({
+        type: SET_CURRENT_DISCIPLINE,
+        payload: {currentDiscipline: {materie: den_materie, id_materie: id_materie}}
+    });
+}
 
 export const insertDisciplineFormulas = (id_materie, formule) => dispatch => {
     dispatch({
@@ -156,21 +163,20 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
         });
 };
 
-export const insertProfessorDisciplines = (id_materie, den_materie) => dispatch => {
+export const insertProfessorDisciplines = (id_profesor, den_materie) => (dispatch, getState) => {
     dispatch({
         type: POST_PROFESSOR_DISCIPLINES
     });
     axios
-        .post(`${APIURL}/materii`, {id_materie: id_materie, den_materie: den_materie})
+        .post(`${APIURL}/materii`, {id_materie: id_profesor, den_materie: den_materie})
         .then(res => {
-            console.log(res)
-            let disciplines
             if (res.data) {
-                // disciplines = [...getState().disciplines];
-                disciplines.push({materie: res.data.den_materie})
+                let disciplines = getState().professorReducer.disciplines
+                let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 7}
+                disciplines.push(newDiscipline)
                 dispatch({
                     type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
-                    payload: {disciplines: disciplines}
+                    payload: {disciplines: disciplines, currentDiscipline: newDiscipline}
                 });
             }
         })

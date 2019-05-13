@@ -245,7 +245,6 @@ export default class Catalog extends Component {
                 column.filterRenderer = filters[column.type];
             return column
         })];
-        console.log(this.state.user)
         return (
             <ReactDataGrid
                 columns={columns}
