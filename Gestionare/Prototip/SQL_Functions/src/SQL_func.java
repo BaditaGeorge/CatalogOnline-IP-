@@ -658,12 +658,12 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-        void addSession(String username,int session_id,String last_activity)
+    void addSession(String username,String session_id,String last_activity)
     {
         String query = "Insert into sessions(session_id,username,last_activity) VALUES (?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setInt(1, session_id);
+            pstmt.setString(1, session_id);
             pstmt.setString(2, username);
             pstmt.setString(3, last_activity);
             pstmt.executeUpdate();
@@ -671,20 +671,20 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-    void deleteSession(int session_id)
+    void deleteSession(String session_id)
     {
         String query = "DELETE FROM sessions WHERE session_id = ?";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setInt(1, session_id);
+            pstmt.setString(1, session_id);
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-    public int countSession(int session_id)
+    public int countSession(String session_id)
     {
         int result = 0;
         String query = "select username from sessions where session_id= " + session_id;
@@ -698,7 +698,7 @@ public class SQL_func {
         }
         return result;
     }
-    String getTime(int s_id)
+    String getTime(String s_id)
     {
         String result = "";
         String query = " Select last_activity from sessions where session_id=";
@@ -714,7 +714,7 @@ public class SQL_func {
         }
         return result;
     }
-    String getUsername(int s_id)
+    String getUsername(String s_id)
     {
         String result = "";
         String query = " Select username from sessions where session_id=";
@@ -730,17 +730,18 @@ public class SQL_func {
         }
         return result;
     }
-    void updateSessionActivity(int s_id,String new_time)
+    void updateSessionActivity(String s_id,String new_time)
     {
         String query = "Update sessions set last_activity= ? where session_id=?";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, new_time);
-            pstmt.setInt(2, s_id);
+            pstmt.setString(2, s_id);
             // update
             pstmt.executeUpdate();
             System.out.println("Succes!");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
 }
