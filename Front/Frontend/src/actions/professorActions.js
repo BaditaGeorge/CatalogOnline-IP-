@@ -119,10 +119,10 @@ export const getDisciplineFormulas = (id_professor) => dispatch => {
     });
 };
 
-export const setDefaultDiscipline = (id_materie, den_materie) => dispatch => {
+export const setDefaultDiscipline = (newCurrentDiscipline) => dispatch => {
   dispatch({
     type: SET_CURRENT_DISCIPLINE,
-    payload: { currentDiscipline: { materie: den_materie, id_materie: id_materie } }
+    payload: { currentDiscipline: newCurrentDiscipline}
   });
 }
 
@@ -153,7 +153,6 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
   axios
     .post(`${APIURL}/catalog`, catalog)
     .then(res => {
-      console.log(res)
       let columns, rows
       if (res.data) {
         rows = res.data.rows;
