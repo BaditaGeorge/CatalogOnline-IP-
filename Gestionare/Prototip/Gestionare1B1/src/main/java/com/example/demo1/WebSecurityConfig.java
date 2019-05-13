@@ -17,8 +17,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author GoguSpoder
  */
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements ApplicationContextAware{
     @Override
     protected void configure(HttpSecurity http) throws Exception{
