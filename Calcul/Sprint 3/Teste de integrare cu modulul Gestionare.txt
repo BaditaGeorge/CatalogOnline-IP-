@@ -1,0 +1,89 @@
+Testele constau in trimiterea unor requesturi de tip POST prin PostMan
+si verificarea mesajului returnat si a update-urilor din baza de date. 
+
+Requesturile sunt evaluate de modulul de Gestionare care apeleaza modulul Calcul ce returneaza 
+un mesaj ce ne spune daca datele din post sunt valide sau nu, iar in caz afirmativ modulul updateaza
+baza de date. 
+
+POST formule
+
+Input: { "id_materie":14,"formula_calcul":"L1=L2+L3"}
+Output: Formula este valida
+Update baza de date: realizat
+
+Input: { "id_materie":14,"formula_calcul":"L2+L3"}
+Output: Eroare: Formula trebuie sa fie de forma <variabila>=<expresie>
+Update baza de date: nerealizat
+
+Input: { "id_materie":14,"formula_calcul":"L1=L2+L3; L2=L3"}
+Output: Formula este valida
+Update baza de date: realizat 
+Obs: formulele sunt salvate in baza de date in ordinea corecta a efectuarii: L2=L3; L1=L2+L3
+
+Input: { "id_materie":14,"formula_calcul":"L1=L2+L3; L2=L1"}
+Output: Eroare: Formulele nu sunt independente - exista circuite in calculul punctajului
+Update baza de date: nerealizat 
+
+Input: { "id_materie":14,"formula_calcul":"L1=L2+L3; L2=L1+L5"}
+Output: Eroare: Urmatoarele variabile din formula nu sunt definite in antet: L5 (Antetul definit pentru materia cu idul 14 e L1 L2 L3)
+Update baza de date: nerealizat 
+
+Observam ca principalele erori sunt depistate si update-ul in baza de date nu este realizat in aceste cazuri.
+
+POST catalog
+
+Input: 
+{
+    "profesor": 3,
+    "disciplina": 14,
+    "columns": [
+        {
+            "key": "student",
+            "type": "text"
+        },
+        {
+            "key": "id",
+            "type": "text"
+        },
+        {
+            "key": "group",
+            "type": "text"
+        },
+        {
+            "key": "L1",
+            "type": "number"
+        },
+        {
+            "key": "L2",
+            "type": "number"
+        },
+        {
+            "key": "L3",
+            "type": "number"
+        }
+    ],
+    "rows": [
+        {
+            "id": "1",
+            "student": "Victor Paval",
+            "group": "B1",
+            "L1": "5",
+            "L2": "12",
+            "L3":"2"
+        },
+        {
+            "student": "Marian Cristian",
+            "id": "2",
+            "group": "B5",
+            "L1": "10",
+            "L2": "8",
+            "L3":"2"
+        }
+    ]
+}
+
+Output: Antetul este valid
+Update baza de date: realizat (notele au fost updatate in functie de formula)
+
+
+
