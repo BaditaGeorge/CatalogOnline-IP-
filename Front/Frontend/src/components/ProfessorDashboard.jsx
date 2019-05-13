@@ -1,4 +1,3 @@
-
 import React, {Component, Fragment} from 'react';
 import '../css/Professor.css';
 import {connect} from "react-redux";
@@ -16,33 +15,33 @@ import {
 import Formula from "./Formula";
 import NavProf from "./NavProf";
 
-const user = { name: "Alex Ivan", role: "professor", id_prof: 1 }
+const user = {name: "Alex Ivan", role: "professor", id_prof: 1}
 
 
 class ProfessorDashboard extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.props.getProfessorDisciplines(user.id_prof)
     this.props.getDisciplineFormulas(user.id_prof)
   }
 
-  componentWillUpdate (nextProps, nextState, nextContext) {
-    if (nextProps.currentDiscipline && (!nextProps.columns || !nextProps.columns.length)) {
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    if (nextProps.currentDiscipline.id_materie && !nextProps.columns.length) {
       this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, user.id_prof)
     }
 
-    if (!equal(nextProps.currentDiscipline, this.props.currentDiscipline) && (nextProps.rows || nextProps.rows.length)) {
+    if (nextProps.currentDiscipline.id_materie !== this.props.currentDiscipline.id_materie && nextProps.rows.length) {
       this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, user.id_prof)
     }
   }
 
-  render () {
+  render() {
     if (!this.props.loading)
       return (
-        <Fragment>
+        <div className={'dashboard'}>
           <NavProf user={user}
                    disciplines={this.props.disciplines}
                    currentDiscipline={this.props.currentDiscipline}
@@ -57,9 +56,9 @@ class ProfessorDashboard extends Component {
           />
           <Formula formulas={this.props.formulas}
                    currentDiscipline={this.props.currentDiscipline}
-                   onAddFormulas={this.props.insertDisciplineFormulas}
+                   onChangeFormula={this.props.insertDisciplineFormulas}
           />
-        </Fragment>
+        </div>
       );
     return <div>Loading</div>
   }

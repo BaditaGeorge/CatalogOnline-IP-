@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown, Image, Button } from 'react-bootstrap';
+import React, {Component, Fragment} from 'react';
+import {Navbar, Nav, NavDropdown, Image, Button} from 'react-bootstrap';
 
 export default class NavProf extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
@@ -32,13 +32,12 @@ export default class NavProf extends Component {
     this.props.onDisciplineChange(newCurrentDiscipline)
   }
 
-  render () {
+  render() {
     return (
       <Navbar collapseOnSelect expand="sm">
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Button variant="secondary">Logo</Button>
             <NavDropdown title="Courses" id="collasible-nav-dropdown">
               {this.props.disciplines && this.props.disciplines.map((item, id) => {
                 return (
@@ -48,21 +47,19 @@ export default class NavProf extends Component {
                   </NavDropdown.Item>
                 )
               })}
-              <NavDropdown.Divider/>
-              <NavDropdown.Item onClick={() => this.onAddDiscipline(this.props.user.id_prof)}>+ Add a new
-                class</NavDropdown.Item>
+              {this.props.user.role === 'professor' &&
+              <Fragment>
+                <NavDropdown.Divider/>
+                <NavDropdown.Item onClick={() => this.onAddDiscipline(this.props.user.id_prof)}>+ Add a
+                  new</NavDropdown.Item>
+              </Fragment>
+              }
             </NavDropdown>
           </Nav>
-
           <Nav>
             <NavDropdown title={this.props.user.name} id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/myProfile">My profile</NavDropdown.Item>
               <NavDropdown.Item href="#action/Logout">Logout</NavDropdown.Item>
             </NavDropdown>
-          </Nav>
-          <Nav>
-            <Image className={"avatar"} src="https://cdn.onlinewebfonts.com/svg/img_24787.png"
-                   roundedCircle/>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

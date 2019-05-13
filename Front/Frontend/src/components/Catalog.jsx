@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDataGrid from "react-data-grid";
-import { Data, Filters, Menu, Toolbar } from "react-data-grid-addons";
+import equal from "fast-deep-equal"
+import {Data, Filters, Menu, Toolbar} from "react-data-grid-addons";
 
 const {
   NumericFilter,
@@ -8,7 +9,7 @@ const {
   MultiSelectFilter,
   SingleSelectFilter
 } = Filters;
-const { ContextMenu, MenuItem, SubMenu, ContextMenuTrigger } = Menu;
+const {ContextMenu, MenuItem, SubMenu, ContextMenuTrigger} = Menu;
 const selectors = Data.Selectors;
 const filters = {
   number: NumericFilter,
@@ -23,7 +24,7 @@ const defaultColumnProperties = {
 };
 
 export default class Catalog extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       rows: props.rows,
@@ -33,8 +34,8 @@ export default class Catalog extends Component {
     }
   }
 
-  componentWillReceiveProps (nextProps, nextContext) {
-    this.setState({ rows: nextProps.rows, columns: nextProps.columns })
+  componentWillReceiveProps(nextProps, nextContext) {
+    this.setState({rows: nextProps.rows, columns: nextProps.columns})
   }
 
   askUserInput = (message, defaultInput) => {
@@ -59,7 +60,10 @@ export default class Catalog extends Component {
   deleteRow = (initialRows, rowIdx) => {
     const nextRows = [...initialRows];
     nextRows.splice(rowIdx, 1);
-    return nextRows;
+    if (nextRows.length)
+      return nextRows;
+    alert('You cant delete the last row')
+    return initialRows
   };
 
   insertRow = (initialRows, rowIdx) => {
@@ -72,7 +76,7 @@ export default class Catalog extends Component {
   deleteColumn = (initialColumns, columnIdx) => {
     const nextColumns = [...initialColumns];
     nextColumns.splice(columnIdx, 1);
-    return nextColumns;
+    return nextColumns
   };
 
   deleteDataFromColumn = (initialRows, columnId) => {
@@ -92,7 +96,7 @@ export default class Catalog extends Component {
   };
 
   insertColumn = (initialColumns, colIdx, newColIdx, newColType) => {
-    const newColumn = { key: newColIdx, name: newColIdx, type: newColType };
+    const newColumn = {key: newColIdx, name: newColIdx, type: newColType};
     const nextColumns = [...initialColumns];
     nextColumns.splice(colIdx, 0, newColumn);
     return nextColumns;
@@ -115,7 +119,7 @@ export default class Catalog extends Component {
   };
 
   getRowsSelector = (rows, filters) => {
-    return selectors.getRows({ rows, filters });
+    return selectors.getRows({rows, filters});
   };
 
   sortRows = (initialRows, sortColumn, sortDirection) => {
@@ -138,7 +142,7 @@ export default class Catalog extends Component {
   };
 
   changeFilters = (initialFilters, filter) => {
-    const newFilters = { ...initialFilters };
+    const newFilters = {...initialFilters};
     if (filter.filterTerm) {
       newFilters[filter.column.key] = filter;
     } else {
@@ -147,31 +151,53 @@ export default class Catalog extends Component {
     return newFilters;
   };
 
+  onFilter = (filter) => {
+    this.setState(state => {
+      const filters = this.changeFilters(state.filters, filter);
+      return {filters};
+    })
+  };
+
+  onColumnResize = (idx, width) => {
+    console.log(`Column ${idx} has been resized to ${width}`)
+  };
+
   onRowDelete = (rowIdx) => {
     this.setState(state => {
       const rows = this.deleteRow(state.rows, rowIdx);
-      return { rows };
+      return {rows};
     })
   };
 
   onRowInsert = (rowIdx) => {
     this.setState(state => {
       const rows = this.insertRow(state.rows, rowIdx);
-      return { rows };
+      return {rows};
     })
   };
 
   onColumnDelete = (colIdx) => {
-    this.setState(state => {
-      const colId = state.columns[colIdx].key;
-      const columns = this.deleteColumn(state.columns, colIdx);
-      const rows = this.deleteDataFromColumn(state.rows, colId);
-      return { columns, rows };
-    })
+    try {
+      if (colIdx < 3)
+        throw 'You cant delete one of the mandatory columns (ex: student, id, group)'
+      if (this.state.columns.length < 5)
+        throw 'You cant delete all variables'
+      this.setState(state => {
+        const colId = state.columns[colIdx].key;
+        const columns = this.deleteColumn(state.columns, colIdx);
+        const rows = this.deleteDataFromColumn(state.rows, colId);
+        return {columns, rows};
+      })
+    } catch (e) {
+      alert(e)
+    }
+
   };
 
   onColumnRename = (colIdx) => {
     try {
+      if (colIdx < 3)
+        throw 'You cant rename one of the mandatory columns (ex: student, id, group)'
       const newColIdx = this.askUserInput('Name:', 'undefined');
       this.state.columns.map(col => {
         if (col.key === newColIdx)
@@ -181,7 +207,7 @@ export default class Catalog extends Component {
         const initialColumnId = this.state.columns[colIdx].key;
         const columns = this.renameColumn(state.columns, colIdx, newColIdx);
         const rows = this.renameColumnInRows(state.rows, initialColumnId, newColIdx);
-        return { columns, rows };
+        return {columns, rows};
       });
       this.forceUpdate()
     } catch (e) {
@@ -200,7 +226,7 @@ export default class Catalog extends Component {
       this.setState(state => {
         const columns = this.insertColumn(state.columns, colIdx, newColIdx, newColType);
         const rows = this.insertDataToColumn(state.rows, newColIdx, newColType);
-        return { columns, rows };
+        return {columns, rows};
       })
     } catch (e) {
       alert(e)
@@ -210,39 +236,39 @@ export default class Catalog extends Component {
   onColumnSort = (sortColumn, sortDirection) => {
     this.setState(state => {
       const rows = this.sortRows(state.rows, sortColumn, sortDirection);
-      return { rows };
+      return {rows};
     })
   };
 
-  onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
+  onGridRowsUpdated = ({fromRow, toRow, updated}) => {
     this.setState(state => {
       const rows = state.rows.slice();
       for (let i = fromRow; i <= toRow; i++) {
-        rows[i] = { ...rows[i], ...updated };
+        rows[i] = {...rows[i], ...updated};
       }
-      return { rows };
+      return {rows};
     });
-    this.onCatalogChange(this.state.rows, this.state.columns)
-  };
 
-  onFilter = (filter) => {
-    this.setState(state => {
-      const filters = this.changeFilters(state.filters, filter);
-      return { filters };
-    })
-  };
-
-  onColumnResize = (idx, width) => {
-    console.log(`Column ${idx} has been resized to ${width}`)
   };
 
   onCatalogChange = (rows, columns) => {
-    this.props.onCatalogChange(this.props.user.id_prof, this.props.currentDiscipline.id_materie, rows, columns)
+    const catalog = {
+      profesor: this.props.user.id_prof,
+      disciplina: this.props.currentDiscipline.denumire_materie,
+      columns: columns,
+      rows: rows
+    }
+    this.props.onCatalogChange(catalog)
   }
 
-  render () {
+  render() {
+
+    if (!equal(this.props.rows, this.state.rows) || !equal(this.props.columns, this.state.columns)) {
+      console.log(this.state.rows, this.props.rows)
+      this.onCatalogChange(this.state.rows, this.state.columns)
+    }
     const filteredRows = this.getRowsSelector(this.state.rows, this.state.filters);
-    let columns = [...this.state.columns.map(c => ({ ...c, ...defaultColumnProperties }))]
+    let columns = [...this.state.columns.map(c => ({...c, ...defaultColumnProperties}))]
     columns = [...columns.map(column => {
       column.name = column.key;
       column.filterable = column.type !== 'none';
@@ -261,17 +287,17 @@ export default class Catalog extends Component {
         enableCellSelect={this.state.user.role === 'professor' ? true : false}
         toolbar={<Toolbar enableFilter={true}/>}
         onAddFilter={this.onFilter}
-        onClearFilters={() => this.setState({ filters: {} })}
+        onClearFilters={() => this.setState({filters: {}})}
         getValidFilterValues={columnKey => this.getValidFilterValues(this.state.rows, columnKey)}
         contextMenu={this.state.user.role === 'professor' ?
           <CatalogContextMenu
-            onRowDelete={(e, { rowIdx }) => this.onRowDelete(rowIdx)}
-            onRowInsertAbove={(e, { rowIdx }) => this.onRowInsert(rowIdx)}
-            onRowInsertBelow={(e, { rowIdx }) => this.onRowInsert(rowIdx + 1)}
-            onColumnDelete={(e, { idx }) => this.onColumnDelete(idx)}
-            onColumnInsertLeft={(e, { idx }) => this.onColumnInsert(idx)}
-            onColumnInsertRight={(e, { idx }) => this.onColumnInsert(idx + 1)}
-            onColumnRename={(e, { idx }) => this.onColumnRename(idx)}
+            onRowDelete={(e, {rowIdx}) => this.onRowDelete(rowIdx)}
+            onRowInsertAbove={(e, {rowIdx}) => this.onRowInsert(rowIdx)}
+            onRowInsertBelow={(e, {rowIdx}) => this.onRowInsert(rowIdx + 1)}
+            onColumnDelete={(e, {idx}) => this.onColumnDelete(idx)}
+            onColumnInsertLeft={(e, {idx}) => this.onColumnInsert(idx)}
+            onColumnInsertRight={(e, {idx}) => this.onColumnInsert(idx + 1)}
+            onColumnRename={(e, {idx}) => this.onColumnRename(idx)}
           />
           : null
         }
@@ -283,11 +309,11 @@ export default class Catalog extends Component {
 }
 
 class CatalogContextMenu extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
   }
 
-  render () {
+  render() {
     const {
       rowIdx,
       idx,
@@ -302,28 +328,28 @@ class CatalogContextMenu extends Component {
     } = this.props;
     return (
       <ContextMenu id={id}>
-        <MenuItem data={{ rowIdx, idx }} onClick={onColumnRename}>
+        <MenuItem data={{rowIdx, idx}} onClick={onColumnRename}>
           Rename Column
         </MenuItem>
-        <MenuItem data={{ rowIdx, idx }} onClick={onRowDelete}>
+        <MenuItem data={{rowIdx, idx}} onClick={onRowDelete}>
           Delete Row
         </MenuItem>
-        <MenuItem data={{ rowIdx, idx }} onClick={onColumnDelete}>
+        <MenuItem data={{rowIdx, idx}} onClick={onColumnDelete}>
           Delete Column
         </MenuItem>
         <SubMenu title="Insert Row">
-          <MenuItem data={{ rowIdx, idx }} onClick={onRowInsertAbove}>
+          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertAbove}>
             Above
           </MenuItem>
-          <MenuItem data={{ rowIdx, idx }} onClick={onRowInsertBelow}>
+          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertBelow}>
             Below
           </MenuItem>
         </SubMenu>
         <SubMenu title="Insert Column">
-          <MenuItem data={{ rowIdx, idx }} onClick={onColumnInsertLeft}>
+          <MenuItem data={{rowIdx, idx}} onClick={onColumnInsertLeft}>
             Left
           </MenuItem>
-          <MenuItem data={{ rowIdx, idx }} onClick={onColumnInsertRight}>
+          <MenuItem data={{rowIdx, idx}} onClick={onColumnInsertRight}>
             Right
           </MenuItem>
         </SubMenu>

@@ -1,5 +1,5 @@
 import axios from "axios/index";
-import { APIURL } from "../config";
+import {APIURL} from "../config";
 
 export const GET_GLOBAL = "GET_GLOBAL";
 export const GET_GLOBAL_SUCCESS = "GET_GLOBAL_SUCCESS";
@@ -37,12 +37,12 @@ export const getGlobal = () => dispatch => {
         global = res.data;
         dispatch({
           type: GET_GLOBAL_SUCCESS,
-          payload: { global: global }
+          payload: {global: global}
         });
       }
     })
     .catch(err => {
-      dispatch({ type: GET_GLOBAL_FAIL });
+      dispatch({type: GET_GLOBAL_FAIL});
     });
 };
 
@@ -56,12 +56,12 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
       if (res.data) {
         dispatch({
           type: GET_PROFESSOR_CATALOG_SUCCESS,
-          payload: { rows: res.data.rows, columns: res.data.columns }
+          payload: {rows: res.data.rows, columns: res.data.columns}
         });
       }
     })
     .catch(err => {
-      dispatch({ type: GET_PROFESSOR_CATALOG_FAIL });
+      dispatch({type: GET_PROFESSOR_CATALOG_FAIL});
     });
 };
 
@@ -88,7 +88,7 @@ export const getProfessorDisciplines = (id_professor) => dispatch => {
       }
     })
     .catch(err => {
-      dispatch({ type: GET_PROFESSOR_DISCIPLINES_FAIL });
+      dispatch({type: GET_PROFESSOR_DISCIPLINES_FAIL});
     });
 };
 
@@ -103,49 +103,51 @@ export const getDisciplineFormulas = (id_professor) => dispatch => {
         let formulas = res.data
         dispatch({
           type: GET_DISCIPLINE_FORMULAS_SUCCESS,
-          payload: { formulas: formulas }
+          payload: {formulas: formulas}
         });
       }
     })
     .catch(err => {
-      dispatch({ type: GET_DISCIPLINE_FORMULAS_FAIL });
+      dispatch({type: GET_DISCIPLINE_FORMULAS_FAIL});
     });
 };
 
 export const setDefaultDiscipline = (newCurrentDiscipline) => dispatch => {
   dispatch({
     type: SET_CURRENT_DISCIPLINE,
-    payload: { currentDiscipline: newCurrentDiscipline }
+    payload: {currentDiscipline: newCurrentDiscipline}
   });
 }
 
-export const insertDisciplineFormulas = (id_materie, formule) => dispatch => {
+export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getState) => {
+  const newFormula = {id_materie: id_materie, formule: formule}
   dispatch({
     type: POST_DISCIPLINE_FORMULAS
   });
   axios
-    .post(`${APIURL}/formule`, { id_materie: id_materie, formule: formule })
+    .post(`${APIURL}/formule`, newFormula)
     .then(res => {
       let formulas
-      if (res.data) {
-        formulas = [{ formula: res.data.formule }];
+      if (res.data === 'Formula este valida') {
+        formulas = [...getState().professorReducer.formulas.map(
+          f => f.id_materie === newFormula.id_materie ? {
+            id_materie: newFormula.id_materie,
+            formula_calcul: newFormula.formule
+          } : f
+        )]
+        console.log(formulas)
         dispatch({
           type: POST_DISCIPLINE_FORMULAS_SUCCESS,
-          payload: { formulas: formulas }
+          payload: {formulas: formulas}
         });
       }
     })
     .catch(err => {
-      dispatch({ type: POST_DISCIPLINE_FORMULAS_FAIL });
+      dispatch({type: POST_DISCIPLINE_FORMULAS_FAIL});
     });
 };
-export const insertProfessorCatalog = (id_profesor, id_materie, columns, rows) => dispatch => {
-  const catalog = {
-    profesor: id_profesor,
-    disciplina: id_materie,
-    columns: columns,
-    rows: rows
-  }
+export const insertProfessorCatalog = (catalog) => dispatch => {
+
   dispatch({
     type: POST_PROFESSOR_CATALOG
   });
@@ -153,17 +155,17 @@ export const insertProfessorCatalog = (id_profesor, id_materie, columns, rows) =
     .post(`${APIURL}/catalog`, catalog)
     .then(res => {
       let columns, rows
-      if (res.data) {
-        rows = res.data.rows;
-        columns = res.data.columns;
+      if (res.data === 'Antetul este valid') {
+        rows = catalog.rows;
+        columns = catalog.columns;
         dispatch({
           type: POST_PROFESSOR_CATALOG_SUCCESS,
-          payload: { rows: rows, columns: columns }
+          payload: {rows: rows, columns: columns}
         });
       }
     })
     .catch(err => {
-      dispatch({ type: POST_PROFESSOR_CATALOG_FAIL });
+      dispatch({type: POST_PROFESSOR_CATALOG_FAIL});
     });
 };
 
@@ -172,19 +174,44 @@ export const insertProfessorDisciplines = (id_profesor, den_materie) => (dispatc
     type: POST_PROFESSOR_DISCIPLINES
   });
   axios
-    .post(`${APIURL}/materii`, { id_materie: id_profesor, den_materie: den_materie })
+    .post(`${APIURL}/materii`, {id_materie: id_profesor, den_materie: den_materie})
     .then(res => {
       if (res.data) {
-        let disciplines = getState().professorReducer.disciplines
-        let newDiscipline = { denumire_materie: res.data.den_materie, id_materie: 7 }
-        disciplines.push(newDiscipline)
+        let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 7}
+        let columns = [
+          {
+            "key": "student",
+            "type": "text"
+          },
+          {
+            "key": "id",
+            "type": "text"
+          },
+          {
+            "key": "group",
+            "type": "text"
+          },
+          {
+            "key": "lab",
+            "type": "number"
+          }
+        ]
+        let rows = [
+          {
+            "id": "1",
+            "student": "James Doe",
+            "group": "B1",
+            "lab": "10",
+          }
+        ]
+        let disciplines = getState().professorReducer.disciplines.push(newDiscipline)
         dispatch({
           type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
-          payload: { disciplines: disciplines, currentDiscipline: newDiscipline }
+          payload: {disciplines: disciplines}
         });
       }
     })
     .catch(err => {
-      dispatch({ type: POST_PROFESSOR_DISCIPLINES_FAIL });
+      dispatch({type: POST_PROFESSOR_DISCIPLINES_FAIL});
     });
 };

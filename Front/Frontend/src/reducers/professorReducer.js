@@ -170,7 +170,6 @@ export default function professorReducer (state = INITIAL_STATE, action) {
       return {
         ...state,
         disciplines: action.payload.disciplines,
-        currentDiscipline: action.payload.currentDiscipline,
         loading: false
       };
     }
