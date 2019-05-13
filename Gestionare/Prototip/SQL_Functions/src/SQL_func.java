@@ -744,4 +744,23 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+    public String getAccessLevel(String username)
+    {
+        String result="None";
+        String query="select tip_utilizator from utilizatori where username=? and verificare=1";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,username);
+            ResultSet rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                result=rs.getString("tip_utilizator");
+            }
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
 }
