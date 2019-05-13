@@ -21,18 +21,18 @@ public class FormulaTest {
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
 
-        MockFormula.setFormula("L+E1");
+        MockFormula.setFormula("L=E1");
         MockFormula.parsareFormula();
         assertEquals("L", MockFormula.variabile[0]);
         assertEquals("E1", MockFormula.variabile[1]);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("L");
+        MockFormula.setFormula("L=L1");
         MockFormula.parsareFormula();
         assertEquals("L", MockFormula.variabile[0]);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("L * (T+E)");
+        MockFormula.setFormula("L = (T+E)");
         MockFormula.parsareFormula();
         assertEquals("L", MockFormula.variabile[0]);
         assertEquals("T", MockFormula.variabile[1]);
@@ -41,36 +41,36 @@ public class FormulaTest {
 
 
         //formula data mai jos e intentionat gresita pentru a verica daca se detecteaza eroarea
-        MockFormula.setFormula("B+ T(P + B)");
+        MockFormula.setFormula("B= T(P + B)");
         MockFormula.parsareFormula();
         assertEquals("Eroare: Inainte de paranteza nu exista operator", MockFormula.mesajPentruFront);
 
 
-        MockFormula.setFormula(" B + 1L");
+        MockFormula.setFormula(" B = 1L");
         MockFormula.parsareFormula();
         assertEquals("Eroare: Variabilele nu pot incepe cu cifre", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("B+ min(10,L1)");
+        MockFormula.setFormula("B= min(10,L1)");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("sum(L1:L3)");
+        MockFormula.setFormula("P = sum(L1:L3)");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
         
-         MockFormula.setFormula(" max(min(L1,L4),min(L2,L3))");
+         MockFormula.setFormula(" E= max(min(L1,L4),min(L2,L3))");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida",MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("3 ++ T");
+        MockFormula.setFormula("R = 3 ++ T");
         MockFormula.parsareFormula();
         assertEquals("Eroare: Nu pot exista doi operatori unul dupa altul",MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("min(Z,3)+7");
+        MockFormula.setFormula("R = min(Z,3)+7");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida",MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("L T");
+        MockFormula.setFormula("A = L T");
         MockFormula.parsareFormula();
         assertEquals("Eroare: Intre doi operanzi nu exista operator",MockFormula.mesajPentruFront);
 
@@ -78,19 +78,10 @@ public class FormulaTest {
         // MockFormula.parsareFormula();
         // assertEquals("Formula este valida",MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("010.5 + max(L3,B)");
+        MockFormula.setFormula("H= 010.5 + max(L3,B)");
         MockFormula.parsareFormula();
         assertEquals("Formula este valida",MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("(L5 +) T*25/100");
-        MockFormula.parsareFormula();
-        assertEquals("Eroare: Paranteza inchisa dupa operator",MockFormula.mesajPentruFront);
-
-        MockFormula.setFormula("L5 == L6 > 3");
-        MockFormula.parsareFormula();
-        assertEquals("L5", MockFormula.variabile[0]);
-        assertEquals("L6", MockFormula.variabile[1]);
-        assertEquals("Formula este valida",MockFormula.mesajPentruFront);
 
 
     }
@@ -296,35 +287,35 @@ public class FormulaTest {
     @Test
     public void verificareVariabileFormula() {
 
-        Formula MockFormula = new Formula("L+E+D");
+        Formula MockFormula = new Formula("L=E+D");
         MockFormula.parsareFormula();
         String[] init = {"D"};
         AntetMaterie antet = new AntetMaterie(init);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Eroare: Urmatoarele variabile din formula nu sunt definite in antet: L E", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("A+B*C");
+        MockFormula.setFormula("A=B*C");
         MockFormula.parsareFormula();
         String[] sir1 = {"A", "B", "C"};
         antet.setCampuriAntet(sir1);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("sum(A1:A3)");
+        MockFormula.setFormula("A1=sum(A1:A3)");
         MockFormula.parsareFormula();
         String[] sir2 = {"A1","A2","A3"};
         antet.setCampuriAntet(sir2);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("min(E1,E2)");
+        MockFormula.setFormula("E1=min(E1,E2)");
         MockFormula.parsareFormula();
         String[] sir3 = {"E1", "E2"};
         antet.setCampuriAntet(sir3);
         MockFormula.verificareVariabileFormula(antet);
         assertEquals("Formula este valida", MockFormula.mesajPentruFront);
 
-        MockFormula.setFormula("max(A,B)");
+        MockFormula.setFormula("A=max(A,B)");
         String[] sir4 = {"A", "B"};
         antet.setCampuriAntet(sir4);
         MockFormula.parsareFormula();

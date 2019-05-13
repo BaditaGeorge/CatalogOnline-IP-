@@ -16,7 +16,7 @@ public class Calcul {
 
     public Calcul(String formula) {
         this.formula = new Formula(formula);
-        this.formula.infixToPostfix();
+
     }
 
     public boolean getPromovat(){
@@ -86,14 +86,15 @@ public class Calcul {
     }
 
     void evaluareFormulaPostfixata(){
-        int startIndex=0;
+        int startIndex=0,i=0;
         formula.infixToPostfix();
-        while(formula.formula.charAt(startIndex)!='='){
+        while(formula.formula.charAt(i)!='='){
             if(formula.formula.charAt(startIndex)!=' ')
+            {
                 resultVar+=formula.formula.charAt(startIndex);
-
-            startIndex++;
-
+                startIndex++;
+            }
+            i++;
         }
         startIndex++;
         formula.formulaPostfixata=formula.formulaPostfixata.substring(0, formula.formulaPostfixata.length() - 1);
@@ -102,6 +103,7 @@ public class Calcul {
 
     }
     void evaluareFormulaPostfixataCriteriu(){
+
         evaluareFormulaPostfixataGenerala(0);
         if(stack.peek()==0.0) promovat=false;
         else promovat=true;
