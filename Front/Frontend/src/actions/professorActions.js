@@ -1,5 +1,5 @@
 import axios from "axios/index";
-import {APIURL} from "../config";
+import { APIURL } from "../config";
 
 export const GET_GLOBAL = "GET_GLOBAL";
 export const GET_GLOBAL_SUCCESS = "GET_GLOBAL_SUCCESS";
@@ -24,163 +24,169 @@ export const POST_PROFESSOR_DISCIPLINES_SUCCESS = "POST_PROFESSOR_DISCIPLINES_SU
 export const POST_PROFESSOR_DISCIPLINES_FAIL = "POST_PROFESSOR_DISCIPLINES_FAIL"
 export const SET_CURRENT_DISCIPLINE = "SET_CURRENT_DISCIPLINE"
 export const getGlobal = () => dispatch => {
-    dispatch({
-        type: GET_GLOBAL
-    });
-    axios
-        .get(`http://ip-api.com/json/24.48.0.1`, {
-            withCredentials: false
-        })
-        .then(res => {
-            let global
-            if (res.data) {
-                global = res.data;
-                dispatch({
-                    type: GET_GLOBAL_SUCCESS,
-                    payload: {global: global}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: GET_GLOBAL_FAIL});
+  dispatch({
+    type: GET_GLOBAL
+  });
+  axios
+    .get(`http://ip-api.com/json/24.48.0.1`, {
+      withCredentials: false
+    })
+    .then(res => {
+      let global
+      if (res.data) {
+        global = res.data;
+        dispatch({
+          type: GET_GLOBAL_SUCCESS,
+          payload: { global: global }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: GET_GLOBAL_FAIL });
+    });
 };
 
 export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
-    dispatch({
-        type: GET_PROFESSOR_CATALOG
-    });
-    const data = {
-        "id_Materie": id_materie,
-        "id_prof": id_profesor
-    };
-    axios
-        .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}`)
-        .then(res => {
-            let rows, columns
-            if (res.data) {
-                rows = res.data.rows;
-                columns = res.data.columns;
-                dispatch({
-                    type: GET_PROFESSOR_CATALOG_SUCCESS,
-                    payload: {rows: rows, columns: columns}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: GET_PROFESSOR_CATALOG_FAIL});
+  dispatch({
+    type: GET_PROFESSOR_CATALOG
+  });
+  const data = {
+    "id_Materie": id_materie,
+    "id_prof": id_profesor
+  };
+  axios
+    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}`)
+    .then(res => {
+      let rows, columns
+      if (res.data) {
+        rows = res.data.rows;
+        columns = res.data.columns;
+        dispatch({
+          type: GET_PROFESSOR_CATALOG_SUCCESS,
+          payload: { rows: rows, columns: columns }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: GET_PROFESSOR_CATALOG_FAIL });
+    });
 };
 
 export const getProfessorDisciplines = (id_professor) => dispatch => {
-    dispatch({
-        type: GET_PROFESSOR_DISCIPLINES
-    });
-    axios
-        .get(`${APIURL}/materii?id_profesor=${id_professor}`)
-        .then(res => {
-            let disciplines
-            if (res.data) {
-                disciplines = res.data.disciplines;
-                dispatch({
-                    type: GET_PROFESSOR_DISCIPLINES_SUCCESS,
-                    payload: {disciplines: disciplines, currentDiscipline: disciplines[0] ? disciplines[0] : {}}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: GET_PROFESSOR_DISCIPLINES_FAIL});
+  dispatch({
+    type: GET_PROFESSOR_DISCIPLINES
+  });
+  axios
+    .get(`${APIURL}/materii?id_profesor=${id_professor}`)
+    .then(res => {
+      let disciplines
+      if (res.data) {
+        disciplines = res.data.disciplines;
+        dispatch({
+          type: GET_PROFESSOR_DISCIPLINES_SUCCESS,
+          payload: {
+            disciplines: disciplines,
+            currentDiscipline: disciplines[0] ? {
+              denumire_materie: disciplines[0].denumire_materie,
+              id_materie: parseInt(disciplines[0].id_materie.replace(" ", ""), 10)
+            } : {}
+          }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: GET_PROFESSOR_DISCIPLINES_FAIL });
+    });
 };
 
 export const getDisciplineFormulas = (id_professor) => dispatch => {
-    dispatch({
-        type: GET_DISCIPLINE_FORMULAS
-    });
-    axios
-        .get(`${APIURL}/formule?id_profesor=${id_professor}`)
-        .then(res => {
-            if (res.data) {
-                let formulas = res.data
-                dispatch({
-                    type: GET_DISCIPLINE_FORMULAS_SUCCESS,
-                    payload: {formulas: formulas}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: GET_DISCIPLINE_FORMULAS_FAIL});
+  dispatch({
+    type: GET_DISCIPLINE_FORMULAS
+  });
+  axios
+    .get(`${APIURL}/formule?id_profesor=${id_professor}`)
+    .then(res => {
+      if (res.data) {
+        let formulas = res.data
+        dispatch({
+          type: GET_DISCIPLINE_FORMULAS_SUCCESS,
+          payload: { formulas: formulas }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: GET_DISCIPLINE_FORMULAS_FAIL });
+    });
 };
 
 export const setDefaultDiscipline = (id_materie, den_materie) => dispatch => {
-    dispatch({
-        type: SET_CURRENT_DISCIPLINE,
-        payload: {currentDiscipline: {materie: den_materie, id_materie: id_materie}}
-    });
+  dispatch({
+    type: SET_CURRENT_DISCIPLINE,
+    payload: { currentDiscipline: { materie: den_materie, id_materie: id_materie } }
+  });
 }
 
 export const insertDisciplineFormulas = (id_materie, formule) => dispatch => {
-    dispatch({
-        type: POST_DISCIPLINE_FORMULAS
-    });
-    axios
-        .post(`${APIURL}/formule`, {id_materie: id_materie, formule: formule})
-        .then(res => {
-            let formulas
-            if (res.data) {
-                formulas = [{formula: res.data.formule}];
-                dispatch({
-                    type: POST_DISCIPLINE_FORMULAS_SUCCESS,
-                    payload: {formulas: formulas}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: POST_DISCIPLINE_FORMULAS_FAIL});
+  dispatch({
+    type: POST_DISCIPLINE_FORMULAS
+  });
+  axios
+    .post(`${APIURL}/formule`, { id_materie: id_materie, formule: formule })
+    .then(res => {
+      let formulas
+      if (res.data) {
+        formulas = [{ formula: res.data.formule }];
+        dispatch({
+          type: POST_DISCIPLINE_FORMULAS_SUCCESS,
+          payload: { formulas: formulas }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: POST_DISCIPLINE_FORMULAS_FAIL });
+    });
 };
 export const insertProfessorCatalog = (catalog) => dispatch => {
-    dispatch({
-        type: POST_PROFESSOR_CATALOG
-    });
-    axios
-        .post(`${APIURL}/catalog`, catalog)
-        .then(res => {
-            console.log(res)
-            let columns, rows
-            if (res.data) {
-                rows = res.data.rows;
-                columns = res.data.columns;
-                dispatch({
-                    type: POST_PROFESSOR_CATALOG_SUCCESS,
-                    payload: {rows: rows, columns: columns}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: POST_PROFESSOR_CATALOG_FAIL});
+  dispatch({
+    type: POST_PROFESSOR_CATALOG
+  });
+  axios
+    .post(`${APIURL}/catalog`, catalog)
+    .then(res => {
+      console.log(res)
+      let columns, rows
+      if (res.data) {
+        rows = res.data.rows;
+        columns = res.data.columns;
+        dispatch({
+          type: POST_PROFESSOR_CATALOG_SUCCESS,
+          payload: { rows: rows, columns: columns }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: POST_PROFESSOR_CATALOG_FAIL });
+    });
 };
 
 export const insertProfessorDisciplines = (id_profesor, den_materie) => (dispatch, getState) => {
-    dispatch({
-        type: POST_PROFESSOR_DISCIPLINES
-    });
-    axios
-        .post(`${APIURL}/materii`, {id_materie: id_profesor, den_materie: den_materie})
-        .then(res => {
-            if (res.data) {
-                let disciplines = getState().professorReducer.disciplines
-                let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 7}
-                disciplines.push(newDiscipline)
-                dispatch({
-                    type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
-                    payload: {disciplines: disciplines, currentDiscipline: newDiscipline}
-                });
-            }
-        })
-        .catch(err => {
-            dispatch({type: POST_PROFESSOR_DISCIPLINES_FAIL});
+  dispatch({
+    type: POST_PROFESSOR_DISCIPLINES
+  });
+  axios
+    .post(`${APIURL}/materii`, { id_materie: id_profesor, den_materie: den_materie })
+    .then(res => {
+      if (res.data) {
+        let disciplines = getState().professorReducer.disciplines
+        let newDiscipline = { denumire_materie: res.data.den_materie, id_materie: 7 }
+        disciplines.push(newDiscipline)
+        dispatch({
+          type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
+          payload: { disciplines: disciplines, currentDiscipline: newDiscipline }
         });
+      }
+    })
+    .catch(err => {
+      dispatch({ type: POST_PROFESSOR_DISCIPLINES_FAIL });
+    });
 };

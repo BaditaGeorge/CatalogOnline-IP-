@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b65d462d-d87e-43eb-a777-a46a4fae8f1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Front/Frontend/src/css/Formula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front/Frontend/src/css/Professor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Controller$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Demo1Application$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/IPCalcul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/IPCalcul.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/IPCalcul.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/IPCalcul.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/Diagrama UML.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/Diagrama UML.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/DiagramaC4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/DiagramaC4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/Dod.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/Dod.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/Product Backlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 1/Arhitectura calcul/Product Backlog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/Dod.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/Dod.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/Front docs/Antet.JSON" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/Front docs/Antet.JSON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/Front docs/Formule.JSON" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/Front docs/Formule.JSON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/Front docs/Instructiuni pagina antet-formula.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/Front docs/Instructiuni pagina antet-formula.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/PrelucrareDate.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/PrelucrareDate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/allclasses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/element-list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/external/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_flat_75_ffffff_40x100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_888888_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-3.3.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-migrate-3.0.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-migrate-3.0.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.structure.css" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.structure.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.structure.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jquery-ui.structure.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip/dist/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip/dist/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip/dist/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/jquery/jszip/dist/jszip.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/member-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/resources/glass.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/resources/glass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/resources/x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/resources/x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/Sprint 2/JavaDocs/type-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/lib/hamcrest-core-1.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/lib/hamcrest-core-1.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/lib/junit-4.12.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/lib/junit-4.12.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/artifacts/IPCalcul_jar/IPCalcul.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/artifacts/IPCalcul_jar/IPCalcul.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/AntetMaterie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/AntetMaterie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/Calcul.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/Calcul.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/Formula.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/Formula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/MockFunctiiGestiune.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/MockFunctiiGestiune.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/PaginaFormula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/AntetMaterieTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/AntetMaterieTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/CalculTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/CalculTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/FormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/FormulaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/PaginaFormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/out/test/IPCalcul/PaginaFormulaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/AntetMaterie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/AntetMaterie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/Calcul.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/Calcul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/Formula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/MockFunctiiGestiune.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/MockFunctiiGestiune.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/PaginaFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/PaginaFormula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/src/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/tests/AntetMaterieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/tests/AntetMaterieTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/tests/CalculTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/tests/CalculTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/tests/FormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/tests/FormulaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calcul/tests/PaginaFormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calcul/tests/PaginaFormulaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/actions/studentActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/actions/studentActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/catalog.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/catalog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/SecretaryDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/SecretaryDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/config.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/reducers/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/reducers/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/reducers/studentReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/reducers/studentReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/serviceWorker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/serviceWorker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Media/c4-frontend.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Media/c4-frontend.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Media/site-map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Media/site-map.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Media/uml-frontend.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Media/uml-frontend.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Front/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Sprints/Sprint1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Sprints/Sprint1/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Sprints/Sprint2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Sprints/Sprint2/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General/Diagrama de containere.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/General/Diagrama de containere.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General/Diagrama de context.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/General/Diagrama de context.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/BD_Gestiunea" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/BD_Gestiunea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/DoD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/DoD.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/Gestionare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/Gestionare.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Catalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Examen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Examen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Materie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Materie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Nota.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Nota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Secretar.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Secretar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Gestionare/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Gestionare/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/JavaCSVLib.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/JavaCSVLib.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/JavaPDFLib.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/JavaPDFLib.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/JavaSQLLib.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/JavaSQLLib.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Product Backlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Product Backlog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/IPCalcul.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/IPCalcul.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/nbactions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/nbactions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/sqlite-jdbc-3.27.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/sqlite-jdbc-3.27.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/AntetMaterie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/AntetMaterie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/CSVExporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/CSVImporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Calcul.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Calcul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Demo1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Demo1Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/Formula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/FstParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/FstParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/MockFunctiiGestiune.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/MyConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/PaginaFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/PaginaFormula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/SQL_func.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/SQL_func.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/sqlite-jdbc-3.27.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/java/com/example/demo1/sqlite-jdbc-3.27.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/test/java/com/example/demo1/Demo1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/src/test/java/com/example/demo1/Demo1ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/AntetMaterie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/AntetMaterie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Calcul.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Calcul.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Demo1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Demo1Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Formula.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/Formula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/FstParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/FstParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PaginaFormula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/PrelucrareDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/SQL_func.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/SQL_func.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/classes/com/example/demo1/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/demo1-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/demo1-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/demo1-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/demo1-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/surefire-reports/TEST-com.example.demo1.Demo1ApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/surefire-reports/TEST-com.example.demo1.Demo1ApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/surefire-reports/com.example.demo1.Demo1ApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/surefire-reports/com.example.demo1.Demo1ApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/test-classes/com/example/demo1/Demo1ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/Gestionare1B1/target/test-classes/com/example/demo1/Demo1ApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/ProiectIP-CSV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/ProiectIP-CSV.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/gm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/gm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/out/production/gm/SelectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/out/production/gm/SelectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/out/production/gm/sqlite-jdbc-3.27.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/out/production/gm/sqlite-jdbc-3.27.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/src/SelectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/src/SelectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/src/sqlite-jdbc-3.27.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/SelectDB/src/sqlite-jdbc-3.27.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/country2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/country2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/out/production/ProiectIP-CSV/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/out/production/ProiectIP-CSV/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/ProiectIP-CSV/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/SQL_Functions.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/out/production/SQL_Functions/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/out/production/SQL_Functions/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/out/production/SQL_Functions/SQL_func.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/out/production/SQL_Functions/SQL_func.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/src/SQL_func.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/src/SQL_func.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/src/sqlite-jdbc-3.27.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Prototip/SQL_Functions/src/sqlite-jdbc-3.27.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/SQL_Functions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/SQL_Functions.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/Uml Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/Uml Diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/c4_2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/c4_2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/from_security.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/from_security.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/laic.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/laic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/schema_Database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/schema_Database.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Catalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Examen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Examen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Materie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Materie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Nota.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Nota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Secretar.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Secretar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestionare/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Diagrama-componente-new.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Diagrama-componente-new.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/DiagramaClase.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/Security/DiagramaClase.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/DoD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Security/DoD.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/BD_Gestiunea" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/BD_Gestiunea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/security/DatabaseOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/security/DatabaseOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/security/HelpFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/security/HelpFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/security/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/security/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/security/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/security/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/security/Verify.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/security/Verify.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/HFTestEncrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/HFTestEncrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/HFTestGetAuthCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/HFTestGetAuthCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/LTestLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/LTestLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/LTestLogin2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/LTestLogin2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/RTestRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/RTestRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/VerifyTestVAN.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/VerifyTestVAN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/com/testing/VerifyTestVeryfyMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/com/testing/VerifyTestVeryfyMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/META-INF/clasele facute bine !!!.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/META-INF/clasele facute bine !!!.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/database/SQL_func.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/database/SQL_func.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/HelpFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/HelpFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/Verify.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/security/Verify.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/HFTestEncrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/HFTestEncrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/HFTestEncrypt2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/HFTestEncrypt2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/HFTestGetAuthCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/HFTestGetAuthCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin4.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/LTestLogin4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/RTestRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/RTestRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/RTestRegister2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/RTestRegister2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestAN2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestAN2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestAN3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestAN3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestMAIL2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestMAIL2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestVAN.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestVAN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestVeryfyMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/bin/production/clasele facute bine !!!/com/testing/VerifyTestVeryfyMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/lib/activation.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/lib/activation.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/lib/java-plugin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/lib/java-plugin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/lib/javax.mail.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/lib/javax.mail.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/lib/mail-1.5.0-b01.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/lib/mail-1.5.0-b01.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/lib/sqlite-jdbc-3.27.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/lib/sqlite-jdbc-3.27.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/database/SQL_func.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/database/SQL_func.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/security/HelpFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/security/HelpFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/security/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/security/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/security/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/security/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/security/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/security/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/security/Verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/security/Verify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/HFTestEncrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/HFTestEncrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/HFTestEncrypt2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/HFTestEncrypt2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/HFTestGetAuthCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/HFTestGetAuthCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin4.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/LTestLogin4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/RTestRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/RTestRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/RTestRegister2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/RTestRegister2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestAN2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestAN2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestAN3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestAN3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestMAIL2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestMAIL2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestVAN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestVAN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestVeryfyMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Final/src/com/testing/VerifyTestVeryfyMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/IP-Security.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/IP-Security.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/AddAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/AddAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/Administrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/ChangePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/DatabaseOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/DatabaseOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/ModifyAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/ModifyAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/Secretar.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/Secretar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/IP-Security/src/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security/IP-Security/src/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/backlog - Securiate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Security/backlog - Securiate.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/docu.md" beforeDir="false" afterPath="$PROJECT_DIR$/Security/docu.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/allclasses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/database/SQL_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/database/SQL_func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/database/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/database/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/database/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/database/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/HelpFunctions.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/HelpFunctions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/Verify.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/Verify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/com/security/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/com/security/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/element-list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/external/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_flat_75_ffffff_40x100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_888888_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-3.3.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-migrate-3.0.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.structure.css" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.structure.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.structure.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jquery-ui.structure.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jszip/dist/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jszip/dist/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/jquery/jszip/dist/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/jquery/jszip/dist/jszip.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/member-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/package-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/resources/glass.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/resources/glass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/resources/x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/resources/x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security/javadoc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Security/javadoc/type-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="26" column="25" lean-forward="true" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+              <folding>
+                <element signature="e#1#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+              <folding>
+                <element signature="e#132#171#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-519">
+              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/reducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/config.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/studentActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Front/Frontend/src/reducers/reducer.js" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboardRedux.jsx" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" />
+        <option value="$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+              <item name="Calcul" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7953000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2493" height="1417" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17071198" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3287483" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32849503" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.24966443" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/studentReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#823#1276#0" />
+            <element signature="e#1288#1469#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/config.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboardRedux.jsx" />
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/studentActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/professorReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="25" lean-forward="true" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <element signature="e#1#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Formula.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#132#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
