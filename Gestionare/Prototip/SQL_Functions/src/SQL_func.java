@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.util.Random;
+
 /**
  * Clasa care contine functii cu operatii pentru baza de date
  */
@@ -6,9 +8,9 @@ public class SQL_func {
     String way;
 
     /**
-     * Constructor cu rol de plasare a path-ului 
+     * Constructor cu rol de plasare a path-ului
      * @param path Un String cu path-ul bazei de date
-      */
+     */
     SQL_func(String path)
     {
         way=path;
@@ -38,7 +40,7 @@ public class SQL_func {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                 result+= rs.getString("formula_calcul") + " | ";
+                result+= rs.getString("formula_calcul") + " | ";
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -57,7 +59,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-                result =(rs.getString("formula_calcul") + "\t");
+            result =(rs.getString("formula_calcul") + "\t");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -97,13 +99,13 @@ public class SQL_func {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-            result+= rs.getString("id_student") +"  " + rs.getString("id_materie") + " " + rs.getString("valori_note")+ " | ";
+                result+= rs.getString("id_student") +"  " + rs.getString("id_materie") + " " + rs.getString("valori_note")+ " | ";
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
-    } catch (SQLException e) {
-        System.out.println(e.getMessage());
-    }
         return result;
-}
+    }
     /**
      * Functia care returneaza notele unui anumit student la o anumita materie
      * @param id_s Parametrul care identifica id-ul studentului
@@ -149,16 +151,17 @@ public class SQL_func {
      * @param id_s Parametrul care identifica id-ul studentului
      * @param nume Parametrul care identifica numele materiei
      * @param note Parametrul care identifica valorile notelor
-     * @param formula Parametrul care identifica formula de calcul
+//     * @param formula Parametrul care identifica formula de calcul
      */
     public void insertMaterii(String id_m,String id_s,String nume,String note){
-        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note) VALUES (?,?,?,?)";
+        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note,situatiePromovare) VALUES (?,?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_m);
             pstmt.setString(2, id_s);
             pstmt.setString(3, nume);
             pstmt.setString(4, note);
+            pstmt.setString(5, "");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -213,7 +216,7 @@ public class SQL_func {
      */
     public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula)
     {
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet,criteriiPromovare) VALUES (?,?,?,?,?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_p);
@@ -223,7 +226,7 @@ public class SQL_func {
             pstmt.setString(5, den_m);
             pstmt.setString(6, formula);
             pstmt.setString(7, "");
-
+            pstmt.setString(8, "");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -237,7 +240,7 @@ public class SQL_func {
     public void insertProfesori(String id_p,String den_m)
     {
 
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet,criteriiPromovare) VALUES (?,?,?,?,?,?,?,?)";
         String aux=getNumePrenumeProf(id_p);
         String[] numePrenume=aux.split(" ");
         String nume=numePrenume[0];
@@ -251,6 +254,7 @@ public class SQL_func {
             pstmt.setString(5, den_m);
             pstmt.setString(6, "");
             pstmt.setString(7, "");
+            pstmt.setString(8, "");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -351,14 +355,14 @@ public class SQL_func {
     }
     /**
      * Functia care insereaza un nou utilizator in baza de date
-     * @param id_u Parametrul care identifica id-ul utilizatorului
+//     * @param id_u Parametrul care identifica id-ul utilizatorului
      * @param username Parametrul care identifica username-ul utilizatorului
      * @param email Parametrul care identifica adresa de mail a utilizatorului
      * @param pas Parametrul care identifica parola utilizatorului
      * @param salt Parametrul care identifica valoarea din campul salt_parola a utilizatorului
-     * @param nrt Parametrul care identifica numarul de telefon al utilizatorului
-     * @param tip_u Parametrul care identifica tipul utilizatorului
-     * @param ver Parametrul care identifica valoarea din campul verificare a utilizatorului
+//     * @param nrt Parametrul care identifica numarul de telefon al utilizatorului
+//     * @param tip_u Parametrul care identifica tipul utilizatorului
+//     * @param ver Parametrul care identifica valoarea din campul verificare a utilizatorului
      */
     public void addNewUser(String username,String email,String pas,String salt ,String auth)
     {
@@ -416,9 +420,9 @@ public class SQL_func {
                     result = aux;
             }
         }
-     catch (SQLException e) {
-        System.out.println(e.getMessage());
-    }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
         return result+1;
     }
     /**
@@ -432,7 +436,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-                result+= rs.getString("nume")+ " "  +  rs.getString("prenume");
+            result+= rs.getString("nume")+ " "  +  rs.getString("prenume");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -463,22 +467,22 @@ public class SQL_func {
      */
     public Integer getMaxIdUtilizator()
     {
-            int result=0;
-            String query="Select id_utilizator as maxID from utilizatori";
-            try (Connection conn = this.connect();
-                 Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery(query)) {
-                while (rs.next())
-                {
-                    Integer aux =Integer.parseInt(rs.getString("maxID"));
-                    if( aux > result)
-                        result = aux;
-                }
+        int result=0;
+        String query="Select id_utilizator as maxID from utilizatori";
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next())
+            {
+                Integer aux =Integer.parseInt(rs.getString("maxID"));
+                if( aux > result)
+                    result = aux;
             }
-            catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-            return result+1;
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result+1;
     }
 
     /**
@@ -544,7 +548,8 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-        /**
+
+    /**
      * Functia care adauga un nou student in baza de date
      * @param student e un String de forma id,nume,prenume,grupa.email
      */
@@ -612,4 +617,130 @@ public class SQL_func {
         return saltStr;
 
     }
+    String selectCriterii(String id){
+        String result = "";
+        String query = " Select criteriiPromovare from profesori where id_materie=";
+        query+=id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            result =(rs.getString("criteriiPromovare  ") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    void updateCriterii(String id_m, String criterii){
+        String query="Update profesori set criteriiPromovare = ? where id_materie = ?";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,criterii);
+            pstmt.setString(2,id_m);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    void updatePromovare(String promovare,String id_s,String id_m){
+        String query = "Update materii set situatiePromovare= ? where id_student= ? and id_materie= ?";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, promovare);
+            pstmt.setString(2, id_s);
+            pstmt.setString(3, id_m);
+            // update
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+        void addSession(String username,int session_id,String last_activity)
+    {
+        String query = "Insert into sessions(session_id,username,last_activity) VALUES (?,?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, session_id);
+            pstmt.setString(2, username);
+            pstmt.setString(3, last_activity);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    void deleteSession(int session_id)
+    {
+        String query = "DELETE FROM sessions WHERE session_id = ?";
+
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, session_id);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public int countSession(int session_id)
+    {
+        int result = 0;
+        String query = "select username from sessions where session_id= " + session_id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next())
+                result ++;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    String getTime(int s_id)
+    {
+        String result = "";
+        String query = " Select last_activity from sessions where session_id=";
+        query+=s_id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while(rs.next())
+                result+=(rs.getString("last_activity") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    String getUsername(int s_id)
+    {
+        String result = "";
+        String query = " Select username from sessions where session_id=";
+        query+=s_id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while(rs.next())
+                result+=(rs.getString("username") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    void updateSessionActivity(int s_id,String new_time)
+    {
+        String query = "Update sessions set last_activity= ? where session_id=?";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, new_time);
+            pstmt.setInt(2, s_id);
+            // update
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
 }
