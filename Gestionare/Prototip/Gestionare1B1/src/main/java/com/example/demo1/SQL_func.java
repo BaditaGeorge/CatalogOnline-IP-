@@ -68,6 +68,20 @@ public class SQL_func {
         }
         return result;
     }*/
+    public String selectFormulaCalc(String id) {
+        String result = "";
+        String query = " Select formula_calcul from profesori where id_materie=";
+        query+=id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+                result =(rs.getString("formula_calcul") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
     public String selectFormula(String id){
         String result = "";
         String query = " Select formula_calcul,id_materie from profesori where id_profesor=";
