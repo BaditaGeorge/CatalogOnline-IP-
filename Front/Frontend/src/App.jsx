@@ -6,7 +6,7 @@ import store from './store';
 import Login from './components/Login';
 import Register from './components/Register';
 import {StudentDashboardRedux} from './components/StudentDashboard';
-import {ProfessorDashboardRedux} from './components/ProfessorDashboardRedux';
+import {ProfessorDashboardRedux} from './components/ProfessorDashboard';
 import SecretaryDashboard from './components/SecretaryDashboard'
 import AdminDashboard from './components/AdminDashboard';
 import About from './components/About';

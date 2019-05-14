@@ -3,89 +3,71 @@ import '../App.css';
 import {connect} from "react-redux";
 import Catalog from "./Catalog"
 import {
-    getProfessorCatalog,
-    getProfessorDisciplines,
-    getDisciplineFormulas,
-    insertDisciplineFormulas,
-    insertProfessorCatalog
-} from "../actions/actions";
-import Formula from "./Formula";
+  getStudentCatalog,
+  getStudentDisciplines,
+  setStudentCurrentDiscipline
+} from "../actions/studentActions";
 import NavProf from "./NavProf";
+import equal from "fast-deep-equal";
+
+const user = {name: "Alex Ivan", role: "student", id_prof: 1}
 
 class StudentDashboard extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentDiscipline: {}
     }
+  }
 
-    componentWillMount() {
-        // const catalog = {
-        //     "profesor": "1",
-        //     "disciplina": "7",
-        //     "columns": [
-        //         {
-        //             "key": "student",
-        //             "type": "text"
-        //         },
-        //         {
-        //             "key": "id",
-        //             "type": "text"
-        //         },
-        //         {
-        //             "key": "group",
-        //             "type": "text"
-        //         },
-        //         {
-        //             "key": "L1",
-        //             "type": "number"
-        //         },
-        //         {
-        //             "key": "L2",
-        //             "type": "number"
-        //         },
-        //         {
-        //             "key": "L3",
-        //             "type": "number"
-        //         }], "rows": [
-        //         {
-        //             "id": "1",
-        //             "student": "Victor Paval",
-        //             "group": "B1",
-        //             "L1": "5",
-        //             "L2": "10",
-        //             "L3": "15"
-        //         }]
-        // }
-        // this.props.getProfessorCatalog(7, 1)
-        // this.props.getProfessorDisciplines(2)
-        // this.props.getDisciplineFormulas(7)
-        // this.props.insertDisciplineFormulas(7, "L1*L2")
-    }
 
-    render() {
-        console.log(this.props.disciplines)
-        const user={name:"Alex", prenume:"Andrei Marian", role:"student"}
-        return (
-            <div>
-                <NavProf disciplines={this.props.disciplines}/>
-                <Catalog user={user} rows={this.props.rows} columns={this.props.columns}/>
-            </div>
-        );
+  componentWillMount() {
+    this.props.getStudentCatalog(user.id_prof, 3)
+    this.props.getStudentDisciplines(user.id_prof)
+  }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    if (!equal(nextProps.currentDiscipline, this.props.currentDiscipline)) {
+      this.setState({currentDiscipline: nextProps.currentDiscipline})
+      console.log(this.state)
     }
+  }
+
+  render() {
+    let catalogIndex = 0
+    this.props.catalogs.map((catalog, index) => {
+      console.log(catalog, this.props.currentDiscipline.denumire_materie)
+      if (catalog.denumire_materie === this.props.currentDiscipline.denumire_materie)
+        catalogIndex = index
+    })
+
+    return (
+      <div>
+        <NavProf
+          user={user}
+          disciplines={this.props.disciplines}
+          currentDiscipline={this.props.currentDiscipline}
+          onDisciplineChange={this.props.setStudentCurrentDiscipline}
+        />
+        <Catalog user={user}
+                 rows={this.props.catalogs.length ? this.props.catalogs[catalogIndex].rows : []}
+                 columns={this.props.catalogs.length ? this.props.catalogs[catalogIndex].columns : []}
+        />
+      </div>
+    );
+  }
 }
 
 export const StudentDashboardRedux = connect((state) => ({
-    global: state.global,
-    columns: state.columns,
-    disciplines: state.disciplines,
-    formulas: state.formulas,
-    rows: state.rows,
-    loading: state.loading
+  global: state.studentReducer.global,
+  catalogs: state.studentReducer.catalogs,
+  disciplines: state.studentReducer.disciplines,
+  currentDiscipline: state.studentReducer.currentDiscipline,
+  loading: state.studentReducer.loading
 }), {
-    getProfessorCatalog,
-    getProfessorDisciplines,
-    getDisciplineFormulas,
-    insertDisciplineFormulas,
-    insertProfessorCatalog
+  getStudentCatalog,
+  getStudentDisciplines,
+  setStudentCurrentDiscipline,
 })(StudentDashboard)
 
 
