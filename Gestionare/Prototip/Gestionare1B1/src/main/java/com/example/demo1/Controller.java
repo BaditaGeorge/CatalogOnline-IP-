@@ -395,7 +395,7 @@ public class Controller {
            String forC="f: " + aRe + "; " + bRe;
            PrelucrareDate pd = new PrelucrareDate();
            aRe=aRe.replace(" ","");
-           new SQL_func().updateAntet("L1 L2 L3",aRe);
+           
            System.out.println(new SQL_func().selectAntet(aRe));
            mesajPentruFront=pd.primesteMesajFront(forC);
            System.out.println(mesajPentruFront);

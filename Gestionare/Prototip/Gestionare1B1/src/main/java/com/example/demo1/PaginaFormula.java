@@ -23,9 +23,11 @@ public class PaginaFormula {
             return mesajPentruFront;
         }
         antet = antet.replaceAll("\\s+", " ");
+        System.out.println(antet);
         String[] campuriAntet = antet.split(" ");
         AntetMaterie antetMaterie = new AntetMaterie(campuriAntet);
-
+       
+        
         String[] list = formule.split(";");
         Formula[] listFormule=new Formula[list.length];
         int index=0;

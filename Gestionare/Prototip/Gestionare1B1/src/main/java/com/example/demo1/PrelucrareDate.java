@@ -95,12 +95,13 @@ public class PrelucrareDate {
               
             for (String formula : listFormule) {
                 Calcul calcul = new Calcul(formula);
-              
+               System.out.println("he!!");
                 calcul.parsareNote(note);
-                 
+                 System.out.println("h!!");
                 calcul.evaluareFormulaPostfixata();
-            
+                  System.out.println("h");
                 note = calcul.noteUpdatate();
+                
             }
              System.out.println("hei!");
             functiiGestiune.updateNote(id_student, id_materie, note);
