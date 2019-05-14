@@ -56,6 +56,7 @@ class ProfessorDashboard extends Component {
           />
           <Catalog user={user}
                    currentDiscipline={this.props.currentDiscipline}
+                   formulas={this.props.formulas}
                    rows={this.props.rows}
                    columns={this.props.columns}
                    onCatalogChange={this.props.insertProfessorCatalog}

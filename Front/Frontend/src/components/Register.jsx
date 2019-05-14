@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../App.css';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 import '../css/Register.css'
 import {Button, Form} from "react-bootstrap";
 import Card from "react-bootstrap/Card";
