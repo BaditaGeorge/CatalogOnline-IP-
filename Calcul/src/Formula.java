@@ -1,5 +1,8 @@
 import java.util.Stack;
 
+import static java.lang.Character.isDigit;
+import static java.lang.Character.isLetter;
+
 public class Formula {
     public String formula;
     public String formulaPostfixata = "";
@@ -277,10 +280,51 @@ public class Formula {
         return -1;
     }
 
+    boolean isVariable(int equalSignIndex){
+        int index=0;
+        String var="";
+        while(formula.charAt(index)==' ' && index<equalSignIndex)index++;
+        if(index>=equalSignIndex) return false;
+
+        if(isDigit(formula.charAt(index))) return false;
+        while(index<equalSignIndex && (isLetter(formula.charAt(index))||isDigit(formula.charAt(index)))){
+            var+=formula.charAt(index);
+            index++;
+        }
+
+        if(index==equalSignIndex)
+        {
+            variabile[nrVariabile++]=var;
+            return true;
+        }
+        while(index<equalSignIndex && formula.charAt(index)==' ') index++;
+
+        if(index==equalSignIndex)
+        {
+            variabile[nrVariabile++]=var;
+            return true;
+        }
+        return false;
+    }
+
+
     //parcurge formula, verifica daca e corecta si determina variabilele
 
     void parsareFormula() {
-        parsareExpresie(formula);
+        if(formula.indexOf('=')<0)
+            mesajPentruFront="Eroare: Formula trebuie sa fie de forma <variabila>=<expresie>";
+        else{
+            if(!isVariable(formula.indexOf('=')))
+                mesajPentruFront="Eroare: Formula trebuie sa fie de forma <variabila>=<expresie>";
+            else
+            {
+                String expression=formula.substring(formula.indexOf('=')+1);
+                formula=expression;
+                parsareExpresie(expression);
+            }
+        }
+
+
     }
 
     void parsareCriteriu() {

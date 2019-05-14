@@ -1,6 +1,9 @@
 package com.example.demo1;
 import java.util.Stack;
 
+import static java.lang.Character.isDigit;
+import static java.lang.Character.isLetter;
+
 public class Formula {
     public String formula;
     public String formulaPostfixata = "";
@@ -278,10 +281,51 @@ public class Formula {
         return -1;
     }
 
+    boolean isVariable(int equalSignIndex){
+        int index=0;
+        String var="";
+        while(formula.charAt(index)==' ' && index<equalSignIndex)index++;
+        if(index>=equalSignIndex) return false;
+
+        if(isDigit(formula.charAt(index))) return false;
+        while(index<equalSignIndex && (isLetter(formula.charAt(index))||isDigit(formula.charAt(index)))){
+            var+=formula.charAt(index);
+            index++;
+        }
+
+        if(index==equalSignIndex)
+        {
+            variabile[nrVariabile++]=var;
+            return true;
+        }
+        while(index<equalSignIndex && formula.charAt(index)==' ') index++;
+
+        if(index==equalSignIndex)
+        {
+            variabile[nrVariabile++]=var;
+            return true;
+        }
+        return false;
+    }
+
+
     //parcurge formula, verifica daca e corecta si determina variabilele
 
     void parsareFormula() {
-        parsareExpresie(formula);
+        if(formula.indexOf('=')<0)
+            mesajPentruFront="Eroare: Formula trebuie sa fie de forma <variabila>=<expresie>";
+        else{
+            if(!isVariable(formula.indexOf('=')))
+                mesajPentruFront="Eroare: Formula trebuie sa fie de forma <variabila>=<expresie>";
+            else
+            {
+                String expression=formula.substring(formula.indexOf('=')+1);
+                formula=expression;
+                parsareExpresie(expression);
+            }
+        }
+
+
     }
 
     void parsareCriteriu() {
@@ -687,11 +731,10 @@ public class Formula {
                 for (int j = 0; j < antet.nrCampuri; j++)
                     if (variabile[i].equals(antet.CampuriAntet[j]))
                         check = true;
-                if (!check && !variabile[i].equals(""))
+                if (!check)
                     raspuns[k++] = this.variabile[i];
             }
-      
-        System.out.println(antet.nrCampuri);
+
         if (raspuns[0] != null) {
             mesajPentruFront = "Eroare: Urmatoarele variabile din formula nu sunt definite in antet:";
             for (int i = 0; i < raspuns.length; i++)

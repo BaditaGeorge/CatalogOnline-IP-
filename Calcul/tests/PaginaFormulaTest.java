@@ -19,7 +19,7 @@ public class PaginaFormulaTest {
         assertEquals("Eroare: Campurile din antet pot contine doar litere si cifre si trebuie sa inceapa cu o litera", paginaFormula.mesajPentruFront);
         */
 
-       prelucrareDate.primesteMesajFront("n: 1; 2; L1 1 L2 1 L3 1 L4 1 L5 1");
+       prelucrareDate.primesteMesajFront("a: 14; L1 L2 L4");
 
 
     }

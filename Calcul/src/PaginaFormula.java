@@ -56,7 +56,7 @@ public class PaginaFormula {
                     nr=nr*10+number.charAt(i)-'0';
                 }
 
-                formuleReturnate+=(listFormule[nr].formula+ "; ");
+                formuleReturnate+=(list[nr]+ "; ");
 
             }
         }
@@ -214,7 +214,7 @@ public class PaginaFormula {
         mesajPentruFront = antetNou.getMesajPentruFront();
 
         if (mesajPentruFront.equals("Antetul este valid"))
-            this.prelucrareDate.functiiGestiune.updateAntet(id_materie, antet);
+            this.prelucrareDate.functiiGestiune.updateAntet(antet,id_materie);
 
         return mesajPentruFront;
 

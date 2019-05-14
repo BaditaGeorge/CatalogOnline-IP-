@@ -108,7 +108,7 @@ public class Controller {
            //bRe=treeMap.get(result.get(1)).toString();
            System.out.println(aRe+"\n"+bRe);
         
-        //String forRet = parserPuiuMic(selectCatalog(aRe,bRe));
+        //String forRet = parserPuiuMic(select(aRe,bRe));
         //return forRet;
         return (new FstParser().convertCatalogToJSON(aRe, bRe));
     }
@@ -219,7 +219,8 @@ public class Controller {
                     tempSol = "n: " + idStud + "; " + treeMap.get(result.get(1)).toString() + "; " + tempSol;
                     System.out.println(tempSol+"\n");
                     System.out.println("before\n");
-                    System.out.println(pd.primesteMesajFront(tempSol));
+                    mesajPentruFront+=" "+pd.primesteMesajFront(tempSol);
+                    System.out.println(mesajPentruFront);
                     System.out.println("after\n");
                }
            }

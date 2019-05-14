@@ -82,6 +82,10 @@ public class PrelucrareDate {
             }
          
             String formule = functiiGestiune.selectFormulaCalc(id_materie);
+            System.out.println(id_materie);
+            System.out.println(formule);
+            
+            formule = formule.replaceAll("\\s+", "");
             if (formule.equals(""))
                 return "Nu se vor face calcule fara formula";
 
@@ -102,10 +106,17 @@ public class PrelucrareDate {
                 note = calcul.noteUpdatate();
                 System.out.println("Dupa noteeca");
             }
+             System.out.println("hei!");
             functiiGestiune.updateNote(id_student, id_materie, note);
             //System.out.println("De control!");
+            
+            System.out.println("hei!!");
+             
+            
             String promovare="";
-            if (!criterii.equals("")) {
+            criterii = criterii.replaceAll("\\s+", "");
+            if (criterii != null && !criterii.isEmpty()) {
+                System.out.println("criterii" + criterii);
                 boolean promovat=false;
                 String[] listCriterii=criterii.split(";");
                 for (String criteriu : listCriterii) {
@@ -119,10 +130,13 @@ public class PrelucrareDate {
                     promovare+=promovat+" ";
 
                 }
-
+               
+                functiiGestiune.updatePromovare(promovare, id_student, id_materie);
             }
+             
+
+            System.out.println("hei!!!");
             
-            functiiGestiune.updatePromovare(promovare, id_student, id_materie);
 
             return "Update efectuat";
         }

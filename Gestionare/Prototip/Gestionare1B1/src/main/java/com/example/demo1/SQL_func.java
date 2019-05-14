@@ -54,6 +54,20 @@ public class SQL_func {
         return result;
     }
     //Selectam doar o singura formula din baza de date indicata de id-ul materiei
+    /*public String selectFormulaCalc(String id) {
+        String result = "";
+        String query = " Select formula_calcul from profesori where id_materie=";
+        query+=id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+                result =(rs.getString("formula_calcul") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }*/
     public String selectFormulaCalc(String id) {
         String result = "";
         String query = " Select formula_calcul from profesori where id_materie=";
@@ -131,6 +145,95 @@ public class SQL_func {
             pstmt.setString(3, prenume);
             pstmt.setString(4, grupa);
             pstmt.setString(5, eMail);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+     String getUsername(String s_id)
+    {
+        String result = "";
+        String query = " Select username from sessions where session_id=";
+        query+=s_id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while(rs.next())
+                result+=(rs.getString("username") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+         void addSession(String username,String session_id,String last_activity)
+    {
+        String query = "Insert into sessions(session_id,username,last_activity) VALUES (?,?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, session_id);
+            pstmt.setString(2, username);
+            pstmt.setString(3, last_activity);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    void deleteSession(String session_id)
+    {
+        String query = "DELETE FROM sessions WHERE session_id = ?";
+
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, session_id);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public int countSession(String session_id)
+    {
+        int result = 0;
+        String query = "select username from sessions where session_id= " + session_id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next())
+                result ++;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    String getTime(String s_id)
+    {
+        String result = "";
+        String query = " Select last_activity from sessions where session_id=";
+        query+=s_id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while(rs.next())
+                result+=(rs.getString("last_activity") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+    void updateSessionActivity(String s_id,String new_time)
+    {
+        String query = "Update sessions set last_activity= ? where session_id=?";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, new_time);
+            pstmt.setString(2, s_id);
+            // update
             pstmt.executeUpdate();
             System.out.println("Succes!");
         } catch (SQLException e) {
@@ -481,6 +584,70 @@ public class SQL_func {
         }
         return result;
     }
+    
+    String selectCriterii(String id){
+        String result = "";
+        String query = " Select criteriiPromovare from profesori where id_materie=";
+        query+=id;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            result =(rs.getString("criteriiPromovare  ") + "\t");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+     void updateCriterii(String id_m, String criterii){
+        String query="Update profesori set criteriiPromovare = ? where id_materie = ?";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,criterii);
+            pstmt.setString(2,id_m);
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public String getAccessLevel(String username)
+    {
+        String result="None";
+        String query="select tip_utilizator from utilizatori where username=? and verificare=1";
+        try ( Connection conn =this.connect();
+              PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1,username);
+            ResultSet rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                result=rs.getString("tip_utilizator");
+            }
+            System.out.println("Succes!");
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+     void updatePromovare(String promovare,String id_s,String id_m){
+        String query = "Update materii set situatiePromovare= ? where id_student= ? and id_materie= ?";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, promovare);
+            pstmt.setString(2, id_s);
+            pstmt.setString(3, id_m);
+            // update
+            pstmt.executeUpdate();
+            System.out.println("Succes!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     public void updateAntet(String antet,String id_m)
     {
         String query="Update profesori set antet = ? where id_materie = ?";
@@ -495,7 +662,7 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
-    void updatePromovare(String promovare,String id_s,String id_m){
+    /*void updatePromovare(String promovare,String id_s,String id_m){
         String query = "Update materii set situatiePromovare= ? where id_student= ? and id_materie= ?";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -535,5 +702,5 @@ public class SQL_func {
         catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
+    }*/
 }

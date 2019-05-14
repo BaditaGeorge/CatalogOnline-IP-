@@ -11,7 +11,7 @@ public class MockFunctiiGestiune {
 
 
     public String selectFormula(String id) {
-        return "L1=L2+L5; L3=L1+L4";
+        return "L4=(L1 + L2)/2";
     }
 
     public void updateFormula(String id_m,String formula)
