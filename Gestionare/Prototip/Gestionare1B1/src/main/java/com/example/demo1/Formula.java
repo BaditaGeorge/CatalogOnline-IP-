@@ -1,4 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.example.demo1;
+
+/**
+ *
+ * @author GoguSpoder
+ */
 import java.util.Stack;
 
 import static java.lang.Character.isDigit;
@@ -12,16 +22,9 @@ public class Formula {
     public String[] variabile = new String[50];
     public String mesajPentruFront;
 
-
-
     public Formula(String formula) {
         this.formula = formula;
     }
-
-    public Formula() {
-    }
-
-
 
     //used only for tests
     public void setFormula(String formula) {
@@ -30,94 +33,101 @@ public class Formula {
         formulaPostfixata = "";
     }
 
-    public void setCriteriiPromovare(String criteriiPromovare) {
-        this.criteriiPromovare = criteriiPromovare;
-    }
-
     //primeste un index de unde incepe paranteza pentru sum, returneaza  pozitia primei paranteze inchise pe care o gaseste daca functia sum a fost folosita corect si -1 altfel
     // Ex: Pentru formula "P+E+sum(L1:L14)" functia primeste indexul 7 si returneaza 14
     // Pentru "P + sum(L)" returneaza -1
     public int verificaUtilizareSum(int index) {
         int i = index;
         int indexFinal = -1;
-        String var1 = "", var2 = "";
-        String func = formula.substring(index, formula.length());
+        String var1="",var2="";
+        String func=formula.substring(index,formula.length());
 
-        if (func.indexOf(')') < 0) {
-            mesajPentruFront = "Eroare: Nu s-a inchis paranteza pentru sum";
+        if(func.indexOf(')')<0)
+        {
+            mesajPentruFront="Eroare: Nu s-a inchis paranteza pentru sum";
             return -1;
         }
 
-        func = func.substring(1, func.indexOf(')') + 1);
+        func=func.substring(1,func.indexOf(')')+1);
 
-        if (func.indexOf(':') < 0) {
-            mesajPentruFront = "Eroare: Functia sum nu contine caracterul \':\'";
+        if(func.indexOf(':')<0)
+        {
+            mesajPentruFront="Eroare: Functia sum nu contine caracterul \':\'";
             return -1;
         }
-        i = 0;
-        while (i < func.indexOf(':') && func.charAt(i) == ' ') i++;
-        var1 = func.substring(i, func.indexOf(':'));
+        i=0;
+        while(i<func.indexOf(':') && func.charAt(i)==' ') i++;
+        var1=func.substring(i,func.indexOf(':'));
 
-        i = func.indexOf(':') + 1;
-        while (i < func.indexOf(')') && func.charAt(i) == ' ') i++;
-        var2 = func.substring(i, func.indexOf(')'));
+        i=func.indexOf(':')+1;
+        while(i<func.indexOf(')') && func.charAt(i)==' ') i++;
+        var2=func.substring(i,func.indexOf(')'));
 
-        int indexVar1 = 0, indexVar2 = 0;
-        while (indexVar1 < var1.length() && ((var1.charAt(indexVar1) >= 'a' && var1.charAt(indexVar1) <= 'z') || (var1.charAt(indexVar1) >= 'A' && var1.charAt(indexVar1) <= 'Z')))
+        int indexVar1=0, indexVar2=0;
+        while(indexVar1<var1.length() &&((var1.charAt(indexVar1)>='a' && var1.charAt(indexVar1)<='z') || (var1.charAt(indexVar1)>='A' && var1.charAt(indexVar1)<='Z')))
             indexVar1++;
-        while (indexVar2 < var2.length() && ((var2.charAt(indexVar2) >= 'a' && var2.charAt(indexVar2) <= 'z') || (var2.charAt(indexVar2) >= 'A' && var2.charAt(indexVar2) <= 'Z')))
+        while(indexVar2<var2.length() && ((var2.charAt(indexVar2)>='a' && var2.charAt(indexVar2)<='z') || (var2.charAt(indexVar2)>='A' && var2.charAt(indexVar2)<='Z')))
             indexVar2++;
 
-        if (indexVar1 != indexVar2) {
+        if(indexVar1!=indexVar2)
+        {
             mesajPentruFront = "Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
             return -1;
         }
-        if (indexVar1 == 0) {
+        if(indexVar1==0)
+        {
             mesajPentruFront = "Eroare: Variabila din sum trebuie sa inceapa cu o litera";
             return -1;
         }
-        for (i = 0; i < indexVar1; i++)
-            if (var1.charAt(i) != var2.charAt(i)) {
+        for(i=0; i<indexVar1; i++)
+            if(var1.charAt(i)!=var2.charAt(i))
+            {
                 mesajPentruFront = "Eroare: Variabilele din sum nu fac parte din aceeasi componenta";
                 return -1;
             }
 
-        int num1 = 0, num2 = 0;
-        for (i = indexVar1; i < var1.length(); i++) {
-            if (var1.charAt(i) < '0' || var1.charAt(i) > '9') {
-                while (i < var1.length() && var1.charAt(i) == ' ') i++;
-                if (i < var1.length()) {
+        int num1=0,num2=0;
+        for(i=indexVar1; i<var1.length(); i++)
+        {
+            if(var1.charAt(i)<'0' || var1.charAt(i)>'9')
+            {
+               while(i<var1.length() && var1.charAt(i)==' ') i++;
+                if(i<var1.length())
+                {
                     mesajPentruFront = "Eroare: Variabilele din sum trebuie sa inceapa cu litere si sa se termine cu cifre";
                     return -1;
                 }
             }
-            num1 = num1 * 10 + (var1.charAt(i) - '0');
+            num1=num1*10+(var1.charAt(i)-'0');
         }
 
-        for (i = indexVar2; i < var2.length(); i++) {
-            if (var2.charAt(i) < '0' || var2.charAt(i) > '9') {
-                while (i < var2.length() && var2.charAt(i) == ' ') i++;
-                if (i < var2.length()) {
+        for(i=indexVar2; i<var2.length(); i++)
+        {
+            if(var2.charAt(i)<'0' || var2.charAt(i)>'9')
+            {
+                while(i<var2.length() && var2.charAt(i)==' ') i++;
+                if(i<var2.length())
+                {
                     mesajPentruFront = "Eroare: Variabilele din sum trebuie sa inceapa cu litere si sa se termine cu cifre";
                     return -1;
                 }
             }
-            num2 = num2 * 10 + (var2.charAt(i) - '0');
+            num2=num2*10+(var2.charAt(i)-'0');
         }
 
-        if (num1 > num2) {
+        if(num1>num2) {
             mesajPentruFront = "Eroare: Ordinea variabilelor din sum nu e corecta";
             return -1;
 
         }
 
-        var1 = var1.substring(0, indexVar1);
+        var1=var1.substring(0,indexVar1);
 
-        for (i = num1; i <= num2; i++)
-            variabile[nrVariabile++] = var1 + i;
+        for(i=num1; i<=num2; i++)
+            variabile[nrVariabile++]=var1+i;
 
-        i = index;
-        while (formula.charAt(i) != ')') i++;
+        i=index;
+        while(formula.charAt(i)!=')') i++;
 
         return i;
 
@@ -310,8 +320,8 @@ public class Formula {
 
 
     //parcurge formula, verifica daca e corecta si determina variabilele
-
     void parsareFormula() {
+<<<<<<< HEAD
         if(formula.indexOf('=')<0)
             mesajPentruFront="Eroare: Formula trebuie sa fie de forma <variabila>=<expresie>";
         else{
@@ -335,6 +345,8 @@ public class Formula {
     }
 
     void parsareExpresie(String formula) {
+=======
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
         int i;
         boolean isVariable = false;
         boolean isNumber = false;
@@ -408,7 +420,7 @@ public class Formula {
                 }
 
 
-            } else if ("+-/*%=!><&|".indexOf(formula.charAt(i)) >= 0) {
+            } else if ("+-/*%=".indexOf(formula.charAt(i)) >= 0) {
                 if (isOperator) {
                     mesajPentruFront = "Eroare: Nu pot exista doi operatori unul dupa altul";
                     return;
@@ -416,14 +428,6 @@ public class Formula {
                     if (isVariable) {
                         variabile[nrVariabile++] = var;
                         var = "";
-                    }
-                    if(i<formula.length()-1)
-                    {
-                        if(formula.charAt(i)=='=' && formula.charAt(i+1)=='=') i++;
-                        else if((formula.charAt(i)=='!' || formula.charAt(i)=='<' || formula.charAt(i)=='>')&& formula.charAt(i+1)=='=') i++;
-                        else if(formula.charAt(i)=='&' && formula.charAt(i)=='&') i++;
-                        else if(formula.charAt(i)=='|' && formula.charAt(i)=='|') i++;
-
                     }
 
                     isVariable = false;
@@ -512,14 +516,8 @@ public class Formula {
 
 
     }
-    void infixToPostfix(){
-        infixToPostfixGeneral(formula);
-    }
-    void infixToPostfixCriteriu(){
-        infixToPostfixGeneral(criteriiPromovare);
-    }
 
-    void infixToPostfixGeneral(String formula) {
+    void infixToPostfix() {
         boolean justReadAVariable = false;
         boolean isMin = false;
         int sum = 0;
@@ -600,37 +598,9 @@ public class Formula {
 
                 if (stack.peek().equals("("))
                     stack.pop();
-            } else if ("+-/*%=!><&|".indexOf(formula.charAt(i)) >= 0) {
+            } else if ("+-/*%=".indexOf(formula.charAt(i)) >= 0) {
                 String currentOperator = "";
-                boolean doubleCharOperator=false;
-                if(i<formula.length()-1)
-                {
-                    if(formula.charAt(i)=='=' && formula.charAt(i+1)=='='){
-                        currentOperator+="~==~";
-                        doubleCharOperator=true;
-                        i++;
-                    }
-                    else if((formula.charAt(i)=='!' || formula.charAt(i)=='<' || formula.charAt(i)=='>')&& formula.charAt(i+1)=='='){
-                        currentOperator+="~";
-                        currentOperator+=formula.charAt(i);
-                        currentOperator+='=';
-                        currentOperator+="~";
-                        doubleCharOperator=true;
-                        i++;
-                    }
-                    else if(formula.charAt(i)=='&' && formula.charAt(i)=='&') {
-                        currentOperator+="~&&~";
-                        doubleCharOperator=true;
-                        i++;
-                    }
-                    else if(formula.charAt(i)=='|' && formula.charAt(i)=='|'){
-                        currentOperator+="~||~";
-                        doubleCharOperator=true;
-                        i++;
-                    }
-                }
-
-                if(!doubleCharOperator) currentOperator += formula.charAt(i);
+                currentOperator += formula.charAt(i);
                 while (!stack.peek().equals("#") && precedence(currentOperator) <= precedence(stack.peek())) {
                     formulaPostfixata += stack.peek();
                     stack.pop();
@@ -667,55 +637,27 @@ public class Formula {
     int precedence(String operator) {
         switch (operator) {
             case "~max~":
-                return 8;
-            case "~min~":
-                return 8;
-            case ":":
-                return 8;
-            case "%":
-                return 7;
-            case "*":
-                return 7;
-            case "/":
-                return 7;
-            case "+":
-                return 6;
-            case "-":
-                return 6;
-            case "~<=~":
-                return 5;
-            case "~>=~":
-                return 5;
-            case ">":
-                return 5;
-            case "<":
-                return 5;
-            case "~!=~":
-                return 4;
-            case "~==~":
-                return 4;
-            case "~&&~":
                 return 3;
-            case "~||~":
+            case "~min~":
+                return 3;
+            case ":":
+                return 3;
+            case "%":
                 return 2;
-            case "=":
+            case "*":
+                return 2;
+            case "/":
+                return 2;
+            case "+":
+                return 1;
+            case "-":
                 return 1;
             default:
                 return -1;
         }
     }
 
-    public void verificareVariabileCriteriu(AntetMaterie antet) {
-        verificareVariabileExpresie(antet);
-        if(mesajPentruFront.equals("Formula este valida"))
-            mesajPentruFront="Criteriul este valid";
-    }
-
     public void verificareVariabileFormula(AntetMaterie antet) {
-        verificareVariabileExpresie(antet);
-    }
-
-    public void verificareVariabileExpresie(AntetMaterie antet) {
         int k = 0;
         boolean check;
         if (nrVariabile == 0)
@@ -745,8 +687,9 @@ public class Formula {
 
     }
 
+    void parsareCriteriiPromovare() {
 
-
+    }
 
     String getMesajPentruFront() {
         return mesajPentruFront;

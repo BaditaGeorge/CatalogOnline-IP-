@@ -20,11 +20,9 @@ public class SQL_func {
     SQL_func(String path)
     {
         way=path;
-        //way = "BD_Gestiunea";
     }
     SQL_func(){
         way="C://Users/GoguSpoder/Desktop/BD_Gestiunea";
-        //way = "BD_Gestiunea";
     }
     // Conectarea cu baza de date
     private Connection connect() {
@@ -54,7 +52,7 @@ public class SQL_func {
         return result;
     }
     //Selectam doar o singura formula din baza de date indicata de id-ul materiei
-    /*public String selectFormula(String id) {
+    public String selectFormula(String id) {
         String result = "";
         String query = " Select formula_calcul from profesori where id_materie=";
         query+=id;
@@ -67,6 +65,7 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
         return result;
+<<<<<<< HEAD
     }*/
     public String selectFormulaCalc(String id) {
         String result = "";
@@ -96,6 +95,8 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
         return result;
+=======
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
     }
     //Facem update-ul campului valori_note din baza de date pentru un anumit student la o anumita materie
     public void updateNote(String id_s, String id_m, String note)
@@ -127,62 +128,7 @@ public class SQL_func {
         System.out.println(e.getMessage());
     }
         return result;
-    }
-    
-     public void insertNewStudent(String student)
-    {
-        String date[]=student.split(",");
-        String id = date[0];
-        String nume = date[1];
-        String prenume = date[2];
-        String grupa = date[3];
-        String eMail = date[4];
-        String query = "Insert into studenti(id_student,nume,prenume,email,grupa) VALUES (?,?,?,?,?)";
-        try (Connection conn = this.connect();
-             PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setString(1, id);
-            pstmt.setString(2, nume);
-            pstmt.setString(3, prenume);
-            pstmt.setString(4, grupa);
-            pstmt.setString(5, eMail);
-            pstmt.executeUpdate();
-            System.out.println("Succes!");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    public String selectStudentRow(String idSt,String idM){
-        String result = "";
-        String query="Select denumire_materie,valori_note from materii where id_student="+idSt+" and id_materie="+idM;
-        try{
-            Connection conn = this.connect();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            //while(rs.next()){
-                result += rs.getString("denumire_materie") + ":" + rs.getString("valori_note") + " ~ ";
-            //}
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        return result;
-    }
-    public String selectStudentCursuri(String idSt){
-        String result = "";
-        String query = "Select denumire_materie,id_materie from materii where id_student="+idSt;
-        try{
-            Connection conn = this.connect();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            while(rs.next()){
-                result += rs.getString("denumire_materie") + ":" + rs.getString("id_materie") + "~";
-            }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        return result;
-    }
+}
     //Selectam notele unui anumit student la o anumita materie
     public String selectNote(String id_s,String id_m){
         String result="";
@@ -242,12 +188,12 @@ public class SQL_func {
     }
     public String selectDenumireMaterii(String id_p){
         String result="";
-        String query="Select denumire_materie,id_materie from profesori where id_profesor=" + id_p;
+        String query="Select denumire_materie from profesori where id_profesor=" + id_p;
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                result+= rs.getString("denumire_materie")  + ":" + rs.getString("id_materie") +  " ~";
+                result+= rs.getString("denumire_materie")  + " | ";
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

@@ -1,4 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.example.demo1;
+
+/**
+ *
+ * @author GoguSpoder
+ */
 import java.util.Stack;
 
 public class Calcul {
@@ -7,76 +17,67 @@ public class Calcul {
     public Stack<Double> stack = new Stack<>();
     public double[] note = new double[50];
     public int nrNote;
-    private String resultVar="";
-    private boolean promovat=false;
 
-    public Calcul(){
-
-    }
 
     public Calcul(String formula) {
         this.formula = new Formula(formula);
 
     }
 
-    public boolean getPromovat(){
-        return promovat;
-    }
+    String parsareNote(String stringNote) {
 
-    void parsareNote(String stringNote) {
-
-        stringNote = stringNote.replaceAll("\\s+", " ");
-        String[] splited = stringNote.split(" ");
-        nrNote = 0;
-        for (int i = 0; i < splited.length; i += 2) {
-            antet[i / 2] = splited[i];
+        stringNote=stringNote.replaceAll("\\s+"," ");
+        String[] splited=stringNote.split(" ");
+        nrNote=0;
+        for(int i=0; i<splited.length; i+=2) {
+            antet[i/2]=splited[i];
             nrNote++;
         }
-        for (int i = 1; i < splited.length; i += 2) {
-            int j = 0;
-            int pow = 1;
-            if (splited[i].charAt(0) == '-') {
-                pow = -1;
+        for(int i=1; i<splited.length; i+=2){
+            int j=0;
+            int pow=1;
+            if(splited[i].charAt(0)=='-')
+            {
+                pow=-1;
                 j++;
             }
 
-            note[i / 2] = 0;
-            while (j < splited[i].length() && splited[i].charAt(j) >= '0' && splited[i].charAt(j) <= '9') {
-                note[i / 2] = note[i / 2] * 10 + (splited[i].charAt(j) - '0');
+            note[i/2]=0;
+            while(j<splited[i].length() && splited[i].charAt(j)>='0' && splited[i].charAt(j)<='9'){
+                note[i/2]=note[i/2]+(splited[i].charAt(j)-'0');
                 j++;
             }
 
 
-            if (j < splited[i].length() && splited[i].charAt(j) == '.') {
+            if(j<splited[i].length() && splited[i].charAt(j)=='.')
+            {
                 j++;
 
-                double decimal = 0.1;
+               double decimal = 0.1;
                 int pow2 = 10;
-                while (j < splited[i].length() && splited[i].charAt(j) >= '0' && splited[i].charAt(j) <= '9') {
-                    note[i / 2] = note[i / 2] + (splited[i].charAt(j) - '0') * decimal;
-                    note[i / 2] = ((double) Math.floor(note[i / 2] * pow2)) / pow2;
+                while (j<splited[i].length() && splited[i].charAt(j) >= '0' && splited[i].charAt(j) <= '9') {
+                    note[i/2] = note[i/2] + ( splited[i].charAt(j)- '0') * decimal;
+                    note[i/2] = ((double) Math.floor(note[i/2] * pow2)) / pow2;
                     pow2 *= 10;
                     decimal /= 10;
                     j++;
                 }
             }
 
-            note[i / 2] *= pow;
+            note[i/2]*=pow;
         }
-    }
 
-    String noteUpdatate(){
-        String stringNote="";
+        evaluareFormulaPostfixata();
+        stringNote="";
         for(int i=0; i<nrNote; i++)
         {
             stringNote+=antet[i]+" ";
             stringNote+=note[i]+" ";
 
         }
+
         return stringNote;
     }
-
-
 
     int getColumnOf(String var) {
         for (int i = 0; i < antet.length; i++)
@@ -85,6 +86,7 @@ public class Calcul {
         return -1;
     }
 
+<<<<<<< HEAD
     void evaluareFormulaPostfixata(){
         int startIndex=0,i=0;
         formula.infixToPostfix();
@@ -110,13 +112,35 @@ public class Calcul {
     }
 
     void evaluareFormulaPostfixataGenerala(int startIndex) {
+=======
+    void evaluareFormulaPostfixata() {
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
 
         boolean isVariable = false;
         boolean isNumber = false;
         double number, decimal;
         char currentChar;
         String var;
+        int startIndex=0;
+        String resultVar="";
 
+        formula.infixToPostfix();
+
+
+        if(formula.formulaPostfixata.indexOf('=')>=0)
+        {
+            resultVar="";
+            while(formula.formulaPostfixata.charAt(startIndex)==' ') startIndex++;
+            currentChar=formula.formulaPostfixata.charAt(startIndex);
+            while((currentChar >= 'a' && currentChar<= 'z') || (currentChar >= 'A' && currentChar <= 'Z') || (currentChar >= '0' && currentChar <= '9'))
+            {
+                resultVar+=currentChar;
+                startIndex++;
+                currentChar=formula.formulaPostfixata.charAt(startIndex);
+            }
+
+            formula.formulaPostfixata=formula.formulaPostfixata.substring(0, formula.formulaPostfixata.length() - 1);
+        }
 
         for (int i = startIndex; i < formula.formulaPostfixata.length(); i++) {
             number = 0;
@@ -160,7 +184,7 @@ public class Calcul {
 
             }
 
-            if ("+-*/%~:><".indexOf(formula.formulaPostfixata.charAt(i)) >= 0) {
+            if ("+-*/%~:".indexOf(formula.formulaPostfixata.charAt(i)) >= 0) {
                 double val1 = stack.pop();
                 double val2 = stack.pop();
 
@@ -180,14 +204,6 @@ public class Calcul {
                     case '%':
                         stack.push(val2 % val1);
                         break;
-                    case '<':
-                        if(val2<val1) stack.push(1.0);
-                        else stack.push(0.0);
-                        break;
-                    case '>':
-                        if(val2>val1) stack.push(1.0);
-                        else stack.push(0.0);
-                        break;
                     case '~': {
                         i++;
                         String operator = "";
@@ -203,31 +219,6 @@ public class Calcul {
                             case "max":
                                 stack.push(Math.max(val2, val1));
                                 break;
-                            case ">=":
-                                if(val2>=val1) stack.push(1.0);
-                                else stack.push(0.0);
-                                break;
-                            case "<=":
-                                if(val2<=val1) stack.push(1.0);
-                                else stack.push(0.0);
-                                break;
-                            case "&&":
-                                if(val2>0 && val1>0) stack.push(1.0);
-                                else stack.push(0.0);
-                                break;
-                            case "||":
-                                if(val2>0 || val1>0) stack.push(1.0);
-                                else stack.push(0.0);
-                                break;
-                            case "==":
-                                if(val2==val1) stack.push(1.0);
-                                else stack.push(0.0);
-                                break;
-                            case "!=":
-                                if(val2!=val1) stack.push(1.0);
-                                else stack.push(0.0);
-                                break;
-
                         }
 
                         break;
@@ -249,6 +240,9 @@ public class Calcul {
 
     }
 
+    void updatePunctaj() {
+
+    }
 
     void verificarePromovareMaterie() {
 
