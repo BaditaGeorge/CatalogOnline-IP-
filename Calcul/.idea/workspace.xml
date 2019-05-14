@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58a16bb-049d-4fcf-92d2-0833469d4648" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" afterDir="false" />
@@ -20,6 +21,23 @@
       <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Gestionare/Prototip/Gestionare1B1/target/test-classes/com/example/demo1/Demo1ApplicationTests.class" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/Formula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PaginaFormula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IPCalcul/PrelucrareDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/FormulaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/IPCalcul/PaginaFormulaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/IPCalcul/PaginaFormulaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calcul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calcul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Formula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockFunctiiGestiune.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaginaFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaginaFormula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrelucrareDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrelucrareDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CalculTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CalculTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/FormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/FormulaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PaginaFormulaTest.java" afterDir="false" />
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,9 +55,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Formula.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="665" column="52" selection-start-line="665" selection-start-column="52" selection-end-line="665" selection-end-column="52" />
+              <folding>
+                <element signature="e#10117#10118#0" expanded="true" />
+                <element signature="e#10150#10151#0" expanded="true" />
+                <element signature="e#16578#16579#0" expanded="true" />
+                <element signature="e#16610#16611#0" expanded="true" />
+                <element signature="e#16652#16653#0" expanded="true" />
+                <element signature="e#16684#16685#0" expanded="true" />
+                <element signature="e#23912#23913#0" expanded="true" />
+                <element signature="e#25050#25051#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3400">
+            <state relative-caret-position="351">
               <caret line="202" column="39" selection-start-line="202" selection-start-column="39" selection-end-line="202" selection-end-column="39" />
             </state>
           </provider>
@@ -48,11 +85,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="272">
               <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
+=======
+            <state relative-caret-position="221">
+              <caret line="33" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="33" />
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
               <folding>
                 <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#400#401#0" expanded="true" />
+                <element signature="e#430#431#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,17 +117,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3247">
+            <state relative-caret-position="-17">
               <caret line="193" column="10" selection-start-line="193" selection-start-column="10" selection-end-line="193" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Calcul.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
               <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
+              <folding>
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#536#537#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,7 +139,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="313">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -103,8 +151,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-1392">
               <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+=======
+            <state relative-caret-position="245">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
             </state>
           </provider>
         </entry>
@@ -112,10 +165,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3196">
+            <state relative-caret-position="109">
               <caret line="190" selection-start-line="190" selection-end-line="190" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#286#287#0" expanded="true" />
+                <element signature="e#338#339#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,9 +226,15 @@
         <option value="$PROJECT_DIR$/src/PaginaFormula.java" />
         <option value="$PROJECT_DIR$/tests/PaginaFormulaTest.java" />
         <option value="$PROJECT_DIR$/tests/CalculTest.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Calcul.java" />
         <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
         <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
+=======
+        <option value="$PROJECT_DIR$/src/PrelucrareDate.java" />
+        <option value="$PROJECT_DIR$/src/MockFunctiiGestiune.java" />
+        <option value="$PROJECT_DIR$/src/Calcul.java" />
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
       </list>
     </option>
   </component>
@@ -183,10 +244,17 @@
       <select />
     </treeState>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -194,6 +262,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,7 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -227,7 +295,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557232038219" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557225464837" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -256,7 +324,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in IPCalcul">
+  <component name="RunManager" selected="JUnit.PaginaFormulaTest">
     <configuration name="All in IPCalcul" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IPCalcul" />
       <option name="PACKAGE_NAME" value="" />
@@ -305,8 +373,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in IPCalcul" />
         <item itemvalue="JUnit.PaginaFormulaTest" />
+        <item itemvalue="JUnit.All in IPCalcul" />
         <item itemvalue="JUnit.FormulaTest" />
         <item itemvalue="JUnit.FormulaTest.parsareFormula" />
         <item itemvalue="JUnit.PaginaFormulaTest.generareFormula" />
@@ -357,6 +425,21 @@
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="PaginaFormulaTest - 2019.05.07 at 12h 38m 24s.xml">
+      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PaginaFormulaTest - 2019.05.07 at 12h 39m 41s.xml">
+      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PaginaFormulaTest - 2019.05.07 at 12h 41m 52s.xml">
+      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PaginaFormulaTest - 2019.05.07 at 13h 02m 23s.xml">
+      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PaginaFormulaTest - 2019.05.07 at 13h 03m 50s.xml">
+      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="PaginaFormulaTest - 2019.05.07 at 13h 04m 13s.xml">
       <configuration name="PaginaFormulaTest" configurationId="JUnit" />
     </history-entry>
@@ -371,21 +454,6 @@
     </history-entry>
     <history-entry file="PaginaFormulaTest - 2019.05.07 at 13h 33m 17s.xml">
       <configuration name="PaginaFormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PaginaFormulaTest - 2019.05.07 at 13h 35m 48s.xml">
-      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PaginaFormulaTest - 2019.05.07 at 13h 36m 41s.xml">
-      <configuration name="PaginaFormulaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_IPCalcul - 2019.05.07 at 13h 39m 47s.xml">
-      <configuration name="All in IPCalcul" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_IPCalcul - 2019.05.12 at 23h 22m 04s.xml">
-      <configuration name="All in IPCalcul" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_IPCalcul - 2019.05.13 at 00h 00m 06s.xml">
-      <configuration name="All in IPCalcul" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -404,7 +472,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07449664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -413,7 +481,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39660057" />
+      <window_info active="true" anchor="bottom" id="Debug" order="2" visible="true" weight="0.39660057" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.3286119" />
@@ -423,7 +491,7 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.31586403" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info active="true" anchor="bottom" id="Run" order="12" visible="true" weight="0.30736545" />
+      <window_info anchor="bottom" id="Run" order="12" weight="0.30736545" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -642,40 +710,76 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="202" column="39" selection-start-line="202" selection-start-column="39" selection-end-line="202" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
     <entry file="file://$PROJECT_DIR$/tests/CalculTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3247">
+        <state relative-caret-position="-17">
           <caret line="193" column="10" selection-start-line="193" selection-start-column="10" selection-end-line="193" selection-end-column="10" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/src/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="498">
+          <caret line="665" column="52" selection-start-line="665" selection-start-column="52" selection-end-line="665" selection-end-column="52" />
           <folding>
-            <element signature="e#23862#23863#0" expanded="true" />
+            <element signature="e#10117#10118#0" expanded="true" />
+            <element signature="e#10150#10151#0" expanded="true" />
+            <element signature="e#16578#16579#0" expanded="true" />
+            <element signature="e#16610#16611#0" expanded="true" />
+            <element signature="e#16652#16653#0" expanded="true" />
+            <element signature="e#16684#16685#0" expanded="true" />
             <element signature="e#23912#23913#0" expanded="true" />
-            <element signature="e#25011#25012#0" expanded="true" />
             <element signature="e#25050#25051#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/FormulaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/MockFunctiiGestiune.java">
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="202" column="39" selection-start-line="202" selection-start-column="39" selection-end-line="202" selection-end-column="39" />
+        <state relative-caret-position="221">
+          <caret line="33" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="33" />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PaginaFormula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PaginaFormulaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -712,6 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PrelucrareDate.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-1392">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
         </state>
@@ -721,8 +826,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="659" column="5" lean-forward="true" selection-start-line="646" selection-start-column="3" selection-end-line="659" selection-end-column="5" />
+=======
+        <state relative-caret-position="245">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Calcul.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
           </folding>
         </state>
       </provider>

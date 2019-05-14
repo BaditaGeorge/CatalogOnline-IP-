@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -32,9 +31,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author GoguSpoder
  */
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/")
-@CrossOrigin
 public class Controller {
     @RequestMapping("/")
     public String home(){
@@ -73,13 +71,13 @@ public class Controller {
         return "Multumesc";
     }
     
-    @RequestMapping(value= "/formule", method=RequestMethod.OPTIONS)
-    public void corsHeaders(HttpServletResponse response) {
-        response.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-        response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-        response.addHeader("Access-Control-Allow-Headers", "origin, content-type, accept, x-requested-with");
-        response.addHeader("Access-Control-Max-Age", "3600");
-    }
+//    @RequestMapping(value= "/formule", method=RequestMethod.OPTIONS)
+//    public void corsHeaders(HttpServletResponse response) {
+//        response.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//        response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//        response.addHeader("Access-Control-Allow-Headers", "origin, content-type, accept, x-requested-with");
+//        response.addHeader("Access-Control-Max-Age", "3600");
+//    }
     
     public String parseOne(String el){
         String resultB="";
@@ -96,6 +94,7 @@ public class Controller {
     
      
     @GetMapping(value="/catalog")
+<<<<<<< HEAD
     public String getCatalog(@RequestParam("id_Materie") String aRe,@RequestParam("id_prof") String bRe){
         //String aRe="";
         //String bRe="";
@@ -115,6 +114,8 @@ public class Controller {
     
     /*
     @GetMapping(value="/catalog")
+=======
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
     public String getCatalog(@RequestBody String something){
         String aRe="";
         String bRe="";
@@ -135,7 +136,6 @@ public class Controller {
         //return forRet;
         return (new FstParser().convertCatalogToJSON(aRe, bRe));
     }
-    */
     
      
     @RequestMapping(
@@ -173,12 +173,6 @@ public class Controller {
            antet="a: "+treeMap.get(result.get(1)).toString()+"; "+antet;
            System.out.println(cnt);
            System.out.println("\n"+antet);
-           
-           PrelucrareDate pd = new PrelucrareDate();
-           String mesajPentruFront=pd.primesteMesajFront(antet);
-           System.out.println(mesajPentruFront);
-           
-           
            String[] splitedVal = treeMap.get(result.get(3)).toString().split("}");
            int cnt2=0;
            for(String tempVal:splitedVal)
@@ -218,19 +212,21 @@ public class Controller {
                     tempSol=tempSol.substring(j,tempSol.length());
                     tempSol = "n: " + idStud + "; " + treeMap.get(result.get(1)).toString() + "; " + tempSol;
                     System.out.println(tempSol+"\n");
+<<<<<<< HEAD
                     System.out.println("before\n");
                     mesajPentruFront+=" "+pd.primesteMesajFront(tempSol);
                     System.out.println(mesajPentruFront);
                     System.out.println("after\n");
+=======
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
                }
            }
-           return mesajPentruFront;
         }
         catch(IOException e)
         {
             e.printStackTrace();
-            return "Error";
         }
+        return "Multumesc";
     }
     
      
@@ -305,7 +301,7 @@ public class Controller {
     }
     
      
-    /*@RequestMapping(
+    @RequestMapping(
     value="/formule",
     method=RequestMethod.GET)
     public String getFormule(@RequestBody String something){
@@ -315,66 +311,6 @@ public class Controller {
         splArr[1]=splArr[1].substring(1,splArr[1].length()-2);
         System.out.println(splArr[1]);
         return (new FstParser().convertFormuleToJSON(splArr[1]));
-    }*/
-    
-     @RequestMapping(
-     value="/import",
-     method=RequestMethod.POST)
-     public String getCSV(@RequestBody String body){
-        String response = "";
-        CSVImporter obj=new CSVImporter();
-        String[] els=body.split("\n");
-        /*try {
-            for(int jj=0;jj<els.length;jj++){
-                List<String> line = obj.parseLine(els[jj]);
-                for(int i=0;i<line.size();i++)
-                    response += (line.get(i)+"\n");
-            }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }*/
-        for(int jj=0;jj<els.length;jj++){
-            System.out.println(els[jj]);
-            (new SQL_func()).insertNewStudent(els[jj]);
-        }
-        return "Done";
-     }
-    
-    @RequestMapping(
-    value="/formule",
-    method=RequestMethod.GET)
-    public String getFormule(@RequestParam("id_profesor") String iDp){
-        /*String[] splArr = something.split(":");
-        splArr[1]=splArr[1].replace("}","");
-        splArr[1]=splArr[1].replace(" ","");
-        splArr[1]=splArr[1].substring(1,splArr[1].length()-2);
-        System.out.println(splArr[1]);*/
-        //return (new FstParser().convertFormuleToJSON(iDp));
-        String result = (new SQL_func()).selectFormula(iDp);
-        String[] els=result.split("~");
-        String jsonResponse = "[\n";
-        for(int ind=0;ind<els.length;ind++){
-            if(els[ind].charAt(0) == ':'){
-                String[] els2 = els[ind].split(":");
-                if(ind<els.length-1){
-                    jsonResponse += ("{ \"id_materie\":" + els2[1] + "," + "\"formula_calcul\":" + "\" \"" + " },");
-                }else{
-                    jsonResponse += ("{ \"id_materie\":" + els2[1] + "," + "\"formula_calcul\":" + "\" \"" + " }");
-                }
-            }
-            else{
-                String[] els2 = els[ind].split(":");
-                if(ind<els.length-1){
-                    jsonResponse += ("{ \"id_materie\":" + els2[1] + "," + "\"formula_calcul\":" + "\"" + els2[0] + "\"" + "},");
-                }
-                else{
-                    jsonResponse += ("{ \"id_materie\":" + els2[1] + "," + "\"formula_calcul\":" + "\"" + els2[0] + "\"" + "}");
-                }
-            }
-        }
-        jsonResponse += "]";
-        return jsonResponse;
     }
     
      
@@ -384,7 +320,6 @@ public class Controller {
     public String postFormule(@RequestBody String something){
         String aRe="";
         String bRe="";
-        String mesajPentruFront="";
         ObjectMapper mapper = new ObjectMapper();
         try{
            Map<String,Object> treeMap = mapper.readValue(something,Map.class);
@@ -397,8 +332,7 @@ public class Controller {
            aRe=aRe.replace(" ","");
            
            System.out.println(new SQL_func().selectAntet(aRe));
-           mesajPentruFront=pd.primesteMesajFront(forC);
-           System.out.println(mesajPentruFront);
+           System.out.println(pd.primesteMesajFront(forC));
            System.out.println(forC);
            
         }
@@ -408,36 +342,21 @@ public class Controller {
         }
         //String forRet = parserPuiuMic(updateFormule(id_materie,formula));
         //return forRet;
-        return mesajPentruFront;
+        return something;
     }
     
      
     @RequestMapping(
     value="/materii",
     method=RequestMethod.GET)
-    public String getProfesor(@RequestParam("id_profesor") String iDp){
-        /*String[] splArr = something.split(":");
+    public String getProfesor(@RequestBody String something){
+        String[] splArr = something.split(":");
         splArr[1].replace("}","");
         splArr[1].replace(" ","");
         splArr[1]=splArr[1].substring(1,splArr[1].length()-3);
         System.out.println(splArr[1]);
-        //return parser(selectMaterii(splArr[1]);*/
-        //return (new FstParser().convertMateriiToJSON(iDp));
-        SQL_func obj=new SQL_func();
-        String result=obj.selectDenumireMaterii(iDp);
-        String []els = result.split("~");
-        String jsonResponse = "";
-        jsonResponse = "{\"disciplines\":[\n";
-        for(int ind=0;ind<els.length;ind++){
-            String[] els2 = els[ind].split(":");
-            if(ind<els.length-1)
-                jsonResponse += ("{ \"denumire_materie\":" + "\"" + els2[0] + "\"" + "," + "\"id_materie\":" + "\"" + els2[1] + "\"" + "},");
-            else
-                jsonResponse += ("{ \"denumire_materie\":" + "\"" + els2[0] + "\"" + "," + "\"id_materie\":" + "\"" + els2[1] + "\"" + "}\n");
-        }
-        jsonResponse += "]";
-        jsonResponse += "\n}";
-        return jsonResponse;
+        //return parser(selectMaterii(splArr[1]);
+        return (new FstParser().convertMateriiToJSON(splArr[1]));
     }
     
      
@@ -464,107 +383,5 @@ public class Controller {
         //String forRet = parserPuiuMic(selectCatalog(aRe,bRe));
         //return forRet;
         return something;
-    }
-    
-    @RequestMapping(
-    value="/note",
-    method=RequestMethod.GET)
-    public String getListaNote(@RequestParam("id_student") String idStud,@RequestParam("id_materie") String idMaterie){
-        SQL_func obj = new SQL_func();
-        String result = obj.selectStudentRow(idStud,idMaterie);
-        String[] els=result.split("~");
-        String jsonResponse="[\n";
-        for(int ind=0;ind<els.length-1;ind++){
-            //System.out.println(els[ind]);
-            String[] tel = els[ind].split(":");
-            jsonResponse += "{";
-            jsonResponse += ("\"denumire_materie\":" + "\""+tel[0]+"\"" + ",");
-            jsonResponse += ("\"valori_note\":");
-            System.out.println(tel[1]);
-            String[] tele = tel[1].split(";");
-            if(tele.length == 3)
-                System.out.println(tele.length + tele[0] + tele[1] + tele[2]);
-            else
-                System.out.println(tele.length + tele[0] + tele[1]);
-            jsonResponse += "{";
-            for(int tt=0;tt<tele.length;tt++){
-                String fst = "";
-                String snd = "";
-                int oke=0;
-                for(int yai=0;yai<tele[tt].length();yai++){
-                    if(tele[tt].charAt(yai) == ' ' && !fst.equals(""))
-                        oke=1;
-                    if(oke==0){
-                        if(tele[tt].charAt(yai)!=' ')
-                            fst+=tele[tt].charAt(yai);
-                    }
-                    else{
-                        if(tele[tt].charAt(yai)!=' ')
-                            snd+=tele[tt].charAt(yai);
-                    }
-                }
-                //for(int yai = 0; yai < lle.length-1; yai++){
-                    //System.out.println(lle[yai]);
-                    //if((lle[yai].charAt(0) >= 'a' && lle[yai].charAt(0)<='z') || (lle[yai].charAt(0)>='A' && lle[yai].charAt(0)<='Z')){
-                        //System.out.println(lle[yai]);
-                        /*if(tt == tele.length - 1){
-                            jsonResponse += (lle[yai] + ":" + lle[yai+1]);
-                        }
-                        else{
-                            jsonResponse += (lle[yai] + ":" + lle[yai+1] + ",");
-                        }
-                        break;*/
-                    //}
-                //}
-                if(tt == tele.length-1)
-                    jsonResponse += ("\""+fst+"\""+":"+"\""+snd+"\"");
-                else
-                    jsonResponse += ("\""+fst+"\""+":"+"\""+snd+"\""+",");
-            }
-            jsonResponse += "} }";
-            if(ind<els.length-2)
-                jsonResponse += ("," + "\n");
-            else
-                jsonResponse += "\n";
-        }
-        jsonResponse += "]";
-        return jsonResponse;
-    }
-    
-    @RequestMapping(
-    value="/note",
-    method=RequestMethod.POST)
-    public String postListaNote(@RequestBody String something){
-        return null;
-    }
-    
-    @RequestMapping(
-    value="/cursuri",
-    method=RequestMethod.GET)
-    public String getCursuri(@RequestParam("id_student") String idStud){
-        String result="";
-        SQL_func obj = new SQL_func();
-        result = obj.selectStudentCursuri(idStud);
-        System.out.println(result);
-        String[] els = result.split("~");
-        String jsonResponse="{ \"disciplines\":[\n";
-        for(int ind=0;ind<els.length;ind++){
-            String[] els2=els[ind].split(":");
-            jsonResponse += "{";
-            if(ind < els.length-1)
-                jsonResponse += ("\"denumire_materie\":" + "\""+els2[0]+"\""+"," +"\"id_materie\":"+"\""+els2[1]+"\"" + "}" + ",");
-            else
-                jsonResponse += ("\"denumire_materie\":" + "\""+els2[0]+"\""+"," +"\"id_materie\":"+"\""+els2[1]+"\"" + "}");
-        }
-        jsonResponse += "]";
-        jsonResponse += "}";
-        return jsonResponse;
-    }
-    
-    @RequestMapping(
-    value="/cursruri",
-    method=RequestMethod.POST)
-    public String postCursuri(@RequestBody String something){
-        return null;
     }
 }

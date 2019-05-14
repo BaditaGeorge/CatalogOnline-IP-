@@ -3,6 +3,9 @@ import '../App.css';
 import {Button,Form} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
+import '../css/Login.css';
+
+
 export default class Login extends Component {
     constructor(props) {
         super(props)
@@ -18,7 +21,7 @@ export default class Login extends Component {
 
     render() {
         return (
-            
+
             <Card style={{ width: '20rem', marginTop: '10%',marginLeft:'auto' ,marginRight:'auto' }}>
             <Card.Body>
             <Form>
@@ -38,6 +41,7 @@ export default class Login extends Component {
             </Form>
             </Card.Body>
            </Card>
+
         );
     }
 }

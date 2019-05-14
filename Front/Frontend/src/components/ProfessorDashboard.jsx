@@ -15,7 +15,7 @@ import {
 import Formula from "./Formula";
 import NavProf from "./NavProf";
 
-const user = {name: "Alex Ivan", role: "professor", id_prof: 3}
+const user = {name: "Stefan Calcai", role: "professor", id_prof: 3}
 
 
 class ProfessorDashboard extends Component {
@@ -56,6 +56,7 @@ class ProfessorDashboard extends Component {
           />
           <Catalog user={user}
                    currentDiscipline={this.props.currentDiscipline}
+                   formulas={this.props.formulas}
                    rows={this.props.rows}
                    columns={this.props.columns}
                    onCatalogChange={this.props.insertProfessorCatalog}
