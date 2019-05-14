@@ -1,0 +1,9 @@
+localhost:9991/formule?id_profesor=7
+localhost:9991/materii?id_profesor=1
+localhost:9991/cursuri?id_student=1
+localhost:9991/import
+localhost:9991/note?id_student=1&id_materie=3
+localhost:9991/catalog?id_Materie=7&id_prof=1
+localhost:9991/catalog
+localhost:9991/formule
+localhost:9991/materii
