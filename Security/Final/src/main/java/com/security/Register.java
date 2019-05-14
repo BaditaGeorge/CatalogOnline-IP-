@@ -62,9 +62,9 @@ public class Register {
                     if (db.countUsersByMail(mail) != 0) {
                         System.out.println("Mail was already used.");
                     } else {
-                        String auth = funct.generateAuthCode();
+                        String auth = funct.generateRandomString(16);
                         db.addNewUser(username, mail,hash,salt_string,auth);
-                        //sendEmail(mail, auth);
+                        sendEmail(mail, auth);
                         return true;
                     }
                 }
