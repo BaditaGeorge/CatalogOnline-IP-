@@ -674,10 +674,13 @@ public class Formula {
                     if (variabile[i].equals(antet.CampuriAntet[j]))
                         check = true;
                 if (!check)
+                {
                     raspuns[k++] = this.variabile[i];
+                    raspuns[k-1].replaceAll("\\s+", "");
+                }
             }
 
-        if (raspuns[0] != null) {
+        if (raspuns[0] != null && !raspuns[0].isEmpty()) {
             mesajPentruFront = "Eroare: Urmatoarele variabile din formula nu sunt definite in antet:";
             for (int i = 0; i < raspuns.length; i++)
                 if (raspuns[i] != null)

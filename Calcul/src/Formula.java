@@ -757,7 +757,7 @@ public class Formula {
 
     }
 
-    
+
     String getMesajPentruFront() {
         return mesajPentruFront;
     }
