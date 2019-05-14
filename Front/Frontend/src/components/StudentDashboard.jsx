@@ -51,6 +51,7 @@ class StudentDashboard extends Component {
         <Catalog user={user}
                  rows={this.props.catalogs.length ? this.props.catalogs[catalogIndex].rows : []}
                  columns={this.props.catalogs.length ? this.props.catalogs[catalogIndex].columns : []}
+                 formulas={[]}
         />
       </div>
     );

@@ -15,7 +15,7 @@ import {
 import Formula from "./Formula";
 import NavProf from "./NavProf";
 
-const user = {name: "Alex Ivan", role: "professor", id_prof: 3}
+const user = {name: "Stefan Calcai", role: "professor", id_prof: 3}
 
 
 class ProfessorDashboard extends Component {
