@@ -15,7 +15,7 @@ import {
 import Formula from "./Formula";
 import NavProf from "./NavProf";
 
-const user = {name: "Alex Ivan", role: "professor", id_prof: 1}
+const user = {name: "Alex Ivan", role: "professor", id_prof: 3}
 
 
 class ProfessorDashboard extends Component {
@@ -36,6 +36,12 @@ class ProfessorDashboard extends Component {
     if (nextProps.currentDiscipline.id_materie !== this.props.currentDiscipline.id_materie && nextProps.rows.length) {
       this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, user.id_prof)
     }
+
+    if (nextProps.didUpdate === true && this.props.currentDiscipline.id_materie) {
+      this.props.getProfessorCatalog(this.props.currentDiscipline.id_materie, user.id_prof)
+
+    }
+
   }
 
   render() {
@@ -68,6 +74,7 @@ export const ProfessorDashboardRedux = connect((state) => ({
   global: state.professorReducer.global,
   columns: state.professorReducer.columns,
   disciplines: state.professorReducer.disciplines,
+  didUpdate: state.professorReducer.didUpdate,
   currentDiscipline: state.professorReducer.currentDiscipline,
   formulas: state.professorReducer.formulas,
   rows: state.professorReducer.rows,

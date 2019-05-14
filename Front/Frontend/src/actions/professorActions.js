@@ -56,7 +56,7 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
       if (res.data) {
         dispatch({
           type: GET_PROFESSOR_CATALOG_SUCCESS,
-          payload: {rows: res.data.rows, columns: res.data.columns}
+          payload: {rows: res.data.rows, columns: res.data.columns, didUpdate: false}
         });
       }
     })
@@ -135,15 +135,16 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
             formula_calcul: newFormula.formule
           } : f
         )]
-        console.log(formulas)
         dispatch({
           type: POST_DISCIPLINE_FORMULAS_SUCCESS,
           payload: {formulas: formulas}
         });
       }
+      throw (res.data)
     })
     .catch(err => {
-      dispatch({type: POST_DISCIPLINE_FORMULAS_FAIL});
+      dispatch({type: POST_DISCIPLINE_FORMULAS_FAIL})
+      alert(err)
     });
 };
 export const insertProfessorCatalog = (catalog) => dispatch => {
@@ -155,17 +156,22 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
     .post(`${APIURL}/catalog`, catalog)
     .then(res => {
       let columns, rows
-      if (res.data === 'Antetul este valid') {
-        rows = catalog.rows;
-        columns = catalog.columns;
+      console.log(res.data)
+      if (res.data.includes('Antetul este valid')) {
+        let didUpdate = false
+        if (res.data.includes('Update efectuat'))
+          didUpdate = true
         dispatch({
           type: POST_PROFESSOR_CATALOG_SUCCESS,
-          payload: {rows: rows, columns: columns}
+          payload: {didUpdate: didUpdate}
         });
+      } else {
+        throw res.data
       }
     })
     .catch(err => {
       dispatch({type: POST_PROFESSOR_CATALOG_FAIL});
+      alert(err)
     });
 };
 

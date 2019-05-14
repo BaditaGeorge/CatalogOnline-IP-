@@ -31,10 +31,11 @@ const INITIAL_STATE = {
   disciplines: [],
   currentDiscipline: {},
   formulas: [],
+  didUpdate: false,
   loading: false
 };
 
-export default function professorReducer (state = INITIAL_STATE, action) {
+export default function professorReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case GET_GLOBAL: {
       return {
@@ -66,6 +67,7 @@ export default function professorReducer (state = INITIAL_STATE, action) {
         ...state,
         rows: action.payload.rows,
         columns: action.payload.columns,
+        didUpdate: action.payload.didUpdate,
         loading: false
       };
     }
@@ -123,7 +125,7 @@ export default function professorReducer (state = INITIAL_STATE, action) {
     case POST_DISCIPLINE_FORMULAS: {
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     }
     case POST_DISCIPLINE_FORMULAS_SUCCESS: {
@@ -148,8 +150,7 @@ export default function professorReducer (state = INITIAL_STATE, action) {
     case POST_PROFESSOR_CATALOG_SUCCESS: {
       return {
         ...state,
-        rows: action.payload.rows,
-        columns: action.payload.columns,
+        didUpdate: action.payload.didUpdate,
         loading: false
       };
     }
