@@ -503,7 +503,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-            result =(rs.getString("criteriiPromovare  ") + "\t");
+            result =(rs.getString("criteriiPromovare") + "\t");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

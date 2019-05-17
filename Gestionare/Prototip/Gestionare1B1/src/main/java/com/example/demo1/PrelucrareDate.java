@@ -87,7 +87,10 @@ public class PrelucrareDate {
             
             formule = formule.replaceAll("\\s+", "");
             if (formule.equals(""))
+            {
+                functiiGestiune.updateNote(id_student, id_materie, note);
                 return "Nu se vor face calcule fara formula";
+            }
 
             String criterii = functiiGestiune.selectCriterii(id_materie);
 
