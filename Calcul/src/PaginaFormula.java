@@ -98,7 +98,7 @@ public class PaginaFormula {
         HashMap<String, Integer> noduri = new HashMap<>();
         int index = -1;
         for (Formula f : formule) {
-            for (String var : f.variabile) {
+            for (String var : f.getVariabile()) {
                 if (!noduri.containsKey(var) && var != null) {
                     noduri.put(var, ++index);
                     //System.out.println(index + var);
@@ -112,7 +112,7 @@ public class PaginaFormula {
         int[][] graf = new int[nrNoduri][nrNoduri];
         for (Formula f : formule) {
             int primaVariabila = -1;
-            for (String var : f.variabile) {
+            for (String var : f.getVariabile()) {
                 if (primaVariabila == -1 && var != null) {
                     primaVariabila = noduri.get(var);
                     indexFormula.put(primaVariabila, ++index);

@@ -1,0 +1,36 @@
+.dashboard
+{
+    position: relative;
+}
+
+.navbar,
+.navbar-default {
+    background-color: #1861ff;
+}
+
+.navbar-nav a {
+}
+
+.dropdown-menu {
+    right: 0;
+    color: rgba(0, 0, 0, .6);
+}
+
+.nav-item > a {
+    color: white !important;
+}
+
+.dropdown-menu a:hover {
+    background: #1861ff;
+    color: white;
+    border-radius: 3px;
+}
+
+.react-grid-Main {
+    /*padding: 0 2em !important;*/
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+}

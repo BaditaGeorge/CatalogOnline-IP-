@@ -352,11 +352,12 @@ public class Controller {
         System.out.println(splArr[1]);*/
         //return (new FstParser().convertFormuleToJSON(iDp));
         String result = (new SQL_func()).selectFormula(iDp);
+        System.out.println(result);
         String[] els=result.split("~");
         String jsonResponse = "[\n";
         for(int ind=0;ind<els.length;ind++){
-            if(els[ind].charAt(0) == ':'){
-                String[] els2 = els[ind].split(":");
+            if(els[ind].charAt(0) == '_'){
+                String[] els2 = els[ind].split("_");
                 if(ind<els.length-1){
                     jsonResponse += ("{ \"id_materie\":" + els2[1] + "," + "\"formula_calcul\":" + "\" \"" + " },");
                 }else{
@@ -364,7 +365,8 @@ public class Controller {
                 }
             }
             else{
-                String[] els2 = els[ind].split(":");
+                String[] els2 = els[ind].split("_");
+                System.out.println(els2[0]);
                 if(ind<els.length-1){
                     jsonResponse += ("{ \"id_materie\":" + els2[1] + "," + "\"formula_calcul\":" + "\"" + els2[0] + "\"" + "},");
                 }
@@ -395,7 +397,7 @@ public class Controller {
            String forC="f: " + aRe + "; " + bRe;
            PrelucrareDate pd = new PrelucrareDate();
            aRe=aRe.replace(" ","");
-           new SQL_func().updateAntet("L1 L2 L3",aRe);
+           
            System.out.println(new SQL_func().selectAntet(aRe));
            mesajPentruFront=pd.primesteMesajFront(forC);
            System.out.println(mesajPentruFront);
@@ -456,6 +458,7 @@ public class Controller {
            bRe=treeMap.get(result.get(1)).toString();
            System.out.println(aRe+"\n"+bRe);
            new SQL_func().insertProfesori(aRe,bRe);
+           
         }
         catch(IOException e)
         {
@@ -472,6 +475,7 @@ public class Controller {
     public String getListaNote(@RequestParam("id_student") String idStud,@RequestParam("id_materie") String idMaterie){
         SQL_func obj = new SQL_func();
         String result = obj.selectStudentRow(idStud,idMaterie);
+        System.out.println(result);
         String[] els=result.split("~");
         String jsonResponse="[\n";
         for(int ind=0;ind<els.length-1;ind++){
@@ -481,14 +485,14 @@ public class Controller {
             jsonResponse += ("\"denumire_materie\":" + "\""+tel[0]+"\"" + ",");
             jsonResponse += ("\"valori_note\":");
             System.out.println(tel[1]);
-            String[] tele = tel[1].split(";");
-            if(tele.length == 3)
+            String[] tele = tel[1].split(" ");
+            /*if(tele.length == 3)
                 System.out.println(tele.length + tele[0] + tele[1] + tele[2]);
             else
-                System.out.println(tele.length + tele[0] + tele[1]);
+                System.out.println(tele.length + tele[0] + tele[1]);*/
             jsonResponse += "{";
-            for(int tt=0;tt<tele.length;tt++){
-                String fst = "";
+            for(int tt=0;tt<tele.length;tt+=2){
+                /*String fst = "";
                 String snd = "";
                 int oke=0;
                 for(int yai=0;yai<tele[tt].length();yai++){
@@ -502,7 +506,7 @@ public class Controller {
                         if(tele[tt].charAt(yai)!=' ')
                             snd+=tele[tt].charAt(yai);
                     }
-                }
+                }*/
                 //for(int yai = 0; yai < lle.length-1; yai++){
                     //System.out.println(lle[yai]);
                     //if((lle[yai].charAt(0) >= 'a' && lle[yai].charAt(0)<='z') || (lle[yai].charAt(0)>='A' && lle[yai].charAt(0)<='Z')){
@@ -516,10 +520,10 @@ public class Controller {
                         break;*/
                     //}
                 //}
-                if(tt == tele.length-1)
-                    jsonResponse += ("\""+fst+"\""+":"+"\""+snd+"\"");
+                if(tt == tele.length-2)
+                    jsonResponse += ("\""+tele[tt]+"\""+":"+"\""+tele[tt+1]+"\"");
                 else
-                    jsonResponse += ("\""+fst+"\""+":"+"\""+snd+"\""+",");
+                    jsonResponse += ("\""+tele[tt]+"\""+":"+"\""+tele[tt+1]+"\""+",");
             }
             jsonResponse += "} }";
             if(ind<els.length-2)

@@ -1,5 +1,7 @@
 .App {
     text-align: center;
+    font-family: Helvetica;
+
 }
 
 .App-logo {
@@ -111,4 +113,7 @@
 .example-multiple-targets::after {
     content: attr(data-count);
     display: block;
+}
+.react-grid-Container{
+    padding: 0;
 }

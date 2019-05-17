@@ -1,0 +1,16 @@
+451,ana,blandiana,ana@blandiana.com,B1
+21311,petru,trimbitas,petru@trim.com,B3
+314141,name,sndname,ooo@gmail.dom,A1
+---- success ---
+
+451,ana,blandiana,ana@blandiana.com,'B1'
+21311,petru,trimbitas,'petru@trim.com',B3
+314141,"name","sndname",ooo@gmail.dom,A1
+--- success (elementele marcate cu " sau ' sunt ignorate) ---
+
+a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12...,a13
+--- success (a12... e un string unitar)
+
+1,2,,,,,,,3,4,5
+--- fail ( se incearca inserarea de elemente nule) ---
+re: greseala a fost corectata, acum parsarea ignora orice element null sau lungime 0

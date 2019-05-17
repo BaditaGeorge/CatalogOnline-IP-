@@ -1,32 +1,45 @@
 import java.util.Stack;
-
 import static java.lang.Character.isDigit;
 import static java.lang.Character.isLetter;
 
 public class Formula {
-    public String formula;
-    public String formulaPostfixata = "";
-    public int nrVariabile = 0;
-    public String criteriiPromovare;
-    public String[] variabile = new String[50];
-    public String mesajPentruFront;
-
-
+    private String formula;
+    private String formulaPostfixata = "";
+    private int nrVariabile = 0;
+    private String criteriiPromovare;
+    private String[] variabile = new String[50];
+    private String mesajPentruFront;
 
     public Formula(String formula) {
         this.formula = formula;
     }
-
     public Formula() {
     }
 
+    public String[] getVariabile(){
+        return variabile;
+    }
 
+    public int getNrVariabile(){
+        return nrVariabile;
+    }
 
-    //used only for tests
     public void setFormula(String formula) {
         this.formula = formula;
         nrVariabile = 0;
         formulaPostfixata = "";
+    }
+
+    public String getFormula(){
+        return formula;
+    }
+
+    public String getFormulaPostfixata(){
+        return formulaPostfixata;
+    }
+
+    public void setFormulaPostfixata(String formulaPostfixata){
+        this.formulaPostfixata=formulaPostfixata;
     }
 
     public void setCriteriiPromovare(String criteriiPromovare) {
@@ -743,8 +756,6 @@ public class Formula {
             mesajPentruFront = "Formula este valida";
 
     }
-
-
 
 
     String getMesajPentruFront() {

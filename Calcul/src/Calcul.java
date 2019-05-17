@@ -87,16 +87,16 @@ public class Calcul {
     void evaluareFormulaPostfixata(){
         int startIndex=0,i=0;
         formula.infixToPostfix();
-        while(formula.formula.charAt(i)!='='){
-            if(formula.formula.charAt(startIndex)!=' ')
+        while(formula.getFormula().charAt(i)!='='){
+            if(formula.getFormula().charAt(startIndex)!=' ')
             {
-                resultVar+=formula.formula.charAt(startIndex);
+                resultVar+=formula.getFormula().charAt(startIndex);
                 startIndex++;
             }
             i++;
         }
         startIndex++;
-        formula.formulaPostfixata=formula.formulaPostfixata.substring(0, formula.formulaPostfixata.length() - 1);
+        formula.setFormulaPostfixata(formula.getFormulaPostfixata().substring(0, formula.getFormulaPostfixata().length() - 1));
 
         evaluareFormulaPostfixataGenerala(startIndex);
 
@@ -117,22 +117,22 @@ public class Calcul {
         String var;
 
 
-        for (int i = startIndex; i < formula.formulaPostfixata.length(); i++) {
+        for (int i = startIndex; i < formula.getFormulaPostfixata().length(); i++) {
             number = 0;
 
             isNumber = false;
-            while (formula.formulaPostfixata.charAt(i) >= '0' && formula.formulaPostfixata.charAt(i) <= '9') {
-                number = number * 10 + formula.formulaPostfixata.charAt(i) - '0';
+            while (formula.getFormulaPostfixata().charAt(i) >= '0' && formula.getFormulaPostfixata().charAt(i) <= '9') {
+                number = number * 10 + formula.getFormulaPostfixata().charAt(i) - '0';
                 i++;
                 isNumber = true;
             }
 
-            if (formula.formulaPostfixata.charAt(i) == '.') {
+            if (formula.getFormulaPostfixata().charAt(i) == '.') {
                 i++;
                 decimal = 0.1;
                 int pow = 10;
-                while (formula.formulaPostfixata.charAt(i) >= '0' && formula.formulaPostfixata.charAt(i) <= '9') {
-                    number = number + (formula.formulaPostfixata.charAt(i) - '0') * decimal;
+                while (formula.getFormulaPostfixata().charAt(i) >= '0' && formula.getFormulaPostfixata().charAt(i) <= '9') {
+                    number = number + (formula.getFormulaPostfixata().charAt(i) - '0') * decimal;
                     number = ((double) Math.floor(number * pow)) / pow;
                     pow *= 10;
                     decimal /= 10;
@@ -146,8 +146,8 @@ public class Calcul {
             }
 
             var = "";
-            while ((formula.formulaPostfixata.charAt(i) >= 'a' && formula.formulaPostfixata.charAt(i) <= 'z') || (formula.formulaPostfixata.charAt(i) >= 'A' && formula.formulaPostfixata.charAt(i) <= 'Z') || (formula.formulaPostfixata.charAt(i) >= '0' && formula.formulaPostfixata.charAt(i) <= '9')) {
-                var += formula.formulaPostfixata.charAt(i);
+            while ((formula.getFormulaPostfixata().charAt(i) >= 'a' && formula.getFormulaPostfixata().charAt(i) <= 'z') || (formula.getFormulaPostfixata().charAt(i) >= 'A' && formula.getFormulaPostfixata().charAt(i) <= 'Z') || (formula.getFormulaPostfixata().charAt(i) >= '0' && formula.getFormulaPostfixata().charAt(i) <= '9')) {
+                var += formula.getFormulaPostfixata().charAt(i);
                 isVariable = true;
                 i++;
             }
@@ -159,11 +159,11 @@ public class Calcul {
 
             }
 
-            if ("+-*/%~:><".indexOf(formula.formulaPostfixata.charAt(i)) >= 0) {
+            if ("+-*/%~:><".indexOf(formula.getFormulaPostfixata().charAt(i)) >= 0) {
                 double val1 = stack.pop();
                 double val2 = stack.pop();
 
-                switch (formula.formulaPostfixata.charAt(i)) {
+                switch (formula.getFormulaPostfixata().charAt(i)) {
                     case '+':
                         stack.push(val2 + val1);
                         break;
@@ -190,8 +190,8 @@ public class Calcul {
                     case '~': {
                         i++;
                         String operator = "";
-                        while (formula.formulaPostfixata.charAt(i) != '~') {
-                            operator += formula.formulaPostfixata.charAt(i);
+                        while (formula.getFormulaPostfixata().charAt(i) != '~') {
+                            operator += formula.getFormulaPostfixata().charAt(i);
                             i++;
                         }
 

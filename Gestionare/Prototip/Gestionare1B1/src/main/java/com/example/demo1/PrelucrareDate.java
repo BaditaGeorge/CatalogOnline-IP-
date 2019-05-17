@@ -86,8 +86,10 @@ public class PrelucrareDate {
             System.out.println(formule);
             
             formule = formule.replaceAll("\\s+", "");
-            if (formule.equals(""))
+            if (formule.equals("")){
+                functiiGestiune.updateNote(id_student,id_materie,note);
                 return "Nu se vor face calcule fara formula";
+            }
 
             String criterii = functiiGestiune.selectCriterii(id_materie);
             System.out.println("Criteriile sunt = "+criterii);
@@ -98,13 +100,19 @@ public class PrelucrareDate {
             for (String formula : listFormule) {
                 System.out.println("Rundaa : " + formula);
                 Calcul calcul = new Calcul(formula);
-                System.out.println("Parsare");
+                /*System.out.println("Parsare");
                 calcul.parsareNote(note);
                 System.out.println("Last step!");
                 calcul.evaluareFormulaPostfixata();
                 System.out.println("Dupa eval!");
                 note = calcul.noteUpdatate();
-                System.out.println("Dupa noteeca");
+                System.out.println("Dupa noteeca");*/
+               System.out.println("he!!");
+                calcul.parsareNote(note);
+                 System.out.println("h!!");
+                calcul.evaluareFormulaPostfixata();
+                  System.out.println("h");
+                note = calcul.noteUpdatate();
             }
              System.out.println("hei!");
             functiiGestiune.updateNote(id_student, id_materie, note);

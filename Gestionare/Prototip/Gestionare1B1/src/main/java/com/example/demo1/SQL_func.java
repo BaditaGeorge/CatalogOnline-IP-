@@ -19,12 +19,12 @@ public class SQL_func {
     String way;
     SQL_func(String path)
     {
-        way=path;
-        //way = "BD_Gestiunea";
+        //way=path;
+        way = "BD_Gestiunea";
     }
     SQL_func(){
-        way="C://Users/GoguSpoder/Desktop/BD_Gestiunea";
-        //way = "BD_Gestiunea";
+        //way="C://Users/GoguSpoder/Desktop/BD_Gestiunea";
+        way = "BD_Gestiunea";
     }
     // Conectarea cu baza de date
     private Connection connect() {
@@ -90,7 +90,7 @@ public class SQL_func {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
              while(rs.next())
-                result += (rs.getString("formula_calcul") + ":" + rs.getString("id_materie") + "~");
+                result += (rs.getString("formula_calcul") + " _ " + rs.getString("id_materie") + "~");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
