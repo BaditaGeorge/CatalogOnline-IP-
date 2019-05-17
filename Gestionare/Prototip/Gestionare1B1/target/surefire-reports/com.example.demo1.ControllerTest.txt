@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo1.ControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.045 s <<< FAILURE! - in com.example.demo1.ControllerTest
+com.example.demo1.ControllerTest  Time elapsed: 0.044 s  <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at com.example.demo1.ControllerTest.<clinit>(ControllerTest.java:41)
+
+com.example.demo1.ControllerTest  Time elapsed: 0.044 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.example.demo1.ControllerTest
+

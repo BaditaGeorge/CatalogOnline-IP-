@@ -1,4 +1,5 @@
 package com.example.demo1;
+
 import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Queue;
@@ -23,11 +24,9 @@ public class PaginaFormula {
             return mesajPentruFront;
         }
         antet = antet.replaceAll("\\s+", " ");
-        System.out.println(antet);
         String[] campuriAntet = antet.split(" ");
         AntetMaterie antetMaterie = new AntetMaterie(campuriAntet);
-       
-        
+
         String[] list = formule.split(";");
         Formula[] listFormule=new Formula[list.length];
         int index=0;
@@ -101,7 +100,7 @@ public class PaginaFormula {
         HashMap<String, Integer> noduri = new HashMap<>();
         int index = -1;
         for (Formula f : formule) {
-            for (String var : f.variabile) {
+            for (String var : f.getVariabile()) {
                 if (!noduri.containsKey(var) && var != null) {
                     noduri.put(var, ++index);
                     //System.out.println(index + var);
@@ -115,7 +114,7 @@ public class PaginaFormula {
         int[][] graf = new int[nrNoduri][nrNoduri];
         for (Formula f : formule) {
             int primaVariabila = -1;
-            for (String var : f.variabile) {
+            for (String var : f.getVariabile()) {
                 if (primaVariabila == -1 && var != null) {
                     primaVariabila = noduri.get(var);
                     indexFormula.put(primaVariabila, ++index);

@@ -175,46 +175,40 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
     });
 };
 
-export const insertProfessorDisciplines = (id_profesor, den_materie) => (dispatch, getState) => {
+export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) => (dispatch, getState) => {
   dispatch({
     type: POST_PROFESSOR_DISCIPLINES
   });
   axios
-    .post(`${APIURL}/materii`, {id_materie: id_profesor, den_materie: den_materie})
+    .post(`${APIURL}/materii`, {id_Materie: id_profesor, den_materie: den_materie})
     .then(res => {
       if (res.data) {
-        let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 7}
-        let columns = [
-          {
-            "key": "student",
-            "type": "text"
-          },
-          {
-            "key": "id",
-            "type": "text"
-          },
-          {
-            "key": "group",
-            "type": "text"
-          },
-          {
-            "key": "lab",
-            "type": "number"
-          }
-        ]
-        let rows = [
-          {
-            "id": "1",
-            "student": "James Doe",
-            "group": "B1",
-            "lab": "10",
-          }
-        ]
-        let disciplines = getState().professorReducer.disciplines.push(newDiscipline)
-        dispatch({
-          type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
-          payload: {disciplines: disciplines}
-        });
+        let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 1}
+        axios
+          .get(`${APIURL}/materii?id_profesor=${id_profesor}`)
+          .then(res => {
+            if (!res.data)
+              throw 'Cant get disciplines'
+            else {
+              const lastDiscipline = res.data.disciplines[res.data.disciplines.length - 1]
+              catalog.disciplina = lastDiscipline.id_materie
+              newDiscipline.id_materie = lastDiscipline.id_materie
+              axios
+                .post(`${APIURL}/catalog`, catalog)
+                .then(res => {
+                    if (!res.data || !res.data.includes('Antetul este valid')) {
+                      throw res.data
+                    }
+                  }
+                )
+              let disciplines = getState().professorReducer.disciplines
+              disciplines.push(newDiscipline)
+              dispatch({
+                type: POST_PROFESSOR_DISCIPLINES_SUCCESS,
+                payload: {disciplines: disciplines}
+              });
+            }
+          })
       }
     })
     .catch(err => {

@@ -1,0 +1,55 @@
+toate respunsurile sunt de tip json,toate jsonurile au un camp success care indica daca operatia
+s-a realizat cu succes sau nu.
+toate erorile trimit cod de eroare 400 alaturi de un json cu campul sucess(ca mai sus)
+si campul message care contine mesajul erorii(ex:"User/pass invalid")
+
+
+1.login
+request:POST adresa_server/login?username=nume.prenume&password=parola
+response:
+utilizator existent cu credentiale corecte si cont activat
+200 ok tip json:
+{
+    "success":true,
+    "session_id":"id generat"
+}
+utilizator inexistent:
+400 tip json:
+{
+    "success":false,
+    "message":"User does not exist"
+}
+toate celelalte response-uri la erori sunt asemanatoare,difera doar message.
+
+
+2.register
+request: POST adresa_server/register?username=nume.prenume&password=parola&mail=nume.prenume@info.uaic.ro 
+response:
+totul in regula:
+200 ok cu jsonul:
+{
+    "success":true,
+    "message":"Use the activation code sent to the university email in order to activate your account and be able to login."
+}
+eroare:
+400 tip json:
+{
+    "success":false,
+    "message":"Sursa erorii"
+}
+
+
+3.activate account (cu acel cod trimis pe mail)
+request: POST adresa_server/activate?username=nume.prenume&password=parola&code=cod
+response:
+200 ok tip json:
+{
+    "sucess":true,
+    "session_id":"id generat"
+}
+eroare
+400 tip json:
+{
+    "success":false,
+    "message":"Incorrect activation code"
+}

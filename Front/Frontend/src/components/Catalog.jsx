@@ -30,16 +30,25 @@ export default class Catalog extends Component {
       rows: props.rows,
       columns: props.columns,
       user: props.user,
+      variables: [],
       filters: {}
     }
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
     this.setState({rows: nextProps.rows, columns: nextProps.columns})
+    let variables = []
+    this.props.formulas.map(formula => {
+      console.log(formula)
+      if (formula.id_materie === this.props.currentDiscipline.id_materie) {
+        variables = formula.formula_calcul.match(/\w+/g)
+      }
+    })
+    this.setState({variables: variables})
   }
 
   askUserInput = (message, defaultInput) => {
-    const result = prompt("Column ID:");
+    const result = prompt(message);
     if (result === "") {
       return defaultInput
     } else if (result) {
@@ -180,6 +189,9 @@ export default class Catalog extends Component {
     try {
       if (colIdx < 3)
         throw 'You cant delete one of the mandatory columns (ex: student, id, group)'
+      if (this.state.variables.includes(this.state.columns[colIdx].key)) {
+        throw 'You cant remove a column from formula. Change formula and try again!'
+      }
       if (this.state.columns.length < 5)
         throw 'You cant delete all variables'
       this.setState(state => {
@@ -198,6 +210,9 @@ export default class Catalog extends Component {
     try {
       if (colIdx < 3)
         throw 'You cant rename one of the mandatory columns (ex: student, id, group)'
+      if (this.state.variables.includes(this.state.columns[colIdx].key)) {
+        throw 'You cant rename a column from formula. Change formula and try again!'
+      }
       const newColIdx = this.askUserInput('Name:', 'undefined');
       this.state.columns.map(col => {
         if (col.key === newColIdx)
@@ -218,7 +233,7 @@ export default class Catalog extends Component {
   onColumnInsert = (colIdx) => {
     try {
       const newColIdx = this.askUserInput('Name:', 'undefined');
-      const newColType = this.askUserInput('Column type (number or string):', 'number');
+      const newColType = 'number';
       this.state.columns.map(col => {
         if (col.key === newColIdx)
           throw `You already have a column named ${newColIdx}`
@@ -337,14 +352,14 @@ class CatalogContextMenu extends Component {
         <MenuItem data={{rowIdx, idx}} onClick={onColumnDelete}>
           Delete Column
         </MenuItem>
-        <SubMenu title="Insert Row">
-          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertAbove}>
-            Above
-          </MenuItem>
-          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertBelow}>
-            Below
-          </MenuItem>
-        </SubMenu>
+        {/*<SubMenu title="Insert Row">*/}
+        {/*  <MenuItem data={{rowIdx, idx}} onClick={onRowInsertAbove}>*/}
+        {/*    Above*/}
+        {/*  </MenuItem>*/}
+        {/*  <MenuItem data={{rowIdx, idx}} onClick={onRowInsertBelow}>*/}
+        {/*    Below*/}
+        {/*  </MenuItem>*/}
+        {/*</SubMenu>*/}
         <SubMenu title="Insert Column">
           <MenuItem data={{rowIdx, idx}} onClick={onColumnInsertLeft}>
             Left
