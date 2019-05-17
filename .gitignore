@@ -1,6 +1,8 @@
 Calcul/.idea
 .idea/workspace.xml
 
+Gestionare/*.jar
+
 Front/src/node_modules
 Front/src/.idea
 
@@ -9,4 +11,9 @@ Front/src/.idea
 
 */.idea
 .idea/workspace.xml
+<<<<<<< HEAD
 /Gestionare/Prototip/Gestionare1B1/nbproject/
+=======
+Gestionare/*.jar
+node_modules
+>>>>>>> 1e15adc1bcbe292fc7cae034579a5b22130474a9

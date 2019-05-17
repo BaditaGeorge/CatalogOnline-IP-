@@ -1,6 +1,4 @@
 import java.sql.*;
-import java.util.Random;
-
 /**
  * Clasa care contine functii cu operatii pentru baza de date
  */
@@ -8,9 +6,9 @@ public class SQL_func {
     String way;
 
     /**
-     * Constructor cu rol de plasare a path-ului
+     * Constructor cu rol de plasare a path-ului 
      * @param path Un String cu path-ul bazei de date
-     */
+      */
     SQL_func(String path)
     {
         way=path;
@@ -40,7 +38,7 @@ public class SQL_func {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                result+= rs.getString("formula_calcul") + " | ";
+                 result+= rs.getString("formula_calcul") + " | ";
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -59,7 +57,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-            result =(rs.getString("formula_calcul") + "\t");
+                result =(rs.getString("formula_calcul") + "\t");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -99,13 +97,13 @@ public class SQL_func {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                result+= rs.getString("id_student") +"  " + rs.getString("id_materie") + " " + rs.getString("valori_note")+ " | ";
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            result+= rs.getString("id_student") +"  " + rs.getString("id_materie") + " " + rs.getString("valori_note")+ " | ";
         }
-        return result;
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
     }
+        return result;
+}
     /**
      * Functia care returneaza notele unui anumit student la o anumita materie
      * @param id_s Parametrul care identifica id-ul studentului
@@ -151,17 +149,16 @@ public class SQL_func {
      * @param id_s Parametrul care identifica id-ul studentului
      * @param nume Parametrul care identifica numele materiei
      * @param note Parametrul care identifica valorile notelor
-//     * @param formula Parametrul care identifica formula de calcul
+     * @param formula Parametrul care identifica formula de calcul
      */
     public void insertMaterii(String id_m,String id_s,String nume,String note){
-        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note,situatiePromovare) VALUES (?,?,?,?,?)";
+        String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note) VALUES (?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_m);
             pstmt.setString(2, id_s);
             pstmt.setString(3, nume);
             pstmt.setString(4, note);
-            pstmt.setString(5, "");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -216,7 +213,7 @@ public class SQL_func {
      */
     public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula)
     {
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet,criteriiPromovare) VALUES (?,?,?,?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, id_p);
@@ -226,7 +223,7 @@ public class SQL_func {
             pstmt.setString(5, den_m);
             pstmt.setString(6, formula);
             pstmt.setString(7, "");
-            pstmt.setString(8, "");
+
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -240,7 +237,7 @@ public class SQL_func {
     public void insertProfesori(String id_p,String den_m)
     {
 
-        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet,criteriiPromovare) VALUES (?,?,?,?,?,?,?,?)";
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
         String aux=getNumePrenumeProf(id_p);
         String[] numePrenume=aux.split(" ");
         String nume=numePrenume[0];
@@ -254,7 +251,6 @@ public class SQL_func {
             pstmt.setString(5, den_m);
             pstmt.setString(6, "");
             pstmt.setString(7, "");
-            pstmt.setString(8, "");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -355,14 +351,14 @@ public class SQL_func {
     }
     /**
      * Functia care insereaza un nou utilizator in baza de date
-//     * @param id_u Parametrul care identifica id-ul utilizatorului
+     * @param id_u Parametrul care identifica id-ul utilizatorului
      * @param username Parametrul care identifica username-ul utilizatorului
      * @param email Parametrul care identifica adresa de mail a utilizatorului
      * @param pas Parametrul care identifica parola utilizatorului
      * @param salt Parametrul care identifica valoarea din campul salt_parola a utilizatorului
-//     * @param nrt Parametrul care identifica numarul de telefon al utilizatorului
-//     * @param tip_u Parametrul care identifica tipul utilizatorului
-//     * @param ver Parametrul care identifica valoarea din campul verificare a utilizatorului
+     * @param nrt Parametrul care identifica numarul de telefon al utilizatorului
+     * @param tip_u Parametrul care identifica tipul utilizatorului
+     * @param ver Parametrul care identifica valoarea din campul verificare a utilizatorului
      */
     public void addNewUser(String username,String email,String pas,String salt ,String auth)
     {
@@ -420,9 +416,9 @@ public class SQL_func {
                     result = aux;
             }
         }
-        catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+     catch (SQLException e) {
+        System.out.println(e.getMessage());
+    }
         return result+1;
     }
     /**
@@ -436,7 +432,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-            result+= rs.getString("nume")+ " "  +  rs.getString("prenume");
+                result+= rs.getString("nume")+ " "  +  rs.getString("prenume");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -467,22 +463,22 @@ public class SQL_func {
      */
     public Integer getMaxIdUtilizator()
     {
-        int result=0;
-        String query="Select id_utilizator as maxID from utilizatori";
-        try (Connection conn = this.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
-            while (rs.next())
-            {
-                Integer aux =Integer.parseInt(rs.getString("maxID"));
-                if( aux > result)
-                    result = aux;
+            int result=0;
+            String query="Select id_utilizator as maxID from utilizatori";
+            try (Connection conn = this.connect();
+                 Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery(query)) {
+                while (rs.next())
+                {
+                    Integer aux =Integer.parseInt(rs.getString("maxID"));
+                    if( aux > result)
+                        result = aux;
+                }
             }
-        }
-        catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return result+1;
+            catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return result+1;
     }
 
     /**
@@ -548,6 +544,7 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+<<<<<<< HEAD
 
     /**
      * Functia care adauga un nou student in baza de date
@@ -763,4 +760,6 @@ public class SQL_func {
         }
         return result;
     }
+=======
+>>>>>>> 0bb654169dee5ca819153b6b545173719cdf30af
 }

@@ -19,12 +19,43 @@ export default class NavProf extends Component {
 
   onAddDiscipline = (id_professor) => {
     const disciplineName = this.askUserInput("Specify discipline name")
+    let catalog = {
+      profesor: id_professor,
+      disciplina: 100,
+      columns: [
+        {
+          "key": "student",
+          "type": "text"
+        },
+        {
+          "key": "id",
+          "type": "text"
+        },
+        {
+          "key": "group",
+          "type": "text"
+        },
+        {
+          "key": "lab",
+          "type": "number"
+        }
+      ],
+      rows: [
+        {
+          "id": "1",
+          "student": "James Doe",
+          "group": "B1",
+          "lab": "10",
+        }
+      ]
+    }
     if (disciplineName)
-      this.props.onAddDiscipline(id_professor, disciplineName)
+      this.props.onAddDiscipline(id_professor, disciplineName, catalog)
 
   }
 
   onDisciplineChange = (id_materie, denumire_materie) => {
+    console.log(id_materie, denumire_materie, 'asdasdasd')
     const newCurrentDiscipline = {
       denumire_materie: denumire_materie,
       id_materie: parseInt(id_materie.replace(" ", ""), 10)
@@ -40,6 +71,7 @@ export default class NavProf extends Component {
           <Nav className="mr-auto">
             <NavDropdown title="Courses" id="collasible-nav-dropdown">
               {this.props.disciplines && this.props.disciplines.map((item, id) => {
+                console.log(item)
                 return (
                   <NavDropdown.Item key={id} value={item.denumire_materie}
                                     onClick={() => this.onDisciplineChange(item.id_materie, item.denumire_materie)}>
@@ -58,7 +90,7 @@ export default class NavProf extends Component {
           </Nav>
           <Nav>
             <NavDropdown title={this.props.user.name} id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/Logout">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="#">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

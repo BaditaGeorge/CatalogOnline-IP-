@@ -36,7 +36,6 @@ class StudentDashboard extends Component {
   render() {
     let catalogIndex = 0
     this.props.catalogs.map((catalog, index) => {
-      console.log(catalog, this.props.currentDiscipline.denumire_materie)
       if (catalog.denumire_materie === this.props.currentDiscipline.denumire_materie)
         catalogIndex = index
     })
@@ -52,6 +51,7 @@ class StudentDashboard extends Component {
         <Catalog user={user}
                  rows={this.props.catalogs.length ? this.props.catalogs[catalogIndex].rows : []}
                  columns={this.props.catalogs.length ? this.props.catalogs[catalogIndex].columns : []}
+                 formulas={[]}
         />
       </div>
     );
