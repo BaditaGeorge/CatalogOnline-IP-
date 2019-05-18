@@ -200,8 +200,29 @@ public class PaginaFormula {
     String generareFormula(String id_materie, String formula) {
 
         mesajPentruFront=parsareFormule(id_materie, formula);
+        System.out.println("here5");
         if (mesajPentruFront.equals("Formula este valida"))
+        {
             this.prelucrareDate.functiiGestiune.updateFormula(id_materie, formuleReturnate);
+            String note=this.prelucrareDate.functiiGestiune.selectNote(id_materie);
+           
+            String[] noteStudenti=note.split("_");
+            
+                System.out.println(note);
+            
+            for(String noteStudent: noteStudenti){
+                if(!noteStudent.replaceAll("\\s+","").isEmpty())
+                {   
+                    note="n: ";
+                    note+=noteStudent;
+
+                    System.out.println(note);
+                    String mesaj=this.prelucrareDate.primesteMesajFront(note);
+                    System.out.println(mesaj);
+                }
+            }
+            
+        }
 
         return mesajPentruFront;
 
@@ -223,20 +244,5 @@ public class PaginaFormula {
 
 
     }
-
-    void schimbareAntet(String id_materie, String antet) {
-
-    }
-
-
-    void schimbareFormula(String id_materie, String formula) {
-
-    }
-
-
-    void schimbareCriterii(String id_materie) {
-
-    }
-
 
 }
