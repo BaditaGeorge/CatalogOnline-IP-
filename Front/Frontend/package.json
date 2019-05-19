@@ -39,6 +39,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-plugin-transform-decorators": "^6.24.1"
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "node-sass": "^4.12.0"
   }
 }
