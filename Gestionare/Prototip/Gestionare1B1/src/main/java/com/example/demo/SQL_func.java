@@ -23,7 +23,7 @@ public class SQL_func {
         //way = "BD_Gestiunea";
     }
     SQL_func(){
-        way="C://Users/GoguSpoder/Desktop/BD_Gestiunea";
+        way="C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea";
         //way = "BD_Gestiunea";
     }
     // Conectarea cu baza de date
@@ -122,6 +122,22 @@ public class SQL_func {
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
             result+= rs.getString("id_student") +"  " + rs.getString("id_materie") + " " + rs.getString("valori_note")+ " | ";
+        }
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+    }
+        return result;
+    }
+    
+     public String selectNote(String id_m){
+        String result="";
+        String query="Select id_materie,id_student,valori_note from materii where id_materie=";
+        query+=id_m;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+            result+= rs.getString("id_student") +"; " + rs.getString("id_materie") + "; " + rs.getString("valori_note")+ " _ ";
         }
     } catch (SQLException e) {
         System.out.println(e.getMessage());
@@ -423,8 +439,8 @@ public class SQL_func {
             pstmt.setString(3, prenume);
             pstmt.setInt(4, getMaxIdMaterie());
             pstmt.setString(5, den_m);
-            pstmt.setString(6, "");
-            pstmt.setString(7, "");
+            pstmt.setString(6, "L=sum(L1:L14); T=L+E1+E2");
+            pstmt.setString(7, "L1 L2 L3 L4 L5 L6 L7 L8 L9 L10 L11 L12 L13 L14 L E1 E2 T");
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -677,7 +693,7 @@ public class SQL_func {
         try (Connection conn = this.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
-            result =(rs.getString("criteriiPromovare  ") + "\t");
+            result =(rs.getString("criteriiPromovare") + "\t");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
