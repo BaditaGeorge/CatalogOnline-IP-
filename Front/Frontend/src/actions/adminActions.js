@@ -21,6 +21,7 @@ export const POST_PROFESSOR_DISCIPLINES_SUCCESS = "POST_PROFESSOR_DISCIPLINES_SU
 export const POST_PROFESSOR_DISCIPLINES_FAIL = "POST_PROFESSOR_DISCIPLINES_FAIL"
 export const SET_CURRENT_DISCIPLINE = "SET_CURRENT_DISCIPLINE"
 
+
 export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
   dispatch({
     type: GET_PROFESSOR_CATALOG

@@ -1,7 +1,4 @@
 import {
-  GET_GLOBAL,
-  GET_GLOBAL_SUCCESS,
-  GET_GLOBAL_FAIL,
   GET_STUDENT_CATALOG,
   GET_STUDENT_CATALOG_SUCCESS,
   GET_STUDENT_CATALOG_FAIL,
@@ -12,34 +9,14 @@ import {
 } from "../actions/studentActions";
 
 const INITIAL_STATE = {
-  global: undefined,
   disciplines: [],
   currentDiscipline: {},
   loading: false,
   catalogs: [],
 };
 
-export default function studentReducer(state = INITIAL_STATE, action) {
+export default function studentReducer (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case GET_GLOBAL: {
-      return {
-        ...state,
-        loading: true
-      };
-    }
-    case GET_GLOBAL_SUCCESS: {
-      return {
-        ...state,
-        global: action.payload.global,
-        loading: false
-      };
-    }
-    case GET_GLOBAL_FAIL: {
-      return {
-        ...state,
-        loading: false
-      };
-    }
     case GET_STUDENT_CATALOG: {
       return {
         ...state,

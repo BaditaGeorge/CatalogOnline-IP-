@@ -43,7 +43,7 @@ export default class Formula extends Component {
         {this.props.formulas.map((item, key) => {
           if (item.id_materie === this.props.currentDiscipline.id_materie) {
             return (
-              <div className={'col'}>
+              <div className={'col'} key={key}>
                 <h4>{item.formula_calcul}</h4>
                 <Button variant="primary"
                         type="button"

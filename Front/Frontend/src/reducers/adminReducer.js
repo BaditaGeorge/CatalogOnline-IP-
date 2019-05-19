@@ -18,7 +18,7 @@ import {
   POST_PROFESSOR_DISCIPLINES_SUCCESS,
   POST_PROFESSOR_DISCIPLINES_FAIL,
   SET_CURRENT_DISCIPLINE,
-} from "../actions/professorActions";
+} from "../actions/adminActions";
 
 
 const INITIAL_STATE = {
@@ -32,7 +32,7 @@ const INITIAL_STATE = {
   loading: false
 };
 
-export default function professorReducer(state = INITIAL_STATE, action) {
+export default function adminReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case GET_PROFESSOR_CATALOG: {
       return {

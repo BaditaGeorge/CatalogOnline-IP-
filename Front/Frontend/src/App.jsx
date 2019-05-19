@@ -1,36 +1,47 @@
-import React, {Component, Suspense, lazy} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Provider} from "react-redux";
-import store from './store';
+import React, { Component, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Provider } from "react-redux";
+import configureStore from './store';
 
-import Login from './components/Login';
-import Register from './components/Register';
-import {StudentDashboardRedux} from './components/StudentDashboard';
-import {ProfessorDashboardRedux} from './components/ProfessorDashboard';
-import SecretaryDashboard from './components/SecretaryDashboard'
-import AdminDashboard from './components/AdminDashboard';
-import About from './components/About';
+import { PersistGate } from 'redux-persist/integration/react'
+import { AdminDashboardWithRedux } from './components/AdminDashboard';
+import { ProfessorDashboardRedux } from './components/ProfessorDashboard';
+import { StudentDashboardRedux } from './components/StudentDashboard';
+import { LoginWithRedux } from './components/Login';
+import { RegisterWithRedux } from './components/Register';
+
+const config = configureStore()
+const { store, persistor } = config
 
 class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Router>
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Switch>
-                            <Route exact path="/login" component={Login}/>
-                            <Route path="/register" component={Register}/>
-                            <Route path="/student" component={StudentDashboardRedux}/>
-                            <Route path="/professor" component={ProfessorDashboardRedux}/>
-                            <Route path="/secretary" component={SecretaryDashboard}/>
-                            <Route path="/admin" component={AdminDashboard}/>
-                            <Route path="/about" component={About}/>
-                        </Switch>
-                    </Suspense>
-                </Router>
-            </Provider>
-        );
-    }
+  render () {
+    return (
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Routing/>
+        </PersistGate>
+      </Provider>
+    );
+  }
+}
+
+class Routing extends Component {
+  render () {
+    return (
+      <Router>
+        <Suspense fallback={null}>
+          <Switch>
+            <Route path="/admin" component={AdminDashboardWithRedux}/>
+            <Route path="/dashboard" component={ProfessorDashboardRedux}/>
+            <Route path="/student" component={StudentDashboardRedux}/>
+            <Route path="/login" component={LoginWithRedux}/>
+            <Route path="/register" component={RegisterWithRedux}/>
+            <Redirect from="/" to="/login"/>
+          </Switch>
+        </Suspense>
+      </Router>
+    )
+  }
 }
 
 export default App;

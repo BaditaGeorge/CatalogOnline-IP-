@@ -59,7 +59,6 @@ class StudentDashboard extends Component {
 }
 
 export const StudentDashboardRedux = connect((state) => ({
-  global: state.studentReducer.global,
   catalogs: state.studentReducer.catalogs,
   disciplines: state.studentReducer.disciplines,
   currentDiscipline: state.studentReducer.currentDiscipline,

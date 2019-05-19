@@ -61,7 +61,8 @@ export default class Catalog extends Component {
   createEmptyRow = (columns) => {
     const newRow = {};
     columns.map((item) => {
-      newRow[item.key] = item.type === 'string' ? '-' : 0;
+      const result = prompt(item.key);
+      newRow[item.key] = result
     });
     return newRow
   };
@@ -279,7 +280,6 @@ export default class Catalog extends Component {
   render() {
 
     if (!equal(this.props.rows, this.state.rows) || !equal(this.props.columns, this.state.columns)) {
-      console.log(this.state.rows, this.props.rows)
       this.onCatalogChange(this.state.rows, this.state.columns)
     }
     const filteredRows = this.getRowsSelector(this.state.rows, this.state.filters);
@@ -352,14 +352,14 @@ class CatalogContextMenu extends Component {
         <MenuItem data={{rowIdx, idx}} onClick={onColumnDelete}>
           Delete Column
         </MenuItem>
-        {/*<SubMenu title="Insert Row">*/}
-        {/*  <MenuItem data={{rowIdx, idx}} onClick={onRowInsertAbove}>*/}
-        {/*    Above*/}
-        {/*  </MenuItem>*/}
-        {/*  <MenuItem data={{rowIdx, idx}} onClick={onRowInsertBelow}>*/}
-        {/*    Below*/}
-        {/*  </MenuItem>*/}
-        {/*</SubMenu>*/}
+        <SubMenu title="Insert Row">
+          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertAbove}>
+            Above
+          </MenuItem>
+          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertBelow}>
+            Below
+          </MenuItem>
+        </SubMenu>
         <SubMenu title="Insert Column">
           <MenuItem data={{rowIdx, idx}} onClick={onColumnInsertLeft}>
             Left

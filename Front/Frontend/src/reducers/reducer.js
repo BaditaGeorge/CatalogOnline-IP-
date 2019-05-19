@@ -1,8 +1,12 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
+import adminReducer from './adminReducer'
 import professorReducer from './professorReducer'
 import studentReducer from './studentReducer'
+import loginReducer from './loginReducer'
 
 export default combineReducers({
-    professorReducer,
-    studentReducer
+  adminReducer,
+  professorReducer,
+  studentReducer,
+  loginReducer
 })
