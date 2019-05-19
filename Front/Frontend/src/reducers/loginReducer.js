@@ -6,7 +6,7 @@ import {
 
 const INITIAL_STATE = {
   userName: 'James Doe',
-  role: 'professor',
+  role: 'admin',
   token: 'asdasd7ad712ehsujcksd2husuxsa',
   verified: true,
   loading: false,
@@ -23,10 +23,10 @@ export default function loginReducer (state = INITIAL_STATE, action) {
     case GET_USER_DATA_SUCCESS: {
       return {
         ...state,
-        userName: action.payload.userName,
-        role: action.payload.role,
-        token: action.payload.token,
-        verified: action.payload.verified,
+        // userName: action.payload.userName,
+        // role: action.payload.role,
+        // token: action.payload.token,
+        // verified: action.payload.verified,
         loading: false
       };
     }
