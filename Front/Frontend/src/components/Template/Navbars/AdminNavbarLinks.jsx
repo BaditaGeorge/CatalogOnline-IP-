@@ -12,7 +12,7 @@ export default class AdminNavbarLinks extends Component {
       </div>
     );
     return (
-      <Fragment>
+      <Fragment >
         <Nav>
           <NavItem eventKey={1} href="#">
             <i className="fa fa-dashboard"/>
