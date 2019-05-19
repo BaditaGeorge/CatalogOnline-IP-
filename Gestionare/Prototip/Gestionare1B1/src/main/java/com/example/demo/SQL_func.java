@@ -322,7 +322,21 @@ public class SQL_func {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                result+= rs.getString("id_student") +"  " + rs.getString("nume") + " " + rs.getString("prenume")+ " " + rs.getString("grupa") + " " + rs.getString("valori_note") + " | ";
+                result+= rs.getString("id_student") +" " + rs.getString("nume") + " " + rs.getString("prenume")+ " " + rs.getString("grupa") + " " + rs.getString("valori_note") + " | ";
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    public String selectCatalogCSV(String id_m, String id_p){
+        String result="";
+        String query="Select s.id_student,s.nume,s.prenume,s.grupa,m.valori_note from studenti s join materii m on s.id_student = m.id_student join profesori p on m.id_materie = p.id_materie where m.id_materie=" + id_m + " and p.id_profesor=" + id_p;
+        try (Connection conn = this.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                result+= rs.getString("id_student") +" " + rs.getString("nume") + " " + rs.getString("prenume")+ " " + rs.getString("grupa") + " " + rs.getString("valori_note") + " ~";
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -343,6 +357,20 @@ public class SQL_func {
         }
         return result;
     }
+    public String selectCurricula(){
+        String result = "";
+        String query="Select distinct id_materie,denumire_materie from materii";
+        try(Connection conn = this.connect();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query)){
+            while(rs.next()){
+                result += rs.getString("id_materie") + " _ " + rs.getString("denumire_materie") + " ~";
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
     public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula)
     {
         String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
@@ -355,6 +383,24 @@ public class SQL_func {
             pstmt.setString(5, den_m);
             pstmt.setString(6, formula);
             pstmt.setString(7, "");
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void insertProfesori(String id_p, String nume,String prenume, String id_m,String den_m,String formula,String antet)
+    {
+        String query = "Insert into profesori(id_profesor,nume,prenume,id_materie,denumire_materie,formula_calcul,antet) VALUES (?,?,?,?,?,?,?)";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, id_p);
+            pstmt.setString(2, nume);
+            pstmt.setString(3, prenume);
+            pstmt.setString(4, id_m);
+            pstmt.setString(5, den_m);
+            pstmt.setString(6, formula);
+            pstmt.setString(7, antet);
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -504,6 +550,45 @@ public class SQL_func {
         System.out.println(e.getMessage());
     }
         return result+1;
+    }
+    public Boolean selectStudAtId(String id){
+        String result = "";
+        String query = "Select * from studenti where id_student="+id;
+        try(Connection conn = this.connect();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query)){
+            return rs.next();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    public Boolean getIdProfs(String idP){
+        String result = "";
+        String query = "Select * from profesori where id_profesor="+idP;
+        try(Connection conn = this.connect();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query)){
+                return rs.next();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    public String selectAllProfs(){
+        String result = "";
+        String query = "Select distinct id_profesor,nume,prenume from profesori";
+        try(Connection conn = this.connect();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query)){
+                while(rs.next()){
+                    result += (rs.getString("id_profesor") + " _ " + rs.getString("nume") + " _ " + rs.getString("prenume") + " ~");
+                }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
     public String getNumePrenumeProf(String id_p){
         String result="";

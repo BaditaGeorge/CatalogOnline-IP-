@@ -317,6 +317,139 @@ public class Controller {
         return (new FstParser().convertFormuleToJSON(splArr[1]));
     }*/
     
+    public String randId(){
+        int ind = 1;
+        while((new SQL_func()).selectStudAtId(String.valueOf(ind))){
+            ind++;
+        }
+        //System.out.println((new SQL_func()).selectStudAtId(String.valueOf(ind)));
+        return String.valueOf(ind);
+    }
+    
+    @RequestMapping(
+    value = "/addStud",
+    method = RequestMethod.POST)
+    public String addStud(@RequestBody String body){
+        String[] result = body.split(",");
+        String json = "";
+        json += (randId() + ",");
+        for(int t=0;t<result.length;t++){
+            String[] vals = result[t].split(":");
+            vals[1] = vals[1].trim();
+            int len = vals[1].length();
+            if(vals[1].charAt(len-1) == '}'){
+                vals[1] = vals[1].substring(0,len-1);
+            }
+            vals[1] = vals[1].substring(1,len-1);
+            if(t < result.length - 1)
+                json += (vals[1] + ",");
+            else{
+                String n = "";
+                int indexu = 0;
+                while(vals[1].charAt(indexu) != '"'){
+                    n += vals[1].charAt(indexu);
+                    indexu++;
+                }
+                json += n;
+            }
+        }
+        (new SQL_func()).insertNewStudent(json);
+        return "Done";
+    }
+    
+    public String idPrfG(){
+        int ind = 1;
+        while((new SQL_func()).getIdProfs(String.valueOf(ind)))
+            ind++;
+        return String.valueOf(ind);
+    }
+    
+    @RequestMapping(
+    value="/profesori",
+    method=RequestMethod.POST)
+    public String postProfs(@RequestBody String body){
+        String[] arr = body.split(",");
+        String db = "";
+        db += (idPrfG() + ",");
+        if(arr.length <= 2)
+            return "";
+        for(int i=1;i<3;i++){
+            String[] vals = arr[i].split(":");
+            vals[1].trim();
+            vals[1] = vals[1].substring(1,vals[1].length()-1);
+            db += (vals[1].trim() + ",");
+        }
+        for(int i=3;i<arr.length;i+=4){
+           String temp = db;
+           String[] vls1 = arr[i].split(":");
+           if(vls1.length > 2)
+               vls1[1] = vls1[vls1.length - 1];
+           if((i+1)>=arr.length)
+               return "wrong format 1" + " " + i + " " + arr.length;
+           String[] vls2 = arr[i+1].split(":");
+           vls2[1] = vls2[1].substring(1,vls2[1].length()-1);
+           if((i+2)>=arr.length)
+               return "wrong format 2";
+           String[] vls3 = arr[i+2].split(":");
+           if(vls3.length > 2)
+               vls3[1] += ":" + vls3[2];
+           vls3[1] = vls3[1].substring(1,vls3[1].length()-1);
+           if((i+3)>=arr.length)
+               return "wrong format 3";
+           String[] vls4 = arr[i+3].split(":");
+           vls4[1] = vls4[1].substring(1,vls4[1].length()-1);
+           while(vls4[1].charAt(vls4[1].length()-1) == '\n' || vls4[1].charAt(vls4[1].length()-1) == '\t' || vls4[1].charAt(vls4[1].length()-1) == ' ' || vls4[1].charAt(vls4[1].length()-1) == '"' || vls4[1].charAt(vls4[1].length()-1) == '}' || vls4[1].charAt(vls4[1].length()-1) == ']')
+               vls4[1] = vls4[1].substring(0,vls4[1].length()-1);
+           temp += (vls1[1] + "," + vls2[1] + "," + vls3[1] + "," + vls4[1]);
+           String[] temV = temp.split(",");
+           (new SQL_func()).insertProfesori(temV[0], temV[1],temV[2],temV[3],temV[4],temV[5],temV[6]);
+        }
+        return "Done";
+    }
+    @RequestMapping(
+    value="/export",
+    method=RequestMethod.GET)
+    public String exportCSV(@RequestParam("id_profesor") String idP,@RequestParam("id_Materie") String idM){
+        String result = (new SQL_func()).selectCatalogCSV(idM, idP);
+        String[] arr = result.split(" ~");
+        String csv = "";
+        for(int i=0;i<arr.length;i++){
+            arr[i] = arr[i].replace(" ",",");
+            csv += (arr[i] + "\n");
+        }
+        return csv;
+    }
+    @RequestMapping(
+    value="/profesori",
+    method=RequestMethod.GET)
+    public String getProfs(){
+        String data = (new SQL_func()).selectAllProfs();
+        String[] arr = data.split("~");
+        String json = "[";
+        for(int t=0;t<arr.length;t++){
+            String[] vals = arr[t].split(" _ ");
+            json +="{";
+            json += ("\"id_profesor\":" + vals[0] + ", \"nume\":" + "\"" + vals[1] + "\"" + ", \"prenume\":" + "\"" + vals[2] + "\"" + ", \"materii\":");
+            json += "[";
+            data = (new SQL_func()).selectDenumireMaterii(vals[0]);
+            String[] vals2 = data.split(" ~");
+            for(int k=0;k<vals2.length;k++){
+                String[] vel = vals2[k].split(":");
+                if(k != vals2.length - 1)
+                    json += "{ \"id_materie\":" + vel[1] + ", \"den_materie\":" + "\"" + vel[0] + "\"" +  "},";
+                else
+                    json += "{ \"id_materie\":" + vel[1] + ", \"den_materie\":" + "\"" + vel[0] + "\"" + " }";
+            }
+            json += "]";
+            if(t != arr.length - 1)
+                json += "},";
+            else
+                json += "}";
+        }
+        json += "]";
+        return json;
+    }
+    
      @RequestMapping(
      value="/import",
      method=RequestMethod.POST)
@@ -379,7 +512,24 @@ public class Controller {
         return jsonResponse;
     }
     
-     
+    @RequestMapping(
+    value="/materiiTot",
+    method=RequestMethod.GET)
+    public String getCurr(){
+        String str = (new SQL_func()).selectCurricula();
+        String[] arr = str.split(" ~");
+        String json = "[";
+        for(int t=0;t<arr.length;t++){
+            String[] vls = arr[t].split(" _ ");
+            if(t != arr.length - 1)
+                json += "{\"id_materie\":" +  vls[0] + ", \"denumire_materie\":" + "\"" + vls[1] + "\"" + "},";
+            else
+                json += "{\"id_materie\":" +  vls[0] + ", \"denumire_materie\":" + "\"" + vls[1] + "\"" + "}";
+        }
+        json += "]";
+        return json;
+    }
+    
     @RequestMapping(
     value="/formule",
     method=RequestMethod.POST)
