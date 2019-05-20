@@ -1,19 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../App.css';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Catalog from "./Catalog"
 import {
   getStudentCatalog,
   getStudentDisciplines,
   setStudentCurrentDiscipline
 } from "../actions/studentActions";
-import NavProf from "./NavProf";
+import Navigation from "./Navigation";
 import equal from "fast-deep-equal";
+import { logoutUser } from "../actions/loginActions";
 
-const user = {name: "Alex Ivan", role: "student", id_prof: 1}
+// const user = {name: "Alex Ivan", role: "student", id_prof: 1}
+
 
 class StudentDashboard extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       currentDiscipline: {}
@@ -21,19 +23,23 @@ class StudentDashboard extends Component {
   }
 
 
-  componentWillMount() {
-    this.props.getStudentCatalog(user.id_prof, 3)
-    this.props.getStudentDisciplines(user.id_prof)
-  }
-
-  componentWillUpdate(nextProps, nextState, nextContext) {
-    if (!equal(nextProps.currentDiscipline, this.props.currentDiscipline)) {
-      this.setState({currentDiscipline: nextProps.currentDiscipline})
-      console.log(this.state)
+  componentWillMount () {
+    if (this.props.userId && this.props.token && this.props.token.length) {
+      this.props.getStudentCatalog(this.props.userId, 3)
+      this.props.getStudentDisciplines(this.props.userId)
     }
   }
 
-  render() {
+  componentWillUpdate (nextProps, nextState, nextContext) {
+    if (nextProps.token !== this.props.token && nextProps.userId && nextProps.token.length) {
+      if (!equal(nextProps.currentDiscipline, this.props.currentDiscipline)) {
+        this.setState({ currentDiscipline: nextProps.currentDiscipline })
+        console.log(this.state)
+      }
+    }
+  }
+
+  render () {
     let catalogIndex = 0
     this.props.catalogs.map((catalog, index) => {
       if (catalog.denumire_materie === this.props.currentDiscipline.denumire_materie)
@@ -42,13 +48,15 @@ class StudentDashboard extends Component {
 
     return (
       <div>
-        <NavProf
-          user={user}
+        <Navigation
+          user={{ name: this.props.userName, role: this.props.role, userId: this.props.userId }}
           disciplines={this.props.disciplines}
           currentDiscipline={this.props.currentDiscipline}
           onDisciplineChange={this.props.setStudentCurrentDiscipline}
+          onUserLogout={this.props.logoutUser}
+
         />
-        <Catalog user={user}
+        <Catalog user={{ name: this.props.userName, role: this.props.role, userId: this.props.userId }}
                  rows={this.props.catalogs.length ? this.props.catalogs[catalogIndex].rows : []}
                  columns={this.props.catalogs.length ? this.props.catalogs[catalogIndex].columns : []}
                  formulas={[]}
@@ -62,11 +70,16 @@ export const StudentDashboardRedux = connect((state) => ({
   catalogs: state.studentReducer.catalogs,
   disciplines: state.studentReducer.disciplines,
   currentDiscipline: state.studentReducer.currentDiscipline,
-  loading: state.studentReducer.loading
+  loading: state.studentReducer.loading,
+  userName: state.loginReducer.userName,
+  role: state.loginReducer.role,
+  toke: state.loginReducer.toke,
+  verified: state.loginReducer.verified,
 }), {
   getStudentCatalog,
   getStudentDisciplines,
   setStudentCurrentDiscipline,
+  logoutUser,
 })(StudentDashboard)
 
 

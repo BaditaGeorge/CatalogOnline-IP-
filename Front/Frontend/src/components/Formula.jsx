@@ -1,18 +1,18 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import equal from "fast-deep-equal"
-import {Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "../css/Formula.css";
 
 export default class Formula extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       formulas: []
     }
   }
 
-  componentWillReceiveProps(nextProps, nextContext) {
-    this.setState({formulas: nextProps.formulas})
+  componentWillReceiveProps (nextProps, nextContext) {
+    this.setState({ formulas: nextProps.formulas })
   }
 
   askUserInput = (message, defaultInput) => {
@@ -26,18 +26,18 @@ export default class Formula extends Component {
     }
   };
 
-  onChangeFormula() {
+  onChangeFormula () {
     const formula = this.askUserInput('Please specify a new formula (ex: L1 + L2)', '')
     if (formula !== '')
       this.props.onChangeFormula(this.props.currentDiscipline.id_materie, formula)
   }
 
-  componentWillUpdate(nextProps, nextState, nextContext) {
+  componentWillUpdate (nextProps, nextState, nextContext) {
     if (!equal(nextProps.formulas, this.props.formulas))
-      this.setState({formulas: nextProps.formulas})
+      this.setState({ formulas: nextProps.formulas })
   }
 
-  render() {
+  render () {
     return (
       <div className={'formula'}>
         {this.props.formulas.map((item, key) => {

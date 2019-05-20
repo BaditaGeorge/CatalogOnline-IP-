@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import '../App.css';
 import { Button, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
@@ -18,10 +18,16 @@ class Login extends Component {
       email: '',
       password: '',
       sessionId: '',
-      failToLogin: false
+      failToLogin: false,
+      loggedIn: false
     }
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentWillUpdate (nextProps, nextState, nextContext) {
+    if (nextProps.token.length && !this.state.loggedIn)
+      this.setState({ loggedIn: true })
   }
 
   onSubmit = (e) => {
@@ -35,6 +41,7 @@ class Login extends Component {
 
   render () {
     return (
+      !this.state.loggedIn ?
         <Card style={{ width: '20rem', marginTop: '10%', marginLeft: 'auto', marginRight: 'auto' }}>
           <Card.Body>
             <Form>
@@ -56,7 +63,12 @@ class Login extends Component {
             </Form>
             {this.state.failToLogin && <p>Failed. Try again.</p>}
           </Card.Body>
-        </Card>
+        </Card> :
+        <Router>
+          <Switch>
+            <Route render={() => (<Redirect to="/dashboard"/>)}/>
+          </Switch>
+        </Router>
     );
   }
 }

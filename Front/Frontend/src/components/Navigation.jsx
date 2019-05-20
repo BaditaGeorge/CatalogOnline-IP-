@@ -1,8 +1,9 @@
-import React, {Component, Fragment} from 'react';
-import {Navbar, Nav, NavDropdown, Image, Button} from 'react-bootstrap';
+import React, { Component, Fragment } from 'react';
+import { Navbar, Nav, NavDropdown, Image, Button } from 'react-bootstrap';
+import NavItem from "react-bootstrap/NavItem";
 
-export default class NavProf extends Component {
-  constructor(props) {
+export default class Navigation extends Component {
+  constructor (props) {
     super(props);
   }
 
@@ -63,7 +64,12 @@ export default class NavProf extends Component {
     this.props.onDisciplineChange(newCurrentDiscipline)
   }
 
-  render() {
+  onUserLogout = () => {
+    console.log(this.props.onUserLogout)
+    this.props.onUserLogout()
+  }
+
+  render () {
     return (
       <Navbar collapseOnSelect expand="sm">
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
@@ -82,7 +88,7 @@ export default class NavProf extends Component {
               {this.props.user.role === 'professor' &&
               <Fragment>
                 <NavDropdown.Divider/>
-                <NavDropdown.Item onClick={() => this.onAddDiscipline(this.props.user.id_prof)}>+ Add a
+                <NavDropdown.Item onClick={() => this.onAddDiscipline(this.props.user.userId)}>+ Add a
                   new</NavDropdown.Item>
               </Fragment>
               }
@@ -90,9 +96,12 @@ export default class NavProf extends Component {
           </Nav>
           <Nav>
             <NavDropdown title={this.props.user.name} id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#">Logout</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.onUserLogout()}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <NavItem style={{ color: 'white' }}>
+            {`${this.props.user.role}`}
+          </NavItem>
         </Navbar.Collapse>
       </Navbar>
     )

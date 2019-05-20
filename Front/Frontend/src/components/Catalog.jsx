@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDataGrid from "react-data-grid";
 import equal from "fast-deep-equal"
-import {Data, Filters, Menu, Toolbar} from "react-data-grid-addons";
+import { Data, Filters, Menu, Toolbar } from "react-data-grid-addons";
 
 const {
   NumericFilter,
@@ -9,7 +9,7 @@ const {
   MultiSelectFilter,
   SingleSelectFilter
 } = Filters;
-const {ContextMenu, MenuItem, SubMenu, ContextMenuTrigger} = Menu;
+const { ContextMenu, MenuItem, SubMenu, ContextMenuTrigger } = Menu;
 const selectors = Data.Selectors;
 const filters = {
   number: NumericFilter,
@@ -24,7 +24,7 @@ const defaultColumnProperties = {
 };
 
 export default class Catalog extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       rows: props.rows,
@@ -35,8 +35,8 @@ export default class Catalog extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps, nextContext) {
-    this.setState({rows: nextProps.rows, columns: nextProps.columns})
+  componentWillReceiveProps (nextProps, nextContext) {
+    this.setState({ rows: nextProps.rows, columns: nextProps.columns })
     let variables = []
     this.props.formulas.map(formula => {
       console.log(formula)
@@ -44,7 +44,7 @@ export default class Catalog extends Component {
         variables = formula.formula_calcul.match(/\w+/g)
       }
     })
-    this.setState({variables: variables})
+    this.setState({ variables: variables })
   }
 
   askUserInput = (message, defaultInput) => {
@@ -106,7 +106,7 @@ export default class Catalog extends Component {
   };
 
   insertColumn = (initialColumns, colIdx, newColIdx, newColType) => {
-    const newColumn = {key: newColIdx, name: newColIdx, type: newColType};
+    const newColumn = { key: newColIdx, name: newColIdx, type: newColType };
     const nextColumns = [...initialColumns];
     nextColumns.splice(colIdx, 0, newColumn);
     return nextColumns;
@@ -129,7 +129,7 @@ export default class Catalog extends Component {
   };
 
   getRowsSelector = (rows, filters) => {
-    return selectors.getRows({rows, filters});
+    return selectors.getRows({ rows, filters });
   };
 
   sortRows = (initialRows, sortColumn, sortDirection) => {
@@ -152,7 +152,7 @@ export default class Catalog extends Component {
   };
 
   changeFilters = (initialFilters, filter) => {
-    const newFilters = {...initialFilters};
+    const newFilters = { ...initialFilters };
     if (filter.filterTerm) {
       newFilters[filter.column.key] = filter;
     } else {
@@ -164,7 +164,7 @@ export default class Catalog extends Component {
   onFilter = (filter) => {
     this.setState(state => {
       const filters = this.changeFilters(state.filters, filter);
-      return {filters};
+      return { filters };
     })
   };
 
@@ -175,14 +175,14 @@ export default class Catalog extends Component {
   onRowDelete = (rowIdx) => {
     this.setState(state => {
       const rows = this.deleteRow(state.rows, rowIdx);
-      return {rows};
+      return { rows };
     })
   };
 
   onRowInsert = (rowIdx) => {
     this.setState(state => {
       const rows = this.insertRow(state.rows, rowIdx);
-      return {rows};
+      return { rows };
     })
   };
 
@@ -199,7 +199,7 @@ export default class Catalog extends Component {
         const colId = state.columns[colIdx].key;
         const columns = this.deleteColumn(state.columns, colIdx);
         const rows = this.deleteDataFromColumn(state.rows, colId);
-        return {columns, rows};
+        return { columns, rows };
       })
     } catch (e) {
       alert(e)
@@ -223,7 +223,7 @@ export default class Catalog extends Component {
         const initialColumnId = this.state.columns[colIdx].key;
         const columns = this.renameColumn(state.columns, colIdx, newColIdx);
         const rows = this.renameColumnInRows(state.rows, initialColumnId, newColIdx);
-        return {columns, rows};
+        return { columns, rows };
       });
       this.forceUpdate()
     } catch (e) {
@@ -242,7 +242,7 @@ export default class Catalog extends Component {
       this.setState(state => {
         const columns = this.insertColumn(state.columns, colIdx, newColIdx, newColType);
         const rows = this.insertDataToColumn(state.rows, newColIdx, newColType);
-        return {columns, rows};
+        return { columns, rows };
       })
     } catch (e) {
       alert(e)
@@ -252,24 +252,24 @@ export default class Catalog extends Component {
   onColumnSort = (sortColumn, sortDirection) => {
     this.setState(state => {
       const rows = this.sortRows(state.rows, sortColumn, sortDirection);
-      return {rows};
+      return { rows };
     })
   };
 
-  onGridRowsUpdated = ({fromRow, toRow, updated}) => {
+  onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
     this.setState(state => {
       const rows = state.rows.slice();
       for (let i = fromRow; i <= toRow; i++) {
-        rows[i] = {...rows[i], ...updated};
+        rows[i] = { ...rows[i], ...updated };
       }
-      return {rows};
+      return { rows };
     });
 
   };
 
   onCatalogChange = (rows, columns) => {
     const catalog = {
-      profesor: this.props.user.id_prof,
+      profesor: this.props.user.userId,
       disciplina: this.props.currentDiscipline.id_materie,
       columns: columns,
       rows: rows
@@ -277,13 +277,13 @@ export default class Catalog extends Component {
     this.props.onCatalogChange(catalog)
   }
 
-  render() {
+  render () {
 
     if (!equal(this.props.rows, this.state.rows) || !equal(this.props.columns, this.state.columns)) {
       this.onCatalogChange(this.state.rows, this.state.columns)
     }
     const filteredRows = this.getRowsSelector(this.state.rows, this.state.filters);
-    let columns = [...this.state.columns.map(c => ({...c, ...defaultColumnProperties}))]
+    let columns = [...this.state.columns.map(c => ({ ...c, ...defaultColumnProperties }))]
     columns = [...columns.map(column => {
       column.name = column.key;
       column.filterable = column.type !== 'none';
@@ -291,28 +291,29 @@ export default class Catalog extends Component {
         column.filterRenderer = filters[column.type];
       return column
     })];
+    const writeRight = this.state.user.role !== 'student'
     return (
       <ReactDataGrid
         columns={columns}
         rowGetter={i => filteredRows[i]}
         rowsCount={this.state.rows.length}
-        onGridRowsUpdated={this.state.user.role === 'professor' ? this.onGridRowsUpdated : null}
+        onGridRowsUpdated={writeRight ? this.onGridRowsUpdated : null}
         onColumnResize={this.onColumnResize}
         onGridSort={this.onColumnSort}
-        enableCellSelect={this.state.user.role === 'professor' ? true : false}
+        enableCellSelect={writeRight ? true : false}
         toolbar={<Toolbar enableFilter={true}/>}
         onAddFilter={this.onFilter}
-        onClearFilters={() => this.setState({filters: {}})}
+        onClearFilters={() => this.setState({ filters: {} })}
         getValidFilterValues={columnKey => this.getValidFilterValues(this.state.rows, columnKey)}
-        contextMenu={this.state.user.role === 'professor' ?
+        contextMenu={writeRight ?
           <CatalogContextMenu
-            onRowDelete={(e, {rowIdx}) => this.onRowDelete(rowIdx)}
-            onRowInsertAbove={(e, {rowIdx}) => this.onRowInsert(rowIdx)}
-            onRowInsertBelow={(e, {rowIdx}) => this.onRowInsert(rowIdx + 1)}
-            onColumnDelete={(e, {idx}) => this.onColumnDelete(idx)}
-            onColumnInsertLeft={(e, {idx}) => this.onColumnInsert(idx)}
-            onColumnInsertRight={(e, {idx}) => this.onColumnInsert(idx + 1)}
-            onColumnRename={(e, {idx}) => this.onColumnRename(idx)}
+            onRowDelete={(e, { rowIdx }) => this.onRowDelete(rowIdx)}
+            onRowInsertAbove={(e, { rowIdx }) => this.onRowInsert(rowIdx)}
+            onRowInsertBelow={(e, { rowIdx }) => this.onRowInsert(rowIdx + 1)}
+            onColumnDelete={(e, { idx }) => this.onColumnDelete(idx)}
+            onColumnInsertLeft={(e, { idx }) => this.onColumnInsert(idx)}
+            onColumnInsertRight={(e, { idx }) => this.onColumnInsert(idx + 1)}
+            onColumnRename={(e, { idx }) => this.onColumnRename(idx)}
           />
           : null
         }
@@ -324,11 +325,11 @@ export default class Catalog extends Component {
 }
 
 class CatalogContextMenu extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
   }
 
-  render() {
+  render () {
     const {
       rowIdx,
       idx,
@@ -343,28 +344,28 @@ class CatalogContextMenu extends Component {
     } = this.props;
     return (
       <ContextMenu id={id}>
-        <MenuItem data={{rowIdx, idx}} onClick={onColumnRename}>
+        <MenuItem data={{ rowIdx, idx }} onClick={onColumnRename}>
           Rename Column
         </MenuItem>
-        <MenuItem data={{rowIdx, idx}} onClick={onRowDelete}>
+        <MenuItem data={{ rowIdx, idx }} onClick={onRowDelete}>
           Delete Row
         </MenuItem>
-        <MenuItem data={{rowIdx, idx}} onClick={onColumnDelete}>
+        <MenuItem data={{ rowIdx, idx }} onClick={onColumnDelete}>
           Delete Column
         </MenuItem>
         <SubMenu title="Insert Row">
-          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertAbove}>
+          <MenuItem data={{ rowIdx, idx }} onClick={onRowInsertAbove}>
             Above
           </MenuItem>
-          <MenuItem data={{rowIdx, idx}} onClick={onRowInsertBelow}>
+          <MenuItem data={{ rowIdx, idx }} onClick={onRowInsertBelow}>
             Below
           </MenuItem>
         </SubMenu>
         <SubMenu title="Insert Column">
-          <MenuItem data={{rowIdx, idx}} onClick={onColumnInsertLeft}>
+          <MenuItem data={{ rowIdx, idx }} onClick={onColumnInsertLeft}>
             Left
           </MenuItem>
-          <MenuItem data={{rowIdx, idx}} onClick={onColumnInsertRight}>
+          <MenuItem data={{ rowIdx, idx }} onClick={onColumnInsertRight}>
             Right
           </MenuItem>
         </SubMenu>
