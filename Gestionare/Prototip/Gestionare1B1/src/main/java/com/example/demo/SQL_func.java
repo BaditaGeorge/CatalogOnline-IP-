@@ -23,7 +23,8 @@ public class SQL_func {
         //way = "BD_Gestiunea";
     }
     SQL_func(){
-        way="C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea";
+        way = "C:/Users/GoguSpoder/Desktop/BD_Gestiunea";
+        //way="C://Users/legion/Desktop/IP/Gestionare/BD_Gestiunea";
         //way = "BD_Gestiunea";
     }
     // Conectarea cu baza de date
@@ -112,6 +113,9 @@ public class SQL_func {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+    public void updateNoteAndCreate(String id_s,String id_m,String note){
+        
     }
     //Selectam toate notele existente in baza de date
     public String selectNote(){
@@ -317,6 +321,21 @@ public class SQL_func {
             System.out.println(e.getMessage());
         }
     }
+    
+    public String selectDenM(String idM){
+        String query = "Select denumire_materie from materii where id_materie="+idM;
+        String result = "";
+        try(Connection conn = this.connect();
+            Statement stmt = conn.createStatement()){
+            ResultSet rs = stmt.executeQuery(query);
+            result += rs.getString("denumire_materie");
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
     //Inseram in tabela materii o intrare noua
     public void insertMaterii(String id_m,String id_s,String nume,String note){
         String query = "Insert into materii(id_materie,id_student,denumire_materie,valori_note) VALUES (?,?,?,?)";

@@ -96,9 +96,17 @@ public class Controller {
     
      
     @GetMapping(value="/catalog")
-    public String getCatalog(@RequestParam("id_Materie") String aRe,@RequestParam("id_prof") String bRe){
+    public String getCatalog(@RequestParam("id_Materie") String aRe,@RequestParam("id_prof") String bRe,@RequestParam("id_session") String ses){
         //String aRe="";
-        //String bRe="";
+        //String bRe="";    
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
+        
         ObjectMapper mapper = new ObjectMapper();
         
            //Map<String,Object> treeMap = mapper.readValue(something,Map.class);
@@ -141,9 +149,16 @@ public class Controller {
     @RequestMapping(
     value="/catalog",
     method=RequestMethod.POST)
-    public String postCatalog(@RequestBody String something){
+    public String postCatalog(@RequestBody String something,@RequestParam("id_session") String ses){
         String aRe="";
         String bRe="";
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         ObjectMapper mapper = new ObjectMapper();
         try{
            Map<String,Object> treeMap = mapper.readValue(something,Map.class);
@@ -233,6 +248,74 @@ public class Controller {
         }
     }
     
+    @RequestMapping(
+    value="/addStudCatalog",
+    method = RequestMethod.POST)
+    public String postNewToCatalog(@RequestBody String body,@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
+        String[] arr = body.split(",");
+        String data = "";
+        String[] sols = new String[12];
+        for(int i=0;i<arr.length;i++){
+            String[] vls = arr[i].split(":");
+            sols[i] = vls[1].trim().replace("}","").replace("\"","");
+            System.out.println(sols[i]);
+        }
+        if(sols.length<3)
+            return "Wrong format!";
+        (new SQL_func()).insertMaterii(sols[0], sols[1], sols[2], sols[3]);
+        return "Added";
+    }
+    
+    @RequestMapping(
+    value="/importCatalog",
+    method = RequestMethod.POST)
+    public String importCatalog(@RequestBody String body,@RequestParam("id_Materie") String param,@RequestParam("id_session") String param2){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(param2);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
+        String[] arr = body.split("\n");
+        for(int i=0;i<arr.length;i++){
+            String[] vls = arr[i].split(",");
+            String den = (new SQL_func()).selectDenM(param.trim());
+            //system.out.println(param + "," + vls[0] + "," + den + "," + vls[1]);
+            (new SQL_func()).insertMaterii(param,vls[0],den,vls[1]);
+        }
+        return "Added!";
+    }
+    
+    
+    
+    @RequestMapping(
+    value="/criterii",
+    method = RequestMethod.POST)
+    public String getCriterii(@RequestBody String body,@RequestParam("id_session") String ses){
+        
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
+        String[] arr = body.split(",");
+        String[] vls1 = arr[0].split(":");
+        String[] vls2 = arr[1].split(":");
+        vls1[1] = vls1[1].trim();
+        vls2[1] = vls2[1].replace("}","").trim();
+        String snd = "c: " + vls1[1] + " ; " + vls2[1];
+        return (new PrelucrareDate()).primesteMesajFront(snd);
+    }
      
     @RequestMapping(
     value="/catalog",
@@ -329,7 +412,14 @@ public class Controller {
     @RequestMapping(
     value = "/addStud",
     method = RequestMethod.POST)
-    public String addStud(@RequestBody String body){
+    public String addStud(@RequestBody String body,@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         String[] result = body.split(",");
         String json = "";
         json += (randId() + ",");
@@ -367,7 +457,14 @@ public class Controller {
     @RequestMapping(
     value="/profesori",
     method=RequestMethod.POST)
-    public String postProfs(@RequestBody String body){
+    public String postProfs(@RequestBody String body,@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false)
+            return "Not allowed!";
         String[] arr = body.split(",");
         String db = "";
         db += (idPrfG() + ",");
@@ -409,7 +506,14 @@ public class Controller {
     @RequestMapping(
     value="/export",
     method=RequestMethod.GET)
-    public String exportCSV(@RequestParam("id_profesor") String idP,@RequestParam("id_Materie") String idM){
+    public String exportCSV(@RequestParam("id_profesor") String idP,@RequestParam("id_Materie") String idM,@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         String result = (new SQL_func()).selectCatalogCSV(idM, idP);
         String[] arr = result.split(" ~");
         String csv = "";
@@ -422,7 +526,14 @@ public class Controller {
     @RequestMapping(
     value="/profesori",
     method=RequestMethod.GET)
-    public String getProfs(){
+    public String getProfs(@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false)
+            return "Not allowed!";
         String data = (new SQL_func()).selectAllProfs();
         String[] arr = data.split("~");
         String json = "[";
@@ -453,7 +564,14 @@ public class Controller {
      @RequestMapping(
      value="/import",
      method=RequestMethod.POST)
-     public String getCSV(@RequestBody String body){
+     public String getCSV(@RequestBody String body,@RequestParam("id_session") String ses){
+        Sessions Sobj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(Sobj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed";
         String response = "";
         CSVImporter obj=new CSVImporter();
         String[] els=body.split("\n");
@@ -477,13 +595,20 @@ public class Controller {
     @RequestMapping(
     value="/formule",
     method=RequestMethod.GET)
-    public String getFormule(@RequestParam("id_profesor") String iDp){
+    public String getFormule(@RequestParam("id_profesor") String iDp,@RequestParam("id_session") String ses){
         /*String[] splArr = something.split(":");
         splArr[1]=splArr[1].replace("}","");
         splArr[1]=splArr[1].replace(" ","");
         splArr[1]=splArr[1].substring(1,splArr[1].length()-2);
         System.out.println(splArr[1]);*/
         //return (new FstParser().convertFormuleToJSON(iDp));
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         String result = (new SQL_func()).selectFormula(iDp);
         System.out.println(result);
         String[] els=result.split("~");
@@ -515,7 +640,14 @@ public class Controller {
     @RequestMapping(
     value="/materiiTot",
     method=RequestMethod.GET)
-    public String getCurr(){
+    public String getCurr(@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         String str = (new SQL_func()).selectCurricula();
         String[] arr = str.split(" ~");
         String json = "[";
@@ -533,7 +665,14 @@ public class Controller {
     @RequestMapping(
     value="/formule",
     method=RequestMethod.POST)
-    public String postFormule(@RequestBody String something){
+    public String postFormule(@RequestBody String something,@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         String aRe="";
         String bRe="";
         String mesajPentruFront="";
@@ -567,7 +706,7 @@ public class Controller {
     @RequestMapping(
     value="/materii",
     method=RequestMethod.GET)
-    public String getProfesor(@RequestParam("id_profesor") String iDp){
+    public String getProfesor(@RequestParam("id_profesor") String iDp,@RequestParam("id_session") String ses){
         /*String[] splArr = something.split(":");
         splArr[1].replace("}","");
         splArr[1].replace(" ","");
@@ -575,6 +714,13 @@ public class Controller {
         System.out.println(splArr[1]);
         //return parser(selectMaterii(splArr[1]);*/
         //return (new FstParser().convertMateriiToJSON(iDp));
+        Sessions sObj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(sObj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         SQL_func obj=new SQL_func();
         String result=obj.selectDenumireMaterii(iDp);
         String []els = result.split("~");
@@ -596,7 +742,14 @@ public class Controller {
     @RequestMapping(
     value="/materii",
     method=RequestMethod.POST)
-    public String putProfesor(@RequestBody String something){
+    public String putProfesor(@RequestBody String something,@RequestParam("id_session") String ses){
+        Sessions obj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(obj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isAdministrator(uSername) == false && aObj.isProfesor(uSername) == false)
+            return "Not allowed!";
         String aRe="";
         String bRe="";
         ObjectMapper mapper = new ObjectMapper();
@@ -622,7 +775,14 @@ public class Controller {
     @RequestMapping(
     value="/note",
     method=RequestMethod.GET)
-    public String getListaNote(@RequestParam("id_student") String idStud,@RequestParam("id_materie") String idMaterie){
+    public String getListaNote(@RequestParam("id_student") String idStud,@RequestParam("id_materie") String idMaterie,@RequestParam("id_session") String ses){
+        Sessions sObj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(sObj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isStudent(uSername) == false)
+            return "Not allowed!";
         SQL_func obj = new SQL_func();
         String result = obj.selectStudentRow(idStud,idMaterie);
         System.out.println(result);
@@ -695,7 +855,14 @@ public class Controller {
     @RequestMapping(
     value="/cursuri",
     method=RequestMethod.GET)
-    public String getCursuri(@RequestParam("id_student") String idStud){
+    public String getCursuri(@RequestParam("id_student") String idStud,@RequestParam("id_session") String ses){
+        Sessions sObj = new Sessions();
+        Access aObj = new Access();
+        String uSername = (new SQL_func()).getUsername(ses);
+        if(sObj.checkSession(uSername) == false)
+            return "Invalid session!";
+        if(aObj.isStudent(uSername) == false)
+            return "Not allowed!";
         String result="";
         SQL_func obj = new SQL_func();
         result = obj.selectStudentCursuri(idStud);
