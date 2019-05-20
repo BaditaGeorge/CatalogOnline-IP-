@@ -9,6 +9,7 @@ import { ProfessorDashboardRedux } from './components/ProfessorDashboard';
 import { StudentDashboardRedux } from './components/StudentDashboard';
 import { LoginWithRedux } from './components/Login';
 import { RegisterWithRedux } from './components/Register';
+import {VerifyWithRedux} from "./components/Verify";
 import Layout from './components/Template/Layout'
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -67,7 +68,8 @@ class Routing extends Component {
             )}/>
             <Route path="/login" component={LoginWithRedux}/>
             <Route path="/register" component={RegisterWithRedux}/>
-            <Route path="/verify" component={RegisterWithRedux}/>
+            <Route path="/verify" component={VerifyWithRedux}/>
+            <Route path="/test" component={Layout}/>
           </Switch>
         </Suspense>
       </Router>
