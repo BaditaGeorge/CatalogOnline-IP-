@@ -9,7 +9,8 @@ import { ProfessorDashboardRedux } from './components/ProfessorDashboard';
 import { StudentDashboardRedux } from './components/StudentDashboard';
 import { LoginWithRedux } from './components/Login';
 import { RegisterWithRedux } from './components/Register';
-import { VerifyWithRedux } from './components/Verify';
+import { VerifyWithRedux } from "./components/Verify";
+import Layout from './components/Template/Layout'
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "./css/animate.min.css";
@@ -63,6 +64,7 @@ class Routing extends Component {
             <Route path="/register" component={RegisterWithRedux}/>
             <Route path="/verify" component={VerifyWithRedux}/>
             <Route path="/dashboard" render={() => (whatToRender)}/>
+            <Route path="/test" component={Layout}/>
             <Route exact path="" render={() => (
               !whatToRender ? (
                 <Redirect to="/login"/>

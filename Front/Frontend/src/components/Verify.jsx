@@ -27,18 +27,18 @@ class Verify extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+
   render () {
     return (
       <Card style={{ width: '20rem', marginTop: '10%', marginLeft: 'auto', marginRight: 'auto' }}>
         <Card.Body>
           <Form>
-            <Form.Group controlId='formBasicEmail'>
+            <Form.Group controlId="formBasicMatr">
               <Form.Label>Code</Form.Label>
-              <Form.Control type='code' name='code' placeholder='Enter code' onChange={this.onChange}
+              <Form.Control type="nr" name="code" placeholder="Type your activation code" onChange={this.onChange}
                             value={this.state.code}/>
             </Form.Group>
-
-            <Button variant='primary' type='button' onClick={this.onSubmit} block>
+            <Button variant="primary" type="button" onClick={this.onSubmit} block>
               Verify
             </Button>
           </Form>
