@@ -19,7 +19,7 @@ export const loginUser = (email, password) => dispatch => {
   // };
   dispatch({
     type: GET_USER_DATA_SUCCESS,
-    payload: { userName: 'Cristian', role: 'professor', userId: 3, token: 'basfjkasdjc27812ksad78jkdajks', verified: true }
+    payload: { userName: 'Cristian', role: 'admin', userId: 3, token: 'basfjkasdjc27812ksad78jkdajks', verified: true }
   });
   // axios.post(`${APIURL}/login`, data)
   //   .then(res => {

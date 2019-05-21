@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import { Navbar, Nav, NavDropdown, Image, Button } from 'react-bootstrap';
+import React, {Component, Fragment} from 'react';
+import {Navbar, Nav, NavDropdown, Image, Button} from 'react-bootstrap';
 import NavItem from "react-bootstrap/NavItem";
 
 export default class Navigation extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
@@ -55,13 +55,30 @@ export default class Navigation extends Component {
 
   }
 
-  onDisciplineChange = (id_materie, denumire_materie) => {
-    console.log(id_materie, denumire_materie, 'asdasdasd')
-    const newCurrentDiscipline = {
-      denumire_materie: denumire_materie,
-      id_materie: parseInt(id_materie.replace(" ", ""), 10)
+  onDisciplineChange = (newDiscipline) => {
+    this.props.onDisciplineChange(newDiscipline)
+  }
+
+  onAddProfessor = () => {
+    const professorEmail = this.askUserInput("Specify professor Email")
+    const professorName = this.askUserInput("Specify professor Name")
+    const professorFirstname = this.askUserInput("Specify professor Firstname")
+    const newProfessor = {
+      email: professorEmail,
+      nume: professorName,
+      prenume: professorFirstname,
+      materii: [{
+        id_materie: '1',
+        den_materie: 'POO',
+        formula: 'L=sum(L1:L3)',
+        antet: 'L L1 L2 L3'
+      }]
     }
-    this.props.onDisciplineChange(newCurrentDiscipline)
+    this.props.onAddProfessor(newProfessor)
+  }
+
+  onProfessorChange = (item) => {
+    this.props.onProfessorChange(item)
   }
 
   onUserLogout = () => {
@@ -69,23 +86,39 @@ export default class Navigation extends Component {
     this.props.onUserLogout()
   }
 
-  render () {
+  render() {
     return (
       <Navbar collapseOnSelect expand="sm">
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title="Courses" id="collasible-nav-dropdown">
+            {this.props.user.role === 'admin' &&
+            <NavDropdown title={`${this.props.currentProfessor.nume} ${this.props.currentProfessor.prenume}`}
+                         id="collasible-nav-dropdown">
+              {this.props.professors && this.props.professors.map((item, id) => {
+                return (
+                  <NavDropdown.Item key={id} value={item.nume}
+                                    onClick={() => this.onProfessorChange(item)}>
+                    {`${item.nume} ${item.prenume}`}
+                  </NavDropdown.Item>
+                )
+              })}
+              <Fragment>
+                <NavDropdown.Divider/>
+                <NavDropdown.Item onClick={() => this.onAddProfessor()}>+ Add a
+                  new</NavDropdown.Item>
+              </Fragment>
+            </NavDropdown>}
+            <NavDropdown title={this.props.currentDiscipline.denumire_materie} id="collasible-nav-dropdown">
               {this.props.disciplines && this.props.disciplines.map((item, id) => {
-                console.log(item)
                 return (
                   <NavDropdown.Item key={id} value={item.denumire_materie}
-                                    onClick={() => this.onDisciplineChange(item.id_materie, item.denumire_materie)}>
+                                    onClick={() => this.onDisciplineChange(item)}>
                     {item.denumire_materie}
                   </NavDropdown.Item>
                 )
               })}
-              {this.props.user.role === 'professor' &&
+              {(this.props.user.role === 'professor' || this.props.user.role === 'admin') &&
               <Fragment>
                 <NavDropdown.Divider/>
                 <NavDropdown.Item onClick={() => this.onAddDiscipline(this.props.user.userId)}>+ Add a
@@ -95,13 +128,10 @@ export default class Navigation extends Component {
             </NavDropdown>
           </Nav>
           <Nav>
-            <NavDropdown title={this.props.user.name} id="collasible-nav-dropdown">
+            <NavDropdown title={`${this.props.user.name} (${this.props.user.role})`} id="collasible-nav-dropdown">
               <NavDropdown.Item onClick={() => this.onUserLogout()}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <NavItem style={{ color: 'white' }}>
-            {`${this.props.user.role}`}
-          </NavItem>
         </Navbar.Collapse>
       </Navbar>
     )

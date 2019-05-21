@@ -8,7 +8,7 @@ import {
 const INITIAL_STATE = {
   userName: 'James Doe',
   userId: 3,
-  role: 'professor',
+  role: 'admin',
   token: 'asdasd7ad712ehsujcksd2husuxsa',
   verified: true,
   loading: false,

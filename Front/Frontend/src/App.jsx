@@ -37,7 +37,6 @@ class Routing extends Component {
 
 
   render () {
-    console.log(this.props.role, 'asdasdasdsad')
     let whatToRender = <Redirect to={'/login'}/>;
     if (this.props.token.length)
       switch (this.props.role) {

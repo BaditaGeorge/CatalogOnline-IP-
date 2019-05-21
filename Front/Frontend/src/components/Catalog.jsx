@@ -269,7 +269,7 @@ export default class Catalog extends Component {
 
   onCatalogChange = (rows, columns) => {
     const catalog = {
-      profesor: this.props.user.userId,
+      profesor: this.props.user.role === 'admin' ?  this.props.currentProfessor.id_professor : this.props.user.userId,
       disciplina: this.props.currentDiscipline.id_materie,
       columns: columns,
       rows: rows

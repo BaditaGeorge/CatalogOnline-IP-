@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../css/Professor.css';
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import Catalog from "./Catalog"
 import {
   getProfessorCatalog,
@@ -11,25 +11,25 @@ import {
   insertDisciplineFormulas,
   setDefaultDiscipline,
 } from "../actions/professorActions";
-import { logoutUser } from "../actions/loginActions"
+import {logoutUser} from "../actions/loginActions"
 import Formula from "./Formula";
 import Navigation from "./Navigation";
 
 
 class ProfessorDashboard extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
   }
 
-  componentWillMount () {
-    if (this.props.userId && this.props.userId.length) {
+  componentWillMount() {
+    if (this.props.token && this.props.token.length) {
       this.props.getProfessorDisciplines(this.props.userId)
       this.props.getDisciplineFormulas(this.props.userId)
     }
   }
 
-  componentWillUpdate (nextProps, nextState, nextContext) {
-    if (nextProps.userId && nextProps.token.length) {
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    if (nextProps.token !== this.props.token || this.props.token.length) {
       if (nextProps.currentDiscipline.id_materie && !nextProps.columns.length) {
         this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, this.props.userId)
       }
@@ -45,11 +45,13 @@ class ProfessorDashboard extends Component {
     }
   }
 
-  render () {
+  render() {
+    // console.log(this.props, 'asdasdas')
+
     if (!this.props.loading)
       return (
         <div className={'dashboard'}>
-          <Navigation user={{ name: this.props.userName, role: this.props.role, userId: this.props.userId }}
+          <Navigation user={{name: this.props.userName, role: this.props.role, userId: this.props.userId}}
                       disciplines={this.props.disciplines}
                       currentDiscipline={this.props.currentDiscipline}
                       onAddDiscipline={this.props.insertProfessorDisciplines}
@@ -57,14 +59,14 @@ class ProfessorDashboard extends Component {
                       onUserLogout={this.props.logoutUser}
 
           />
-          <Catalog user={{ name: this.props.userName, role: this.props.role, userId: this.props.userId }}
+          <Catalog user={{name: this.props.userName, role: this.props.role, userId: this.props.userId}}
                    currentDiscipline={this.props.currentDiscipline}
                    formulas={this.props.formulas}
                    rows={this.props.rows}
                    columns={this.props.columns}
                    onCatalogChange={this.props.insertProfessorCatalog}
           />
-          <Formula user={{ name: this.props.userName, role: this.props.role, userId: this.props.userId }}
+          <Formula user={{name: this.props.userName, role: this.props.role, userId: this.props.userId}}
                    formulas={this.props.formulas}
                    currentDiscipline={this.props.currentDiscipline}
                    onChangeFormula={this.props.insertDisciplineFormulas}
@@ -87,7 +89,7 @@ export const ProfessorDashboardRedux = connect((state) => ({
   userName: state.loginReducer.userName,
   userId: state.loginReducer.userId,
   role: state.loginReducer.role,
-  toke: state.loginReducer.toke,
+  token: state.loginReducer.token,
   verified: state.loginReducer.verified,
 }), {
   getProfessorCatalog,
