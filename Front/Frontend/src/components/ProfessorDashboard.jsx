@@ -34,14 +34,14 @@ class ProfessorDashboard extends Component {
         this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, this.props.userId)
       }
 
-      if (nextProps.currentDiscipline.id_materie !== this.props.currentDiscipline.id_materie && nextProps.rows.length) {
-        this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, this.props.userId)
-      }
+        if (nextProps.currentDiscipline.id_materie !== this.props.currentDiscipline.id_materie && nextProps.rows.length) {
+          this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, this.props.userId)
+        }
 
-      if (nextProps.didUpdate === true && this.props.currentDiscipline.id_materie) {
-        this.props.getProfessorCatalog(this.props.currentDiscipline.id_materie, this.props.userId)
+        if (nextProps.didUpdate === true && this.props.currentDiscipline.id_materie) {
+          this.props.getProfessorCatalog(this.props.currentDiscipline.id_materie, this.props.userId)
 
-      }
+        }
     }
   }
 

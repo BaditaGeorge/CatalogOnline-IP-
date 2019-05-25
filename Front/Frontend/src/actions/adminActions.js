@@ -37,7 +37,7 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
     .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}&id_session=1`)
     .then(res => {
       if (res.data) {
-        console.log(res.data)
+        console.log(res.data);
         dispatch({
           type: GET_PROFESSOR_CATALOG_SUCCESS,
           payload: {rows: res.data.rows, columns: res.data.columns, didUpdate: false}
@@ -104,7 +104,7 @@ export const setDefaultDiscipline = (newCurrentDiscipline) => dispatch => {
 };
 
 export const setDefaultProfessor = (newCurrentProfessor) => dispatch => {
-  console.log(newCurrentProfessor)
+  console.log(newCurrentProfessor);
   dispatch({
     type: SET_CURRENT_PROFESSOR,
     payload: {
@@ -144,7 +144,6 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
     });
 };
 export const insertProfessorCatalog = (catalog) => dispatch => {
-
   dispatch({
     type: POST_PROFESSOR_CATALOG
   });
@@ -213,7 +212,7 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
 };
 
 export const insertProfessor = (professor) => (dispatch) => {
-  console.log(professor)
+  console.log(professor);
   dispatch({
     type: POST_PROFESSOR
   });
@@ -268,7 +267,7 @@ export const getProfessorsList = () => dispatch => {
             prenume: prof.prenume,
             materii: []
           });
-          console.log(professors)
+          console.log(professors);
           prof.materii.map(mat => {
             professors[index].materii.push({denumire_materie: mat.den_materie, id_materie: mat.id_materie})
           })
