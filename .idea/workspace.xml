@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77976ea4-88b4-4271-b50b-02b2f035e628" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Front/rute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/actions/adminActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/actions/adminActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/actions/loginActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/actions/loginActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/Navigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/reducers/adminReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/reducers/adminReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/Frontend/src/reducers/loginReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/src/reducers/loginReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/Frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestionare/BD_Gestiunea" beforeDir="false" afterPath="$PROJECT_DIR$/Gestionare/BD_Gestiunea" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Front/Frontend/node_modules/" />
@@ -26,110 +16,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
+        <entry file="file://$PROJECT_DIR$/Front/rute.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="33" column="92" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="37" column="120" selection-start-line="37" selection-start-column="95" selection-end-line="37" selection-end-column="120" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/studentActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="271" column="92" selection-start-line="271" selection-start-column="92" selection-end-line="271" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/loginReducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#128#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/adminActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="264" column="42" selection-start-line="264" selection-start-column="42" selection-end-line="264" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <element signature="e#4365#4972#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/adminReducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/loginActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Front/rute.txt">
+        <entry file="file://$PROJECT_DIR$/Front/Frontend/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1283">
-              <caret line="110" column="80" selection-start-line="110" selection-start-column="80" selection-end-line="110" selection-end-column="80" />
+            <state relative-caret-position="204">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -250,54 +149,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Template" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Template" type="462c0819:PsiDirectoryNode" />
-              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="lbd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CatalogOnline-IP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CatalogOnline-IP-" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="lbd" type="462c0819:PsiDirectoryNode" />
-              <item name="mixins" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -309,7 +160,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/Frontend/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -346,18 +197,19 @@
       <option name="presentableId" value="Default" />
       <updated>1558266560307</updated>
       <workItem from="1558266563870" duration="14626000" />
-      <workItem from="1558418175782" duration="16605000" />
+      <workItem from="1558418175782" duration="16733000" />
+      <workItem from="1558444140546" duration="16000" />
+      <workItem from="1558764332609" duration="2060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31080000" />
+    <option name="totallyTimeSpent" value="33284000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2059569" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2059569" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -375,7 +227,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3287483" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3287483" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -400,13 +252,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/NavProf.jsx" />
     <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/professorActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3519">
@@ -492,13 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Template/Sidebar/Sidebar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -565,23 +404,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="271" column="92" selection-start-line="271" selection-start-column="92" selection-end-line="271" selection-end-column="92" />
+        <state relative-caret-position="391">
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/adminReducer.js">
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="374">
+          <caret line="33" column="92" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="37" column="120" selection-start-line="37" selection-start-column="95" selection-end-line="37" selection-end-column="120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/studentActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
+        <state relative-caret-position="393">
           <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -589,47 +435,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/AdminDashboard.jsx">
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/Catalog.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="120" selection-start-line="37" selection-start-column="95" selection-end-line="37" selection-end-column="120" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/StudentDashboard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="33" column="92" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/adminActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="264" column="42" selection-start-line="264" selection-start-column="42" selection-end-line="264" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#4365#4972#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/components/ProfessorDashboard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="393">
+          <caret line="271" column="92" selection-start-line="271" selection-start-column="92" selection-end-line="271" selection-end-column="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/loginReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="85">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="14" />
           <folding>
             <element signature="e#0#128#0" expanded="true" />
@@ -637,9 +452,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/adminActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="264" column="42" selection-start-line="264" selection-start-column="42" selection-end-line="264" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/src/reducers/adminReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Front/Frontend/src/actions/loginActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
+        <state relative-caret-position="393">
           <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -649,8 +481,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Front/rute.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1283">
-          <caret line="110" column="80" selection-start-line="110" selection-start-column="80" selection-end-line="110" selection-end-column="80" />
+        <state relative-caret-position="195">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/Frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
         </state>
       </provider>
     </entry>

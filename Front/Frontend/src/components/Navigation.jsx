@@ -126,6 +126,7 @@ export default class Navigation extends Component {
               </Fragment>
               }
             </NavDropdown>
+
           </Nav>
           <Nav>
             <NavDropdown title={`${this.props.user.name} (${this.props.user.role})`} id="collasible-nav-dropdown">

@@ -34,9 +34,10 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
     type: GET_PROFESSOR_CATALOG
   });
   axios
-    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}`)
+    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}&id_session=1`)
     .then(res => {
       if (res.data) {
+        console.log(res.data)
         dispatch({
           type: GET_PROFESSOR_CATALOG_SUCCESS,
           payload: {rows: res.data.rows, columns: res.data.columns, didUpdate: false}
@@ -53,7 +54,7 @@ export const getProfessorDisciplines = (id_professor) => dispatch => {
     type: GET_PROFESSOR_DISCIPLINES
   });
   axios
-    .get(`${APIURL}/materii?id_profesor=${id_professor}`)
+    .get(`${APIURL}/materii?id_profesor=${id_professor}&id_session=1`)
     .then(res => {
       let disciplines;
       if (res.data) {
@@ -80,7 +81,7 @@ export const getDisciplineFormulas = (id_professor) => dispatch => {
     type: GET_DISCIPLINE_FORMULAS
   });
   axios
-    .get(`${APIURL}/formule?id_profesor=${id_professor}`)
+    .get(`${APIURL}/formule?id_profesor=${id_professor}&id_session=1`)
     .then(res => {
       if (res.data) {
         let formulas = res.data;
@@ -120,7 +121,7 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
     type: POST_DISCIPLINE_FORMULAS
   });
   axios
-    .post(`${APIURL}/formule`, newFormula)
+    .post(`${APIURL}/formule?id_session=1`, newFormula)
     .then(res => {
       let formulas;
       if (res.data === 'Formula este valida') {
@@ -148,7 +149,7 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
     type: POST_PROFESSOR_CATALOG
   });
   axios
-    .post(`${APIURL}/catalog`, catalog)
+    .post(`${APIURL}/catalog?id_session=1`, catalog)
     .then(res => {
       let columns, rows;
       console.log(res.data);
@@ -175,12 +176,12 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
     type: POST_PROFESSOR_DISCIPLINES
   });
   axios
-    .post(`${APIURL}/materii`, {id_Materie: id_profesor, den_materie: den_materie})
+    .post(`${APIURL}/materii?id_session=1`, {id_Materie: id_profesor, den_materie: den_materie})
     .then(res => {
       if (res.data) {
         let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 1};
         axios
-          .get(`${APIURL}/materii?id_profesor=${id_profesor}`)
+          .get(`${APIURL}/materii?id_profesor=${id_profesor}&id_session=1`)
           .then(res => {
             if (!res.data)
               throw 'Cant get disciplines';
@@ -189,7 +190,7 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
               catalog.disciplina = lastDiscipline.id_materie;
               newDiscipline.id_materie = lastDiscipline.id_materie;
               axios
-                .post(`${APIURL}/catalog`, catalog)
+                .post(`${APIURL}/catalog?id_session=1`, catalog)
                 .then(res => {
                     if (!res.data || !res.data.includes('Antetul este valid')) {
                       throw res.data
@@ -217,10 +218,10 @@ export const insertProfessor = (professor) => (dispatch) => {
     type: POST_PROFESSOR
   });
   axios
-    .post(`${APIURL}/profesori`, professor)
+    .post(`${APIURL}/profesori?id_session=1`, professor)
     .then(res => {
       if (res.data.includes('Done')) {
-        axios.get(`${APIURL}/profesori`)
+        axios.get(`${APIURL}/profesori?id_session=1`)
           .then(res => {
             if (res.data) {
               let professors = [];
@@ -256,7 +257,7 @@ export const getProfessorsList = () => dispatch => {
     type: GET_PROFESSOR_LIST
   });
   axios
-    .get(`${APIURL}/profesori`)
+    .get(`${APIURL}/profesori?id_session=1`)
     .then(res => {
       if (res.data) {
         let professors = [];

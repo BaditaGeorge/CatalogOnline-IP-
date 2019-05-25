@@ -34,25 +34,15 @@ class AdminDashboard extends Component {
 
   componentWillUpdate(nextProps, nextState, nextContext) {
     if (nextProps.token !== this.props.token || this.props.token.length) {
-      console.log(nextProps.currentProfessor)
-      if (nextProps.currentDiscipline.id_materie && nextProps.currentProfessor.id_professor && !nextProps.columns.length) {
+      if (nextProps.currentDiscipline.id_materie && nextProps.currentProfessor.id_professor && this.props.columns && !this.props.columns.length) {
         this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, nextProps.currentProfessor.id_professor)
-      }
-      if (nextProps.currentDiscipline.id_materie !== this.props.currentDiscipline.id_materie && nextProps.rows.length) {
-        this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, nextProps.currentProfessor.id_professor)
-      }
-
-      if (nextProps.currentProfessor.id_professor !== this.props.currentProfessor.id_professor && nextProps.rows.length) {
-        this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, nextProps.currentProfessor.id_professor)
-      }
-
-      if (nextProps.didUpdate === true && this.props.currentDiscipline.id_materie) {
-        this.props.getProfessorCatalog(nextProps.currentDiscipline.id_materie, nextProps.currentProfessor.id_professor)
+        this.setState({updated: true})
       }
     }
   }
 
   render() {
+    console.log(this.props)
     if (!this.props.loading)
       return (
         <div className={'dashboard'}>
@@ -67,6 +57,7 @@ class AdminDashboard extends Component {
                       onProfessorChange={this.props.setDefaultProfessor}
                       onUserLogout={this.props.logoutUser}
           />
+          {this.props.columns &&
           <Catalog user={{name: this.props.userName, role: this.props.role, userId: this.props.userId}}
                    currentDiscipline={this.props.currentDiscipline}
                    currentProfessor={this.props.currentProfessor}
@@ -74,7 +65,7 @@ class AdminDashboard extends Component {
                    rows={this.props.rows}
                    columns={this.props.columns}
                    onCatalogChange={this.props.insertProfessorCatalog}
-          />
+          />}
           {/*<Formula formulas={this.props.formulas}*/}
           {/*         currentDiscipline={this.props.currentDiscipline}*/}
           {/*         onChangeFormula={this.props.insertDisciplineFormulas}*/}

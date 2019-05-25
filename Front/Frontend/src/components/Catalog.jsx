@@ -35,11 +35,10 @@ export default class Catalog extends Component {
     }
   }
 
-  componentWillReceiveProps (nextProps, nextContext) {
+  componentWillUpdate (nextProps, nextState, nextContext) {
     this.setState({ rows: nextProps.rows, columns: nextProps.columns })
     let variables = []
     this.props.formulas.map(formula => {
-      console.log(formula)
       if (formula.id_materie === this.props.currentDiscipline.id_materie) {
         variables = formula.formula_calcul.match(/\w+/g)
       }
