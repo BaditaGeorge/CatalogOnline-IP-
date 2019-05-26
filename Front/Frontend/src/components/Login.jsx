@@ -15,7 +15,7 @@ class Login extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      email: '',
+      username: '',
       password: '',
       sessionId: '',
       failToLogin: false,
@@ -32,7 +32,7 @@ class Login extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.loginUser(this.state.email, this.state.password)
+    this.props.loginUser(this.state.username, this.state.password)
   }
 
   onChange (e) {
@@ -41,14 +41,14 @@ class Login extends Component {
 
   render () {
     return (
-      !this.state.loggedIn ?
+      // !this.state.loggedIn ?
         <Card style={{ width: '20rem', marginTop: '10%', marginLeft: 'auto', marginRight: 'auto' }}>
           <Card.Body>
             <Form>
               <Form.Group controlId='formBasicEmail'>
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type='email' name='email' placeholder='Enter email' onChange={this.onChange}
-                              value={this.state.email}/>
+                <Form.Label>Username</Form.Label>
+                <Form.Control type='text' name='username' placeholder='Enter username' onChange={this.onChange}
+                              value={this.state.username}/>
               </Form.Group>
 
               <Form.Group controlId='formBasicPassword'>
@@ -63,12 +63,7 @@ class Login extends Component {
             </Form>
             {this.state.failToLogin && <p>Failed. Try again.</p>}
           </Card.Body>
-        </Card> :
-        <Router>
-          <Switch>
-            <Route render={() => (<Redirect to="/dashboard"/>)}/>
-          </Switch>
-        </Router>
+        </Card>
     );
   }
 }

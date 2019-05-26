@@ -5,16 +5,16 @@ import {
   LOGOUT_USER_SUCCESS
 } from "../actions/loginActions";
 
+
 const INITIAL_STATE = {
-  userName: 'James Doe',
-  userId: 3,
-  role: 'admin',
-  token: 'asdasd7ad712ehsujcksd2husuxsa',
-  verified: true,
+  userName: '',
+  userId: undefined,
+  role: '',
+  token: '',
   loading: false,
 };
 
-export default function loginReducer (state = INITIAL_STATE, action) {
+export default function loginReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case GET_USER_DATA: {
       return {
@@ -25,22 +25,19 @@ export default function loginReducer (state = INITIAL_STATE, action) {
     case GET_USER_DATA_SUCCESS: {
       return {
         ...state,
-        userName: action.payload.userName,
         userId: action.payload.userId,
+        userName: action.payload.username,
         role: action.payload.role,
         token: action.payload.token,
-        verified: action.payload.verified,
         loading: false
       };
     }
     case LOGOUT_USER_SUCCESS: {
       return {
         ...state,
-        userName: '',
         userId: null,
         role: '',
         token: '',
-        verified: false,
         loading: false
       };
     }

@@ -21,7 +21,7 @@ class Register extends Component {
 
   onSubmit (e) {
     e.preventDefault();
-    this.props.registerUser(this.state.userName, this.state.email, this.state.passive)
+    this.props.registerUser(this.state.userName, this.state.password,  this.state.email)
   }
 
   onChange (e) {
@@ -35,21 +35,21 @@ class Register extends Component {
         <Card.Body>
           <Form>
             <Form.Group controlId="formBasicMatr">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="nr" name="name" placeholder="James Doe" onChange={this.onChange}
-                            value={this.state.name}/>
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" name="userName" placeholder="james.doe" onChange={this.onChange}
+                            value={this.state.userName}/>
             </Form.Group>
 
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" name="email" placeholder="james.doe@email.com" onChange={this.onChange}
+              <Form.Control type="email" name="email" placeholder="james.doe@info.uaic.ro" onChange={this.onChange}
                             value={this.state.email}/>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" name="password" placeholder="Password" onChange={this.onChange}
+              <Form.Control type="password" name="password" placeholder="password" onChange={this.onChange}
                             value={this.state.password}/>
             </Form.Group>
 

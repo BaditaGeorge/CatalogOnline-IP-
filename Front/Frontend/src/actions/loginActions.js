@@ -1,5 +1,6 @@
 import axios from "axios/index";
-import { APIURL } from "../config";
+import {APIURL, PUB_KEY} from "../config";
+import NodeRSA from 'node-rsa'
 
 export const GET_USER_DATA = "GET_USER_DATA";
 export const GET_USER_DATA_SUCCESS = "GET_USER_DATA_SUCCESS";
@@ -9,67 +10,74 @@ export const VERIFY_USER_EMAIL_SUCCESS = "VERIFY_USER_EMAIL_SUCCESS";
 export const VERIFY_USER_EMAIL_FAIL = "VERIFY_USER_EMAIL_FAIL";
 export const LOGOUT_USER_SUCCESS = "LOGOUT_USER_SUCCESS";
 
-export const loginUser = (email, password) => dispatch => {
-  // dispatch({
-  //   type: GET_USER_DATA
-  // });
-  // const data = {
-  //   email: email,
-  //   password: password
-  // };
+
+const key = new NodeRSA();
+key.importKey(PUB_KEY);
+
+
+const text = '123456';
+const encrypted = key.encrypt(text, 'base64');
+console.log('encrypted: ', encrypted);
+
+export const loginUser = (username, password) => dispatch => {
   dispatch({
-    type: GET_USER_DATA_SUCCESS,
-    payload: { userName: 'Cristian', role: 'admin', userId: 3, token: 'basfjkasdjc27812ksad78jkdajks', verified: true }
+    type: GET_USER_DATA
   });
-  // axios.post(`${APIURL}/login`, data)
-  //   .then(res => {
-  //     let token = '';
-  //     if (res.data) {
-  //       if (res.data.success === true) {
-  //         token = res.data.session_id
-  //       }
-  //       dispatch({
-  //         type: GET_USER_DATA_SUCCESS,
-  //         payload: { userName: 'Marius', role: 'professor', token: 'asdadskjdaksjj123asdhjk123da2', verified: true }
-  //       });
-  //     }
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //     dispatch({ type: GET_USER_DATA_FAIL })
-  //   })
+  axios.post(`${APIURL}/login?username=${username}&password=${password}`)
+    .then(res => {
+      if (res.data) {
+        if (!res.data.success) {
+          throw(res.data.message)
+        } else {
+          let role = '';
+          switch (res.data.rol) {
+            case 'Administrator':
+              role = 'admin';
+              break;
+            case 'Profesor':
+              role = 'professor';
+              break
+            case 'Student':
+              role = 'student';
+              break
+            default:
+              throw ('Invalid Role')
+          }
+          dispatch({
+            type: GET_USER_DATA_SUCCESS,
+            payload: {username: username, userId: res.data.user_id, role: role, token: res.data.session_id}
+          });
+        }
+      } else
+        throw(res.data.message)
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({type: GET_USER_DATA_FAIL})
+    })
 };
 
-export const registerUser = (name, email, password) => dispatch => {
-  // dispatch({
-  //   type: GET_USER_DATA
-  // });
-  // const data = {
-  //   name: name,
-  //   email: email,
-  //   password: password
-  // };
+export const registerUser = (username, password, email) => dispatch => {
   dispatch({
-    type: GET_USER_DATA_SUCCESS,
-    payload: { userName: 'Cristian', role: 'professor', userId: 3, token: 'basfjkasdjc27812ksad78jkdajks', verified: false }
+    type: GET_USER_DATA
   });
-  // axios.post(`${APIURL}/register`, data)
-  //   .then(res => {
-  //     let token = '';
-  //     if (res.data) {
-  //       if (res.data.success === true) {
-  //         token = res.data.session_id
-  //       }
-  //       dispatch({
-  //         type: GET_USER_DATA_SUCCESS,
-  //         payload: { userName: 'Cristian', role: 'professor', token: 'basfjkasdjc27812ksad78jkdajks', verified: false }
-  //       });
-  //     }
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //     dispatch({ type: GET_USER_DATA_FAIL })
-  //   })
+  axios.post(`${APIURL}/register?username=${username}&password=${password}&mail=${email}`)
+    .then(res => {
+      if (res.data) {
+        if (!res.data.success) {
+          throw (res.data.message)
+        } else {
+          dispatch({
+            type: GET_USER_DATA_SUCCESS,
+            payload: {userName: username, role: res.data.rol, token: res.data.session_id}
+          });
+        }
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({type: GET_USER_DATA_FAIL})
+    })
 };
 
 export const verifyEmail = (code) => dispatch => {
@@ -88,13 +96,13 @@ export const verifyEmail = (code) => dispatch => {
         }
         dispatch({
           type: VERIFY_USER_EMAIL_SUCCESS,
-          payload: { userName: 'Cristian', role: 'professor', token: 'basfjkasdjc27812ksad78jkdajks', verified: true }
+          payload: {userName: 'Cristian', role: 'professor', token: 'basfjkasdjc27812ksad78jkdajks', verified: true}
         });
       }
     })
     .catch(err => {
       console.log(err);
-      dispatch({ type: VERIFY_USER_EMAIL_FAIL })
+      dispatch({type: VERIFY_USER_EMAIL_FAIL})
     })
 }
 

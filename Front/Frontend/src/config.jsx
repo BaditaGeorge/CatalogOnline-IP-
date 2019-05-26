@@ -1,9 +1,5 @@
 export const APIURL = 'http://localhost:9991'
-export const secret = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnzyis1ZjfNB0bBgKFMSv"
-  + "vkTtwlvBsaJq7S5wA+kzeVOVpVWwkWdVha4s38XM/pa/yr47av7+z3VTmvDRyAHc" +
-  "aT92whREFpLv9cj5lTeJSibyr/Mrm/YtjCZVWgaOYIhwrXwKLqPr/11inWsAkfIy" +
-  "tvHWTxZYEcXLgAXFuUuaS3uF9gEiNQwzGTU1v0FqkqTBr4B8nW3HCN47XUu0t8Y0" +
-  "e+lf4s4OxQawWD79J9/5d3Ry0vbV3Am1FtGJiJvOwRsIfVChDpYStTcHTCMqtvWb" +
-  "V6L11BWkpzGXSW4Hv43qa+GSYOD2QU68Mb59oSk2OB+BtOLpJofmbGEGgvmwyCI9" +
-  "MwIDAQAB";
-
+export const PUB_KEY = '-----BEGIN PUBLIC KEY-----\n' +
+  'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCd8I5SyQR2S5K+K3umU2LNRCGDddbjx9UApfxF\n' +
+  'VXPvQRUfANteA8je4FHJyX3aE8qu30ODlX9ESPkZcsD6jRzsGH6/3NMnw70CyDEsQeK00HfNKb6J\n' +
+  'zF6TLw9bZwcbb03DUxLeLfRZhlPjfbcbqxIp5ePmxsExDqm/JLSW7RSrDQIDAQAB-----END PUBLIC KEY-----';
