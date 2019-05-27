@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect, Provider } from "react-redux";
 import configureStore from './store';
 
@@ -10,18 +10,14 @@ import { StudentDashboardRedux } from './components/StudentDashboard';
 import { LoginWithRedux } from './components/Login';
 import { RegisterWithRedux } from './components/Register';
 import { VerifyWithRedux } from "./components/Verify";
-import Layout from './components/Template/Layout'
-
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "./css/animate.min.css";
-// import "./css/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
-// import "./css/demo.css";
-// import "./css/pe-icon-7-stroke.css";
+import { NotFound } from "./components/NotFound";
 
 const config = configureStore();
 const { store, persistor } = config;
 
+
 class App extends Component {
+
   render () {
     return (
       <Provider store={store}>
@@ -34,22 +30,26 @@ class App extends Component {
 }
 
 class Routing extends Component {
+  componentWillMount () {
+    LoginWithRedux.redirectIfLogged(this.props)
+  }
 
+  componentWillUpdate (nextProps, nextState, nextContext) {
+    LoginWithRedux.redirectIfLogged(nextProps)
+  }
 
   render () {
-    let whatToRender = <Redirect to={'/login'}/>;
-    if (this.props.token.length)
+    let whichDashboard;
+    if (this.props.token)
       switch (this.props.role) {
         case 'student':
-          whatToRender = <StudentDashboardRedux/>;
-          if (!this.props.verified)
-            whatToRender = <Redirect to={'/verify'}/>
+          whichDashboard = <StudentDashboardRedux/>;
           break;
         case 'professor':
-          whatToRender = <ProfessorDashboardRedux/>;
+          whichDashboard = <ProfessorDashboardRedux/>;
           break;
         case 'admin':
-          whatToRender = <AdminDashboardWithRedux/>;
+          whichDashboard = <AdminDashboardWithRedux/>;
           break;
         default:
           break;
@@ -59,18 +59,11 @@ class Routing extends Component {
       <Router>
         <Suspense fallback={null}>
           <Switch>
-            <Route path="/login" component={LoginWithRedux}/>
-            <Route path="/register" component={RegisterWithRedux}/>
-            <Route path="/verify" component={VerifyWithRedux}/>
-            <Route path="/dashboard" render={() => (whatToRender)}/>
-            <Route path="/test" component={Layout}/>
-            <Route exact path="" render={() => (
-              !whatToRender ? (
-                <Redirect to="/login"/>
-              ) : (
-                <Redirect to="/dashboard"/>
-              )
-            )}/>
+            <Route path={"/login"} component={LoginWithRedux}/>
+            <Route path={"/register"} component={RegisterWithRedux}/>
+            <Route path={"/verify"} component={VerifyWithRedux}/>
+            <Route path={"/dashboard"} render={() => (whichDashboard)}/>
+            <Route path="" component={NotFound}/>
           </Switch>
         </Suspense>
       </Router>

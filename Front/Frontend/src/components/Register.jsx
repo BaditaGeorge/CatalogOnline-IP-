@@ -12,19 +12,16 @@ class Register extends Component {
       email: '',
       password: '',
       userName: '',
-      failToregister: false,
     };
-    this.onChange = this.onChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
   }
 
 
-  onSubmit (e) {
+  onSubmit = (e) => {
     e.preventDefault();
-    this.props.registerUser(this.state.userName, this.state.password,  this.state.email)
+    this.props.registerUser(this.state.userName, this.state.password, this.state.email)
   }
 
-  onChange (e) {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
 
@@ -39,7 +36,6 @@ class Register extends Component {
               <Form.Control type="text" name="userName" placeholder="james.doe" onChange={this.onChange}
                             value={this.state.userName}/>
             </Form.Group>
-
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -64,13 +60,6 @@ class Register extends Component {
 
 }
 
-export const RegisterWithRedux = connect((state) => ({
-  userName: state.loginReducer.userName,
-  role: state.loginReducer.role,
-  token: state.loginReducer.token,
-  verified: state.loginReducer.verified,
-  loading: state.loginReducer.loading
-}), {
+export const RegisterWithRedux = connect(() => ({}), {
   registerUser,
-  verifyEmail
 })(Register)
