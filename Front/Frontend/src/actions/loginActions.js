@@ -10,19 +10,14 @@ export const VERIFY_USER_EMAIL_SUCCESS = "VERIFY_USER_EMAIL_SUCCESS";
 export const VERIFY_USER_EMAIL_FAIL = "VERIFY_USER_EMAIL_FAIL";
 export const LOGOUT_USER_SUCCESS = "LOGOUT_USER_SUCCESS";
 
-
 const key = new NodeRSA();
 key.importKey(PUB_KEY);
-
-
-const text = '123456';
-const encrypted = key.encrypt(text, 'base64');
-console.log('encrypted: ', encrypted);
 
 export const loginUser = (username, password) => dispatch => {
   dispatch({
     type: GET_USER_DATA
   });
+  const encrypted = key.encrypt(password, 'base64');
   axios.post(`${APIURL}/login?username=${username}&password=${password}`)
     .then(res => {
       if (res.data) {
@@ -52,7 +47,7 @@ export const loginUser = (username, password) => dispatch => {
         throw(res.data.message)
     })
     .catch(err => {
-      console.log(err);
+      console.error(err);
       dispatch({type: GET_USER_DATA_FAIL})
     })
 };
@@ -61,6 +56,7 @@ export const registerUser = (username, password, email) => dispatch => {
   dispatch({
     type: GET_USER_DATA
   });
+  const encrypted = key.encrypt(password, 'base64');
   axios.post(`${APIURL}/register?username=${username}&password=${password}&mail=${email}`)
     .then(res => {
       if (res.data) {
@@ -75,7 +71,7 @@ export const registerUser = (username, password, email) => dispatch => {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.error(err);
       dispatch({type: GET_USER_DATA_FAIL})
     })
 };
@@ -101,7 +97,7 @@ export const verifyEmail = (code) => dispatch => {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.error(err);
       dispatch({type: VERIFY_USER_EMAIL_FAIL})
     })
 }

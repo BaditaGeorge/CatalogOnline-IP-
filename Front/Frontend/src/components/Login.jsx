@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../App.css';
-import { Button, Form } from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {
   loginUser,
 } from '../actions/loginActions';
 
 
 class Login extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       username: '',
@@ -30,12 +30,12 @@ class Login extends Component {
   }
 
   onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({[e.target.name]: e.target.value});
   }
 
-  render () {
+  render() {
     return (
-      <Card style={{ width: '20rem', marginTop: '10%', marginLeft: 'auto', marginRight: 'auto' }}>
+      <Card style={{width: '20rem', marginTop: '10%', marginLeft: 'auto', marginRight: 'auto'}}>
         <Card.Body>
           <Form>
             <Form.Group controlId='formBasicEmail'>
@@ -60,6 +60,6 @@ class Login extends Component {
   }
 }
 
-export const LoginWithRedux = connect(() => ({}), {
+export const LoginWithRedux = connect((state) => ({}), {
   loginUser,
 })(Login)

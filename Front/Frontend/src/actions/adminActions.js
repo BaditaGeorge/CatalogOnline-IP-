@@ -29,15 +29,15 @@ export const SET_CURRENT_DISCIPLINE = "SET_CURRENT_DISCIPLINE";
 export const SET_CURRENT_PROFESSOR = "SET_CURRENT_PROFESSOR";
 
 
-export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
+export const getProfessorCatalog = (id_materie, id_profesor) => (dispatch, getState) => {
   dispatch({
     type: GET_PROFESSOR_CATALOG
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}&id_session=1`)
+    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}&id_session=${id_session}`)
     .then(res => {
       if (res.data) {
-        console.log(res.data);
         dispatch({
           type: GET_PROFESSOR_CATALOG_SUCCESS,
           payload: {rows: res.data.rows, columns: res.data.columns, didUpdate: false}
@@ -49,12 +49,13 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
     });
 };
 
-export const getProfessorDisciplines = (id_professor) => dispatch => {
+export const getProfessorDisciplines = (id_professor) => (dispatch, getState) => {
   dispatch({
     type: GET_PROFESSOR_DISCIPLINES
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/materii?id_profesor=${id_professor}&id_session=1`)
+    .get(`${APIURL}/materii?id_profesor=${id_professor}&id_session=${id_session}`)
     .then(res => {
       let disciplines;
       if (res.data) {
@@ -76,12 +77,13 @@ export const getProfessorDisciplines = (id_professor) => dispatch => {
     });
 };
 
-export const getDisciplineFormulas = (id_professor) => dispatch => {
+export const getDisciplineFormulas = (id_professor) => (dispatch, getState) => {
   dispatch({
     type: GET_DISCIPLINE_FORMULAS
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/formule?id_profesor=${id_professor}&id_session=1`)
+    .get(`${APIURL}/formule?id_profesor=${id_professor}&id_session=${id_session}`)
     .then(res => {
       if (res.data) {
         let formulas = res.data;
@@ -104,7 +106,6 @@ export const setDefaultDiscipline = (newCurrentDiscipline) => dispatch => {
 };
 
 export const setDefaultProfessor = (newCurrentProfessor) => dispatch => {
-  console.log(newCurrentProfessor);
   dispatch({
     type: SET_CURRENT_PROFESSOR,
     payload: {
@@ -120,8 +121,9 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
   dispatch({
     type: POST_DISCIPLINE_FORMULAS
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/formule?id_session=1`, newFormula)
+    .post(`${APIURL}/formule?id_session=${id_session}`, newFormula)
     .then(res => {
       let formulas;
       if (res.data === 'Formula este valida') {
@@ -140,18 +142,17 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
     })
     .catch(err => {
       dispatch({type: POST_DISCIPLINE_FORMULAS_FAIL});
-      alert(err)
+      console.error(err)
     });
 };
-export const insertProfessorCatalog = (catalog) => dispatch => {
+export const insertProfessorCatalog = (catalog) => (dispatch, getState) => {
   dispatch({
     type: POST_PROFESSOR_CATALOG
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/catalog?id_session=1`, catalog)
+    .post(`${APIURL}/catalog?id_session=${id_session}`, catalog)
     .then(res => {
-      let columns, rows;
-      console.log(res.data);
       if (res.data.includes('Antetul este valid')) {
         let didUpdate = false;
         if (res.data.includes('Update efectuat'))
@@ -166,7 +167,7 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
     })
     .catch(err => {
       dispatch({type: POST_PROFESSOR_CATALOG_FAIL});
-      alert(err)
+      console.error(err)
     });
 };
 
@@ -174,13 +175,14 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
   dispatch({
     type: POST_PROFESSOR_DISCIPLINES
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/materii?id_session=1`, {id_Materie: id_profesor, den_materie: den_materie})
+    .post(`${APIURL}/materii?id_session=${id_session}`, {id_Materie: id_profesor, den_materie: den_materie})
     .then(res => {
       if (res.data) {
         let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 1};
         axios
-          .get(`${APIURL}/materii?id_profesor=${id_profesor}&id_session=1`)
+          .get(`${APIURL}/materii?id_profesor=${id_profesor}&id_session=${id_session}`)
           .then(res => {
             if (!res.data)
               throw 'Cant get disciplines';
@@ -189,7 +191,7 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
               catalog.disciplina = lastDiscipline.id_materie;
               newDiscipline.id_materie = lastDiscipline.id_materie;
               axios
-                .post(`${APIURL}/catalog?id_session=1`, catalog)
+                .post(`${APIURL}/catalog?id_session=${id_session}`, catalog)
                 .then(res => {
                     if (!res.data || !res.data.includes('Antetul este valid')) {
                       throw res.data
@@ -211,16 +213,16 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
     });
 };
 
-export const insertProfessor = (professor) => (dispatch) => {
-  console.log(professor);
+export const insertProfessor = (professor) => (dispatch, getState) => {
   dispatch({
     type: POST_PROFESSOR
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/profesori?id_session=1`, professor)
+    .post(`${APIURL}/profesori?id_session=${id_session}`, professor)
     .then(res => {
       if (res.data.includes('Done')) {
-        axios.get(`${APIURL}/profesori?id_session=1`)
+        axios.get(`${APIURL}/profesori?id_session=${id_session}`)
           .then(res => {
             if (res.data) {
               let professors = [];
@@ -247,16 +249,17 @@ export const insertProfessor = (professor) => (dispatch) => {
     })
     .catch(err => {
       dispatch({type: POST_PROFESSOR_FAIL});
-      alert(err)
+      console.error(err)
     });
 };
 
-export const getProfessorsList = () => dispatch => {
+export const getProfessorsList = () => (dispatch, getState) => {
   dispatch({
     type: GET_PROFESSOR_LIST
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/profesori?id_session=1`)
+    .get(`${APIURL}/profesori?id_session=${id_session}`)
     .then(res => {
       if (res.data) {
         let professors = [];
@@ -267,7 +270,6 @@ export const getProfessorsList = () => dispatch => {
             prenume: prof.prenume,
             materii: []
           });
-          console.log(professors);
           prof.materii.map(mat => {
             professors[index].materii.push({denumire_materie: mat.den_materie, id_materie: mat.id_materie})
           })

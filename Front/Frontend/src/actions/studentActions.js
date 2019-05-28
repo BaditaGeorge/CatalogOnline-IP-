@@ -9,12 +9,13 @@ export const GET_STUDENT_DISCIPLINES_SUCCESS = "GET_STUDENT_DISCIPLINES_SUCCESS"
 export const GET_STUDENT_DISCIPLINES_FAIL = "GET_STUDENT_DISCIPLINES_FAIL";
 export const SET_STUDENT_CURRENT_DISCIPLINE = "SET_STUDENT_CURRENT_DISCIPLINE";
 
-export const getStudentCatalog = (id_student, id_materie) => dispatch => {
+export const getStudentCatalog = (id_student, id_materie) => (dispatch, getState) => {
   dispatch({
     type: GET_STUDENT_CATALOG
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/note?id_student=${id_student}&id_materie=${id_materie}`)
+    .get(`${APIURL}/note?id_student=${id_student}&id_materie=${id_materie}&id_session=${id_session}`)
     .then(res => {
       if (res.data) {
         let catalogs = [
@@ -42,12 +43,13 @@ export const getStudentCatalog = (id_student, id_materie) => dispatch => {
     });
 };
 
-export const getStudentDisciplines = (id_student) => dispatch => {
+export const getStudentDisciplines = (id_student) => (dispatch, getState) => {
   dispatch({
     type: GET_STUDENT_DISCIPLINES
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/cursuri?id_student=${id_student}`)
+    .get(`${APIURL}/cursuri?id_student=${id_student}&id_session=${id_session}`)
     .then(res => {
       if (res.data) {
         dispatch({
@@ -64,7 +66,7 @@ export const getStudentDisciplines = (id_student) => dispatch => {
     });
 };
 
-export const setStudentCurrentDiscipline = (newCurrentDiscipline) => dispatch => {
+export const setDefaultDiscipline = (newCurrentDiscipline) => dispatch => {
   dispatch({
     type: SET_STUDENT_CURRENT_DISCIPLINE,
     payload: {currentDiscipline: newCurrentDiscipline}

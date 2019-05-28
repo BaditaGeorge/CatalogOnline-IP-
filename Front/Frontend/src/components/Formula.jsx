@@ -29,7 +29,7 @@ export default class Formula extends Component {
   onChangeFormula () {
     const formula = this.askUserInput('Please specify a new formula (ex: L1 + L2)', '')
     if (formula !== '')
-      this.props.onChangeFormula(this.props.currentDiscipline.id_materie, formula)
+      this.props.insertDisciplineFormulas(this.props.currentDiscipline.id_materie, formula)
   }
 
   componentWillUpdate (nextProps, nextState, nextContext) {

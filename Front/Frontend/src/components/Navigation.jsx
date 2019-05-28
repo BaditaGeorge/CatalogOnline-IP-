@@ -61,12 +61,12 @@ export default class Navigation extends Component {
       ]
     }
     if (disciplineName)
-      this.props.onAddDiscipline(id_professor, disciplineName, catalog)
+      this.props.insertProfessorDisciplines(id_professor, disciplineName, catalog)
 
   }
 
   onDisciplineChange = (newDiscipline) => {
-    this.props.onDisciplineChange(newDiscipline)
+    this.props.setDefaultDiscipline(newDiscipline)
   }
 
   onAddProfessor = () => {
@@ -84,16 +84,15 @@ export default class Navigation extends Component {
         antet: 'L L1 L2 L3'
       }]
     }
-    this.props.onAddProfessor(newProfessor)
+    this.props.insertProfessor(newProfessor)
   }
 
   onProfessorChange = (item) => {
-    this.props.onProfessorChange(item)
+    this.props.setDefaultProfessor(item)
   }
 
   onUserLogout = () => {
-    console.log(this.props.onUserLogout)
-    this.props.onUserLogout()
+    this.props.logoutUser()
   }
 
   handleClose = () => {
@@ -106,16 +105,16 @@ export default class Navigation extends Component {
 
   handleFiles = files => {
     var reader = new FileReader();
+    const id_materie = this.props.currentDiscipline.id_materie
     reader.onload = function (e) {
       axios
-        .post(`${APIURL}/importCatalog?id_Materie=${this.props.currentDiscipline.id_materie}&id_session=1`, reader.result)
+        .post(`${APIURL}/importCatalog?id_Materie=${id_materie}&id_session=1`, reader.result)
         .then(res => {
           if (res.data !== 'Added!')
             throw res.data
         }).catch(err => {
         alert(err)
       });
-      alert(reader.result)
     }
     reader.readAsText(files[0]);
   }

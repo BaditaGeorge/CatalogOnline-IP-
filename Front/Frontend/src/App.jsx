@@ -1,24 +1,23 @@
-import React, { Component, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { connect, Provider } from "react-redux";
+import React, {Component, Suspense} from 'react';
 import configureStore from './store';
-
-import { PersistGate } from 'redux-persist/integration/react'
-import { AdminDashboardWithRedux } from './components/AdminDashboard';
-import { ProfessorDashboardRedux } from './components/ProfessorDashboard';
-import { StudentDashboardRedux } from './components/StudentDashboard';
-import { LoginWithRedux } from './components/Login';
-import { RegisterWithRedux } from './components/Register';
-import { VerifyWithRedux } from "./components/Verify";
-import { NotFound } from "./components/NotFound";
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {connect, Provider} from "react-redux";
+import {PersistGate} from 'redux-persist/integration/react'
+import {AdminDashboardWithRedux} from './components/AdminDashboard';
+import {ProfessorDashboardRedux} from './components/ProfessorDashboard';
+import {StudentDashboardRedux} from './components/StudentDashboard';
+import {LoginWithRedux} from './components/Login';
+import {RegisterWithRedux} from './components/Register';
+import {VerifyWithRedux} from "./components/Verify";
+import './App.css';
 
 const config = configureStore();
-const { store, persistor } = config;
+const {store, persistor} = config;
 
 
-class App extends Component {
+export default class App extends Component {
 
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
@@ -30,15 +29,15 @@ class App extends Component {
 }
 
 class Routing extends Component {
-  componentWillMount () {
+  componentWillMount() {
     LoginWithRedux.redirectIfLogged(this.props)
   }
 
-  componentWillUpdate (nextProps, nextState, nextContext) {
+  componentWillUpdate(nextProps, nextState, nextContext) {
     LoginWithRedux.redirectIfLogged(nextProps)
   }
 
-  render () {
+  render() {
     let whichDashboard;
     if (this.props.token)
       switch (this.props.role) {
@@ -63,7 +62,7 @@ class Routing extends Component {
             <Route path={"/register"} component={RegisterWithRedux}/>
             <Route path={"/verify"} component={VerifyWithRedux}/>
             <Route path={"/dashboard"} render={() => (whichDashboard)}/>
-            <Route path="" component={NotFound}/>
+            <Route path="" render={() => <Redirect to={this.props.token ? '/dashboard' : '/login'}/>}/>
           </Switch>
         </Suspense>
       </Router>
@@ -71,11 +70,4 @@ class Routing extends Component {
   }
 }
 
-const RoutingWithRedux = connect((state) => ({
-  role: state.loginReducer.role,
-  token: state.loginReducer.token,
-  verified: state.loginReducer.verified,
-  loading: state.loginReducer.loading
-}), {})(Routing);
-
-export default App;
+const RoutingWithRedux = connect((state) => ({...state.loginReducer}), {})(Routing);

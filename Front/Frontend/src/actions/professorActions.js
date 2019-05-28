@@ -21,12 +21,13 @@ export const POST_PROFESSOR_DISCIPLINES_SUCCESS = "POST_PROFESSOR_DISCIPLINES_SU
 export const POST_PROFESSOR_DISCIPLINES_FAIL = "POST_PROFESSOR_DISCIPLINES_FAIL"
 export const SET_CURRENT_DISCIPLINE = "SET_CURRENT_DISCIPLINE"
 
-export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
+export const getProfessorCatalog = (id_materie, id_profesor) => (dispatch, getState) => {
   dispatch({
     type: GET_PROFESSOR_CATALOG
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}`)
+    .get(`${APIURL}/catalog?id_Materie=${id_materie}&id_prof=${id_profesor}&id_session=${id_session}`)
     .then(res => {
       if (res.data) {
         dispatch({
@@ -36,43 +37,50 @@ export const getProfessorCatalog = (id_materie, id_profesor) => dispatch => {
       }
     })
     .catch(err => {
+      console.error(err)
       dispatch({type: GET_PROFESSOR_CATALOG_FAIL});
     });
 };
 
-export const getProfessorDisciplines = (id_professor) => dispatch => {
+export const getProfessorDisciplines = (id_professor) => (dispatch, getState) => {
   dispatch({
     type: GET_PROFESSOR_DISCIPLINES
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/materii?id_profesor=${id_professor}`)
+    .get(`${APIURL}/materii?id_profesor=${id_professor}&id_session=${id_session}`)
     .then(res => {
       let disciplines
       if (res.data) {
-        disciplines = res.data.disciplines;
+        disciplines = [];
+        res.data.disciplines.map(item => {
+          disciplines.push({
+            denumire_materie: item.denumire_materie,
+            id_materie: item.id_materie.includes(" ") ? parseInt(item.id_materie.replace(" ", ""), 10) : item.id_materie
+          })
+        })
         dispatch({
           type: GET_PROFESSOR_DISCIPLINES_SUCCESS,
           payload: {
             disciplines: disciplines,
-            currentDiscipline: disciplines[0] ? {
-              denumire_materie: disciplines[0].denumire_materie,
-              id_materie: parseInt(disciplines[0].id_materie.replace(" ", ""), 10)
-            } : {}
+            currentDiscipline: disciplines[0]
           }
         });
       }
     })
     .catch(err => {
+      console.error(err)
       dispatch({type: GET_PROFESSOR_DISCIPLINES_FAIL});
     });
 };
 
-export const getDisciplineFormulas = (id_professor) => dispatch => {
+export const getDisciplineFormulas = (id_professor) => (dispatch, getState) => {
   dispatch({
     type: GET_DISCIPLINE_FORMULAS
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .get(`${APIURL}/formule?id_profesor=${id_professor}`)
+    .get(`${APIURL}/formule?id_profesor=${id_professor}&id_session=${id_session}`)
     .then(res => {
       if (res.data) {
         let formulas = res.data
@@ -83,11 +91,12 @@ export const getDisciplineFormulas = (id_professor) => dispatch => {
       }
     })
     .catch(err => {
+      console.error(err)
       dispatch({type: GET_DISCIPLINE_FORMULAS_FAIL});
     });
 };
 
-export const setDefaultDiscipline = (newCurrentDiscipline) => dispatch => {
+export const setDefaultDiscipline = (newCurrentDiscipline) => (dispatch, getState) => {
   dispatch({
     type: SET_CURRENT_DISCIPLINE,
     payload: {currentDiscipline: newCurrentDiscipline}
@@ -99,8 +108,9 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
   dispatch({
     type: POST_DISCIPLINE_FORMULAS
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/formule`, newFormula)
+    .post(`${APIURL}/formule?id_session=1`, newFormula)
     .then(res => {
       let formulas
       if (res.data === 'Formula este valida') {
@@ -118,20 +128,20 @@ export const insertDisciplineFormulas = (id_materie, formule) => (dispatch, getS
       throw (res.data)
     })
     .catch(err => {
+      console.error(err)
       dispatch({type: POST_DISCIPLINE_FORMULAS_FAIL})
-      alert(err)
     });
 };
-export const insertProfessorCatalog = (catalog) => dispatch => {
+export const insertProfessorCatalog = (catalog) => (dispatch, getState) => {
 
   dispatch({
     type: POST_PROFESSOR_CATALOG
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/catalog`, catalog)
+    .post(`${APIURL}/catalog?id_session=1`, catalog)
     .then(res => {
       let columns, rows
-      console.log(res.data)
       if (res.data.includes('Antetul este valid')) {
         let didUpdate = false
         if (res.data.includes('Update efectuat'))
@@ -145,8 +155,8 @@ export const insertProfessorCatalog = (catalog) => dispatch => {
       }
     })
     .catch(err => {
+      console.error(err)
       dispatch({type: POST_PROFESSOR_CATALOG_FAIL});
-      alert(err)
     });
 };
 
@@ -154,13 +164,14 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
   dispatch({
     type: POST_PROFESSOR_DISCIPLINES
   });
+  const id_session = getState().loginReducer.token;
   axios
-    .post(`${APIURL}/materii`, {id_Materie: id_profesor, den_materie: den_materie})
+    .post(`${APIURL}/materii?id_session=1`, {id_Materie: id_profesor, den_materie: den_materie})
     .then(res => {
       if (res.data) {
         let newDiscipline = {denumire_materie: res.data.den_materie, id_materie: 1}
         axios
-          .get(`${APIURL}/materii?id_profesor=${id_profesor}`)
+          .get(`${APIURL}/materii?id_profesor=${id_profesor}&id_session=${id_session}`)
           .then(res => {
             if (!res.data)
               throw 'Cant get disciplines'
@@ -169,7 +180,7 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
               catalog.disciplina = lastDiscipline.id_materie
               newDiscipline.id_materie = lastDiscipline.id_materie
               axios
-                .post(`${APIURL}/catalog`, catalog)
+                .post(`${APIURL}/catalog?id_session=1`, catalog)
                 .then(res => {
                     if (!res.data || !res.data.includes('Antetul este valid')) {
                       throw res.data
@@ -187,6 +198,7 @@ export const insertProfessorDisciplines = (id_profesor, den_materie, catalog) =>
       }
     })
     .catch(err => {
+      console.error(err)
       dispatch({type: POST_PROFESSOR_DISCIPLINES_FAIL});
     });
 };
